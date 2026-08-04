@@ -1,0 +1,31 @@
+{
+  "name": "test-automocion",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "App de test para el Técnico Superior en Automoción",
+  "scripts": {
+    "panel": "node panel/servidor.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "importar": "node herramientas/importar.mjs",
+    "probar": "node herramientas/probar-analizador.mjs && node herramientas/probar-capturador.mjs && node herramientas/probar-ia.mjs && node herramientas/probar-importador.mjs && node herramientas/probar-macos.mjs && node herramientas/probar-panel.mjs && node herramientas/probar-banco.mjs && node herramientas/probar-app.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "esbuild": "^0.28.0",
+    "jpeg-js": "^0.4.4",
+    "jsdom": "^28.0.0",
+    "pdfjs-dist": "^6.2.0",
+    "pngjs": "^7.0.0",
+    "tailwindcss": "^4.3.0",
+    "vite": "^8.1.0",
+    "vite-plugin-pwa": "^1.3.0"
+  }
+}

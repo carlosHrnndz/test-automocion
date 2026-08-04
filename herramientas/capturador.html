@@ -1,0 +1,1548 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capturador de preguntas · Automoción</title>
+<style>
+  :root{
+    --fondo:#0b1220; --panel:#121b2e; --panel2:#0f1728; --borde:#22304a;
+    --texto:#e6ecf7; --suave:#93a3bd; --azul:#38bdf8; --verde:#34d399;
+    --rojo:#fb7185; --ambar:#fbbf24;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fondo);color:var(--texto);
+       font:14px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:var(--azul)}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.92);
+         backdrop-filter:blur(8px);border-bottom:1px solid var(--borde);padding:12px 20px}
+  header .fila{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  h1{margin:0;font-size:17px;letter-spacing:-.01em}
+  .sub{color:var(--suave);font-size:12px}
+  nav{display:flex;gap:6px;margin-left:auto}
+  nav button{background:transparent;border:1px solid transparent;color:var(--suave);
+             padding:7px 14px;border-radius:9px;cursor:pointer;font-size:13px;font-weight:600}
+  nav button.on{background:var(--azul);color:#06131f;border-color:var(--azul)}
+  main{max-width:1180px;margin:0 auto;padding:20px}
+  .caja{background:var(--panel);border:1px solid var(--borde);border-radius:14px;padding:16px;margin-bottom:16px}
+  .caja h2{margin:0 0 4px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--azul)}
+  .caja p.ayuda{margin:0 0 12px;color:var(--suave);font-size:12.5px}
+  label{display:block;font-size:12px;font-weight:600;color:var(--suave);margin-bottom:5px}
+  textarea,input,select{width:100%;background:var(--panel2);color:var(--texto);
+    border:1px solid var(--borde);border-radius:9px;padding:10px 12px;font:inherit}
+  textarea{min-height:230px;resize:vertical;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;line-height:1.6}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--azul);outline-offset:-1px}
+  .rejilla{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  button.b{background:var(--azul);color:#06131f;border:0;padding:10px 18px;border-radius:9px;
+           font-weight:700;cursor:pointer;font-size:13.5px}
+  button.b:disabled{opacity:.4;cursor:not-allowed}
+  button.b.gris{background:#243149;color:var(--texto)}
+  button.b.verde{background:var(--verde);color:#052e22}
+  button.b.rojo{background:var(--rojo);color:#40101c}
+  .barra-acciones{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .p{border:1px solid var(--borde);border-radius:12px;padding:14px;margin-bottom:10px;background:var(--panel2)}
+  .p.aviso{border-color:var(--ambar)}
+  .p .cab{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
+  .p .num{background:#243149;color:var(--suave);border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;flex:none}
+  .p .enun{width:100%;font-weight:600;background:transparent;border:1px dashed transparent;border-radius:6px;padding:4px 6px}
+  .p .enun:hover,.p .enun:focus{border-color:var(--borde);background:var(--panel)}
+  .op{display:flex;gap:9px;align-items:flex-start;padding:5px 6px;border-radius:7px}
+  .op:hover{background:rgba(255,255,255,.03)}
+  .op input[type=radio]{width:16px;height:16px;flex:none;margin-top:5px;accent-color:var(--verde)}
+  .op .txt{flex:1;background:transparent;border:1px dashed transparent;border-radius:6px;padding:3px 6px}
+  .op .txt:hover,.op .txt:focus{border-color:var(--borde);background:var(--panel)}
+  .op.ok .txt{color:var(--verde)}
+  .expl{margin-top:10px;padding-top:10px;border-top:1px solid var(--borde);display:grid;gap:8px}
+  .expl textarea{min-height:60px;font-family:inherit;font-size:13px}
+  .etq{display:inline-block;background:#243149;color:var(--suave);border-radius:6px;
+       padding:2px 8px;font-size:11px;font-weight:700;margin-right:5px}
+  .etq.ok{background:rgba(52,211,153,.15);color:var(--verde)}
+  .etq.no{background:rgba(251,113,133,.15);color:var(--rojo)}
+  .etq.am{background:rgba(251,191,36,.15);color:var(--ambar)}
+  .fin{color:var(--suave);font-size:12px}
+  .prog{height:6px;background:#1b2740;border-radius:99px;overflow:hidden;margin:10px 0}
+  .prog>div{height:100%;background:var(--azul);transition:width .3s}
+  pre.ej{background:var(--panel2);border:1px solid var(--borde);border-radius:9px;padding:12px;
+         overflow:auto;font-size:12.5px;color:var(--suave);margin:0}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--borde)}
+  th{color:var(--suave);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  .der{text-align:right}
+  .vacio{text-align:center;color:var(--suave);padding:40px 20px}
+  .aviso-caja{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.35);
+              border-radius:10px;padding:11px 13px;color:#fde68a;font-size:12.5px;margin-bottom:12px}
+  .filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+  .filtros select,.filtros input{width:auto;min-width:170px}
+  .interruptor{display:flex;align-items:center;gap:7px;margin:0;cursor:pointer;
+               color:var(--texto);font-size:13px;font-weight:600;user-select:none}
+  .interruptor input{width:16px;height:16px;accent-color:var(--azul);cursor:pointer}
+  kbd{background:#243149;border:1px solid var(--borde);border-radius:5px;
+      padding:1px 5px;font-size:11px;font-family:ui-monospace,monospace}
+  /* Aviso flotante */
+  #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);
+         background:var(--verde);color:#052e22;font-weight:700;padding:11px 20px;
+         border-radius:11px;opacity:0;pointer-events:none;transition:.25s;z-index:50;
+         box-shadow:0 10px 30px rgba(0,0,0,.45)}
+  #toast.ver{opacity:1;transform:translate(-50%,0)}
+  #toast.malo{background:var(--ambar);color:#3b2a05}
+  /* Listado reciente */
+  .reciente{display:flex;align-items:center;gap:10px;padding:7px 11px;margin-top:7px;
+            background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);border-radius:9px;font-size:12.5px}
+  .reciente .txt{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--suave)}
+  .reciente button{background:transparent;border:0;color:var(--rojo);cursor:pointer;font-weight:700;font-size:12px;flex:none}
+  /* Gestor del banco */
+  tr.fila{cursor:pointer}
+  tr.fila:hover{background:rgba(255,255,255,.035)}
+  tr.fila td{vertical-align:top}
+  .celda-enun{max-width:520px}
+  .celda-enun .t{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mini{background:transparent;border:1px solid var(--borde);color:var(--suave);
+        border-radius:7px;padding:3px 9px;font-size:11.5px;font-weight:700;cursor:pointer}
+  .mini:hover{color:var(--texto);border-color:var(--azul)}
+  .mini.rojo:hover{color:var(--rojo);border-color:var(--rojo)}
+  input[type=checkbox].sel{width:16px;height:16px;accent-color:var(--azul);cursor:pointer}
+  .letra{background:#243149;color:var(--suave);border-radius:5px;padding:1px 7px;
+         font-size:11px;font-weight:800;flex:none;margin-top:4px}
+  .op.ok .letra{background:var(--verde);color:#052e22}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="fila">
+    <div>
+      <h1>Capturador de preguntas</h1>
+      <div class="sub">Técnico Superior en Automoción · todo se guarda en este navegador</div>
+    </div>
+    <nav>
+      <button data-vista="capturar" class="on">Capturar</button>
+      <button data-vista="banco">Banco <span id="contadorBanco"></span></button>
+      <button data-vista="ia">Explicaciones IA</button>
+      <button data-vista="exportar">Exportar</button>
+      <button data-vista="ayuda">Ayuda</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ CAPTURAR ============================ -->
+<section id="v-capturar">
+  <div class="caja">
+    <h2>1 · Dónde van estas preguntas</h2>
+    <p class="ayuda">Se aplicará a todas las preguntas que pegues abajo.</p>
+    <div class="rejilla">
+      <div>
+        <label for="selModulo">Módulo</label>
+        <select id="selModulo"></select>
+      </div>
+      <div>
+        <label for="selSub">Tema / submódulo</label>
+        <select id="selSub"></select>
+      </div>
+      <div>
+        <label for="subNuevo">…o escribe uno nuevo</label>
+        <input id="subNuevo" placeholder="Ej. TEST PARCIAL 2" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <div class="caja">
+    <h2>2 · Pega el texto</h2>
+    <p class="ayuda">
+      Pega la pregunta tal cual viene de la academia. Lo único que tienes que hacer es
+      poner un asterisco en la respuesta correcta. Las letras a) b) c) d) las pone la app.
+    </p>
+    <textarea id="entrada" spellcheck="false" placeholder="PREGUNTA: (Identificador nº 2778104)
+Para engranar ejes que se cruzan el tipo de dentado debe ser:
+Respuestas
+Recto
+Helicoidal*
+No puede realizarse este tipo de engranaje
+Todas las demás respuestas son correctas."></textarea>
+    <div class="barra-acciones" style="margin-top:12px">
+      <button class="b" id="btnAnalizar">Analizar y guardar</button>
+      <button class="b gris" id="btnLimpiarEntrada">Vaciar</button>
+      <label class="interruptor" title="Guarda directamente si la pregunta está completa y deja el cuadro listo para la siguiente">
+        <input type="checkbox" id="modoRapido" checked>
+        <span>Modo rápido</span>
+      </label>
+      <span class="fin">Atajo: <kbd>Ctrl</kbd>+<kbd>Enter</kbd></span>
+      <span class="fin" id="infoAnalisis"></span>
+    </div>
+    <div id="recientes"></div>
+  </div>
+
+  <div class="caja" id="cajaRevision" hidden>
+    <h2>3 · Revisa antes de guardar</h2>
+    <p class="ayuda">Puedes editar cualquier texto, cambiar la correcta o descartar preguntas.</p>
+    <div id="avisoRevision"></div>
+    <div id="listaRevision"></div>
+    <div class="barra-acciones" style="margin-top:14px">
+      <button class="b verde" id="btnGuardar">Añadir al banco</button>
+      <button class="b gris" id="btnDescartar">Descartar todo</button>
+      <span class="fin" id="infoGuardar"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BANCO ============================ -->
+<section id="v-banco" hidden>
+  <div class="caja">
+    <h2>Banco de preguntas</h2>
+    <div class="filtros">
+      <select id="filtroModulo"></select>
+      <select id="filtroEstado">
+        <option value="">Todas</option>
+        <option value="sin-expl">Sin explicación</option>
+        <option value="sin-revisar">Sin revisar</option>
+        <option value="revisadas">Revisadas</option>
+        <option value="sin-ejemplo">Sin ejemplo</option>
+      </select>
+      <input id="filtroTexto" placeholder="Buscar en el enunciado…">
+      <button class="b gris" id="btnRecargarBanco">Actualizar</button>
+    </div>
+    <div id="resumenBanco"></div>
+  </div>
+  <div class="caja">
+    <div class="barra-acciones" style="margin-bottom:12px">
+      <label class="interruptor"><input type="checkbox" id="selTodas"><span>Seleccionar todas</span></label>
+      <button class="b rojo" id="btnBorrarSel" disabled>Borrar seleccionadas</button>
+      <span class="fin" id="infoSeleccion"></span>
+    </div>
+    <div id="listaBanco"></div>
+    <div id="editorBanco"></div>
+  </div>
+</section>
+
+<!-- ============================ IA ============================ -->
+<section id="v-ia" hidden>
+  <div class="caja">
+    <h2>Generar explicaciones y ejemplos</h2>
+    <p class="ayuda">
+      Todo ocurre en tu Mac con Ollama. No se envía nada a internet y no cuesta dinero.
+    </p>
+    <div class="aviso-caja">
+      <b>Un modelo pequeño se equivoca.</b> Escribe con mucha seguridad aunque esté inventando,
+      sobre todo con cifras, pares de apriete y normativa. Todo lo que genere queda marcado como
+      <b>sin revisar</b> hasta que lo confirmes tú. Trátalo como un borrador, no como apuntes.
+    </div>
+    <div class="rejilla">
+      <div>
+        <label for="urlOllama">Servidor de Ollama</label>
+        <input id="urlOllama" value="http://localhost:11434" spellcheck="false">
+      </div>
+      <div>
+        <label for="modelo">Modelo</label>
+        <select id="modelo"><option value="">— pulsa Comprobar conexión —</option></select>
+      </div>
+      <div>
+        <label for="iaModulo">Limitar a módulo</label>
+        <select id="iaModulo"></select>
+      </div>
+      <div>
+        <label for="iaQue">Qué generar</label>
+        <select id="iaQue">
+          <option value="faltan">Sólo las que están vacías</option>
+          <option value="sin-revisar">Rehacer las que están sin revisar</option>
+          <option value="todas">Rehacer todas (pisa lo que ya haya)</option>
+        </select>
+      </div>
+    </div>
+    <div class="barra-acciones" style="margin-top:14px">
+      <button class="b gris" id="btnProbar">Comprobar conexión</button>
+      <button class="b" id="btnGenerar" disabled>Generar</button>
+      <button class="b gris" id="btnParar" hidden>Parar</button>
+      <span class="fin" id="infoIA"></span>
+    </div>
+    <div class="prog" id="progIA" hidden><div style="width:0"></div></div>
+    <div id="logIA" class="fin" style="margin-top:8px;white-space:pre-wrap;max-height:260px;overflow:auto"></div>
+  </div>
+
+  <div class="caja">
+    <h2>Cómo dejarlo listo</h2>
+    <p class="ayuda">Se hace una vez y ya no hay que volver a tocarlo.</p>
+    <ol class="ayuda" style="line-height:2">
+      <li>Instala Ollama desde <a href="https://ollama.com/download" target="_blank" rel="noreferrer">ollama.com/download</a> y ábrelo.</li>
+      <li>En el Terminal, descarga el modelo:<br>
+        <code>ollama pull qwen3:4b</code></li>
+      <li>Permite que esta página hable con Ollama (una sola vez):<br>
+        <code>launchctl setenv OLLAMA_ORIGINS "*"</code><br>
+        y reinicia Ollama después (salir del icono de la barra y volver a abrirlo).</li>
+      <li>Vuelve aquí y pulsa <b>Comprobar conexión</b>.</li>
+    </ol>
+    <p class="ayuda">
+      Con 8 GB de RAM cierra el resto de aplicaciones mientras genera. Si el Mac se atasca,
+      prueba con un modelo más pequeño: <code>ollama pull gemma3:4b</code> o
+      <code>ollama pull llama3.2:3b</code>.
+    </p>
+  </div>
+</section>
+
+<!-- ============================ EXPORTAR ============================ -->
+<section id="v-exportar" hidden>
+  <div class="caja">
+    <h2>Llevar el banco a la app</h2>
+    <p class="ayuda">
+      Descarga el paquete, descomprímelo y copia la carpeta <code>data</code> dentro de
+      <code>public/</code> del repositorio, sustituyendo la que haya. Luego haz commit y push:
+      GitHub reconstruye y publica la app sola.
+    </p>
+    <div class="barra-acciones">
+      <button class="b verde" id="btnZip">Descargar paquete data.zip</button>
+      <button class="b gris" id="btnExportarBanco">Copia de seguridad del banco</button>
+      <button class="b gris" id="btnImportarBanco">Restaurar copia</button>
+      <input type="file" id="ficheroImportar" accept="application/json,application/zip" hidden>
+    </div>
+    <div id="resumenExport" style="margin-top:14px"></div>
+  </div>
+  <div class="caja">
+    <h2>Archivos sueltos</h2>
+    <p class="ayuda">Por si prefieres bajarte sólo un módulo concreto.</p>
+    <div id="listaExport"></div>
+  </div>
+  <div class="caja">
+    <h2>Zona peligrosa</h2>
+    <div class="barra-acciones">
+      <button class="b rojo" id="btnVaciarBanco">Vaciar el banco entero</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AYUDA ============================ -->
+<section id="v-ayuda" hidden>
+  <div class="caja">
+    <h2>Formatos que entiende el analizador</h2>
+    <p class="ayuda">No hace falta que el texto venga limpio: prueba a pegarlo tal cual y revisa el resultado.</p>
+    <div class="rejilla">
+      <div>
+        <label>Formato de la academia (el tuyo)</label>
+<pre class="ej">PREGUNTA: (Identificador nº 2778104)
+Para engranar ejes que se cruzan
+el tipo de dentado debe ser:
+Respuestas
+Recto
+Helicoidal*
+No puede realizarse este engranaje
+Todas las demás son correctas.</pre>
+        <p class="ayuda" style="margin-top:8px">
+          La línea <code>Respuestas</code> separa el enunciado de las opciones, y a partir
+          de ahí cada línea es una opción aunque no lleve letra ni guion. El identificador
+          se guarda y sirve para no repetir preguntas nunca.
+        </p>
+      </div>
+      <div>
+        <label>Asterisco al final</label>
+<pre class="ej">1. ¿Qué mide el manómetro?
+a) Temperatura
+b) Presión *
+c) Caudal
+d) Par</pre>
+      </div>
+      <div>
+        <label>Respuesta en línea aparte</label>
+<pre class="ej">¿Qué mide el manómetro?
+a) Temperatura
+b) Presión
+c) Caudal
+d) Par
+Respuesta correcta: b</pre>
+      </div>
+      <div>
+        <label>Corchetes o visto</label>
+<pre class="ej">¿Qué mide el manómetro?
+- Temperatura
+- Presión [x]
+- Caudal
+- Par</pre>
+      </div>
+      <div>
+        <label>Opciones numeradas</label>
+<pre class="ej">Pregunta 4: ¿Qué mide el manómetro?
+1) Temperatura
+2) Presión ✓
+3) Caudal
+4) Par</pre>
+      </div>
+    </div>
+  </div>
+  <div class="caja">
+    <h2>Flujo de trabajo recomendado</h2>
+    <ol class="ayuda" style="line-height:2">
+      <li>Elige módulo y tema arriba del todo. Se quedan fijos: no hay que tocarlos en cada pregunta.</li>
+      <li>Pega una pregunta, ponle el asterisco a la correcta y pulsa <kbd>Ctrl</kbd>+<kbd>Enter</kbd>.</li>
+      <li>Con el <b>modo rápido</b> activado se guarda sola y el cuadro queda vacío para la siguiente.
+          Si falta la correcta o algo no cuadra, se para y te la muestra para que la revises.</li>
+      <li>Bajo el cuadro quedan las últimas cinco guardadas por si quieres <b>deshacer</b>.</li>
+      <li>Cuando tengas un buen montón, ve a <b>Explicaciones IA</b> y genera de golpe.</li>
+      <li><b>Exportar</b> → <code>data.zip</code> → copiar en <code>public/</code> → commit y push.</li>
+    </ol>
+    <p class="ayuda">
+      Para borrar o corregir preguntas ya guardadas, usa la pestaña <b>Banco</b>: pulsa una fila
+      para editarla, o marca varias con las casillas y bórralas de una vez.
+    </p>
+  </div>
+  <div class="caja">
+    <h2>Estructura de cada pregunta</h2>
+<pre class="ej">{
+  "id": "cfsd-0001",
+  "moduloId": "cfsd",
+  "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+  "submoduloId": "ruedas",
+  "submodulo": "RUEDAS",
+  "pregunta": "…",
+  "opciones": ["…", "…", "…", "…"],
+  "correcta": 1,
+  "explicacion": "…",
+  "ejemplo": "…",
+  "material": { "pdf": null, "pagina": null, "video": null, "minuto": null, "audio": null },
+  "tags": []
+}</pre>
+  </div>
+</section>
+
+</main>
+
+<div id="toast"></div>
+
+<script>
+'use strict';
+
+// ---------------------------------------------------------------------------
+// Estructura del temario. Debe coincidir con src/lib/estructura.js de la app.
+// ---------------------------------------------------------------------------
+const ESTRUCTURA = [
+  { id:'cfsd', nombre:'CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN', submodulos:[
+    'SISTEMAS MECÁNICOS','SISTEMAS NEUMÁTICOS E HIDRÁULICOS',
+    'SUSPENSIÓN MECÁNICA E HIDRONEUMÁTICA','SUSPENSIÓN ACTIVA',
+    'EL SISTEMA DE DIRECCIÓN','RUEDAS','TEST PARCIAL','DIAGNOSIS Y AVERÍAS',
+    'Prácticas del módulo CFSD: Taller Automoción 1']},
+  { id:'stf', nombre:'SISTEMAS DE TRANSMISIÓN Y FRENADO', submodulos:[] },
+  { id:'mot', nombre:'MOTORES', submodulos:[] },
+  { id:'sam', nombre:'SISTEMAS AUXILIARES DEL MOTOR', submodulos:[] },
+  { id:'sca', nombre:'SISTEMAS DE CARGA Y ARRANQUE', submodulos:[] },
+  { id:'cea', nombre:'CIRCUITOS ELÉCTRICOS AUXILIARES', submodulos:[] },
+  { id:'ssc', nombre:'SISTEMAS DE SEGURIDAD Y CONFORTABILIDAD', submodulos:[] },
+  { id:'dau', nombre:'DIAGNOSIS CON AUTODATA', submodulos:[] },
+  { id:'veh', nombre:'VEHÍCULOS ELÉCTRICOS, HÍBRIDOS Y DE HIDRÓGENO', submodulos:[] },
+  { id:'epa', nombre:'EJERCICIO PARCIAL', submodulos:[] },
+];
+
+const slug = t => String(t).normalize('NFD').replace(/\p{Diacritic}/gu,'')
+  .toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60);
+
+// ---------------------------------------------------------------------------
+// Almacén
+// ---------------------------------------------------------------------------
+const almacen = {
+  banco(){ try{ return JSON.parse(localStorage.getItem('cap_banco')||'[]'); }catch{ return []; } },
+  guardarBanco(b){ localStorage.setItem('cap_banco', JSON.stringify(b)); },
+  subsExtra(){ try{ return JSON.parse(localStorage.getItem('cap_subs')||'{}'); }catch{ return {}; } },
+  añadirSub(moduloId, nombre){
+    const s = this.subsExtra();
+    s[moduloId] = s[moduloId] || [];
+    if(!s[moduloId].includes(nombre)) s[moduloId].push(nombre);
+    localStorage.setItem('cap_subs', JSON.stringify(s));
+  },
+  urlOllama(){ return localStorage.getItem('cap_ollama') || 'http://localhost:11434'; },
+  guardarUrlOllama(u){ localStorage.setItem('cap_ollama', u); },
+};
+
+let BANCO = almacen.banco();
+let REVISION = [];   // preguntas recién analizadas, pendientes de guardar
+let PARAR = false;
+
+// ---------------------------------------------------------------------------
+// EL ANALIZADOR
+// ---------------------------------------------------------------------------
+
+// Quita marcas de "esta es la correcta" y dice si las había.
+function extraerMarca(texto){
+  let t = texto.trim();
+  let marcada = false;
+
+  // **texto**  ->  correcta
+  const negrita = t.match(/^\*\*(.+?)\*\*$/);
+  if(negrita){ return { texto: negrita[1].trim(), marcada: true }; }
+
+  // marcas al final
+  const finales = /\s*(?:\*{1,3}|✓|✔|√|\[\s*[xX]\s*\]|\(\s*(?:correcta?|ok|v)\s*\)|<--+|<=+|#)\s*$/;
+  if(finales.test(t)){ t = t.replace(finales,'').trim(); marcada = true; }
+
+  // marcas al principio (antes o después de la letra ya retirada)
+  const iniciales = /^(?:\*{1,3}|✓|✔|√|>{1,2}|\[\s*[xX]\s*\])\s+/;
+  if(iniciales.test(t)){ t = t.replace(iniciales,'').trim(); marcada = true; }
+
+  return { texto: t, marcada };
+}
+
+const RE_LETRA   = /^\s*([*>✓✔]\s*)?([a-hA-H])\s*[).\-–:]\s*(.+)$/;
+const RE_NUMERO  = /^\s*([*>✓✔]\s*)?(\d{1,3})\s*[).\-–:]\s*(.+)$/;
+const RE_VINETA  = /^\s*[-•–●▪]\s+(.+)$/;
+// "Respuesta correcta: b" — exige separador para no confundirse con la palabra "Respuestas" suelta.
+const RE_RESP    = /^\s*(?:respuestas?|soluci[oó]n(?:es)?|correcta|resp\.?)\s*(?:correcta)?\s*(?:[:\-–]\s*|\s+)([a-hA-H]|\d{1,2})\b/i;
+// Línea que sólo dice "Respuestas" y separa el enunciado de las opciones.
+const RE_SEPARADOR = /^\s*(?:respuestas?|opciones|alternativas)\s*[:.]?\s*$/i;
+// "PREGUNTA: (Identificador nº 2778104)" o "Pregunta 4: ¿…?"
+const RE_CABECERA= /^\s*(?:pregunta|preg\.?|cuesti[oó]n)\b\s*(\d{1,4})?\s*[:).\-–]?\s*(.*)$/i;
+const RE_ID_EXT  = /^\(\s*(?:identificador|id|c[oó]digo)\b[^)]*?(\d{2,})\s*\)\s*(.*)$/i;
+const RE_RUIDO   = /^\s*(?:p[aá]gina\s*\d+|\d+\s*\/\s*\d+|-{3,}|={3,}|_{3,})\s*$/i;
+
+/**
+ * Convierte texto pegado en un array de preguntas.
+ * Devuelve { preguntas, incidencias }.
+ */
+function analizar(texto){
+  const lineas = texto.replace(/\u00A0/g,' ').split(/\r?\n/);
+  const preguntas = [];
+  const incidencias = [];
+  let actual = null;
+  // esperando | enunciado | opciones | libres
+  //   "libres" = ya sabemos que todo lo que venga son opciones, aunque no lleven
+  //   letra ni guion delante. Se activa con la línea "Respuestas".
+  let estado = 'esperando';
+
+  const cerrar = () => {
+    if(actual && actual.opciones.length >= 2){
+      preguntas.push(actual);
+    } else if(actual && actual.pregunta){
+      incidencias.push(`Descartada por tener menos de 2 opciones: "${actual.pregunta.slice(0,60)}…"`);
+    }
+    actual = null;
+    estado = 'esperando';
+  };
+
+  const abrir = (enunciado, cabecera = false) => {
+    cerrar();
+    actual = { pregunta: enunciado.trim(), opciones: [], correcta: null, cabecera, idExterno: null };
+    estado = (cabecera || enunciado.trim()) ? 'enunciado' : 'esperando';
+  };
+
+  const añadirOpcion = (bruto, libre = false) => {
+    if(!actual) return;
+    const { texto:t, marcada } = extraerMarca(bruto);
+    if(!t) return;
+    actual.opciones.push(t);
+    if(marcada) actual.correcta = actual.opciones.length - 1;
+    estado = libre ? 'libres' : 'opciones';
+  };
+
+  for(let i=0; i<lineas.length; i++){
+    const linea = lineas[i];
+    const limpia = linea.trim();
+
+    if(!limpia){ if(estado === 'opciones' || estado === 'libres') cerrar(); continue; }
+    if(RE_RUIDO.test(limpia)) continue;
+
+    // ¿Línea "Respuestas" que separa enunciado de opciones?
+    if(RE_SEPARADOR.test(limpia)){
+      if(actual) estado = 'libres';
+      continue;
+    }
+
+    // ¿Cabecera "PREGUNTA: (Identificador nº 1234)"?
+    if(/^(pregunta|preg\b|preg\.|cuesti)/i.test(limpia)){
+      const mCab = limpia.match(RE_CABECERA);
+      if(mCab){
+        let resto = (mCab[2] || '').trim();
+        let idExterno = null;
+        const mId = resto.match(RE_ID_EXT);
+        if(mId){ idExterno = mId[1]; resto = (mId[2] || '').trim(); }
+        abrir(resto, true);
+        actual.idExterno = idExterno;
+        continue;
+      }
+    }
+
+    // ¿Respuesta declarada en línea aparte?
+    const mResp = limpia.match(RE_RESP);
+    if(mResp && actual && actual.opciones.length){
+      const v = mResp[1];
+      const idx = /\d/.test(v) ? Number(v) - 1 : v.toLowerCase().charCodeAt(0) - 97;
+      if(idx >= 0 && idx < actual.opciones.length) actual.correcta = idx;
+      else incidencias.push(`Respuesta "${v}" fuera de rango en "${actual.pregunta.slice(0,50)}…"`);
+      continue;
+    }
+
+    // ¿Opción con letra?
+    const mLetra = limpia.match(RE_LETRA);
+    if(mLetra && actual){
+      const marca = mLetra[1] || '';
+      const letra = mLetra[2].toLowerCase();
+      const esperada = String.fromCharCode(97 + actual.opciones.length);
+      if(letra !== esperada && actual.opciones.length > 0){
+        incidencias.push(`Opcion "${letra})" fuera de orden en "${actual.pregunta.slice(0,50)}..."`);
+      }
+      añadirOpcion(marca + mLetra[3]);
+      continue;
+    }
+
+    // ¿Opción con viñeta?
+    const mVin = limpia.match(RE_VINETA);
+    if(mVin && actual && estado !== 'esperando'){
+      añadirOpcion(mVin[1]);
+      continue;
+    }
+
+    // ¿Número? Puede ser opción numerada o el número de una pregunta nueva.
+    const mNum = limpia.match(RE_NUMERO);
+    if(mNum){
+      const n = Number(mNum[2]);
+      const esSiguienteOpcion = actual && estado === 'opciones' && n === actual.opciones.length + 1;
+      const esPrimeraOpcion   = actual && estado === 'enunciado' && n === 1;
+      if(esSiguienteOpcion || esPrimeraOpcion){
+        añadirOpcion((mNum[1] || '') + mNum[3]);
+        continue;
+      }
+      abrir(mNum[3]);
+      continue;
+    }
+
+    // Texto suelto, sin ninguna marca.
+    if(estado === 'libres'){
+      // Estamos dentro del listado de respuestas: cada línea es una opción.
+      añadirOpcion(limpia, true);
+    } else if(estado === 'opciones'){
+      // Veníamos de opciones con marca: lo normal es que empiece otra pregunta.
+      abrir(limpia);
+    } else if(estado === 'enunciado'){
+      // Con cabecera "PREGUNTA:" el enunciado termina en ? : . o !, y a partir
+      // de ahí todo lo que venga son opciones aunque no lleven letra.
+      if(actual.cabecera && actual.pregunta && /[?:.!]$/.test(actual.pregunta)){
+        añadirOpcion(limpia, true);
+      } else {
+        actual.pregunta = actual.pregunta ? actual.pregunta + ' ' + limpia : limpia;
+      }
+    } else {
+      abrir(limpia);
+    }
+  }
+  cerrar();
+
+  return { preguntas, incidencias };
+}
+
+// Clave para detectar duplicados. Si la pregunta trae identificador de la
+// academia usamos ese, que es infalible; si no, el enunciado normalizado.
+const clavePregunta = p => p.idExterno ? 'ext:' + p.idExterno : slug(p.pregunta).slice(0,80);
+
+function siguienteId(moduloId){
+  const usados = BANCO.filter(p => p.moduloId === moduloId)
+    .map(p => Number(String(p.id).split('-').pop()))
+    .filter(n => !Number.isNaN(n));
+  const max = usados.length ? Math.max(...usados) : 0;
+  return `${moduloId}-${String(max + 1).padStart(4,'0')}`;
+}
+
+// ---------------------------------------------------------------------------
+// Interfaz
+// ---------------------------------------------------------------------------
+const $  = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+function esc(t){
+  return String(t ?? '').replace(/[&<>"']/g, c =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// --- Navegación ---
+$$('nav button').forEach(b => b.onclick = () => {
+  $$('nav button').forEach(x => x.classList.toggle('on', x === b));
+  ['capturar','banco','ia','exportar','ayuda'].forEach(v =>
+    $('#v-'+v).hidden = (v !== b.dataset.vista));
+  if(b.dataset.vista === 'banco')    pintarBanco();
+  if(b.dataset.vista === 'exportar') pintarExportar();
+  if(b.dataset.vista === 'ia')       pintarIA();
+});
+
+// --- Selectores de módulo ---
+function opcionesModulo(incluirTodos){
+  return (incluirTodos ? '<option value="">Todos los módulos</option>' : '') +
+    ESTRUCTURA.map(m => `<option value="${m.id}">${esc(m.nombre)}</option>`).join('');
+}
+
+function pintarSubmodulos(){
+  const m = ESTRUCTURA.find(x => x.id === $('#selModulo').value);
+  const extra = almacen.subsExtra()[m.id] || [];
+  const enBanco = [...new Set(BANCO.filter(p => p.moduloId === m.id).map(p => p.submodulo))];
+  const todos = [...new Set([...m.submodulos, ...extra, ...enBanco])].filter(Boolean);
+  $('#selSub').innerHTML = todos.length
+    ? todos.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('')
+    : '<option value="">— ninguno todavía —</option>';
+}
+
+$('#selModulo').innerHTML = opcionesModulo(false);
+$('#filtroModulo').innerHTML = opcionesModulo(true);
+$('#iaModulo').innerHTML = opcionesModulo(true);
+$('#selModulo').onchange = pintarSubmodulos;
+pintarSubmodulos();
+
+// --- Aviso flotante ---
+let tempToast = null;
+function toast(mensaje, malo = false){
+  const t = $('#toast');
+  t.textContent = mensaje;
+  t.classList.toggle('malo', malo);
+  t.classList.add('ver');
+  clearTimeout(tempToast);
+  tempToast = setTimeout(() => t.classList.remove('ver'), 2600);
+}
+
+// --- Analizar ---
+$('#btnAnalizar').onclick = () => analizarEntrada();
+
+// Ctrl+Enter (o Cmd+Enter) dentro del cuadro de texto.
+$('#entrada').addEventListener('keydown', e => {
+  if((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ e.preventDefault(); analizarEntrada(); }
+});
+
+function analizarEntrada(){
+  const texto = $('#entrada').value;
+  if(!texto.trim()){ $('#infoAnalisis').textContent = 'No hay nada que analizar.'; return; }
+
+  const { preguntas, incidencias } = analizar(texto);
+  const moduloId = $('#selModulo').value;
+  const modulo = ESTRUCTURA.find(m => m.id === moduloId);
+  const subNuevo = $('#subNuevo').value.trim();
+  const submodulo = subNuevo || $('#selSub').value || '';
+  if(subNuevo){ almacen.añadirSub(moduloId, subNuevo); $('#subNuevo').value = ''; pintarSubmodulos(); }
+
+  const yaEnBanco = new Set(BANCO.map(clavePregunta));
+  let duplicadas = 0;
+
+  REVISION = preguntas.filter(p => {
+    if(yaEnBanco.has(clavePregunta(p))){ duplicadas++; return false; }
+    return true;
+  }).map(p => ({
+    ...p,
+    moduloId,
+    modulo: modulo.nombre,
+    submoduloId: submodulo ? slug(submodulo) : 'sin-clasificar',
+    submodulo: submodulo || 'Sin clasificar',
+    explicacion: '',
+    ejemplo: '',
+    material: { pdf:null, pagina:null, video:null, minuto:null, audio:null },
+    tags: [],
+  }));
+
+  const partes = [`${preguntas.length} detectadas`];
+  if(duplicadas) partes.push(`${duplicadas} ya estaban en el banco`);
+  if(incidencias.length) partes.push(`${incidencias.length} avisos`);
+  $('#infoAnalisis').textContent = partes.join(' · ');
+
+  // Modo rápido: si todo ha salido limpio, guardamos y dejamos el cuadro listo
+  // para la siguiente pregunta. Si algo chirría, paramos y lo mostramos.
+  const completas = REVISION.length > 0 &&
+                    REVISION.every(p => p.correcta !== null && p.opciones.length >= 2);
+  if($('#modoRapido').checked && completas && !incidencias.length){
+    const n = guardarRevision(true);
+    $('#entrada').value = '';
+    $('#entrada').focus();
+    $('#cajaRevision').hidden = true;
+    toast(n === 1 ? `Guardada · ${BANCO.length} en el banco` : `${n} guardadas · ${BANCO.length} en el banco`);
+    return;
+  }
+
+  if($('#modoRapido').checked && REVISION.length && !completas){
+    toast('Falta marcar la respuesta correcta', true);
+  } else if($('#modoRapido').checked && !REVISION.length && duplicadas){
+    $('#entrada').value = '';
+    $('#entrada').focus();
+    toast('Esa pregunta ya estaba en el banco', true);
+    $('#cajaRevision').hidden = true;
+    return;
+  }
+
+  pintarRevision(incidencias);
+}
+
+$('#btnLimpiarEntrada').onclick = () => {
+  $('#entrada').value = '';
+  $('#infoAnalisis').textContent = '';
+  $('#entrada').focus();
+};
+
+// --- Últimas guardadas, con deshacer ---
+let RECIENTES = [];
+
+function pintarRecientes(){
+  $('#recientes').innerHTML = RECIENTES.map(p => `
+    <div class="reciente">
+      <span class="etq ok">${esc(p.id)}</span>
+      <span class="txt">${esc(p.pregunta)}</span>
+      <button data-quitar="${esc(p.id)}">Deshacer</button>
+    </div>`).join('');
+
+  $$('#recientes button[data-quitar]').forEach(b => b.onclick = () => {
+    const id = b.dataset.quitar;
+    const i = BANCO.findIndex(x => x.id === id);
+    if(i >= 0) BANCO.splice(i, 1);
+    RECIENTES = RECIENTES.filter(x => x.id !== id);
+    persistirBanco();
+    pintarRecientes();
+    toast('Pregunta eliminada', true);
+  });
+}
+
+function pintarRevision(incidencias = []){
+  const caja = $('#cajaRevision');
+  if(!REVISION.length){
+    caja.hidden = false;
+    $('#listaRevision').innerHTML = '<div class="vacio">No hay preguntas nuevas que revisar.</div>';
+    $('#avisoRevision').innerHTML = '';
+    return;
+  }
+  caja.hidden = false;
+
+  const sinCorrecta = REVISION.filter(p => p.correcta === null).length;
+  let avisos = '';
+  if(sinCorrecta) avisos += `<div class="aviso-caja">${sinCorrecta} pregunta(s) sin respuesta correcta detectada. Márcalas a mano antes de guardar.</div>`;
+  if(incidencias.length) avisos += `<div class="aviso-caja">${incidencias.slice(0,6).map(esc).join('<br>')}${incidencias.length>6?'<br>…':''}</div>`;
+  $('#avisoRevision').innerHTML = avisos;
+
+  $('#listaRevision').innerHTML = REVISION.map((p, i) => tarjetaEditable(p, i, 'rev')).join('');
+  enlazarTarjetas('rev', REVISION, $('#listaRevision'));
+  caja.scrollIntoView?.({ behavior:'smooth', block:'nearest' });
+}
+
+function tarjetaEditable(p, i, ambito){
+  const alerta = p.correcta === null ? ' aviso' : '';
+  return `
+  <div class="p${alerta}" data-i="${i}" data-ambito="${ambito}">
+    <div class="cab">
+      <span class="num">${i+1}</span>
+      <div contenteditable class="enun" data-campo="pregunta">${esc(p.pregunta)}</div>
+      <button class="b gris" data-accion="borrar" style="padding:4px 10px;flex:none">✕</button>
+    </div>
+    ${p.opciones.map((o, j) => `
+      <label class="op${p.correcta===j?' ok':''}">
+        <input type="radio" name="${ambito}-c-${i}" value="${j}" ${p.correcta===j?'checked':''}>
+        <span class="letra">${'ABCDEFGH'[j]})</span>
+        <div contenteditable class="txt" data-campo="opcion" data-j="${j}">${esc(o)}</div>
+      </label>`).join('')}
+    <div class="expl">
+      ${p.explicacion && !p.revisado ? `
+      <div class="aviso-caja" style="margin:0">
+        Explicación generada por el modelo local y <b>sin revisar</b>. Léela, corrige lo que
+        haga falta y dale a Revisada.
+        <button class="b verde" data-accion="revisar" style="padding:5px 12px;margin-left:8px">Revisada</button>
+      </div>` : ''}
+      ${p.explicacion && p.revisado ? '<div><span class="etq ok">Revisada por ti</span></div>' : ''}
+      <div>
+        <label>Explicación</label>
+        <textarea data-campo="explicacion" placeholder="Se puede generar luego con el modelo local">${esc(p.explicacion||'')}</textarea>
+      </div>
+      <div>
+        <label>Ejemplo</label>
+        <textarea data-campo="ejemplo" placeholder="Caso práctico de taller">${esc(p.ejemplo||'')}</textarea>
+      </div>
+      <div class="rejilla">
+        <div><label>PDF (ruta o URL)</label><input data-campo="pdf" value="${esc(p.material?.pdf||'')}"></div>
+        <div><label>Página</label><input data-campo="pagina" value="${esc(p.material?.pagina||'')}"></div>
+        <div><label>Vídeo (URL)</label><input data-campo="video" value="${esc(p.material?.video||'')}"></div>
+        <div><label>Minuto</label><input data-campo="minuto" value="${esc(p.material?.minuto||'')}"></div>
+      </div>
+      <div class="fin">${esc(p.modulo)} · ${esc(p.submodulo)}${p.id?' · '+esc(p.id):''}${p.idExterno?' · academia nº '+esc(p.idExterno):''}</div>
+    </div>
+  </div>`;
+}
+
+function enlazarTarjetas(ambito, lista, raiz){
+  raiz.querySelectorAll('.p').forEach(card => {
+    const i = Number(card.dataset.i);
+    const p = lista[i];
+    if(!p) return;
+
+    card.querySelectorAll('[contenteditable]').forEach(el => {
+      el.addEventListener('blur', () => {
+        const v = el.textContent.trim();
+        if(el.dataset.campo === 'pregunta') p.pregunta = v;
+        else p.opciones[Number(el.dataset.j)] = v;
+        if(ambito === 'banco') persistirBanco();
+      });
+    });
+
+    card.querySelectorAll('input[type=radio]').forEach(r => {
+      r.addEventListener('change', () => {
+        p.correcta = Number(r.value);
+        card.classList.remove('aviso');
+        card.querySelectorAll('.op').forEach((o, j) => o.classList.toggle('ok', j === p.correcta));
+        if(ambito === 'banco') persistirBanco();
+      });
+    });
+
+    card.querySelectorAll('textarea[data-campo], input[data-campo]').forEach(el => {
+      el.addEventListener('change', () => {
+        const c = el.dataset.campo;
+        const v = el.value.trim();
+        if(c === 'explicacion' || c === 'ejemplo'){
+          p[c] = v;
+          p.revisado = true;   // si lo escribes o lo corriges tú, ya está revisado
+        } else {
+          p.material = p.material || {};
+          p.material[c] = v || null;
+        }
+        if(ambito === 'banco') persistirBanco();
+      });
+    });
+
+    card.querySelector('[data-accion=revisar]')?.addEventListener('click', () => {
+      p.revisado = true;
+      persistirBanco();
+      if(ambito === 'banco') pintarBanco(); else pintarRevision();
+      toast('Marcada como revisada');
+    });
+
+    card.querySelector('[data-accion=borrar]').addEventListener('click', () => {
+      if(ambito === 'rev'){
+        REVISION.splice(i, 1);
+        pintarRevision();
+      } else {
+        if(!confirm('¿Eliminar esta pregunta del banco?')) return;
+        const pos = BANCO.findIndex(x => x.id === p.id);
+        if(pos >= 0) BANCO.splice(pos, 1);
+        EDITANDO = null;
+        persistirBanco();
+        pintarBanco();
+        toast('Pregunta eliminada', true);
+      }
+    });
+  });
+}
+
+// --- Guardar en el banco ---
+function guardarRevision(){
+  const añadidas = [];
+  for(const p of REVISION){
+    p.id = siguienteId(p.moduloId);
+    if(p.correcta === null) p.correcta = 0;
+    delete p.cabecera;
+    BANCO.push(p);
+    añadidas.push(p);
+  }
+  persistirBanco();
+  REVISION = [];
+  RECIENTES = [...añadidas, ...RECIENTES].slice(0, 5);
+  pintarRecientes();
+  return añadidas.length;
+}
+
+$('#btnGuardar').onclick = () => {
+  const sinCorrecta = REVISION.filter(p => p.correcta === null);
+  if(sinCorrecta.length &&
+     !confirm(`${sinCorrecta.length} pregunta(s) siguen sin respuesta correcta. Se guardarán igual con la primera opción marcada y podrás corregirlas desde el Banco. ¿Continuar?`)){
+    return;
+  }
+  const n = guardarRevision();
+  $('#cajaRevision').hidden = true;
+  $('#entrada').value = '';
+  $('#entrada').focus();
+  $('#infoGuardar').textContent = '';
+  $('#infoAnalisis').textContent = `${n} añadidas. El banco tiene ${BANCO.length}.`;
+  toast(n === 1 ? `Guardada · ${BANCO.length} en el banco` : `${n} guardadas · ${BANCO.length} en el banco`);
+};
+
+$('#btnDescartar').onclick = () => {
+  REVISION = [];
+  $('#cajaRevision').hidden = true;
+};
+
+function persistirBanco(){
+  almacen.guardarBanco(BANCO);
+  $('#contadorBanco').textContent = BANCO.length ? `(${BANCO.length})` : '';
+}
+persistirBanco();
+
+// --- Banco: gestor de preguntas ---
+let BANCO_FILTRADO = [];
+let SELECCION = new Set();   // ids marcados con la casilla
+let EDITANDO = null;         // id de la pregunta desplegada para editar
+
+function pintarBanco(){
+  const m = $('#filtroModulo').value;
+  const estado = $('#filtroEstado').value;
+  const q = slug($('#filtroTexto').value);
+
+  BANCO_FILTRADO = BANCO.filter(p => {
+    if(m && p.moduloId !== m) return false;
+    if(estado === 'sin-expl' && p.explicacion) return false;
+    if(estado === 'sin-revisar' && (!p.explicacion || p.revisado)) return false;
+    if(estado === 'revisadas' && !p.revisado) return false;
+    if(estado === 'sin-ejemplo' && p.ejemplo) return false;
+    if(q && !slug(p.pregunta).includes(q)) return false;
+    return true;
+  });
+
+  // Quita de la selección lo que ya no está visible.
+  const visibles = new Set(BANCO_FILTRADO.map(p => p.id));
+  SELECCION = new Set([...SELECCION].filter(id => visibles.has(id)));
+
+  const porModulo = {};
+  for(const p of BANCO) (porModulo[p.moduloId] ||= []).push(p);
+
+  $('#resumenBanco').innerHTML = BANCO.length ? `
+    <table><thead><tr><th>Módulo</th><th class="der">Preguntas</th>
+      <th class="der">Con explicación</th><th class="der">Sin revisar</th></tr></thead>
+    <tbody>${ESTRUCTURA.filter(mm => porModulo[mm.id]).map(mm => {
+      const l = porModulo[mm.id];
+      const c = l.filter(p => p.explicacion).length;
+      const sr = l.filter(p => p.explicacion && !p.revisado).length;
+      return `<tr><td>${esc(mm.nombre)}</td><td class="der">${l.length}</td>
+        <td class="der">${c === l.length
+          ? '<span class="etq ok">completo</span>'
+          : `<span class="etq am">${c} / ${l.length}</span>`}</td>
+        <td class="der">${sr ? `<span class="etq no">${sr}</span>` : '<span class="etq ok">0</span>'}</td></tr>`;
+    }).join('')}</tbody></table>` : '<div class="vacio">El banco está vacío.</div>';
+
+  $('#listaBanco').innerHTML = BANCO_FILTRADO.length ? `
+    <div class="fin" style="margin-bottom:10px">${BANCO_FILTRADO.length} preguntas · pulsa una fila para editarla</div>
+    <table>
+      <thead><tr><th style="width:34px"></th><th style="width:92px">Id</th><th>Enunciado</th>
+        <th style="width:190px">Tema</th><th style="width:110px" class="der">Explicación</th>
+        <th style="width:78px" class="der"></th></tr></thead>
+      <tbody>${BANCO_FILTRADO.map(p => `
+        <tr class="fila" data-id="${esc(p.id)}">
+          <td><input type="checkbox" class="sel" data-sel="${esc(p.id)}" ${SELECCION.has(p.id)?'checked':''}></td>
+          <td><span class="etq">${esc(p.id)}</span></td>
+          <td class="celda-enun"><span class="t">${esc(p.pregunta)}</span>
+            <span class="fin">${p.opciones.length} opciones · correcta ${'ABCDEFGH'[p.correcta] || '?'}</span></td>
+          <td class="fin">${esc(p.submodulo)}</td>
+          <td class="der">${!p.explicacion
+            ? '<span class="etq am">no</span>'
+            : p.revisado
+              ? '<span class="etq ok">revisada</span>'
+              : '<span class="etq no">sin revisar</span>'}</td>
+          <td class="der"><button class="mini rojo" data-borrar="${esc(p.id)}">Borrar</button></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`
+    : '<div class="vacio">Ninguna pregunta con estos filtros.</div>';
+
+  // Casillas de selección
+  $$('#listaBanco input[data-sel]').forEach(c => c.onclick = e => {
+    e.stopPropagation();
+    if(c.checked) SELECCION.add(c.dataset.sel); else SELECCION.delete(c.dataset.sel);
+    refrescarSeleccion();
+  });
+
+  // Borrado individual
+  $$('#listaBanco button[data-borrar]').forEach(b => b.onclick = e => {
+    e.stopPropagation();
+    const p = BANCO.find(x => x.id === b.dataset.borrar);
+    if(!confirm(`¿Eliminar "${(p?.pregunta || '').slice(0,70)}…"?`)) return;
+    BANCO = BANCO.filter(x => x.id !== b.dataset.borrar);
+    if(EDITANDO === b.dataset.borrar) EDITANDO = null;
+    persistirBanco();
+    pintarBanco();
+    toast('Pregunta eliminada', true);
+  });
+
+  // Desplegar el editor al pulsar la fila
+  $$('#listaBanco tr.fila').forEach(tr => tr.onclick = () => {
+    EDITANDO = (EDITANDO === tr.dataset.id) ? null : tr.dataset.id;
+    pintarEditor();
+  });
+
+  refrescarSeleccion();
+  pintarEditor();
+}
+
+function pintarEditor(){
+  const caja = $('#editorBanco');
+  const p = BANCO.find(x => x.id === EDITANDO);
+  if(!p){ caja.innerHTML = ''; return; }
+  caja.innerHTML = '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--borde)">' +
+    tarjetaEditable(p, 0, 'banco') + '</div>';
+  enlazarTarjetas('banco', [p], caja);
+  caja.scrollIntoView?.({ behavior:'smooth', block:'nearest' });
+}
+
+function refrescarSeleccion(){
+  const n = SELECCION.size;
+  $('#btnBorrarSel').disabled = n === 0;
+  $('#infoSeleccion').textContent = n ? `${n} seleccionada(s)` : '';
+  const total = BANCO_FILTRADO.length;
+  $('#selTodas').checked = total > 0 && n === total;
+  $('#selTodas').indeterminate = n > 0 && n < total;
+}
+
+$('#selTodas').onchange = e => {
+  SELECCION = e.target.checked ? new Set(BANCO_FILTRADO.map(p => p.id)) : new Set();
+  $$('#listaBanco input[data-sel]').forEach(c => c.checked = SELECCION.has(c.dataset.sel));
+  refrescarSeleccion();
+};
+
+$('#btnBorrarSel').onclick = () => {
+  const n = SELECCION.size;
+  if(!n) return;
+  if(!confirm(`¿Eliminar ${n} pregunta(s) del banco? No se puede deshacer.`)) return;
+  BANCO = BANCO.filter(p => !SELECCION.has(p.id));
+  if(SELECCION.has(EDITANDO)) EDITANDO = null;
+  SELECCION = new Set();
+  persistirBanco();
+  pintarBanco();
+  toast(`${n} pregunta(s) eliminadas`, true);
+};
+
+['#filtroModulo','#filtroEstado'].forEach(s => $(s).onchange = pintarBanco);
+$('#filtroTexto').oninput = pintarBanco;
+$('#btnRecargarBanco').onclick = () => { BANCO = almacen.banco(); pintarBanco(); };
+
+// ---------------------------------------------------------------------------
+// Generación de explicaciones con Ollama (modelo local, sin internet)
+//
+// Con un modelo pequeño (3-4B) mandan dos reglas:
+//   1. Una pregunta por llamada. Agrupar sólo servía para ahorrar tokens de pago;
+//      en local no cuesta nada y los modelos pequeños pierden el hilo enseguida.
+//   2. Nada de JSON. Se le pide texto con dos etiquetas, que es lo único que
+//      un 4B respeta de forma fiable.
+// ---------------------------------------------------------------------------
+
+function pintarIA(){
+  $('#urlOllama').value = almacen.urlOllama();
+  actualizarInfoIA();
+}
+$('#urlOllama').onchange = e => almacen.guardarUrlOllama(e.target.value.trim());
+$('#iaModulo').onchange = actualizarInfoIA;
+$('#iaQue').onchange = actualizarInfoIA;
+
+function pendientesIA(){
+  const m = $('#iaModulo').value;
+  const que = $('#iaQue').value;
+  return BANCO.filter(p => {
+    if(m && p.moduloId !== m) return false;
+    if(que === 'todas') return true;
+    if(que === 'sin-revisar') return !p.revisado;
+    return !p.explicacion || !p.ejemplo;   // 'faltan'
+  });
+}
+
+function actualizarInfoIA(){
+  const n = pendientesIA().length;
+  $('#infoIA').textContent = n
+    ? `${n} pregunta(s) entran en la selección.`
+    : 'No hay ninguna pregunta que encaje con la selección.';
+}
+
+// --- Conexión con Ollama ---------------------------------------------------
+
+function urlBase(){
+  return ($('#urlOllama').value.trim() || 'http://localhost:11434').replace(/\/+$/,'');
+}
+
+$('#btnProbar').onclick = async () => {
+  const log = $('#logIA');
+  $('#btnProbar').disabled = true;
+  log.textContent = 'Buscando Ollama en ' + urlBase() + '…\n';
+  almacen.guardarUrlOllama(urlBase());
+  try{
+    const r = await fetch(urlBase() + '/api/tags');
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    const { models = [] } = await r.json();
+    if(!models.length){
+      log.textContent += 'Ollama responde, pero no tienes ningún modelo descargado.\n' +
+        'En el Terminal:  ollama pull qwen3:4b\n';
+      $('#btnGenerar').disabled = true;
+    } else {
+      // Los modelos pequeños primero: en 8 GB son los únicos usables.
+      const orden = ['qwen3:4b','gemma3:4b','llama3.2:3b','phi4-mini'];
+      models.sort((a,b) => (orden.indexOf(a.name) + 99) % 99 - (orden.indexOf(b.name) + 99) % 99);
+      $('#modelo').innerHTML = models.map(m =>
+        `<option value="${esc(m.name)}">${esc(m.name)}${m.size ? ' · ' + (m.size/1e9).toFixed(1) + ' GB' : ''}</option>`
+      ).join('');
+      $('#btnGenerar').disabled = false;
+      log.textContent += `Conectado. ${models.length} modelo(s) disponibles.\n`;
+      const pesado = models.find(m => m.name === $('#modelo').value && m.size > 6e9);
+      if(pesado) log.textContent +=
+        'Aviso: ese modelo ocupa más de 6 GB y con 8 GB de RAM va a ir muy justo.\n';
+      toast('Ollama conectado');
+    }
+  }catch(e){
+    $('#btnGenerar').disabled = true;
+    log.textContent +=
+      'No se ha podido conectar.\n\n' +
+      'Repasa por orden:\n' +
+      '1. ¿Está Ollama abierto? Comprueba el icono en la barra superior del Mac.\n' +
+      '2. ¿Le has dado permiso para hablar con esta página? En el Terminal:\n' +
+      '     launchctl setenv OLLAMA_ORIGINS "*"\n' +
+      '   y después cierra Ollama del todo y vuelve a abrirlo.\n' +
+      '3. Si sigue fallando, abre este archivo desde un servidor local en vez de\n' +
+      '   con doble clic. En el Terminal, dentro de la carpeta del proyecto:\n' +
+      '     python3 -m http.server 8000\n' +
+      '   y entra en  http://localhost:8000/herramientas/capturador.html\n\n' +
+      'Detalle técnico: ' + e.message + '\n';
+    toast('Ollama no responde', true);
+  }
+  $('#btnProbar').disabled = false;
+};
+
+// --- Instrucción para el modelo -------------------------------------------
+// Corta y muy concreta: un 4B se pierde con instrucciones largas.
+
+const INSTRUCCIONES = `Eres profesor de Automoción en España. Escribes para un alumno de Grado Superior.
+
+Recibirás una pregunta de test y su respuesta correcta. Responde EXACTAMENTE con este formato,
+sin añadir nada más, sin markdown y sin asteriscos:
+
+EXPLICACION: [2 o 3 frases explicando por qué esa respuesta es la correcta. Explica el
+principio físico o el funcionamiento, no repitas la respuesta con otras palabras.]
+EJEMPLO: [1 o 2 frases con un caso concreto de taller o de conducción.]
+
+Reglas que no puedes saltarte:
+- Español de España. Tutea al alumno.
+- No inventes cifras, medidas, pares de apriete ni artículos de normativa.
+  Si no estás seguro de un dato numérico, explica el principio general sin dar el número.
+- No uses listas ni viñetas. Sólo las dos líneas del formato.`;
+
+function mensajeUsuario(p){
+  return `Pregunta: ${p.pregunta}\n` +
+         p.opciones.map((o,i) => `${'ABCDEFGH'[i]}) ${o}`).join('\n') +
+         `\nRespuesta correcta: ${'ABCDEFGH'[p.correcta]}) ${p.opciones[p.correcta]}` +
+         (p.submodulo ? `\nTema: ${p.submodulo}` : '');
+}
+
+async function llamarOllama(modelo, pregunta, señal){
+  const r = await fetch(urlBase() + '/api/chat', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    signal: señal,
+    body: JSON.stringify({
+      model: modelo,
+      stream: false,
+      think: false,               // los modelos con "modo pensar" lo desactivan aquí
+      options: { temperature: 0.3, num_predict: 400 },
+      messages: [
+        { role: 'system', content: INSTRUCCIONES },
+        { role: 'user', content: mensajeUsuario(pregunta) },
+      ],
+    }),
+  });
+  if(!r.ok) throw new Error('HTTP ' + r.status + ' · ' + (await r.text()).slice(0,200));
+  const datos = await r.json();
+  return (datos.message?.content || '').trim();
+}
+
+/** Saca EXPLICACION y EJEMPLO del texto, aguantando que el modelo se desvíe un poco. */
+function extraerCampos(texto){
+  // Fuera los bloques de razonamiento que sueltan algunos modelos.
+  let t = texto.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+  t = t.replace(/\*\*/g, '').replace(/^#+\s*/gm, '');
+
+  const iExp = t.search(/EXPLICACI[OÓ]N\s*:/i);
+  const iEje = t.search(/EJEMPLO\s*:/i);
+  if(iExp === -1) return null;
+
+  let explicacion, ejemplo = '';
+  if(iEje > iExp){
+    explicacion = t.slice(iExp, iEje).replace(/^EXPLICACI[OÓ]N\s*:/i, '').trim();
+    ejemplo     = t.slice(iEje).replace(/^EJEMPLO\s*:/i, '').trim();
+  } else {
+    explicacion = t.slice(iExp).replace(/^EXPLICACI[OÓ]N\s*:/i, '').trim();
+  }
+
+  const limpia = s => s.replace(/^\[|\]$/g,'').replace(/\s+/g,' ').trim();
+  explicacion = limpia(explicacion);
+  ejemplo = limpia(ejemplo);
+  if(explicacion.length < 20) return null;
+  return { explicacion, ejemplo };
+}
+
+// --- Bucle de generación ---------------------------------------------------
+
+let abortoIA = null;
+
+$('#btnGenerar').onclick = async () => {
+  const modelo = $('#modelo').value;
+  if(!modelo){ alert('Primero pulsa Comprobar conexión.'); return; }
+
+  const pendientes = pendientesIA();
+  if(!pendientes.length){ alert('No hay nada que generar con esa selección.'); return; }
+  if(!confirm(`Se van a procesar ${pendientes.length} pregunta(s) con ${modelo}.\n` +
+              `En un M1 de 8 GB cuenta unos 20-40 segundos por pregunta.\n\n¿Continuar?`)) return;
+
+  PARAR = false;
+  abortoIA = new AbortController();
+  $('#btnGenerar').disabled = true;
+  $('#btnProbar').disabled = true;
+  $('#btnParar').hidden = false;
+  $('#progIA').hidden = false;
+  const log = $('#logIA');
+  log.textContent = '';
+
+  let hechas = 0, fallos = 0;
+  const arranque = Date.now();
+
+  for(let n = 0; n < pendientes.length; n++){
+    if(PARAR){ log.textContent += 'Detenido.\n'; break; }
+    const p = pendientes[n];
+    const t0 = Date.now();
+    try{
+      const bruto = await llamarOllama(modelo, p, abortoIA.signal);
+      const campos = extraerCampos(bruto);
+      if(!campos) throw new Error('el modelo no respetó el formato');
+
+      p.explicacion = campos.explicacion;
+      if(campos.ejemplo) p.ejemplo = campos.ejemplo;
+      p.revisado = false;              // queda pendiente de que lo valides tú
+      hechas++;
+      persistirBanco();
+      log.textContent += `${n+1}/${pendientes.length} · ${p.id} · ${((Date.now()-t0)/1000).toFixed(0)}s\n`;
+    }catch(e){
+      fallos++;
+      if(e.name === 'AbortError'){ log.textContent += 'Cancelado.\n'; break; }
+      log.textContent += `${n+1}/${pendientes.length} · ${p.id} · ERROR: ${e.message}\n`;
+      if(/HTTP 404/.test(e.message)){
+        log.textContent += 'Ese modelo no está descargado. Prueba: ollama pull ' + modelo + '\n';
+        break;
+      }
+      if(/Failed to fetch|NetworkError/i.test(e.message)){
+        log.textContent += 'Se ha perdido la conexión con Ollama. ¿Se ha cerrado?\n';
+        break;
+      }
+    }
+    const pct = Math.round(((n+1)/pendientes.length)*100);
+    $('#progIA > div').style.width = pct + '%';
+    const medio = (Date.now()-arranque)/1000/(n+1);
+    const quedan = Math.round(medio * (pendientes.length - n - 1) / 60);
+    $('#infoIA').textContent =
+      `${hechas} hechas · ${medio.toFixed(0)}s por pregunta` + (quedan > 0 ? ` · quedan ~${quedan} min` : '');
+    log.scrollTop = log.scrollHeight;
+  }
+
+  $('#btnGenerar').disabled = false;
+  $('#btnProbar').disabled = false;
+  $('#btnParar').hidden = true;
+  log.textContent += `\nTerminado. ${hechas} pregunta(s) con explicación${fallos?`, ${fallos} con error`:''}.\n` +
+    `Están marcadas como SIN REVISAR: repásalas en la pestaña Banco antes de exportar.\n`;
+  actualizarInfoIA();
+  toast(`${hechas} generadas · pendientes de revisar`);
+};
+
+$('#btnParar').onclick = () => { PARAR = true; abortoIA?.abort(); };
+
+// ---------------------------------------------------------------------------
+// Exportación
+// ---------------------------------------------------------------------------
+function agrupado(){
+  const g = {};
+  for(const p of BANCO) (g[p.moduloId] ||= []).push(p);
+  return g;
+}
+
+function limpiar(p){
+  return {
+    id: p.id,
+    moduloId: p.moduloId,
+    modulo: p.modulo,
+    submoduloId: p.submoduloId || 'sin-clasificar',
+    submodulo: p.submodulo || 'Sin clasificar',
+    pregunta: p.pregunta,
+    opciones: p.opciones,
+    correcta: p.correcta,
+    idExterno: p.idExterno || null,
+    explicacion: p.explicacion || '',
+    ejemplo: p.ejemplo || '',
+    revisado: !!p.revisado,
+    // Trazabilidad de lo que vino del importador: de qué captura salió y con
+    // cuánta confianza lo leyó el OCR. Se conserva para poder volver al origen.
+    ...(p.origen ? { origen: p.origen } : {}),
+    ...(p.confianzaOcr ? { confianzaOcr: p.confianzaOcr } : {}),
+    material: {
+      pdf: p.material?.pdf || null,
+      pagina: p.material?.pagina || null,
+      video: p.material?.video || null,
+      minuto: p.material?.minuto || null,
+      audio: p.material?.audio || null,
+    },
+    tags: p.tags || [],
+  };
+}
+
+function descargar(nombre, contenido, tipo='application/json'){
+  const blob = contenido instanceof Blob ? contenido : new Blob([contenido], { type: tipo });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = nombre; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+function pintarExportar(){
+  const g = agrupado();
+  const ids = Object.keys(g);
+  const sinRevisar = BANCO.filter(p => p.explicacion && !p.revisado).length;
+  $('#resumenExport').innerHTML = ids.length
+    ? `<div class="fin">${BANCO.length} preguntas en ${ids.length} módulo(s).</div>` +
+      (sinRevisar ? `<div class="aviso-caja" style="margin-top:10px">
+        ${sinRevisar} explicación(es) siguen <b>sin revisar</b>. Se exportan igual, pero en la app
+        saldrán con un aviso hasta que las repases desde la pestaña Banco.</div>` : '')
+    : '<div class="aviso-caja">El banco está vacío: no hay nada que exportar.</div>';
+
+  $('#listaExport').innerHTML = ids.length ? `
+    <table><thead><tr><th>Archivo</th><th class="der">Preguntas</th><th class="der"></th></tr></thead>
+    <tbody>${ids.map(id => {
+      const m = ESTRUCTURA.find(x => x.id === id);
+      return `<tr><td><code>data/preguntas/${id}.json</code><div class="fin">${esc(m?.nombre||id)}</div></td>
+        <td class="der">${g[id].length}</td>
+        <td class="der"><button class="b gris" data-mod="${id}" style="padding:5px 12px">Descargar</button></td></tr>`;
+    }).join('')}</tbody></table>` : '<div class="vacio">Nada que descargar.</div>';
+
+  $$('#listaExport button[data-mod]').forEach(b => b.onclick = () => {
+    const id = b.dataset.mod;
+    descargar(`${id}.json`, JSON.stringify(g[id].map(limpiar), null, 2));
+  });
+}
+
+function manifiesto(){
+  const g = agrupado();
+  return {
+    titulacion: 'Técnico Superior en Automoción',
+    version: 1,
+    actualizado: new Date().toISOString().slice(0,10),
+    modulos: ESTRUCTURA.filter(m => g[m.id]).map(m => ({ id: m.id, archivo: `preguntas/${m.id}.json` })),
+  };
+}
+
+$('#btnZip').onclick = () => {
+  if(!BANCO.length){ alert('El banco está vacío.'); return; }
+  const g = agrupado();
+  const archivos = [
+    { nombre: 'data/manifest.json', texto: JSON.stringify(manifiesto(), null, 2) },
+    ...Object.keys(g).map(id => ({
+      nombre: `data/preguntas/${id}.json`,
+      texto: JSON.stringify(g[id].map(limpiar), null, 2),
+    })),
+  ];
+  descargar('data.zip', crearZip(archivos), 'application/zip');
+};
+
+$('#btnExportarBanco').onclick = () => {
+  descargar(`banco-automocion-${new Date().toISOString().slice(0,10)}.json`,
+    JSON.stringify({ version:1, exportado:new Date().toISOString(), preguntas: BANCO }, null, 2));
+};
+
+$('#btnImportarBanco').onclick = () => $('#ficheroImportar').click();
+$('#ficheroImportar').onchange = async e => {
+  const f = e.target.files?.[0];
+  if(!f) return;
+  try{
+    const datos = JSON.parse(await f.text());
+    const entrantes = Array.isArray(datos) ? datos : datos.preguntas;
+    if(!Array.isArray(entrantes)) throw new Error('El archivo no contiene un listado de preguntas.');
+    const existentes = new Set(BANCO.map(clavePregunta));
+    let nuevas = 0;
+    for(const p of entrantes){
+      if(existentes.has(clavePregunta(p))) continue;
+      if(!p.id) p.id = siguienteId(p.moduloId || 'epa');
+      BANCO.push(p);
+      existentes.add(clavePregunta(p));
+      nuevas++;
+    }
+    persistirBanco();
+    pintarExportar();
+    alert(`Importadas ${nuevas} preguntas nuevas (${entrantes.length - nuevas} duplicadas se han omitido).`);
+  }catch(err){
+    alert('No se pudo importar: ' + err.message);
+  }
+  e.target.value = '';
+};
+
+$('#btnVaciarBanco').onclick = () => {
+  if(!confirm('Esto borra TODAS las preguntas guardadas en este navegador. ¿Seguro?')) return;
+  if(!confirm('Última oportunidad. ¿De verdad?')) return;
+  BANCO = [];
+  persistirBanco();
+  pintarExportar();
+  pintarBanco();
+};
+
+// ---------------------------------------------------------------------------
+// ZIP mínimo (método "store", sin compresión). Suficiente para JSON pequeños.
+// ---------------------------------------------------------------------------
+const TABLA_CRC = (() => {
+  const t = new Uint32Array(256);
+  for(let n = 0; n < 256; n++){
+    let c = n;
+    for(let k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+    t[n] = c >>> 0;
+  }
+  return t;
+})();
+
+function crc32(bytes){
+  let c = 0xFFFFFFFF;
+  for(let i = 0; i < bytes.length; i++) c = TABLA_CRC[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+  return (c ^ 0xFFFFFFFF) >>> 0;
+}
+
+function crearZip(archivos){
+  const cod = new TextEncoder();
+  const partes = [];
+  const central = [];
+  let desplazamiento = 0;
+
+  for(const a of archivos){
+    const nombre = cod.encode(a.nombre);
+    const datos  = cod.encode(a.texto);
+    const crc    = crc32(datos);
+
+    const local = new DataView(new ArrayBuffer(30));
+    local.setUint32(0, 0x04034b50, true);
+    local.setUint16(4, 20, true);      // versión necesaria
+    local.setUint16(6, 0x0800, true);  // nombres en UTF-8
+    local.setUint16(8, 0, true);       // método: store
+    local.setUint16(10, 0, true);      // hora
+    local.setUint16(12, 0, true);      // fecha
+    local.setUint32(14, crc, true);
+    local.setUint32(18, datos.length, true);
+    local.setUint32(22, datos.length, true);
+    local.setUint16(26, nombre.length, true);
+    local.setUint16(28, 0, true);
+
+    partes.push(new Uint8Array(local.buffer), nombre, datos);
+
+    const cd = new DataView(new ArrayBuffer(46));
+    cd.setUint32(0, 0x02014b50, true);
+    cd.setUint16(4, 20, true);
+    cd.setUint16(6, 20, true);
+    cd.setUint16(8, 0x0800, true);
+    cd.setUint16(10, 0, true);
+    cd.setUint16(12, 0, true);
+    cd.setUint16(14, 0, true);
+    cd.setUint32(16, crc, true);
+    cd.setUint32(20, datos.length, true);
+    cd.setUint32(24, datos.length, true);
+    cd.setUint16(28, nombre.length, true);
+    cd.setUint16(30, 0, true);
+    cd.setUint16(32, 0, true);
+    cd.setUint16(34, 0, true);
+    cd.setUint16(36, 0, true);
+    cd.setUint32(38, 0, true);
+    cd.setUint32(42, desplazamiento, true);
+    central.push(new Uint8Array(cd.buffer), nombre);
+
+    desplazamiento += 30 + nombre.length + datos.length;
+  }
+
+  const inicioCentral = desplazamiento;
+  const tamCentral = central.reduce((n, p) => n + p.length, 0);
+
+  const fin = new DataView(new ArrayBuffer(22));
+  fin.setUint32(0, 0x06054b50, true);
+  fin.setUint16(4, 0, true);
+  fin.setUint16(6, 0, true);
+  fin.setUint16(8, archivos.length, true);
+  fin.setUint16(10, archivos.length, true);
+  fin.setUint32(12, tamCentral, true);
+  fin.setUint32(16, inicioCentral, true);
+  fin.setUint16(20, 0, true);
+
+  return new Blob([...partes, ...central, new Uint8Array(fin.buffer)], { type: 'application/zip' });
+}
+
+// Aviso al cerrar si queda trabajo sin guardar.
+window.addEventListener('beforeunload', e => {
+  if(REVISION.length){ e.preventDefault(); e.returnValue = ''; }
+});
+</script>
+</body>
+</html>

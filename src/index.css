@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+/* Tailwind v4: el modo oscuro se activa con la clase .dark en <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+    overscroll-behavior-y: none;
+  }
+
+  /* Evita el resaltado azul al tocar en móvil */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

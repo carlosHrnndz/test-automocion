@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel · Test de Mecánica</title>
+<style>
+  :root{
+    --fondo:#0b1220; --panel:#121b2e; --panel2:#0f1728; --borde:#22304a;
+    --texto:#e6ecf7; --suave:#93a3bd; --azul:#38bdf8; --verde:#34d399;
+    --rojo:#fb7185; --ambar:#fbbf24; --violeta:#c084fc;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fondo);color:var(--texto);
+       font:14px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:var(--azul)}
+  code{background:#1b2740;padding:1px 6px;border-radius:5px;font-size:12.5px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.94);
+         backdrop-filter:blur(10px);border-bottom:1px solid var(--borde)}
+  .cabecera{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  h1{margin:0;font-size:16px;letter-spacing:-.01em}
+  .sub{color:var(--suave);font-size:12px}
+  nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  nav button{background:transparent;border:0;color:var(--suave);padding:8px 15px;
+             border-radius:9px;cursor:pointer;font-size:13.5px;font-weight:600}
+  nav button:hover{color:var(--texto);background:#1b2740}
+  nav button.on{background:var(--azul);color:#06131f}
+
+  main{max-width:1180px;margin:0 auto;padding:20px}
+  .caja{background:var(--panel);border:1px solid var(--borde);border-radius:14px;padding:18px;margin-bottom:16px}
+  .caja h2{margin:0 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--azul)}
+  .caja p.ayuda{margin:0 0 14px;color:var(--suave);font-size:12.5px}
+  label{display:block;font-size:12px;font-weight:600;color:var(--suave);margin-bottom:5px}
+  input,select,textarea{width:100%;background:var(--panel2);color:var(--texto);
+    border:1px solid var(--borde);border-radius:9px;padding:10px 12px;font:inherit}
+  textarea{min-height:200px;resize:vertical;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.6}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--azul);outline-offset:-1px}
+  .rejilla{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .fila{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+
+  button.b{background:var(--azul);color:#06131f;border:0;padding:11px 20px;border-radius:10px;
+           font-weight:700;cursor:pointer;font-size:14px}
+  button.b:disabled{opacity:.35;cursor:not-allowed}
+  button.b.gris{background:#243149;color:var(--texto)}
+  button.b.verde{background:var(--verde);color:#052e22}
+  button.b.rojo{background:var(--rojo);color:#40101c}
+  button.b.grande{padding:15px 26px;font-size:15px}
+  .mini{background:transparent;border:1px solid var(--borde);color:var(--suave);
+        border-radius:7px;padding:4px 10px;font-size:11.5px;font-weight:700;cursor:pointer}
+  .mini:hover{color:var(--texto);border-color:var(--azul)}
+  .mini.rojo:hover{color:var(--rojo);border-color:var(--rojo)}
+
+  .interruptor{display:flex;align-items:center;gap:9px;margin:0;cursor:pointer;
+               color:var(--texto);font-size:13.5px;font-weight:600;user-select:none;
+               background:var(--panel2);border:1px solid var(--borde);border-radius:10px;padding:11px 14px}
+  .interruptor:hover{border-color:var(--azul)}
+  .interruptor input{width:17px;height:17px;accent-color:var(--azul);cursor:pointer;flex:none}
+  .interruptor .d{display:block;font-weight:400;color:var(--suave);font-size:11.5px;margin-top:2px}
+
+  .etq{display:inline-block;background:#243149;color:var(--suave);border-radius:6px;
+       padding:2px 8px;font-size:11px;font-weight:700}
+  .etq.ok{background:rgba(52,211,153,.15);color:var(--verde)}
+  .etq.no{background:rgba(251,113,133,.15);color:var(--rojo)}
+  .etq.am{background:rgba(251,191,36,.15);color:var(--ambar)}
+  .etq.az{background:rgba(56,189,248,.15);color:var(--azul)}
+  .fin{color:var(--suave);font-size:12px}
+
+  /* Estado del sistema */
+  .semaforo{display:flex;gap:8px;flex-wrap:wrap}
+  .luz{display:flex;align-items:center;gap:7px;background:var(--panel2);border:1px solid var(--borde);
+       border-radius:9px;padding:7px 12px;font-size:12.5px}
+  .punto{width:8px;height:8px;border-radius:50%;flex:none}
+  .punto.si{background:var(--verde)} .punto.no{background:var(--rojo)} .punto.mid{background:var(--ambar)}
+
+  /* Explorador */
+  .explorador{border:1px solid var(--borde);border-radius:11px;overflow:hidden;background:var(--panel2)}
+  .ruta{display:flex;align-items:center;gap:8px;padding:10px 13px;border-bottom:1px solid var(--borde);
+        background:#0d1526;font-size:12.5px}
+  .ruta .p{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--suave);
+           font-family:ui-monospace,monospace}
+  .listaCarpetas{max-height:290px;overflow:auto}
+  .carpeta{display:flex;align-items:center;gap:11px;padding:10px 13px;cursor:pointer;
+           border-bottom:1px solid rgba(34,48,74,.5)}
+  .carpeta:hover{background:rgba(56,189,248,.07)}
+  .carpeta .n{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .carpeta .ic{width:18px;text-align:center;flex:none;opacity:.75}
+
+  /* Registro */
+  .registro{background:#080e1a;border:1px solid var(--borde);border-radius:11px;padding:14px 16px;
+            font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.65;
+            max-height:420px;overflow:auto;white-space:pre-wrap;word-break:break-word}
+  .registro .ok{color:var(--verde)} .registro .mal{color:var(--rojo)}
+  .registro .avi{color:var(--ambar)} .registro .tit{color:var(--azul);font-weight:700}
+  .registro .gris{color:var(--suave)}
+
+  .prog{height:5px;background:#1b2740;border-radius:99px;overflow:hidden;margin:12px 0}
+  .prog>div{height:100%;background:var(--azul);width:0;transition:width .3s}
+  .prog.indef>div{width:35%;animation:vaiven 1.3s ease-in-out infinite}
+  @keyframes vaiven{0%{margin-left:-35%}100%{margin-left:100%}}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--borde);vertical-align:top}
+  th{color:var(--suave);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  .der{text-align:right}
+  tr.fila{cursor:pointer} tr.fila:hover{background:rgba(255,255,255,.035)}
+  .celda{max-width:520px}
+  .celda .t{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  .vacio{text-align:center;color:var(--suave);padding:44px 20px}
+  .aviso{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.35);
+         border-radius:10px;padding:12px 14px;color:#fde68a;font-size:12.5px;margin-bottom:14px}
+  .aviso.malo{background:rgba(251,113,133,.1);border-color:rgba(251,113,133,.35);color:#fecdd3}
+  .aviso.bien{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.35);color:#a7f3d0}
+
+  /* Banco a dos columnas: la lista a la izquierda y el editor fijo a la
+     derecha. Antes el editor salia debajo del todo y habia que subir y bajar
+     cada vez que se abria una pregunta. */
+  body.anchoBanco main{max-width:1680px}
+  .banco2col{display:grid;gap:16px;align-items:start;
+             grid-template-columns:minmax(0,1fr) minmax(420px,540px)}
+  .columnaLista{margin-bottom:0;padding:12px;max-height:calc(100vh - 320px);overflow:auto}
+  .columnaEditor{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto}
+  .columnaEditor .caja{margin-bottom:0}
+  @media (max-width:1240px){
+    .banco2col{grid-template-columns:1fr}
+    .columnaLista{max-height:none}
+    .columnaEditor{position:static;max-height:none}
+  }
+
+  /* Lista de preguntas: filas sueltas en vez de tabla. En una columna
+     estrecha una tabla de cinco columnas se descuadra y no hay quien la lea. */
+  .pregLista{display:flex;flex-direction:column;gap:6px}
+  .pregFila{display:flex;gap:10px;align-items:flex-start;padding:9px 11px;cursor:pointer;
+            border:1px solid var(--borde);border-radius:10px;background:var(--panel2)}
+  .pregFila:hover{border-color:#33507a}
+  .pregFila.abierta{border-color:var(--azul);background:rgba(56,189,248,.09)}
+  .pregFila input[type=checkbox]{width:16px;height:16px;flex:none;margin-top:3px;
+                                 accent-color:var(--azul);cursor:pointer}
+  .pregFila .cuerpo{flex:1;min-width:0}
+  .pregFila .enunciado{display:block;font-size:13.5px;
+                       overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .pregFila .meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:5px}
+
+  /* Editor de pregunta */
+  .op{display:flex;gap:10px;align-items:flex-start;padding:7px 8px;border-radius:8px}
+  .op:hover{background:rgba(255,255,255,.03)}
+  .op input[type=radio]{width:16px;height:16px;flex:none;margin-top:5px;accent-color:var(--verde)}
+  .op .letra{background:#243149;color:var(--suave);border-radius:5px;padding:2px 8px;
+             font-size:11px;font-weight:800;flex:none;margin:4px 0 0;cursor:pointer}
+  .op .letra:hover{background:#33507a;color:var(--texto)}
+  .op .quitar{flex:none;margin-top:3px;opacity:0}
+  .op:hover .quitar,.op .quitar:focus{opacity:1}
+  .op.ok .letra{background:var(--verde);color:#052e22}
+  .op .txt{flex:1;min-width:0;background:var(--panel2);border:1px solid var(--borde);
+           border-radius:6px;padding:6px 9px;line-height:1.5}
+  .op .txt:hover{border-color:#33507a}
+  .op .txt:focus{outline:2px solid var(--azul);outline-offset:-1px}
+  .op.ok .txt{color:var(--verde)}
+  .enun{width:100%;font-weight:600;font-size:15px;background:var(--panel2);
+        border:1px solid var(--borde);border-radius:8px;padding:9px 11px}
+  .enun:focus{outline:2px solid var(--azul);outline-offset:-1px}
+  .enun:hover,.enun:focus{border-color:var(--borde);background:var(--panel2)}
+
+  #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--verde);
+         color:#052e22;font-weight:700;padding:12px 22px;border-radius:11px;opacity:0;
+         pointer-events:none;transition:.25s;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+  #toast.ver{opacity:1;transform:translate(-50%,0)}
+  #toast.malo{background:var(--ambar);color:#3b2a05}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="cabecera">
+    <div>
+      <h1>Panel de Test de Mecánica</h1>
+      <div class="sub">Técnico Superior en Automoción</div>
+    </div>
+    <nav>
+      <button data-v="inicio" class="on">Inicio</button>
+      <button data-v="importar">Importar</button>
+      <button data-v="banco">Banco</button>
+      <button data-v="texto">Pegar texto</button>
+      <button data-v="publicar">Publicar</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ======================= INICIO ======================= -->
+<section id="v-inicio">
+  <div class="caja">
+    <h2>Estado</h2>
+    <div class="semaforo" id="semaforo"></div>
+  </div>
+
+  <div class="caja">
+    <h2>Tu banco de preguntas</h2>
+    <div id="resumenBanco"></div>
+  </div>
+
+  <div class="caja" id="cajaActualizar" hidden>
+    <h2>Actualizar el programa</h2>
+    <div id="infoActualizacion"></div>
+    <div class="fila" style="margin-top:12px">
+      <button class="b verde" id="btnActualizar">Actualizar ahora</button>
+      <span class="fin">Tus preguntas no se tocan</span>
+    </div>
+  </div>
+
+  <div class="caja">
+    <h2>Ver la app</h2>
+    <p class="ayuda">Abre la app de test en tu navegador para probarla antes de publicar.</p>
+    <div class="fila">
+      <button class="b" id="btnDev">Abrir la app en local</button>
+      <button class="b gris" id="btnPararDev" hidden>Cerrar</button>
+      <span class="fin" id="infoDev"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= IMPORTAR ======================= -->
+<section id="v-importar" hidden>
+  <div class="caja">
+    <h2>1 · Elige la carpeta de capturas</h2>
+    <p class="ayuda">
+      Navega hasta la carpeta y pulsa <b>Usar esta carpeta</b>. Da igual el nivel:
+      vale la que contiene los módulos, la de un módulo o la de un tema suelto.
+    </p>
+    <div id="recientes"></div>
+    <div class="explorador">
+      <div class="ruta">
+        <button class="mini" id="btnSubir">↑ Subir</button>
+        <span class="p" id="rutaActual">…</span>
+        <button class="mini" id="btnInicio">Inicio</button>
+      </div>
+      <div class="listaCarpetas" id="listaCarpetas"></div>
+    </div>
+    <div class="fila" style="margin-top:13px">
+      <button class="b verde" id="btnUsarCarpeta">Usar esta carpeta</button>
+      <span class="fin" id="infoCarpeta"></span>
+    </div>
+  </div>
+
+  <div class="caja" id="cajaOpciones" hidden>
+    <h2>2 · Cómo quieres importarla</h2>
+    <div id="carpetaElegida" class="aviso bien"></div>
+    <div class="rejilla">
+      <label class="interruptor">
+        <input type="checkbox" id="opPrueba" checked>
+        <span>Sólo una prueba
+          <span class="d">Se queda en 2 imágenes por tema. Hace todo lo demás igual, para comprobar el resultado antes de lanzarte con todas</span></span>
+      </label>
+      <label class="interruptor">
+        <input type="checkbox" id="opLimpiar">
+        <span>Empezar de cero
+          <span class="d">Borra lo que ya hubiera de esos módulos antes de importar</span></span>
+      </label>
+      <label class="interruptor">
+        <input type="checkbox" id="opForzar">
+        <span>Rehacer las repetidas
+          <span class="d">Actualiza las que ya estaban en vez de saltárselas. No duplica</span></span>
+      </label>
+      <label class="interruptor">
+        <input type="checkbox" id="opSinIa">
+        <span>Sin explicaciones
+          <span class="d">Sólo extrae las preguntas. Mucho más rápido</span></span>
+      </label>
+    </div>
+    <div class="rejilla" style="margin-top:13px">
+      <div>
+        <label for="selMotor">Cómo leer las capturas</label>
+        <select id="selMotor">
+          <option value="macos">Lector de macOS · recomendado</option>
+          <option value="macos-ia">Lector de macOS + repaso del modelo de visión</option>
+          <option value="ocr">Lector de texto (Tesseract) · rápido</option>
+          <option value="vision">Modelo de visión · lento, entiende la página</option>
+          <option value="ambos">Los dos combinados · el mejor resultado</option>
+        </select>
+      </div>
+      <div>
+        <label for="selModeloVision">Modelo de visión</label>
+        <select id="selModeloVision"></select>
+      </div>
+      <div>
+        <label for="selModelo">Modelo para las explicaciones</label>
+        <select id="selModelo"></select>
+      </div>
+      <div>
+        <label for="selModuloForzado">Módulo (sólo si no lo adivina)</label>
+        <select id="selModuloForzado"><option value="">Deducirlo de la carpeta</option></select>
+      </div>
+    </div>
+    <div id="notaMotor" class="fin" style="margin-top:11px"></div>
+    <div class="fila" style="margin-top:16px">
+      <button class="b grande" id="btnImportar">Importar</button>
+      <span class="fin" id="avisoImportar"></span>
+    </div>
+  </div>
+
+  <div class="caja" id="cajaRegistro" hidden>
+    <h2 id="tituloTarea">En marcha</h2>
+    <div class="prog" id="progreso"><div></div></div>
+    <div class="registro" id="registro"></div>
+    <div class="fila" style="margin-top:13px">
+      <button class="b rojo" id="btnParar">Parar</button>
+      <button class="b gris" id="btnCerrarRegistro" hidden>Cerrar</button>
+      <button class="b verde" id="btnIrBanco" hidden>Revisar lo importado</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BANCO ======================= -->
+<section id="v-banco" hidden>
+  <div class="caja">
+    <h2>Banco de preguntas</h2>
+    <p class="ayuda">Lo que ves aquí es exactamente lo que se publica. Se guarda al momento.</p>
+    <div class="fila" style="margin-bottom:13px">
+      <select id="filtroModulo" style="width:auto;min-width:230px"></select>
+      <select id="filtroEstado" style="width:auto;min-width:190px">
+        <option value="">Todas</option>
+        <option value="sin-tema">Sin tema</option>
+        <option value="sin-revisar">Sin revisar</option>
+        <option value="sin-explicacion">Sin explicación</option>
+        <option value="revisadas">Revisadas</option>
+      </select>
+      <input id="filtroTexto" placeholder="Buscar…" style="width:auto;min-width:210px">
+      <button class="b gris" id="btnRecargar">Actualizar</button>
+    </div>
+    <div class="fila">
+      <label class="interruptor" style="padding:8px 12px">
+        <input type="checkbox" id="selTodas"><span>Seleccionar todas</span></label>
+      <span class="fin" id="infoSeleccion"></span>
+    </div>
+    <div class="fila accionesSel" style="margin-top:11px">
+      <input id="nuevoTema" list="temasConocidos" placeholder="Tema (p. ej. RUEDAS)"
+             style="width:auto;min-width:240px" disabled>
+      <datalist id="temasConocidos"></datalist>
+      <button class="b gris" id="btnTemaSel" disabled>Poner este tema</button>
+      <button class="b verde" id="btnRevisarSel" disabled>Marcar revisadas</button>
+      <button class="b rojo" id="btnBorrarSel" disabled>Borrar</button>
+    </div>
+    <p class="ayuda" style="margin-top:8px">Estas tres acciones se aplican a lo que tengas
+      seleccionado. El tema no cambia el modulo, y solo se marcan como revisadas las que
+      ya tengan explicacion.</p>
+  </div>
+
+  <div class="banco2col">
+    <div class="caja columnaLista">
+      <div id="listaPreguntas"></div>
+    </div>
+    <div class="columnaEditor"><div id="editor"></div></div>
+  </div>
+
+  <div class="caja">
+    <h2>Explicaciones que faltan</h2>
+    <p class="ayuda">
+      Genera con el modelo local las que estén vacías. <b>Sin apoyo del PDF</b>: para que
+      se base en el temario, vuelve a Importar con «Rehacer las repetidas» marcada.
+    </p>
+    <div class="fila">
+      <select id="explicarModulo" style="width:auto;min-width:230px"></select>
+      <button class="b" id="btnExplicar">Generar las que faltan</button>
+      <span class="fin" id="infoExplicar"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PEGAR TEXTO ======================= -->
+<section id="v-texto" hidden>
+  <div class="caja">
+    <h2>1 · Dónde va</h2>
+    <div class="rejilla">
+      <div><label for="txtModulo">Módulo</label><select id="txtModulo"></select></div>
+      <div><label for="txtTema">Tema</label><input id="txtTema" placeholder="Ej. RUEDAS" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="caja">
+    <h2>2 · Pega la pregunta</h2>
+    <p class="ayuda">Marca la correcta con un asterisco al final. Atajo: <code>Ctrl</code>+<code>Enter</code>.</p>
+    <textarea id="entrada" spellcheck="false" placeholder="PREGUNTA: (Identificador nº 2778104)
+Para engranar ejes que se cruzan el tipo de dentado debe ser:
+Respuestas
+Recto
+Helicoidal*
+No puede realizarse este tipo de engranaje
+Todas las demás respuestas son correctas."></textarea>
+    <div class="fila" style="margin-top:13px">
+      <button class="b" id="btnAnalizar">Analizar y guardar</button>
+      <button class="b gris" id="btnVaciar">Vaciar</button>
+      <span class="fin" id="infoTexto"></span>
+    </div>
+  </div>
+  <div class="caja">
+    <h2>…o pega el JSON de un modelo de visión</h2>
+    <p class="ayuda">
+      Lo que te devuelva Ollama al mirar una captura. Vale una pregunta o varias, y
+      no pasa nada si trae <code>```json</code> o texto alrededor. Usa el módulo y el
+      tema de arriba para lo que no venga dentro del propio JSON.
+    </p>
+    <textarea id="entradaJson" spellcheck="false" style="min-height:150px"
+      placeholder='{"idExterno":"2778097","pregunta":"En la rotura por fatiga...","opciones":["...","...","...","..."],"correcta":3,"explicacion":"...","ejemplo":"...","confianza":"alta"}'></textarea>
+    <div class="fila" style="margin-top:13px">
+      <button class="b" id="btnPegarJson">Guardar el JSON</button>
+      <span class="fin" id="infoJson"></span>
+    </div>
+    <div id="avisosJson"></div>
+  </div>
+
+  <div class="caja" id="cajaPrevia" hidden>
+    <h2>3 · Revisa antes de guardar</h2>
+    <div id="previa"></div>
+    <div class="fila" style="margin-top:13px">
+      <button class="b verde" id="btnGuardarPrevia">Guardar en el banco</button>
+      <button class="b gris" id="btnDescartar">Descartar</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PUBLICAR ======================= -->
+<section id="v-publicar" hidden>
+  <!-- Primera publicación: sólo se ve mientras falte por hacer. -->
+  <div class="caja" id="cajaPrimeraVez" hidden>
+    <h2>Primera publicación</h2>
+    <p class="ayuda">Esto se hace una sola vez. Después, publicar es un botón.</p>
+    <div id="pasosGit"></div>
+  </div>
+
+  <div class="caja" id="cajaPublicar">
+    <h2>Publicar en GitHub</h2>
+    <p class="ayuda">Sube los cambios del banco. GitHub reconstruye y actualiza la app sola.</p>
+    <div id="estadoGit"></div>
+    <div style="margin-top:13px">
+      <label for="mensajeCommit">Descripción del cambio</label>
+      <input id="mensajeCommit" value="Nuevas preguntas">
+    </div>
+    <div class="fila" style="margin-top:14px">
+      <button class="b grande verde" id="btnPublicar">Publicar</button>
+      <span class="fin" id="infoPublicar"></span>
+    </div>
+  </div>
+  <div class="caja" id="cajaRegistro2" hidden>
+    <h2>Registro</h2>
+    <div class="prog indef" id="progreso2"><div></div></div>
+    <div class="registro" id="registro2"></div>
+  </div>
+</section>
+
+</main>
+<div id="toast"></div>
+
+<script type="module">
+'use strict';
+
+const $  = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) =>
+  ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+let ESTADO = null;
+let CARPETA_ACTUAL = null;   // la que estás explorando
+let CARPETA_ELEGIDA = null;  // la que vas a importar
+let PREGUNTAS = [];
+let SELECCION = new Set();
+let EDITANDO = null;
+let BORRADOR = null;   // cambios del editor sin guardar todavía
+let PREVIA = [];
+
+let temporizadorToast = null;
+function toast(mensaje, malo = false) {
+  const t = $('#toast');
+  t.textContent = mensaje;
+  t.classList.toggle('malo', malo);
+  t.classList.add('ver');
+  clearTimeout(temporizadorToast);
+  temporizadorToast = setTimeout(() => t.classList.remove('ver'), 2800);
+}
+
+const api = async (ruta, opciones = {}) => {
+  const r = await fetch(ruta, {
+    headers: { 'content-type': 'application/json' },
+    ...opciones,
+    body: opciones.cuerpo ? JSON.stringify(opciones.cuerpo) : undefined,
+  });
+  const datos = await r.json().catch(() => ({}));
+  if (datos.error) throw new Error(datos.error);
+  return datos;
+};
+
+// ---------------- Navegación ----------------
+$$('nav button').forEach((b) => b.onclick = () => {
+  $$('nav button').forEach((x) => x.classList.toggle('on', x === b));
+  ['inicio','importar','banco','texto','publicar'].forEach((v) =>
+    $('#v-' + v).hidden = v !== b.dataset.v);
+  // El Banco necesita todo el ancho de la pantalla para las dos columnas.
+  document.body.classList.toggle('anchoBanco', b.dataset.v === 'banco');
+  if (b.dataset.v === 'banco') cargarPreguntas();
+  if (b.dataset.v === 'publicar') pintarGit();
+  if (b.dataset.v === 'importar' && !CARPETA_ACTUAL) explorar(ESTADO?.inicio);
+});
+const irA = (v) => $$('nav button').find((b) => b.dataset.v === v)?.click();
+
+// ---------------- Estado ----------------
+async function cargarEstado() {
+  ESTADO = await api('/api/estado');
+  pintarSemaforo();
+  pintarResumen();
+  pintarSelectores();
+  $('#infoDev').textContent = ESTADO.dev.activo ? 'Abierta en ' + ESTADO.dev.url : '';
+  $('#btnPararDev').hidden = !ESTADO.dev.activo;
+}
+
+function pintarSemaforo() {
+  const e = ESTADO;
+  const luces = [
+    { n: 'Lector de macOS', ok: !!e.macos?.ok,
+      d: e.macos?.ok ? 'listo, no hay que instalar nada' : 'no disponible' },
+    { n: 'Lector de imágenes', ok: e.tesseract.ok,
+      d: e.tesseract.ok
+        ? (e.tesseract.idiomas.includes('spa') ? 'listo, con español' : 'sin español')
+        : 'falta instalar',
+      mid: e.tesseract.ok && !e.tesseract.idiomas.includes('spa') },
+    { n: 'Modelo local', ok: e.ollama.ok,
+      d: e.ollama.ok ? `${e.ollama.modelos.length} modelo(s)` : 'Ollama cerrado' },
+    { n: 'GitHub', ok: e.git.esRepo && !!e.git.remoto,
+      d: !e.git.esRepo ? 'sin repositorio'
+        : !e.git.remoto ? 'sin conectar'
+        : e.git.cambios ? `${e.git.cambios} sin publicar` : 'al día',
+      mid: e.git.esRepo && !!e.git.remoto && e.git.cambios > 0 },
+  ];
+  $('#semaforo').innerHTML = luces.map((l) => `
+    <div class="luz"><span class="punto ${l.mid ? 'mid' : l.ok ? 'si' : 'no'}"></span>
+    <b>${l.n}</b> <span class="fin">${esc(l.d)}</span></div>`).join('');
+
+  const faltan = [];
+  if (!e.macos?.ok && e.macos?.motivo) faltan.push('Lector de macOS: ' + esc(e.macos.motivo).replace(/\n/g, '<br>'));
+  if (!e.tesseract.ok) faltan.push('El lector de imágenes no está instalado. En el Terminal, una sola vez: <code>brew install tesseract tesseract-lang</code>');
+  else if (!e.tesseract.idiomas.includes('spa')) faltan.push('Falta el español del lector: <code>brew install tesseract-lang</code>');
+  if (!e.ollama.ok) faltan.push('Ollama no responde. Ábrelo desde Aplicaciones para poder generar explicaciones. Sin él puedes importar igual, marcando «Sin explicaciones».');
+  $('#semaforo').insertAdjacentHTML('afterend',
+    faltan.length ? `<div class="aviso" style="margin-top:13px">${faltan.join('<br>')}</div>` : '');
+}
+
+function pintarResumen() {
+  const b = ESTADO.banco;
+  if (!b.total) {
+    $('#resumenBanco').innerHTML =
+      `<div class="vacio">Todavía no hay preguntas.<br><br>
+       <button class="b" onclick="document.querySelector('nav button[data-v=importar]').click()">Importar capturas</button></div>`;
+    return;
+  }
+  $('#resumenBanco').innerHTML = `
+    <table><thead><tr><th>Módulo</th><th class="der">Preguntas</th><th class="der">Temas</th>
+      <th class="der">Con explicación</th><th class="der">Sin revisar</th></tr></thead>
+    <tbody>${b.porModulo.map((m) => `
+      <tr><td><b>${esc(m.corto || m.nombre)}</b><div class="fin">${esc(m.nombre)}</div></td>
+        <td class="der">${m.total}</td><td class="der">${m.temas}</td>
+        <td class="der">${m.conExplicacion === m.total
+          ? '<span class="etq ok">todas</span>'
+          : `<span class="etq am">${m.conExplicacion} / ${m.total}</span>`}</td>
+        <td class="der">${m.sinRevisar
+          ? `<span class="etq no">${m.sinRevisar}</span>`
+          : '<span class="etq ok">0</span>'}</td></tr>`).join('')}
+    </tbody></table>
+    ${b.sinRevisar ? `<div class="aviso" style="margin-top:13px">
+      ${b.sinRevisar} explicación(es) sin revisar. Repásalas en <b>Banco</b> antes de publicar:
+      un modelo pequeño se inventa datos con facilidad.</div>` : ''}`;
+}
+
+function pintarSelectores() {
+  const ops = ESTADO.modulos.map((m) => `<option value="${m.id}">${esc(m.nombre)}</option>`).join('');
+  $('#selModuloForzado').innerHTML = '<option value="">Deducirlo de la carpeta</option>' + ops;
+  $('#txtModulo').innerHTML = ops;
+  $('#filtroModulo').innerHTML = '<option value="">Todos los módulos</option>' + ops;
+  $('#explicarModulo').innerHTML = '<option value="">Todos los módulos</option>' + ops;
+
+  const modelos = ESTADO.ollama.modelos;
+  const comoOpciones = (elegido) => modelos.length
+    ? modelos.map((m) => `<option value="${esc(m)}"${m === elegido ? ' selected' : ''}>${esc(m)}</option>`).join('')
+    : '<option value="">— Ollama cerrado —</option>';
+
+  // Se prefiere Gemma: responde directo, sin gastar tiempo razonando, y ve
+  // imágenes. Si hay una guardada de antes, manda esa.
+  const preferido = (guardado) => modelos.includes(guardado) ? guardado
+    : modelos.find((m) => /^gemma4/i.test(m))
+      || modelos.find((m) => /^gemma3/i.test(m))
+      || modelos.find((m) => /gemma|llava|qwen.*vl|minicpm|moondream|pixtral/i.test(m))
+      || modelos[0];
+
+  $('#selModelo').innerHTML = comoOpciones(preferido(ESTADO.ajustes.modelo));
+  $('#selModeloVision').innerHTML = comoOpciones(preferido(ESTADO.ajustes.modeloVision));
+  $('#selMotor').value = ESTADO.ajustes.motor || 'macos';
+  notaMotor();
+}
+
+function notaMotor() {
+  const motor = $('#selMotor').value;
+  const hayOllama = ESTADO?.ollama?.ok;
+  const notas = {
+    macos: 'Décimas de segundo por imagen. Es el mismo lector que usa Vista Previa cuando ' +
+           'seleccionas texto dentro de una imagen: no inventa nada y lee bien el texto blanco ' +
+           'sobre el verde.',
+    'macos-ia': 'Lee con macOS y sólo llama al modelo de visión en las imágenes que se le ' +
+                'atraganten. Rápido casi siempre, con red de seguridad.',
+    ocr: 'Segundos por imagen. No inventa texto, pero confunde letras y a veces se deja alguna opción.',
+    vision: 'Un minuto o más por imagen en un Mac de 8 GB. Entiende la estructura de la página, ' +
+            'pero puede escribir frases que no están en la imagen.',
+    ambos: 'El texto lo pone el modelo y la respuesta correcta la decide el color verde, ' +
+           'que es aritmética y no falla. Lo más lento y lo más fiable.',
+  };
+  // Sólo los motores que hablan con el modelo de visión necesitan Ollama abierto
+  // para leer. Las explicaciones son otra historia y van aparte.
+  const usaVision = motor !== 'ocr' && motor !== 'macos';
+  $('#notaMotor').innerHTML = esc(notas[motor] || '') +
+    (usaVision && !hayOllama
+      ? '<br><span style="color:var(--rojo)">Ollama está cerrado: ábrelo antes de importar así.</span>'
+      : '');
+  $('#selModeloVision').disabled = !usaVision;
+}
+
+// ---------------- Explorador de carpetas ----------------
+async function explorar(ruta) {
+  let datos;
+  try { datos = await api('/api/explorar?ruta=' + encodeURIComponent(ruta || '')); }
+  catch (e) { return toast(e.message, true); }
+
+  CARPETA_ACTUAL = datos;
+  $('#rutaActual').textContent = datos.ruta;
+  $('#btnSubir').disabled = !datos.padre;
+
+  const pista = {
+    tema: 'Esta carpeta es un tema: tiene las imágenes dentro',
+    modulo: 'Esta carpeta es un módulo: dentro están los temas',
+    raiz: 'Esta carpeta contiene varios módulos',
+    vacio: 'Aquí no hay ni imágenes ni subcarpetas',
+  }[datos.nivel];
+
+  $('#infoCarpeta').innerHTML = `${esc(pista)} · <b>${datos.totalImagenes}</b> imágenes en total`;
+
+  $('#listaCarpetas').innerHTML = datos.carpetas.length
+    ? datos.carpetas.map((c) => `
+      <div class="carpeta" data-ruta="${esc(c.ruta)}">
+        <span class="ic">${c.imagenes ? '🖼' : '📁'}</span>
+        <span class="n">${esc(c.nombre)}</span>
+        ${c.imagenes ? `<span class="etq az">${c.imagenes} img</span>` : ''}
+        ${c.pdfs ? `<span class="etq">${c.pdfs} PDF</span>` : ''}
+        ${c.subcarpetas ? `<span class="fin">${c.subcarpetas} carpetas</span>` : ''}
+      </div>`).join('')
+    : '<div class="vacio">No hay subcarpetas aquí.</div>';
+
+  $$('#listaCarpetas .carpeta').forEach((el) =>
+    el.onclick = () => explorar(el.dataset.ruta));
+
+  const recientes = ESTADO?.ajustes?.carpetasRecientes || [];
+  $('#recientes').innerHTML = recientes.length ? `
+    <div class="fila" style="margin-bottom:12px">
+      <span class="fin">Recientes:</span>
+      ${recientes.map((r) => `<button class="mini" data-rec="${esc(r)}">${esc(r.split('/').slice(-2).join('/'))}</button>`).join('')}
+    </div>` : '';
+  $$('#recientes [data-rec]').forEach((b) => b.onclick = () => explorar(b.dataset.rec));
+}
+
+$('#btnSubir').onclick = () => CARPETA_ACTUAL?.padre && explorar(CARPETA_ACTUAL.padre);
+$('#btnInicio').onclick = () => explorar(ESTADO.inicio);
+
+$('#btnUsarCarpeta').onclick = () => {
+  if (!CARPETA_ACTUAL) return;
+  if (CARPETA_ACTUAL.nivel === 'vacio') return toast('Esa carpeta no tiene imágenes', true);
+  CARPETA_ELEGIDA = CARPETA_ACTUAL;
+  $('#cajaOpciones').hidden = false;
+  $('#carpetaElegida').innerHTML =
+    `<b>${esc(CARPETA_ELEGIDA.nombre)}</b> · ${CARPETA_ELEGIDA.totalImagenes} imágenes<br>
+     <span class="fin">${esc(CARPETA_ELEGIDA.ruta)}</span>`;
+  const necesitaModulo = CARPETA_ELEGIDA.nivel === 'tema';
+  $('#avisoImportar').textContent = necesitaModulo
+    ? 'Es un tema suelto: si no acierta con el módulo, elígelo arriba.' : '';
+  $('#cajaOpciones').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+};
+
+// Las dos opciones de "prueba" y "sin ia" se solapan: mantenemos coherencia visual.
+$('#opPrueba').onchange = (e) => { if (e.target.checked) $('#opSinIa').checked = false; };
+$('#opSinIa').onchange = () => {};
+$('#selMotor').onchange = notaMotor;
+
+// ---------------- Importar ----------------
+$('#btnImportar').onclick = async () => {
+  if (!CARPETA_ELEGIDA) return;
+  const prueba = $('#opPrueba').checked;
+  const motor = $('#selMotor').value;
+  const usaVision = motor !== 'ocr' && motor !== 'macos';
+  if (usaVision && !ESTADO.ollama.ok) return toast('Abre Ollama antes de usar el modelo de visión', true);
+  if (motor.startsWith('macos') && !ESTADO.macos?.ok) return toast('El lector de macOS no está disponible', true);
+
+  const cuerpo = {
+    carpeta: CARPETA_ELEGIDA.ruta,
+    // Una prueba se limita a menos imágenes, pero hace TODO lo demás igual,
+    // explicaciones con temario incluidas. Si no, la prueba no prueba nada.
+    sinIa: $('#opSinIa').checked,
+    limpiar: $('#opLimpiar').checked,
+    forzar: $('#opForzar').checked,
+    limite: prueba ? 2 : undefined,
+    modulo: $('#selModuloForzado').value || undefined,
+    modelo: $('#selModelo').value || undefined,
+    motor,
+    modeloVision: usaVision ? $('#selModeloVision').value || undefined : undefined,
+  };
+
+  // Se recuerdan las elecciones para la próxima vez.
+  await api('/api/ajustes', {
+    method: 'POST',
+    cuerpo: { motor, modelo: cuerpo.modelo, modeloVision: $('#selModeloVision').value || undefined },
+  });
+  if (cuerpo.limpiar && !confirm('«Empezar de cero» borra las preguntas que ya tuvieras de esos módulos. ¿Seguro?')) return;
+
+  try {
+    await api('/api/importar', { method: 'POST', cuerpo });
+    prepararRegistro('Importando…');
+  } catch (e) { toast(e.message, true); }
+};
+
+function prepararRegistro(titulo) {
+  $('#cajaRegistro').hidden = false;
+  $('#tituloTarea').textContent = titulo;
+  $('#registro').innerHTML = '';
+  $('#progreso').classList.add('indef');
+  $('#btnParar').hidden = false;
+  $('#btnCerrarRegistro').hidden = true;
+  $('#btnIrBanco').hidden = true;
+  $('#cajaRegistro').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+$('#btnParar').onclick = () => api('/api/parar', { method: 'POST' });
+$('#btnCerrarRegistro').onclick = () => { $('#cajaRegistro').hidden = true; };
+$('#btnIrBanco').onclick = () => irA('banco');
+
+// ---------------- Registro en vivo ----------------
+function claseLinea(t) {
+  if (/^\s*✓/.test(t)) return 'ok';
+  if (/^\s*[✗×]/.test(t) || /ERROR|FALLÓ/i.test(t)) return 'mal';
+  if (/^\s*[!↻]/.test(t) || /aviso|sin revisar|SIN RESPUESTA/i.test(t)) return 'avi';
+  if (/^[A-ZÁÉÍÓÚÑ][^a-z]*$/.test(t.trim()) && t.trim().length > 8) return 'tit';
+  if (/^\s{2,}/.test(t)) return 'gris';
+  return '';
+}
+
+function anadirLinea(texto, donde) {
+  const div = document.createElement('div');
+  const c = claseLinea(texto);
+  if (c) div.className = c;
+  div.textContent = texto || ' ';
+  donde.appendChild(div);
+  donde.scrollTop = donde.scrollHeight;
+}
+
+const donde = () => $('#v-publicar').hidden ? $('#registro') : $('#registro2');
+
+function conectarLog() {
+  const fuente = new EventSource('/api/log');
+  fuente.addEventListener('historial', (e) => {
+    const d = JSON.parse(e.data);
+    const caja = donde();
+    caja.innerHTML = '';
+    d.lineas.forEach((l) => anadirLinea(l, caja));
+    if (d.terminado) terminar(d.codigo);
+  });
+  fuente.addEventListener('inicio', () => { donde().innerHTML = ''; });
+  fuente.addEventListener('linea', (e) => anadirLinea(JSON.parse(e.data).texto, donde()));
+  fuente.addEventListener('fin', (e) => terminar(JSON.parse(e.data).codigo));
+  fuente.onerror = () => {};
+}
+
+function terminar(codigo) {
+  $('#progreso').classList.remove('indef');
+  $('#progreso2').classList.remove('indef');
+  $('#progreso').firstElementChild.style.width = '100%';
+  $('#btnParar').hidden = true;
+  $('#btnCerrarRegistro').hidden = false;
+  $('#btnIrBanco').hidden = codigo !== 0;
+  $('#tituloTarea').textContent = codigo === 0 ? 'Terminado' : 'Terminado con errores';
+  cargarEstado();
+  if ($('#v-banco').hidden === false) cargarPreguntas();
+  // Tras preparar o conectar el repositorio, la pestaña Publicar ha cambiado.
+  if ($('#v-publicar').hidden === false) setTimeout(() => ESTADO && pintarGit(), 400);
+  toast(codigo === 0 ? 'Listo' : 'Ha terminado con errores', codigo !== 0);
+}
+
+// ---------------- Banco ----------------
+async function cargarPreguntas() {
+  const { preguntas } = await api('/api/preguntas');
+  PREGUNTAS = preguntas;
+  pintarPreguntas();
+}
+
+function filtradas() {
+  const m = $('#filtroModulo').value;
+  const estado = $('#filtroEstado').value;
+  const q = $('#filtroTexto').value.trim().toLowerCase();
+  return PREGUNTAS.filter((p) => {
+    if (m && p.moduloId !== m) return false;
+    if (estado === 'sin-tema' && p.submodulo && p.submodulo !== 'Sin clasificar') return false;
+    if (estado === 'sin-revisar' && (!p.explicacion || p.revisado)) return false;
+    if (estado === 'sin-explicacion' && p.explicacion) return false;
+    if (estado === 'revisadas' && !p.revisado) return false;
+    if (q && !p.pregunta.toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
+function pintarPreguntas() {
+  const lista = filtradas();
+  const visibles = new Set(lista.map((p) => p.id));
+  SELECCION = new Set([...SELECCION].filter((id) => visibles.has(id)));
+  pintarTemasConocidos();
+
+  const sinTema = (p) => !p.submodulo || p.submodulo === 'Sin clasificar';
+
+  $('#listaPreguntas').innerHTML = lista.length ? `
+    <div class="fin" style="margin-bottom:11px">${lista.length} preguntas · pulsa una para editarla</div>
+    <div class="pregLista">${lista.map((p) => `
+      <div class="pregFila${EDITANDO === p.id ? ' abierta' : ''}" data-id="${esc(p.id)}">
+        <input type="checkbox" data-sel="${esc(p.id)}" ${SELECCION.has(p.id) ? 'checked' : ''}>
+        <div class="cuerpo">
+          <span class="enunciado">${esc(p.pregunta)}</span>
+          <div class="meta">
+            <span class="etq">${esc(p.id)}</span>
+            ${sinTema(p) ? '<span class="etq am">sin tema</span>'
+                         : `<span class="fin">${esc(p.submodulo)}</span>`}
+            <span class="fin">${p.opciones.length} opciones · correcta ${'ABCDEFGH'[p.correcta] || '?'}</span>
+            ${p.opciones.length > 4 ? '<span class="etq am">sobra una</span>' : ''}
+            ${!p.explicacion ? '<span class="etq">sin explicación</span>'
+              : p.revisado ? '<span class="etq ok">revisada</span>'
+              : '<span class="etq no">sin revisar</span>'}
+          </div>
+        </div>
+      </div>`).join('')}</div>`
+    : '<div class="vacio">Ninguna pregunta con estos filtros.</div>';
+
+  // La casilla selecciona; el resto de la fila abre el editor. Son dos cosas
+  // distintas y no deben pisarse.
+  $$('#listaPreguntas [data-sel]').forEach((c) => c.onclick = (e) => {
+    e.stopPropagation();
+    c.checked ? SELECCION.add(c.dataset.sel) : SELECCION.delete(c.dataset.sel);
+    refrescarSeleccion();
+  });
+  $$('#listaPreguntas .pregFila').forEach((fila) => fila.onclick = () => {
+    EDITANDO = EDITANDO === fila.dataset.id ? null : fila.dataset.id;
+    BORRADOR = null;
+    pintarPreguntas();
+  });
+
+  refrescarSeleccion();
+  pintarEditor();
+}
+
+function refrescarSeleccion() {
+  const n = SELECCION.size;
+  const total = filtradas().length;
+  $('#btnBorrarSel').disabled = n === 0;
+  $('#btnTemaSel').disabled = n === 0;
+  $('#btnRevisarSel').disabled = n === 0;
+  $('#nuevoTema').disabled = n === 0;
+  $('#infoSeleccion').textContent = n ? `${n} seleccionada(s)` : '';
+  $('#selTodas').checked = total > 0 && n === total;
+  $('#selTodas').indeterminate = n > 0 && n < total;
+}
+
+function pintarEditor() {
+  const guardada = PREGUNTAS.find((x) => x.id === EDITANDO);
+  if (!guardada) {
+    BORRADOR = null;
+    return $('#editor').innerHTML =
+      '<div class="caja"><div class="vacio">Pulsa una pregunta de la lista' +
+      '<br>y se abre aquí para editarla.</div></div>';
+  }
+
+  // Mientras se quitan o añaden respuestas se trabaja sobre una copia, para
+  // que los cambios se vean sin tener que guardar a cada paso.
+  const p = (BORRADOR && BORRADOR.id === EDITANDO) ? BORRADOR : guardada;
+
+  $('#editor').innerHTML = `
+    <div class="caja">
+      <h2>Editar ${esc(p.id)}</h2>
+      ${p.explicacion && !p.revisado ? `<div class="aviso">
+        Explicación generada por el modelo y <b>sin revisar</b>. Compruébala y dale a Revisada.
+      </div>` : ''}
+      ${p.opciones.length > 4 ? `<div class="aviso">
+        Hay ${p.opciones.length} respuestas y lo normal son 4. Quita la que sobre con la ✕.
+      </div>` : ''}
+      ${p.origen ? `<p class="ayuda">Viene de <code>${esc(p.origen)}</code>${
+        p.idExterno ? ` · academia nº ${esc(p.idExterno)}` : ''}</p>` : ''}
+      <div contenteditable class="enun" id="edEnunciado">${esc(p.pregunta)}</div>
+      <p class="ayuda" style="margin:10px 0 4px">Pulsa la letra para marcar cuál es la
+        correcta. El texto se edita escribiendo encima.</p>
+      <div id="listaOpciones">
+        ${p.opciones.map((o, j) => `
+          <div class="op${p.correcta === j ? ' ok' : ''}">
+            <input type="radio" name="correcta" id="opc-${j}" value="${j}" ${p.correcta === j ? 'checked' : ''}>
+            <label class="letra" for="opc-${j}">${'ABCDEFGH'[j] || j + 1})</label>
+            <div contenteditable class="txt" data-j="${j}">${esc(o)}</div>
+            <button class="mini rojo quitar" data-quitar="${j}" title="Quitar esta respuesta">✕</button>
+          </div>`).join('')}
+      </div>
+      <div class="fila" style="margin-top:8px">
+        <button class="mini" id="btnAnadirOpcion">+ Añadir respuesta</button>
+      </div>
+      <div class="rejilla" style="margin-top:14px">
+        <div><label>Explicación</label>
+          <textarea id="edExplicacion" style="min-height:110px;font-family:inherit">${esc(p.explicacion || '')}</textarea></div>
+        <div><label>Ejemplo</label>
+          <textarea id="edEjemplo" style="min-height:110px;font-family:inherit">${esc(p.ejemplo || '')}</textarea></div>
+      </div>
+      <div class="fila" style="margin-top:14px">
+        <button class="b verde" id="btnGuardarPregunta">Guardar</button>
+        ${p.explicacion && !p.revisado ? '<button class="b" id="btnRevisada">Guardar y marcar revisada</button>' : ''}
+        <button class="b gris" id="btnCerrarEditor">Cerrar</button>
+        ${p.revisado ? '<span class="etq ok">Revisada por ti</span>' : ''}
+      </div>
+    </div>`;
+
+  const recoger = () => ({
+    ...p,
+    pregunta: $('#edEnunciado').textContent.trim(),
+    opciones: $$('#editor .op .txt').map((el) => el.textContent.trim()),
+    correcta: Number($('#editor input[name=correcta]:checked')?.value ?? p.correcta),
+    explicacion: $('#edExplicacion').value.trim(),
+    ejemplo: $('#edEjemplo').value.trim(),
+  });
+
+  const guardar = async (revisado) => {
+    const datos = recoger();
+    if (datos.opciones.filter(Boolean).length < 2) return toast('Hacen falta al menos 2 respuestas', true);
+    if (!datos.pregunta) return toast('El enunciado no puede quedar vacío', true);
+    datos.opciones = datos.opciones.filter(Boolean);
+    await api('/api/pregunta', { method: 'PUT', cuerpo: { ...datos, revisado } });
+    BORRADOR = null;
+    toast('Guardada');
+    await cargarPreguntas();
+    cargarEstado();
+  };
+
+  $('#btnGuardarPregunta').onclick = () => guardar(p.revisado);
+  $('#btnRevisada')?.addEventListener('click', () => guardar(true));
+  $('#btnCerrarEditor').onclick = () => { EDITANDO = null; BORRADOR = null; pintarPreguntas(); };
+
+  // Marcar la correcta sólo con el radio o su letra. Antes todo el bloque era
+  // un <label>, así que escribir en el texto cambiaba la respuesta correcta.
+  $$('#editor input[name=correcta]').forEach((r) => r.onchange = () =>
+    $$('#editor .op').forEach((o, j) => o.classList.toggle('ok', j === Number(r.value))));
+
+  $$('#editor [data-quitar]').forEach((b) => b.onclick = () => {
+    const j = Number(b.dataset.quitar);
+    const actual = recoger();
+    if (actual.opciones.length <= 2) return toast('Tienen que quedar al menos 2 respuestas', true);
+    if (!confirm(`¿Quitar la respuesta ${'ABCDEFGH'[j]}?`)) return;
+    actual.opciones.splice(j, 1);
+    if (actual.correcta === j) {
+      actual.correcta = 0;
+      toast('Has quitado la que estaba marcada como correcta: revisa cuál es', true);
+    } else if (actual.correcta > j) {
+      actual.correcta--;
+    }
+    BORRADOR = actual;
+    pintarEditor();
+  });
+
+  $('#btnAnadirOpcion').onclick = () => {
+    const actual = recoger();
+    actual.opciones.push('');
+    BORRADOR = actual;
+    pintarEditor();
+    $$('#editor .op .txt').at(-1)?.focus();
+  };
+}
+
+['#filtroModulo','#filtroEstado'].forEach((s) => $(s).onchange = pintarPreguntas);
+$('#filtroTexto').oninput = pintarPreguntas;
+$('#btnRecargar').onclick = () => { cargarPreguntas(); cargarEstado(); };
+$('#selTodas').onchange = (e) => {
+  SELECCION = e.target.checked ? new Set(filtradas().map((p) => p.id)) : new Set();
+  $$('#listaPreguntas [data-sel]').forEach((c) => c.checked = SELECCION.has(c.dataset.sel));
+  refrescarSeleccion();
+};
+// Sugerencias de tema: los del temario del módulo que estés mirando, más los
+// que ya existan en el banco. Escribir uno que no esté en la lista vale igual.
+function pintarTemasConocidos() {
+  const m = $('#filtroModulo').value;
+  const delTemario = (ESTADO?.modulos || [])
+    .filter((x) => !m || x.id === m)
+    .flatMap((x) => x.submodulos || []);
+  const delBanco = PREGUNTAS
+    .filter((p) => !m || p.moduloId === m)
+    .map((p) => p.submodulo)
+    .filter((s) => s && s !== 'Sin clasificar');
+  const todos = [...new Set([...delTemario, ...delBanco])].sort();
+  $('#temasConocidos').innerHTML = todos.map((t) => `<option value="${esc(t)}">`).join('');
+}
+
+$('#btnTemaSel').onclick = async () => {
+  const tema = $('#nuevoTema').value.trim();
+  if (!tema) return toast('Escribe el tema', true);
+  const n = SELECCION.size;
+  if (!confirm(`¿Poner el tema «${tema}» a ${n} pregunta(s)?`)) return;
+  try {
+    const r = await api('/api/reclasificar', {
+      method: 'POST',
+      cuerpo: { ids: [...SELECCION], submodulo: tema },
+    });
+    toast(`${r.cambiadas} pregunta(s) ahora en «${tema}»`);
+    $('#nuevoTema').value = '';
+    SELECCION = new Set();
+    await cargarPreguntas();
+    cargarEstado();
+  } catch (e) { toast(e.message, true); }
+};
+
+$('#btnRevisarSel').onclick = async () => {
+  const n = SELECCION.size;
+  if (!confirm(`¿Dar por buenas las explicaciones de ${n} pregunta(s)?`)) return;
+  try {
+    const r = await api('/api/revisadas', { method: 'POST', cuerpo: { ids: [...SELECCION] } });
+    toast(r.sinExplicacion
+      ? `${r.cambiadas} marcadas · ${r.sinExplicacion} sin explicación se han dejado igual`
+      : `${r.cambiadas} marcadas como revisadas`);
+    await cargarPreguntas();
+    cargarEstado();
+  } catch (e) { toast(e.message, true); }
+};
+
+$('#btnBorrarSel').onclick = async () => {
+  const n = SELECCION.size;
+  if (!confirm(`¿Eliminar ${n} pregunta(s)? No se puede deshacer.`)) return;
+  await api('/api/borrar', { method: 'POST', cuerpo: { ids: [...SELECCION] } });
+  SELECCION = new Set();
+  EDITANDO = null;
+  toast(`${n} eliminadas`, true);
+  await cargarPreguntas();
+  cargarEstado();
+};
+
+$('#btnExplicar').onclick = async () => {
+  if (!ESTADO.ollama.ok) return toast('Ollama no está abierto', true);
+  try {
+    await api('/api/explicar', {
+      method: 'POST',
+      cuerpo: { modulo: $('#explicarModulo').value || undefined, soloVacias: true, modelo: $('#selModelo').value },
+    });
+    irA('importar');
+    prepararRegistro('Generando explicaciones…');
+  } catch (e) { toast(e.message, true); }
+};
+
+// ---------------- Pegar texto ----------------
+$('#btnAnalizar').onclick = analizarTexto;
+$('#entrada').addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); analizarTexto(); }
+});
+$('#btnVaciar').onclick = () => { $('#entrada').value = ''; $('#entrada').focus(); };
+
+async function analizarTexto() {
+  const texto = $('#entrada').value;
+  if (!texto.trim()) return toast('No hay nada que analizar', true);
+
+  const { preguntas, incidencias } = await api('/api/analizar', { method: 'POST', cuerpo: { texto } });
+  if (!preguntas.length) {
+    $('#infoTexto').textContent = 'No se ha detectado ninguna pregunta.';
+    return toast('No se ha detectado ninguna pregunta', true);
+  }
+  PREVIA = preguntas;
+  const completas = preguntas.every((p) => p.correcta !== null && p.opciones.length >= 2);
+
+  if (completas && !incidencias.length) return guardarPrevia();
+
+  $('#cajaPrevia').hidden = false;
+  $('#previa').innerHTML =
+    (incidencias.length ? `<div class="aviso">${incidencias.map(esc).join('<br>')}</div>` : '') +
+    preguntas.map((p, i) => `
+      <div class="caja" style="background:var(--panel2);margin-bottom:11px">
+        <b>${esc(p.pregunta)}</b>
+        <div style="margin-top:9px">${p.opciones.map((o, j) => `
+          <label class="op${p.correcta === j ? ' ok' : ''}">
+            <input type="radio" name="prev-${i}" value="${j}" ${p.correcta === j ? 'checked' : ''}>
+            <span class="letra">${'ABCDEFGH'[j]})</span><div class="txt">${esc(o)}</div>
+          </label>`).join('')}</div>
+      </div>`).join('');
+
+  $$('#previa input[type=radio]').forEach((r) => r.onchange = () => {
+    const i = Number(r.name.split('-')[1]);
+    PREVIA[i].correcta = Number(r.value);
+    r.closest('.caja').querySelectorAll('.op').forEach((o, j) =>
+      o.classList.toggle('ok', j === PREVIA[i].correcta));
+  });
+  toast('Revisa antes de guardar', true);
+}
+
+async function guardarPrevia() {
+  const { anadidas } = await api('/api/anadir', {
+    method: 'POST',
+    cuerpo: { moduloId: $('#txtModulo').value, submodulo: $('#txtTema').value.trim(), preguntas: PREVIA },
+  });
+  PREVIA = [];
+  $('#cajaPrevia').hidden = true;
+  $('#entrada').value = '';
+  $('#entrada').focus();
+  $('#infoTexto').textContent = anadidas ? `${anadidas} añadida(s).` : 'Ya estaba en el banco.';
+  toast(anadidas ? `Guardada · ${anadidas} añadida(s)` : 'Esa pregunta ya estaba', !anadidas);
+  cargarEstado();
+}
+
+// ---------------- Pegar JSON de un modelo de visión ----------------
+$('#btnPegarJson').onclick = async () => {
+  const texto = $('#entradaJson').value.trim();
+  if (!texto) return toast('Pega antes el JSON', true);
+  try {
+    const r = await api('/api/pegar-json', {
+      method: 'POST',
+      cuerpo: { texto, moduloId: $('#txtModulo').value, submodulo: $('#txtTema').value.trim() },
+    });
+    $('#infoJson').textContent = `${r.anadidas} de ${r.leidas} añadida(s).`;
+    $('#avisosJson').innerHTML = r.problemas?.length
+      ? `<div class="aviso" style="margin-top:12px"><b>Revisa esto:</b><br>${r.problemas.map(esc).join('<br>')}</div>`
+      : '';
+    if (r.anadidas) {
+      $('#entradaJson').value = '';
+      toast(`${r.anadidas} guardada(s) · sin revisar`);
+    } else {
+      toast('No ha entrado ninguna', true);
+    }
+    cargarEstado();
+  } catch (e) {
+    $('#avisosJson').innerHTML = `<div class="aviso malo" style="margin-top:12px">${esc(e.message)}</div>`;
+    toast('No se ha podido leer el JSON', true);
+  }
+};
+
+$('#btnGuardarPrevia').onclick = guardarPrevia;
+$('#btnDescartar').onclick = () => { PREVIA = []; $('#cajaPrevia').hidden = true; };
+
+// ---------------- Publicar ----------------
+function pintarGit() {
+  const g = ESTADO.git;
+  const primeraVez = !g.esRepo || !g.remoto;
+  $('#cajaPrimeraVez').hidden = !primeraVez;
+  $('#cajaPublicar').hidden = primeraVez;
+  if (primeraVez) return pintarPasosGit();
+
+  $('#btnPublicar').disabled = g.cambios === 0;
+  $('#estadoGit').innerHTML = g.cambios
+    ? `<div class="aviso bien"><b>${g.cambios} archivo(s) con cambios</b> listos para publicar.<br>
+       <span class="fin">Rama ${esc(g.rama)} · ${esc(g.remoto)}</span></div>`
+    : `<div class="aviso bien">Todo publicado. No hay cambios pendientes.<br>
+       <span class="fin">Rama ${esc(g.rama)} · ${esc(g.remoto)}</span></div>`;
+
+  if (ESTADO.banco.sinRevisar) {
+    $('#estadoGit').insertAdjacentHTML('beforeend', `<div class="aviso">
+      Ojo: ${ESTADO.banco.sinRevisar} explicación(es) siguen sin revisar. Se publicarán igual,
+      pero en la app saldrán marcadas.</div>`);
+  }
+}
+
+// Asistente de la primera vez. Dos pasos: preparar la carpeta y conectarla con
+// GitHub. Cada uno se enseña sólo cuando toca, para no abrumar.
+function pintarPasosGit() {
+  const g = ESTADO.git;
+  const caja = $('#pasosGit');
+
+  if (!g.esRepo) {
+    caja.innerHTML = `
+      <div class="aviso">Paso 1 de 2 · Preparar esta carpeta para poder publicarla.</div>
+      <p class="ayuda">Git apunta quién hace cada cambio. Pon tu nombre y tu correo
+        (el mismo de tu cuenta de GitHub, si tienes).</p>
+      <div class="rejilla">
+        <div><label for="gitNombre">Tu nombre</label>
+          <input id="gitNombre" placeholder="Carlos" value="${esc(g.identidad?.nombre || '')}"></div>
+        <div><label for="gitCorreo">Tu correo</label>
+          <input id="gitCorreo" type="email" placeholder="tucorreo@ejemplo.com"
+                 value="${esc(g.identidad?.correo || '')}"></div>
+      </div>
+      <div class="fila" style="margin-top:14px">
+        <button class="b grande" id="btnGitInit">Preparar la carpeta</button>
+      </div>`;
+    $('#btnGitInit').onclick = async () => {
+      const nombre = $('#gitNombre').value.trim();
+      const correo = $('#gitCorreo').value.trim();
+      if (!nombre || !correo) return toast('Pon tu nombre y tu correo', true);
+      try {
+        await api('/api/git-init', { method: 'POST', cuerpo: { nombre, correo } });
+        registroPublicar();
+      } catch (e) { toast(e.message, true); }
+    };
+    return;
+  }
+
+  // Ya es repositorio: falta enlazarlo con GitHub.
+  const sugerido = (g.carpeta || 'test-automocion').replace(/[^\w.-]+/g, '-');
+  caja.innerHTML = `
+    <div class="aviso">Paso 2 de 2 · Conectar con GitHub para que publique la app.</div>
+    ${g.gh ? `
+      <p class="ayuda">Tienes la herramienta de GitHub instalada y con la sesión abierta,
+        así que puedo crear el repositorio y subirlo yo.</p>
+      <div class="rejilla">
+        <div><label for="ghNombre">Nombre del repositorio</label>
+          <input id="ghNombre" value="${esc(sugerido)}"></div>
+        <div><label for="ghVisible">Quién puede verlo</label>
+          <select id="ghVisible">
+            <option value="privado">Sólo yo (privado)</option>
+            <option value="publico">Cualquiera (público)</option>
+          </select></div>
+      </div>
+      <p class="ayuda" style="margin-top:9px">Con GitHub Pages gratuito la app sólo se
+        publica si el repositorio es <b>público</b>. En privado tendrás el respaldo, pero
+        no la dirección web.</p>
+      <div class="fila" style="margin-top:14px">
+        <button class="b grande verde" id="btnGhCrear">Crear el repositorio y subirlo</button>
+      </div>
+      <hr style="border:0;border-top:1px solid var(--borde);margin:20px 0">
+      <p class="ayuda">O, si ya lo has creado tú en la web, pega aquí su dirección:</p>`
+    : `
+      <p class="ayuda">Crea el repositorio en
+        <a href="https://github.com/new" target="_blank">github.com/new</a>:
+        ponle un nombre, elígelo <b>público</b> si quieres que la app se vea en internet,
+        y <b>no marques</b> ninguna casilla de añadir README ni .gitignore.
+        Luego copia aquí la dirección que te da.</p>`}
+    <div class="fila" style="margin-top:11px">
+      <input id="gitUrl" placeholder="https://github.com/tu-usuario/${esc(sugerido)}"
+             style="flex:1;min-width:300px">
+      <button class="b" id="btnGitConectar">Conectar y subir</button>
+    </div>`;
+
+  $('#btnGhCrear')?.addEventListener('click', async () => {
+    const nombre = $('#ghNombre').value.trim();
+    const privado = $('#ghVisible').value === 'privado';
+    try {
+      await api('/api/git-crear', { method: 'POST', cuerpo: { nombre, privado } });
+      registroPublicar();
+    } catch (e) { toast(e.message, true); }
+  });
+
+  $('#btnGitConectar').onclick = async () => {
+    const url = $('#gitUrl').value.trim();
+    if (!url) return toast('Pega la dirección del repositorio', true);
+    try {
+      await api('/api/git-conectar', { method: 'POST', cuerpo: { url } });
+      registroPublicar();
+    } catch (e) { toast(e.message, true); }
+  };
+}
+
+function registroPublicar() {
+  $('#cajaRegistro2').hidden = false;
+  $('#registro2').innerHTML = '';
+  $('#progreso2').classList.add('indef');
+  $('#cajaRegistro2').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+$('#btnPublicar').onclick = async () => {
+  try {
+    await api('/api/publicar', { method: 'POST', cuerpo: { mensaje: $('#mensajeCommit').value } });
+    registroPublicar();
+  } catch (e) { toast(e.message, true); }
+};
+
+// ---------------- Actualizar el programa ----------------
+async function comprobarActualizacion() {
+  let d;
+  try { d = await api('/api/actualizacion'); } catch { return; }
+  if (!d.origen) return;                      // no hay copia de Cowork: nada que hacer
+
+  $('#cajaActualizar').hidden = false;
+  // Se compara el contenido de los archivos, no la fecha: las fechas mienten
+  // porque al copiar no se conservan con precisión exacta.
+  $('#infoActualizacion').innerHTML = d.hay
+    ? `<div class="aviso bien"><b>Hay cambios sin aplicar.</b>
+        ${d.totalCambios} archivo(s) distintos.
+        <div class="fin" style="margin-top:7px;font-family:ui-monospace,monospace">
+          ${d.cambios.map((c) => esc(c.archivo)).join('<br>')}
+          ${d.totalCambios > d.cambios.length ? `<br>…y ${d.totalCambios - d.cambios.length} más` : ''}
+        </div></div>`
+    : '<div class="fin">Estás al día: no hay ningún archivo distinto.</div>';
+  $('#btnActualizar').textContent = d.hay ? 'Actualizar ahora' : 'Volver a copiar de todos modos';
+  $('#btnActualizar').className = d.hay ? 'b verde' : 'b gris';
+}
+
+$('#btnActualizar').onclick = async () => {
+  try {
+    await api('/api/actualizar', { method: 'POST' });
+    irA('importar');
+    prepararRegistro('Actualizando el programa…');
+  } catch (e) { toast(e.message, true); }
+};
+
+// ---------------- Ver la app ----------------
+$('#btnDev').onclick = async () => {
+  $('#btnDev').disabled = true;
+  $('#infoDev').textContent = 'Arrancando…';
+  try {
+    const r = await api('/api/dev', { method: 'POST', cuerpo: { accion: 'arrancar' } });
+    $('#infoDev').innerHTML = `Abierta en <a href="${esc(r.url)}" target="_blank">${esc(r.url)}</a>`;
+    $('#btnPararDev').hidden = false;
+    await api('/api/abrir', { method: 'POST', cuerpo: { url: r.url } });
+  } catch (e) { toast(e.message, true); $('#infoDev').textContent = ''; }
+  $('#btnDev').disabled = false;
+};
+$('#btnPararDev').onclick = async () => {
+  await api('/api/dev', { method: 'POST', cuerpo: { accion: 'parar' } });
+  $('#infoDev').textContent = '';
+  $('#btnPararDev').hidden = true;
+};
+
+// ---------------- Arranque ----------------
+await cargarEstado();
+comprobarActualizacion();
+conectarLog();
+explorar(ESTADO.ajustes.carpetasRecientes?.[0] || ESTADO.inicio);
+setInterval(() => { if (!document.hidden) cargarEstado().catch(() => {}); }, 20000);
+</script>
+</body>
+</html>

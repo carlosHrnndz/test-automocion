@@ -1,0 +1,1076 @@
+[
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778097",
+    "pregunta": "En la rotura por fatiga...",
+    "opciones": [
+      "O Los materiales pueden llegar a romperse con cargas muy pequeñas sin apenas deformación.",
+      "Los fallos producidos constituyen la mayoría de los daños estructurales que se producen en aparatos con funcionamiento cíclico.",
+      "Los materiales pueden llegar a romperse cuando son sometidos a esfuerzos variables.",
+      "Todas las respuestas anteriores son correctas."
+    ],
+    "correcta": 3,
+    "explicacion": "La fatiga es un proceso de fallo que ocurre cuando un material se somete a esfuerzos repetitivos o cíclicos, incluso si estos están muy por debajo de su límite elástico. Por ello, la rotura puede ocurrir con cargas bajas y en estructuras sometidas a ciclos constantes.",
+    "ejemplo": "Piensa en el eje de transmisión de un coche; las vibraciones constantes generadas al circular pueden provocar una grieta que finalmente causa la rotura, aunque el par aplicado no fuera excesivo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0001"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778081",
+    "pregunta": "Si una pieza se parte con una carga muy inferior a la carga de rotura, cuando está sometida a esfuerzos variables, diremos que se ha roto por:",
+    "opciones": [
+      "Tracción.",
+      "Torsión.",
+      "Compresión.",
+      "Fatiga."
+    ],
+    "correcta": 3,
+    "explicacion": "La fatiga es el fallo de un material que ocurre cuando se somete repetidamente a esfuerzos, incluso si estos son inferiores al límite elástico o de rotura del material. Este fallo se debe a la iniciación y propagación de microfisuras bajo cargas cíclicas.",
+    "ejemplo": "Si estás haciendo pruebas en el taller con una pieza y notas grietas pequeñas que aparecen después de muchos ciclos de carga, aunque no hayas superado nunca su límite teórico, es un claro caso de fatiga.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0002"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778077",
+    "pregunta": "¿Cuál es la unidad de fuerza en el Sistema Internacional?",
+    "opciones": [
+      "Kg.",
+      "Toneladas",
+      "Newton.",
+      "Julio."
+    ],
+    "correcta": 2,
+    "explicacion": "La unidad de fuerza en el Sistema Internacional de Unidades (SI) es el Newton, que se define como la fuerza necesaria para acelerar una masa de un kilogramo a $1 \\text{ metro por segundo al cuadrado}$. El Kgf y las toneladas son unidades de masa o peso no estándar en este contexto.",
+    "ejemplo": "Si tienes que calcular la tensión máxima en un eje sometido a carga, debes usar el Newton para obtener el resultado correcto del par de fuerzas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0003"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778084",
+    "pregunta": "En un conjunto de piñón y ruedas dentadas que engranan entre sí, ¿cómo son las velocidades lineales de sus circunferencias primitivas?",
+    "opciones": [
+      "Mayor la del piñón.",
+      "Mayor la de la rueda.",
+      "Iguales las 2.",
+      "Ninguna de las respuestas anteriores es correcta."
+    ],
+    "correcta": 2,
+    "explicacion": "Cuando dos elementos dentados engranan, la velocidad lineal de los puntos de contacto en sus circunferencias primitivas debe ser idéntica para asegurar un deslizamiento perfecto y evitar el desgaste prematuro. Este principio se basa en la conservación de la energía y la transmisión continua del movimiento rotatorio.",
+    "ejemplo": "Si estás revisando una caja de cambios, al medir la velocidad lineal donde los dientes del piñón impactan contra los de la rueda, verás que son iguales independientemente de si uno gira más rápido o más lento que el otro.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0004"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778105",
+    "pregunta": "El engranaje formado por piñón y cremallera:",
+    "opciones": [
+      "Es un sistema axial y puede estar realizado con dientes rectos o helicoidales",
+      "Es un sistema radial y puede estar realizado con dientes rectos o helicoidales",
+      "Es un sistema tangencial y puede estar realizado con dientes rectos o helicoidales",
+      "Es un sistema tangencial y solo puede estar realizado con dientes rectos."
+    ],
+    "correcta": 2,
+    "explicacion": "Este tipo de engranaje, donde el piñón se acopla a la cremallera mediante contacto tangencial, transmite el movimiento de manera que las fuerzas actúan en la dirección tangente a la curva generada por los dientes. El uso de dientes helicoidales permite una transmisión más suave y silenciosa al introducir un componente axial gradual.",
+    "ejemplo": "En sistemas de dirección asistida o cajas de cambio modernas, se utiliza este principio para asegurar un movimiento continuo sin golpes bruscos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0005"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778107",
+    "pregunta": "Los motores eléctricos basan su funcionamiento en:",
+    "opciones": [
+      "La aplicación de una fuerza en el eje que aplican sobre el devanado del inductor.",
+      "La creación de pares de polos a través de los efectos electromagnéticos",
+      "La aplicación de una fuerza en el eje que aplican sobre el devanado del inducido",
+      "La inercia del estator."
+    ],
+    "correcta": 1,
+    "explicacion": "El principio fundamental es la interacción entre campos magnéticos generados por corrientes eléctricas, lo que provoca un par motor rotatorio. Este par se genera al interactuar el campo magnético fijo (estator) con el campo magnético variable (rotor).",
+    "ejemplo": "Cuando conectamos un motor eléctrico a la batería para arrancar el vehículo, es este par electromagnético el que hace girar los componentes internos del motor.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0006"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778071",
+    "pregunta": "Potencia es el producto de la fuerza que se desplaza por la velocidad a la que se desplaza esa fuerza: P = F • v",
+    "opciones": [
+      "Verdadero.",
+      "Falso."
+    ],
+    "correcta": 0,
+    "explicacion": "La potencia mecánica se define como el trabajo realizado por unidad de tiempo, y matemáticamente es igual al producto entre la fuerza aplicada y la velocidad lineal con la que actúa esa fuerza. Este principio relaciona directamente la capacidad de realizar un trabajo en un intervalo temporal determinado.",
+    "ejemplo": "Si tienes que levantar un motor pesado (fuerza) a una cierta altura en un periodo corto de tiempo (velocidad), estás utilizando potencia mecánica.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0007"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778073",
+    "pregunta": "¿Qué tipo de correa se utiliza en la distribución de los vehículos?",
+    "opciones": [
+      "Plana.",
+      "Trapecial.",
+      "Multigarganta.",
+      "Dentada."
+    ],
+    "correcta": 3,
+    "explicacion": "La correa dentada está diseñada con dientes que engranan directamente con los dientes de la polea del cigüeñal y el árbol de levas, garantizando una sincronización precisa entre ambos ejes. Este sistema mecánico asegura que las válvulas abran y cierren en el momento exacto respecto al movimiento del pistón.",
+    "ejemplo": "Si esta correa se salta o rompe, el motor no podrá realizar su ciclo completo porque la distribución estará desincronizada, lo cual puede provocar un choque entre piezas internas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0008"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778093",
+    "pregunta": "Los trenes de engranaje epicicloidales...",
+    "opciones": [
+      "Son aquellos en que cada eje tiene solo un engranaje.",
+      "Son aquellos en los que se combinan unos en serie y otros en paralelo.",
+      "Se utilizan en los cambios automáticos de los vehículos y en la reductora de los motores de arranque modernos.",
+      "Son aquellos en los que son necesarias tres entradas para obtener una salida."
+    ],
+    "correcta": 2,
+    "explicacion": "Los trenes epicicloidales son un tipo de mecanismo muy eficiente para transmitir movimiento y reducir velocidades, siendo su diseño ideal para aplicaciones que requieren múltiples relaciones de transmisión compactas. Su geometría permite obtener grandes reducciones en un espacio reducido, lo cual es clave en estos sistemas.",
+    "ejemplo": "Cuando revisamos la caja de cambios de un coche moderno, es habitual encontrar este tipo de trengearía por su capacidad para gestionar las distintas marchas con poco espacio físico.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0009"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778102",
+    "pregunta": "El polipasto",
+    "opciones": [
+      "Permite multiplicar la fuerza de elevación pero no la potencia",
+      "Multiplica la potencia del sistema.",
+      "Es un sistema de engranajes mu rudimentario y no realiza ninguna transformación mecánica",
+      "Es un sistema de engranajes mu rudimentario y puede realizar transformaciones mecánicas"
+    ],
+    "correcta": 0,
+    "explicacion": "Un polipasto funciona mediante poleas y cables, lo que permite obtener una ventaja mecánica que multiplica la fuerza aplicada para levantar cargas pesadas. Sin embargo, esta ganancia en fuerza se consigue sacrificando la velocidad o la potencia del sistema.",
+    "ejemplo": "Si necesitas levantar un motor muy pesado, el polipasto te permitirá hacerlo con menos esfuerzo muscular, aunque tendrás que hacer mucho más recorrido de cuerda y tardarás más tiempo en subirlo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0010"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778075",
+    "pregunta": "El kilogramo fuerza deriva del Sistema Internacional de Unidades (SI) y el newton deriva del Sistema Técnico de Unidades (ST).",
+    "opciones": [
+      "Verdadero.",
+      "Falso."
+    ],
+    "correcta": 1,
+    "explicacion": "El Newton es la unidad de fuerza en el Sistema Internacional de Unidades (SI), no el kilogramo fuerza. La unidad de masa en el SI es el kilogramo, y la unidad de fuerza se define a partir de esta relación fundamental.",
+    "ejemplo": "Si necesitas calcular una fuerza aplicada a un motor, debes usar Newtons para obtener un resultado coherente con las unidades del SI.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0011"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778079",
+    "pregunta": "En las articulaciones de rótula siempre está presente:",
+    "opciones": [
+      "Una unión esférica.",
+      "Una unión guiada de cola de milano",
+      "Unión con soldadura.",
+      "Todas las anteriores."
+    ],
+    "correcta": 0,
+    "explicacion": "La articulación de rótula está diseñada para permitir un movimiento angular en varios ejes, lo cual se consigue mediante una conexión que imita el movimiento de una bola dentro de su cavidad. Este tipo de unión esférica garantiza la libertad de movimiento multidireccional necesaria para transmitir el par motor correctamente.",
+    "ejemplo": "Si tienes que conectar un brazo articulado a un soporte donde debe moverse en cualquier ángulo, como en algunos sistemas de suspensión o brazos elevadores, usarás este principio de rótula.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0012"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778076",
+    "pregunta": "Un tornillo de cabeza hexagonal es un elemento:",
+    "opciones": [
+      "Estructural.",
+      "De unión.",
+      "De impermeabilización.",
+      "De seguridad."
+    ],
+    "correcta": 1,
+    "explicacion": "Los tornillos son elementos de fijación cuyo propósito principal es unir dos o más piezas mecánicas, transmitiendo fuerzas de tracción y compresión entre ellas. Su función se centra en asegurar la conexión física entre componentes del sistema.",
+    "ejemplo": "Si tienes que montar un soporte de batería al chasis, utilizarás tornillería para sujetar firmemente el soporte a medida que lo requiere el montaje.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0013"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778094",
+    "pregunta": "¿Cuál de los siguientes elementos no están dentro de los componentes móviles más empleados en mecanismos de trasmisión?",
+    "opciones": [
+      "Engranajes.",
+      "Tuercas.",
+      "Cadenas.",
+      "Tornillos."
+    ],
+    "correcta": 1,
+    "explicacion": "Los elementos móviles empleados en la transmisión suelen estar diseñados para transmitir par o movimiento rotatorio, como son los engranajes, las cadenas o los tornillos de paso. Las tuercas, por sí solas, son componentes pasivos que se sujetan a un elemento roscado y no forman parte del mecanismo activo de transmisión de potencia.",
+    "ejemplo": "Si tienes que acoplar una polea a un eje mediante un sistema de chaveta, la tuerca solo serviría para asegurar el conjunto al cuerpo o soporte, pero no transmite el movimiento rotatorio principal.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0014"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778072",
+    "pregunta": "Las arandelas grower, ¿de qué material están fabricadas?",
+    "opciones": [
+      "Cobre.",
+      "Acero común.",
+      "Aluminio.",
+      "Acero elástico."
+    ],
+    "correcta": 3,
+    "explicacion": "Las arandelas grower están fabricadas en acero elástico porque su función principal es compensar la pérdida de tensión que experimentan las roscas debido al apriete, manteniendo una fuerza constante sobre la unión. Este material permite deformarse y recuperar esa tensión perdida sin romperse.",
+    "ejemplo": "Si estás montando un soporte de motor donde hay vibraciones constantes, usar grower asegura que el par de apriete inicial se mantenga a pesar del uso continuo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0015"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778089",
+    "pregunta": "Decimos que el tipo de dentado que lleva un engranaje es inclinado cuando....",
+    "opciones": [
+      "Sus flancos forman líneas helicoidales.",
+      "Los dientes tienen los flancos paralelos a sus ejes.",
+      "Tienen tallados las ruedas con los dientes inclinados, la mitad en un sentido y la otra mitad en el opuesto, de modo que cada flanco tiene forma de flecha.",
+      "Todas las respuestas anteriores son correctas."
+    ],
+    "correcta": 0,
+    "explicacion": "El dentado inclinado o helicoidal se caracteriza porque sus superficies laterales, los flancos, no son perpendiculares al eje de giro sino que forman una hélice continua. Esto permite que el contacto entre engranajes sea progresivo y más suave que en los dientes rectos.",
+    "ejemplo": "Al accionar un tren de rodaje con engranajes helicoidales, notarás una transmisión mucho más silenciosa y sin sacudidas bruscas comparado con uno de dientes rectos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0016"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778090",
+    "pregunta": "Los acoplamientos de Manguito de platos y casquillo cónico están dentro de...",
+    "opciones": [
+      "Los acoplamientos móviles o variables.",
+      "Los acoplamientos elásticos.",
+      "Los acoplamientos rígidos.",
+      "Los acoplamientos fijos."
+    ],
+    "correcta": 2,
+    "explicacion": "Estos acoplamientos están diseñados para transmitir un par motor sin permitir ninguna desviación angular entre los ejes conectados. Su función principal es mantener una conexión mecánica estricta, resistiendo tanto cargas axiales como de torsión.",
+    "ejemplo": "Si tienes que conectar dos ejes perfectamente alineados en el motor de un generador, usarías este tipo de acoplamiento para asegurar la máxima eficiencia de transmisión.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0017"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778099",
+    "pregunta": "El esfuerzo al que se somete un clavo cuando es golpeado por un martillo es;",
+    "opciones": [
+      "Corte",
+      "Tracción.",
+      "Clavamiento",
+      "Compresión"
+    ],
+    "correcta": 3,
+    "explicacion": "El impacto del martillo genera una fuerza que comprime el material en la zona de contacto inicial, forzando su penetración. Esta acción se debe a la transferencia de energía cinética que resulta en una alta presión sobre el punto de impacto.",
+    "ejemplo": "Si al clavar un clavo no se aplica suficiente fuerza perpendicular, el golpe puede desviarse y generar esfuerzos de cizallamiento en lugar de compresión pura.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0018"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778080",
+    "pregunta": "En la fabricación de cojinetes se utiliza material antifricción, ¿qué propiedad lo hace aconsejable?",
+    "opciones": [
+      "La resistencia al desgate.",
+      "La dureza.",
+      "Su resistencia a la tracción.",
+      "Su coeficiente de dilatación."
+    ],
+    "correcta": 0,
+    "explicacion": "El material antifricción debe reducir el desgaste o fricción entre las piezas móviles, lo cual es su función principal en estos sistemas. Una alta resistencia al desgaste asegura que la superficie de contacto mantenga sus propiedades mecánicas durante un largo periodo de funcionamiento.",
+    "ejemplo": "Si usamos un cojinete con bajo coeficiente de desgaste, podremos esperar una vida útil mayor sin necesidad de revisar o reemplazar componentes por fricción excesiva.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0019"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778088",
+    "pregunta": "Los gorrones se encuentran dentro de la unión...",
+    "opciones": [
+      "Móvil giratoria.",
+      "Móvil deslizante.",
+      "Móvil articulada.",
+      "Todas las respuestas anteriores son correctas."
+    ],
+    "correcta": 0,
+    "explicacion": "Los gorrones están diseñados específicamente para asegurar la conexión y el movimiento relativo en un eje que gira sobre otro, lo cual es característico de una unión móvil giratoria. Su función es transmitir el par motor mientras se permite únicamente el giro angular entre los componentes conectados.",
+    "ejemplo": "Al revisar el sistema de dirección o el cardán de transmisión, verás cómo estos elementos utilizan gorrones para permitir la rotación sin generar juego excesivo ni fricción innecesaria.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0020"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778069",
+    "pregunta": "El momento o par de una fuerza respecto a un punto produce un efecto de giro. Se define como el producto de la fuerza por la distancia de la fuerza al punto de giro.",
+    "opciones": [
+      "Verdadero.",
+      "Falso."
+    ],
+    "correcta": 0,
+    "explicacion": "El momento o par es, efectivamente, el producto vectorial entre la fuerza aplicada y el vector que une el punto de giro con el punto de aplicación de esa fuerza. Este concepto matemático describe precisamente la tendencia a rotar alrededor de ese eje o punto fijo.",
+    "ejemplo": "Si intentas abrir una tapa muy apretada, aplicar la fuerza perpendicularmente en un mango largo aumenta el momento generado y facilita mucho más su apertura que si aplicaras la misma fuerza directamente sobre la tapa.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0021"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778087",
+    "pregunta": "Las abrazaderas...",
+    "opciones": [
+      "Son unas piezas prismáticas de acero, de sección rectangular y ligeramente cónicas en sentido longitudinal.",
+      "Se emplean para acoplar tubos elásticos (de plástico o goma) a tubos metálicos o racores.",
+      "Son elementos roscados normalizados, sin cabeza; con ranura o hexágono interior para apretarlos por un extremo, y con el otro terminando en punta redondeada o cónica para apoyar en su alojamiento.",
+      "Tienen como principal misión actuar en posicionado, liberar los tornillos de cargas cortantes, unir piezas transmitiendo momentos y esfuerzos axiales y bloquear tuercas para evitar que se aflojen."
+    ],
+    "correcta": 1,
+    "explicacion": "Las abrazaderas están diseñadas específicamente para sujetar materiales flexibles, como mangueras de goma o plástico, uniéndolas a estructuras más rígidas como tuberías metálicas o racores. Su función es garantizar la estanqueidad y el soporte mecánico entre dos tipos de conductos diferentes.",
+    "ejemplo": "Cuando conectas una manguera de refrigerante a un radiador metálico, utilizas una abrazadera para asegurar que no haya fugas ni movimientos bruscos en esa unión.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0022"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778092",
+    "pregunta": "¿Qué se define como el producto de la fuerza por la distancia de la fuerza al punto de giro?",
+    "opciones": [
+      "Potencia.",
+      "Momento o par de fuerza.",
+      "Fuerza.",
+      "Potencia motriz."
+    ],
+    "correcta": 1,
+    "explicacion": "El momento, o par de fuerza, es la medida de la capacidad de una fuerza para provocar un giro o rotación alrededor de un eje o punto fijo. Matemáticamente se calcula multiplicando el valor de la fuerza aplicada por la distancia perpendicular desde ese punto de giro hasta la línea de acción de la fuerza.",
+    "ejemplo": "Cuando apretamos un tornillo con una llave, el par que aplicamos es el producto del esfuerzo que hacemos por la longitud de la llave; cuanto más largo sea el brazo de palanca, mayor será el momento generado.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0023"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778098",
+    "pregunta": "El esfuerzo contrario a la \"Tracción\" es:",
+    "opciones": [
+      "La compresión.",
+      "La flexión",
+      "El corte",
+      "La cizalladura"
+    ],
+    "correcta": 0,
+    "explicacion": "La tracción se refiere a las fuerzas que tienden a estirar o separar un material, alargándolo en su eje longitudinal. Por definición, la compresión es el esfuerzo opuesto que tiende a acortar o aplastar ese mismo material.",
+    "ejemplo": "Si al tirar de una barra metálica (tracción) hasta que casi se rompe, aplicar fuerza desde los extremos para intentar doblarla hacia adentro sin separarla sería un ejemplo de compresión.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0024"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778068",
+    "pregunta": "Las uniones elásticas o silentblocks utilizan un vínculo intermedio flexible, ¿qué material se utiliza?",
+    "opciones": [
+      "Caucho o goma.",
+      "Madera.",
+      "Aleación de hierro.",
+      "Amianto."
+    ],
+    "correcta": 0,
+    "explicacion": "El caucho o la goma se utilizan por su alta capacidad de amortiguación y flexibilidad, permitiendo absorber vibraciones y ruidos entre dos componentes mecánicos. Este material es ideal para crear un vínculo intermedio que limite el par de torsión transmitido sin impedir completamente el movimiento relativo.",
+    "ejemplo": "Si tienes un motor montado sobre estos silentblocks en un vehículo, evitarás que las vibraciones del motor se transmitan directamente al chasis y sean molestas para los ocupantes.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0025"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778096",
+    "pregunta": "¿Cuál de los siguientes componentes no está dentro de un mecanismo de palancas?",
+    "opciones": [
+      "Bastidor.",
+      "Husillo.",
+      "Manivelas.",
+      "Palancas."
+    ],
+    "correcta": 1,
+    "explicacion": "Un mecanismo de palancas se basa en la acción de fuerzas aplicadas a brazos rígidos que pivotan alrededor de un punto fijo llamado fulcro. Los husillos son elementos rotativos que transmiten movimiento lineal o angular, pero no constituyen por sí mismos el principio básico del sistema de palanca.",
+    "ejemplo": "Si tienes que levantar una tapa pesada usando una barra larga y apoyándola sobre un punto bajo la tapa, estás utilizando el principio de palancas sin necesidad de conectar un husillo.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0026"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778083",
+    "pregunta": "Para que dos ruedas engranen una con otra, es necesario que las dos tengan:",
+    "opciones": [
+      "El mismo módulo.",
+      "El mismo número de clientes.",
+      "El mismo diámetro primitivo.",
+      "El mismo diámetro exterior."
+    ],
+    "correcta": 0,
+    "explicacion": "El módulo es una característica geométrica fundamental que define el tamaño del diente en un sistema de engranajes y asegura la correcta interacción entre ellos. Si los módulos son diferentes, los dientes no encajarán ni transmitirán el movimiento adecuadamente.",
+    "ejemplo": "Si intentas montar dos poleas con reductores distintos sin verificar su módulo, verás que los dientes quedan desalineados o rozan incorrectamente al girar.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0027"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778091",
+    "pregunta": "Dentro de la deformación de los materiales si decimos que existe un esfuerzo por torsión...",
+    "opciones": [
+      "Las fuerzas lo alargan.",
+      "Las fuerzas lo curvan.",
+      "Las fuerzas lo contraen.",
+      "Las fuerzas lo tuercen."
+    ],
+    "correcta": 3,
+    "explicacion": "El esfuerzo por torsión se genera cuando un elemento estructural experimenta un par de momentos que intentan hacerlo girar alrededor de su eje longitudinal. Este tipo de esfuerzo provoca una deformación angular o giro en el material.",
+    "ejemplo": "Piensa en la llave inglesa al apretar un tornillo; el par aplicado causa un esfuerzo de torsión en la rosca del tornillo.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0028"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778082",
+    "pregunta": "Si tenemos un rodamiento cuya denominación es 32203 ZZ, ¿qué significado tienen las ZZ?",
+    "opciones": [
+      "Que el elemento rodante son agujas.",
+      "Que dispone de dos protecciones, una a cada lado del rodamiento.",
+      "Que soporta perfectamente los esfuerzos axiales.",
+      "Ninguna de las respuestas anteriores es correcta."
+    ],
+    "correcta": 1,
+    "explicacion": "Las letras al final de la denominación de un rodamiento indican su tipo de sellado o protección. El código ZZ significa que el rodamiento está protegido por dos sellos metálicos, uno en cada carcasa lateral.",
+    "ejemplo": "Si vas a montar este rodamiento en una aplicación donde haya polvo fino o suciedad constante, los sellos te aseguran un mejor mantenimiento y mayor vida útil al conjunto.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0029"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778103",
+    "pregunta": "Los engranajes helicoidales:",
+    "opciones": [
+      "Permiten el ataque recto de la rueda transmisora sobre la transmitida",
+      "No se usan en los sistemas de transmisión de los vehículos",
+      "Se caracterizan porque el engranado no se produce por choque entre los flancos sino por deslizamiento.",
+      "Están formados por ruedas dentadas rectas."
+    ],
+    "correcta": 2,
+    "explicacion": "Los engranajes helicoidales están diseñados para que sus dientes entren en contacto de forma gradual y progresiva a lo largo de su superficie curva, lo cual genera un movimiento más suave. Este proceso implica un deslizamiento controlado entre los flancos en lugar del impacto directo característico de los engranajes rectos.",
+    "ejemplo": "Al comparar con una caja de cambios manual, notarás que el cambio de marcha es mucho más silencioso y sin sacudidas bruscas gracias a este tipo de acoplamiento.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0030"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778106",
+    "pregunta": "El sistema de leva y seguidor:",
+    "opciones": [
+      "Transforma el movimiento angular en lineal",
+      "Transforma el movimiento lineal en angular",
+      "No transforma el movimiento, solo la fuerza",
+      "Es un sistema de engranajes mu rudimentario y puede realizar transformaciones mecánicas"
+    ],
+    "correcta": 0,
+    "explicacion": "La leva está diseñada para transformar el movimiento rotatorio continuo del eje que la acciona en un movimiento de traslación o vibración periódico. Este principio se basa en la geometría de contacto entre la leva y su seguidor, forzándolo a seguir un perfil específico.",
+    "ejemplo": "En los motores de combustión interna, la leva transforma el giro del cigüeñal en el movimiento vertical necesario para abrir y cerrar las válvulas de admisión y escape.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0031"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778074",
+    "pregunta": "Cuando se somete a un esfuerzo a un material y sus fibras se estiran, está realizando un esfuerzo de:",
+    "opciones": [
+      "Compresión.",
+      "Tracción.",
+      "Cortadura.",
+      "Ninguno de los anteriores."
+    ],
+    "correcta": 1,
+    "explicacion": "La tracción es el tipo de esfuerzo que se produce cuando un cuerpo tiende a alargarse o estirarse, lo cual implica la separación de sus elementos internos. Este fenómeno ocurre porque las fuerzas aplicadas actúan en direcciones opuestas a lo largo del eje longitudinal del material.",
+    "ejemplo": "Cuando tensas una banda metálica para medir su longitud, estás aplicando un esfuerzo de tracción sobre ella.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0032"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778101",
+    "pregunta": "Las poleas fijas.",
+    "opciones": [
+      "Multiplican la fuarza aplicada por dos",
+      "Dividen la fuerza aplicada por dos",
+      "No sirven para la aplicación de fuerzas de ningún tipo",
+      "No afectan al valor de la fuerza aplicada sobre ellas, tan solo transforman la dirección de la fuerza aplicada"
+    ],
+    "correcta": 3,
+    "explicacion": "Las poleas fijas operan únicamente cambiando el sentido o la dirección de una fuerza sin modificar su magnitud. Esto se debe a que el sistema está anclado y no hay un cambio en las distancias recorridas por la fuerza aplicada respecto al punto de apoyo.",
+    "ejemplo": "Si necesitas tirar hacia abajo para levantar algo, usar una polea fija te permite aplicar esa tensión verticalmente en lugar de tener que hacerlo horizontalmente.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0033"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778085",
+    "pregunta": "Tenemos dos volantes de dirección, uno tiene el doble de diámetro que el otro. El esfuerzo que tenemos que hacer en el pequeño para producir el mismo momento o par será",
+    "opciones": [
+      "Igual.",
+      "Menor.",
+      "Mayor.",
+      "El doble."
+    ],
+    "correcta": 3,
+    "explicacion": "El momento de fuerza, o par, se calcula multiplicando la fuerza aplicada por la distancia al punto de apoyo (el radio). Si el diámetro es el doble, el radio también lo es, y para mantener el mismo par debes aplicar una fuerza mayor.",
+    "ejemplo": "Si en un volante pequeño aplicas 100 Nm con una fuerza X, en el volante grande necesitarás aplicar dos veces esa fuerza X para obtener los mismos 200 Nm de par.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0034"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778104",
+    "pregunta": "Para engranar ejes que se cruzan el tipo de dentado debe ser:",
+    "opciones": [
+      "Recto",
+      "Helicoidal",
+      "No puede realizarse este tipo de engranaje",
+      "Todas las demás respuestas son correctas."
+    ],
+    "correcta": 1,
+    "explicacion": "El dentado helicoidal está diseñado específicamente para transmitir potencia entre ejes que están en ángulo o que se cruzan, ya que sus dientes cortan el material de forma paralela al eje. Este perfil permite una acción de corte más suave y gradual que los perfiles rectos.",
+    "ejemplo": "Si tienes que acoplar dos ejes formando un ángulo de 90 grados, usar un engranaje helicoidal te proporcionará una transmisión mucho más silenciosa y eficiente que intentar con dientes rectos.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0035"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778078",
+    "pregunta": "¿Qué relación de transmisión tienen dos engranajes, uno acoplado al otro, en sus velocidades lineales en la circunferencia primitiva?",
+    "opciones": [
+      "Mayor de la unidad.",
+      "Menor de la unidad.",
+      "Igual a 1.",
+      "Igual a 0."
+    ],
+    "correcta": 2,
+    "explicacion": "Cuando dos engranajes están acoplados directamente, sus radios y las velocidades lineales de los puntos de contacto en la circunferencia primitiva deben ser iguales para que el sistema funcione sin deslizamiento. Esto se debe a que ambos puntos tienen que recorrer la misma distancia en el mismo intervalo de tiempo.",
+    "ejemplo": "Si estás revisando un cambio manual y dos piñones están acoplados, al medir su velocidad lineal en los dientes, verás que son idénticas porque están conectados por el eje.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0036"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778070",
+    "pregunta": "En el movimiento angular de un coche tomando una curva a la derecha, ¿qué rueda es la que tiene menor velocidad angular?",
+    "opciones": [
+      "Todas igual.",
+      "Las dos del lado izquierdo",
+      "La delantera derecha.",
+      "La trasera derecha."
+    ],
+    "correcta": 3,
+    "explicacion": "Al tomar una curva a la derecha, el vehículo realiza un movimiento de giro que implica que las ruedas del lado exterior (en este caso, las derechas) recorren una distancia mayor en comparación con las del lado interior. Esta diferencia de recorrido se traduce en una menor velocidad angular para la rueda trasera derecha respecto al resto.",
+    "ejemplo": "Si estás haciendo un paralelo y el coche tiende a irse hacia la izquierda, notarás que la rueda trasera derecha está ligeramente más \"atrasada\" o girando con menos inercia aparente que las otras ruedas.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0037"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778095",
+    "pregunta": "¿Cuál de las siguientes afirmaciones no es correcta?",
+    "opciones": [
+      "En un movimiento lineal en cuanquier instante las velocidades de todos los puntos del cuerpo no son iguales.",
+      "Un cuerpo tiene movimiento angular cuando las trayectorias de todos sus puntos son circunferencias concéntricas, con centro en el centro de rotación.",
+      "El problema que plantea un movimiento compuesto es calcular el centro instantáneo de rotación.",
+      "La velocidad angular de todos sus puntos o, lo que es lo mismo, el número de vueltas que dan en la unidad de tiempo, es la misma."
+    ],
+    "correcta": 0,
+    "explicacion": "En un movimiento lineal traslacional puro, todos los puntos del cuerpo se desplazan con la misma velocidad y dirección en cualquier instante dado. La afirmación A es incorrecta porque implica que las velocidades varían entre los puntos, lo cual solo ocurre en movimientos más complejos como el curvilíneo o compuesto.",
+    "ejemplo": "Cuando empujas un coche recto por una calle plana, todos los puntos del vehículo se desplazan con la misma velocidad lineal.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0038"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778100",
+    "pregunta": "La fatiga es un tipo de esfuerzo.",
+    "opciones": [
+      "Puntual",
+      "Cíclico",
+      "Axial y lineal",
+      "Angular"
+    ],
+    "correcta": 1,
+    "explicacion": "La fatiga se produce por la aplicación repetida de esfuerzos, incluso si estos son inferiores al límite elástico del material. Este esfuerzo cíclico provoca microfisuras que crecen progresivamente hasta causar una fractura final.",
+    "ejemplo": "Si un eje está sometido a vibraciones constantes debido a un desequilibrio en las ruedas, eventualmente fallará por fatiga aunque no haya sobrecargado nunca su resistencia máxima.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0039"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-mecanicos",
+    "submodulo": "SISTEMAS MECÁNICOS",
+    "idExterno": "2778086",
+    "pregunta": "Las arandelas de seguridad...",
+    "opciones": [
+      "Tienen la misión de proporcionar un asiento correcto a las cabezas de los tornillos y las tuercas.",
+      "Son arandelas de aspecto normal provistas de una solapa cuyo extremo se dobla sobre una arista de la pieza.",
+      "Tienen por misión impedir el aflojamiento de los tornillos por las vibraciones de los elementos que los rodean",
+      "Son anillos cilíndricos que disponen en un sentido radial de uno o más prisioneros."
+    ],
+    "correcta": 2,
+    "explicacion": "Las arandelas de seguridad están diseñadas específicamente para resistir la acción de las vibraciones y las fuerzas de torsión que tienden a aflojar una unión mecánica. Su geometría especial asegura que, incluso si hay un movimiento vibratorio constante, mantendrán la tensión adecuada en la unión.",
+    "ejemplo": "Si trabajamos en el motor y detectamos que un soporte vibra mucho al ralentí, debemos usar arandelas de seguridad para asegurar que los tornillos no se aflojen con el tiempo.",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0040"
+  }
+]
