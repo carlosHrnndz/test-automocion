@@ -549,7 +549,7 @@
     "correcta": 0,
     "explicacion": "El momento o par es, efectivamente, el producto vectorial entre la fuerza aplicada y el vector que une el punto de giro con el punto de aplicación de esa fuerza. Este concepto matemático describe precisamente la tendencia a rotar alrededor de ese eje o punto fijo.",
     "ejemplo": "Si intentas abrir una tapa muy apretada, aplicar la fuerza perpendicularmente en un mango largo aumenta el momento generado y facilita mucho más su apertura que si aplicaras la misma fuerza directamente sobre la tapa.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -576,7 +576,7 @@
     "correcta": 1,
     "explicacion": "Las abrazaderas están diseñadas específicamente para sujetar materiales flexibles, como mangueras de goma o plástico, uniéndolas a estructuras más rígidas como tuberías metálicas o racores. Su función es garantizar la estanqueidad y el soporte mecánico entre dos tipos de conductos diferentes.",
     "ejemplo": "Cuando conectas una manguera de refrigerante a un radiador metálico, utilizas una abrazadera para asegurar que no haya fugas ni movimientos bruscos en esa unión.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -603,7 +603,7 @@
     "correcta": 1,
     "explicacion": "El momento, o par de fuerza, es la medida de la capacidad de una fuerza para provocar un giro o rotación alrededor de un eje o punto fijo. Matemáticamente se calcula multiplicando el valor de la fuerza aplicada por la distancia perpendicular desde ese punto de giro hasta la línea de acción de la fuerza.",
     "ejemplo": "Cuando apretamos un tornillo con una llave, el par que aplicamos es el producto del esfuerzo que hacemos por la longitud de la llave; cuanto más largo sea el brazo de palanca, mayor será el momento generado.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -630,7 +630,7 @@
     "correcta": 0,
     "explicacion": "La tracción se refiere a las fuerzas que tienden a estirar o separar un material, alargándolo en su eje longitudinal. Por definición, la compresión es el esfuerzo opuesto que tiende a acortar o aplastar ese mismo material.",
     "ejemplo": "Si al tirar de una barra metálica (tracción) hasta que casi se rompe, aplicar fuerza desde los extremos para intentar doblarla hacia adentro sin separarla sería un ejemplo de compresión.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -657,7 +657,7 @@
     "correcta": 0,
     "explicacion": "El caucho o la goma se utilizan por su alta capacidad de amortiguación y flexibilidad, permitiendo absorber vibraciones y ruidos entre dos componentes mecánicos. Este material es ideal para crear un vínculo intermedio que limite el par de torsión transmitido sin impedir completamente el movimiento relativo.",
     "ejemplo": "Si tienes un motor montado sobre estos silentblocks en un vehículo, evitarás que las vibraciones del motor se transmitan directamente al chasis y sean molestas para los ocupantes.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -684,7 +684,7 @@
     "correcta": 1,
     "explicacion": "Un mecanismo de palancas se basa en la acción de fuerzas aplicadas a brazos rígidos que pivotan alrededor de un punto fijo llamado fulcro. Los husillos son elementos rotativos que transmiten movimiento lineal o angular, pero no constituyen por sí mismos el principio básico del sistema de palanca.",
     "ejemplo": "Si tienes que levantar una tapa pesada usando una barra larga y apoyándola sobre un punto bajo la tapa, estás utilizando el principio de palancas sin necesidad de conectar un husillo.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -711,7 +711,7 @@
     "correcta": 0,
     "explicacion": "El módulo es una característica geométrica fundamental que define el tamaño del diente en un sistema de engranajes y asegura la correcta interacción entre ellos. Si los módulos son diferentes, los dientes no encajarán ni transmitirán el movimiento adecuadamente.",
     "ejemplo": "Si intentas montar dos poleas con reductores distintos sin verificar su módulo, verás que los dientes quedan desalineados o rozan incorrectamente al girar.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -738,7 +738,7 @@
     "correcta": 3,
     "explicacion": "El esfuerzo por torsión se genera cuando un elemento estructural experimenta un par de momentos que intentan hacerlo girar alrededor de su eje longitudinal. Este tipo de esfuerzo provoca una deformación angular o giro en el material.",
     "ejemplo": "Piensa en la llave inglesa al apretar un tornillo; el par aplicado causa un esfuerzo de torsión en la rosca del tornillo.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -765,7 +765,7 @@
     "correcta": 1,
     "explicacion": "Las letras al final de la denominación de un rodamiento indican su tipo de sellado o protección. El código ZZ significa que el rodamiento está protegido por dos sellos metálicos, uno en cada carcasa lateral.",
     "ejemplo": "Si vas a montar este rodamiento en una aplicación donde haya polvo fino o suciedad constante, los sellos te aseguran un mejor mantenimiento y mayor vida útil al conjunto.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -792,7 +792,7 @@
     "correcta": 2,
     "explicacion": "Los engranajes helicoidales están diseñados para que sus dientes entren en contacto de forma gradual y progresiva a lo largo de su superficie curva, lo cual genera un movimiento más suave. Este proceso implica un deslizamiento controlado entre los flancos en lugar del impacto directo característico de los engranajes rectos.",
     "ejemplo": "Al comparar con una caja de cambios manual, notarás que el cambio de marcha es mucho más silencioso y sin sacudidas bruscas gracias a este tipo de acoplamiento.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -819,7 +819,7 @@
     "correcta": 0,
     "explicacion": "La leva está diseñada para transformar el movimiento rotatorio continuo del eje que la acciona en un movimiento de traslación o vibración periódico. Este principio se basa en la geometría de contacto entre la leva y su seguidor, forzándolo a seguir un perfil específico.",
     "ejemplo": "En los motores de combustión interna, la leva transforma el giro del cigüeñal en el movimiento vertical necesario para abrir y cerrar las válvulas de admisión y escape.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -846,7 +846,7 @@
     "correcta": 1,
     "explicacion": "La tracción es el tipo de esfuerzo que se produce cuando un cuerpo tiende a alargarse o estirarse, lo cual implica la separación de sus elementos internos. Este fenómeno ocurre porque las fuerzas aplicadas actúan en direcciones opuestas a lo largo del eje longitudinal del material.",
     "ejemplo": "Cuando tensas una banda metálica para medir su longitud, estás aplicando un esfuerzo de tracción sobre ella.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -873,7 +873,7 @@
     "correcta": 3,
     "explicacion": "Las poleas fijas operan únicamente cambiando el sentido o la dirección de una fuerza sin modificar su magnitud. Esto se debe a que el sistema está anclado y no hay un cambio en las distancias recorridas por la fuerza aplicada respecto al punto de apoyo.",
     "ejemplo": "Si necesitas tirar hacia abajo para levantar algo, usar una polea fija te permite aplicar esa tensión verticalmente en lugar de tener que hacerlo horizontalmente.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -900,7 +900,7 @@
     "correcta": 3,
     "explicacion": "El momento de fuerza, o par, se calcula multiplicando la fuerza aplicada por la distancia al punto de apoyo (el radio). Si el diámetro es el doble, el radio también lo es, y para mantener el mismo par debes aplicar una fuerza mayor.",
     "ejemplo": "Si en un volante pequeño aplicas 100 Nm con una fuerza X, en el volante grande necesitarás aplicar dos veces esa fuerza X para obtener los mismos 200 Nm de par.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -927,7 +927,7 @@
     "correcta": 1,
     "explicacion": "El dentado helicoidal está diseñado específicamente para transmitir potencia entre ejes que están en ángulo o que se cruzan, ya que sus dientes cortan el material de forma paralela al eje. Este perfil permite una acción de corte más suave y gradual que los perfiles rectos.",
     "ejemplo": "Si tienes que acoplar dos ejes formando un ángulo de 90 grados, usar un engranaje helicoidal te proporcionará una transmisión mucho más silenciosa y eficiente que intentar con dientes rectos.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -954,7 +954,7 @@
     "correcta": 2,
     "explicacion": "Cuando dos engranajes están acoplados directamente, sus radios y las velocidades lineales de los puntos de contacto en la circunferencia primitiva deben ser iguales para que el sistema funcione sin deslizamiento. Esto se debe a que ambos puntos tienen que recorrer la misma distancia en el mismo intervalo de tiempo.",
     "ejemplo": "Si estás revisando un cambio manual y dos piñones están acoplados, al medir su velocidad lineal en los dientes, verás que son idénticas porque están conectados por el eje.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -981,7 +981,7 @@
     "correcta": 3,
     "explicacion": "Al tomar una curva a la derecha, el vehículo realiza un movimiento de giro que implica que las ruedas del lado exterior (en este caso, las derechas) recorren una distancia mayor en comparación con las del lado interior. Esta diferencia de recorrido se traduce en una menor velocidad angular para la rueda trasera derecha respecto al resto.",
     "ejemplo": "Si estás haciendo un paralelo y el coche tiende a irse hacia la izquierda, notarás que la rueda trasera derecha está ligeramente más \"atrasada\" o girando con menos inercia aparente que las otras ruedas.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -1008,7 +1008,7 @@
     "correcta": 0,
     "explicacion": "En un movimiento lineal traslacional puro, todos los puntos del cuerpo se desplazan con la misma velocidad y dirección en cualquier instante dado. La afirmación A es incorrecta porque implica que las velocidades varían entre los puntos, lo cual solo ocurre en movimientos más complejos como el curvilíneo o compuesto.",
     "ejemplo": "Cuando empujas un coche recto por una calle plana, todos los puntos del vehículo se desplazan con la misma velocidad lineal.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -1035,7 +1035,7 @@
     "correcta": 1,
     "explicacion": "La fatiga se produce por la aplicación repetida de esfuerzos, incluso si estos son inferiores al límite elástico del material. Este esfuerzo cíclico provoca microfisuras que crecen progresivamente hasta causar una fractura final.",
     "ejemplo": "Si un eje está sometido a vibraciones constantes debido a un desequilibrio en las ruedas, eventualmente fallará por fatiga aunque no haya sobrecargado nunca su resistencia máxima.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -1062,7 +1062,7 @@
     "correcta": 2,
     "explicacion": "Las arandelas de seguridad están diseñadas específicamente para resistir la acción de las vibraciones y las fuerzas de torsión que tienden a aflojar una unión mecánica. Su geometría especial asegura que, incluso si hay un movimiento vibratorio constante, mantendrán la tensión adecuada en la unión.",
     "ejemplo": "Si trabajamos en el motor y detectamos que un soporte vibra mucho al ralentí, debemos usar arandelas de seguridad para asegurar que los tornillos no se aflojen con el tiempo.",
-    "revisado": false,
+    "revisado": true,
     "material": {
       "pdf": null,
       "pagina": null,
@@ -1072,5 +1072,3380 @@
     },
     "tags": [],
     "id": "cfsd-0040"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778154",
+    "pregunta": "¿Por qué razón se colocan las tuberías de las tomas de la red con ángulos de 60º?",
+    "opciones": [
+      "Por razones ergonómicas.",
+      "Para mejorar la presión de servicio.",
+      "Para no arrastrar el agua condensada.",
+      "Para ahorrar material."
+    ],
+    "correcta": 2,
+    "explicacion": "El ángulo de 60 grados se utiliza para asegurar que la trayectoria del fluido o gas minimice el efecto de sifonamiento por gravedad. Esto evita que el agua condensada, generada en los sistemas, sea arrastrada hacia zonas donde no debe ir.",
+    "ejemplo": "Si instalas una toma baja con un ángulo incorrecto, podrías ver cómo el agua acumulada se va por la tubería principal aunque el sistema esté apagado.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0041"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778123",
+    "pregunta": "¿Qué componente no forma parte de un manómetro?",
+    "opciones": [
+      "Muelle tubular.",
+      "Aguja lectora.",
+      "Escala graduada.",
+      "Depósito de aceite."
+    ],
+    "correcta": 3,
+    "explicacion": "Un manómetro es un instrumento diseñado para medir la presión, por lo que sus componentes principales son los elementos que generan el movimiento proporcional a dicha presión y los encargados de visualizarlo. El depósito de aceite no tiene función directa en la medición de la presión ni forma parte del mecanismo indicador.",
+    "ejemplo": "Si tienes que verificar la presión de un sistema hidráulico sin medirla, podrías observar si hay fugas visibles o si el nivel de fluido es incorrecto, pero eso no sustituye al manómetro.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0042"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778122",
+    "pregunta": "¿Qué se conoce como presión relativa?",
+    "opciones": [
+      "La diferencia que hay entre la presión de un recipiente menos la presión atmosférica.",
+      "La presión reinante en un recipiente.",
+      "La suma entre la presión de un recipiente y la presión atmosférica.",
+      "La presión que existe en las paredes de un recipiente colocado en la atmósfera."
+    ],
+    "correcta": 0,
+    "explicacion": "La presión relativa es el valor medido por manómetros diferenciales, ya que mide la sobrepresión respecto a la atmósfera circundante. Este concepto es fundamental para saber cuánta fuerza adicional hay en un fluido dentro de un sistema cerrado.",
+    "ejemplo": "Si mides la presión de un cilindro hidráulico y obtienes una lectura positiva, esa es la presión relativa que puedes usar para calcular el par motor.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0043"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778150",
+    "pregunta": "¿Cómo se denomina al principio de funcionamiento de los lubricadores?",
+    "opciones": [
+      "Efecto Venturi.",
+      "Perdida de carga.",
+      "Ley de Charles.",
+      "Ley de Boyle-Mariotte."
+    ],
+    "correcta": 0,
+    "explicacion": "El efecto Venturi se basa en la relación entre el caudal, la velocidad y la presión en un conducto que varía de sección. Al reducirse la sección del tubo, aumenta la velocidad del fluido y, por lo tanto, disminuye su presión estática.",
+    "ejemplo": "En los sistemas hidráulicos, este principio se utiliza para generar una diferencia de presión aprovechando la constricción en una tubería o boquilla.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0044"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778125",
+    "pregunta": "¿Cuál de las siguientes unidades no equivale a 1 bar?",
+    "opciones": [
+      "1 kg/cm².",
+      "1 atmósfera.",
+      "105 Pa.",
+      "1 psi."
+    ],
+    "correcta": 3,
+    "explicacion": "El bar es una unidad de presión que se relaciona directamente con la atmósfera y también puede expresarse en unidades de fuerza por superficie como el kg/cm². La unidad psi mide libras por pulgada cuadrada, lo cual corresponde a otra escala de medición.",
+    "ejemplo": "Si estás calibrando un manómetro para revisar frenos, debes asegurarte de que las unidades del equipo coincidan con la presión de trabajo esperada en el circuito.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0045"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778148",
+    "pregunta": "¿Qué elemento no es necesario colocar en las unidades de los puntos de utilización?",
+    "opciones": [
+      "Filtro.",
+      "Manómetro.",
+      "Lubricador.",
+      "Regulador de temperatura."
+    ],
+    "correcta": 3,
+    "explicacion": "Los puntos de utilización en sistemas neumáticos e hidráulicos son puntos donde se toman decisiones o mediciones del fluido, por lo que requieren elementos como filtros para limpiar el aire o aceite, manómetros para medir la presión y lubricadores para asegurar la alimentación de lubricante. El regulador de temperatura es un componente más asociado a sistemas termodinámicos o refrigeración, no siendo esencial en la función básica de control y acondicionamiento de fluidos en estos circuitos.",
+    "ejemplo": "Si tienes que purgar una línea de aire comprimido antes de conectar un actuador, te centrarás en filtrar y regular la presión, sin necesidad de controlar su temperatura.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0046"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778225",
+    "pregunta": "¿Cuál de las siguientes afirmaciones es falsa?",
+    "opciones": [
+      "Los depósitos aseguran la existencia del volumen de aceite necesario para alimentar el circuito.",
+      "Los depósitos disminuyen la temperatura del aceite antes de que este sea impulsado de nuevo al circuito.",
+      "Los depósitos sirven de alojamiento para los filtros de aceite.",
+      "Los depósitos aseguran la estabilidad de la presión en todo el circuito."
+    ],
+    "correcta": 3,
+    "explicacion": "Los depósitos están diseñados para almacenar un volumen constante de fluido, lo que ayuda a mantener un caudal estable al sistema. La estabilidad de la presión depende más del accionamiento y de los componentes reguladores como las bombas o acumuladores.En el taller, si hay una caída brusca de nivel en el depósito, es posible que se note una fluctuación momentánea en la presión de trabajo.",
+    "ejemplo": "",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0047"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778210",
+    "pregunta": "¿Qué tipo de circuitos hidráulicos son utilizados para las aplicaciones que requieren una gran precisión?",
+    "opciones": [
+      "Sistemas con bomba manual.",
+      "Sistemas hidráulicos manuales.",
+      "Sistemas electrohidráulicos.",
+      "Sistemas servocontrolados."
+    ],
+    "correcta": 3,
+    "explicacion": "Los sistemas servocontrolados utilizan servomotores y válvulas proporcionales para modular el caudal y la presión de manera muy precisa. Esto permite un control del movimiento continuo y altamente repetible, ideal para tareas delicadas.",
+    "ejemplo": "Cuando tienes que posicionar un brazo robótico en una estación de diagnóstico sin desviaciones milimétricas, es imprescindible usar este tipo de sistema.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0048"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778193",
+    "pregunta": "¿Cómo se denominan las válvulas que se accionan mediante aire con diversos valores de presión?",
+    "opciones": [
+      "Accionamiento muscular.",
+      "Accionamiento mecánico.",
+      "Accionamiento neumático.",
+      "Accionamiento eléctrico."
+    ],
+    "correcta": 2,
+    "explicacion": "El accionamiento neumático se refiere al uso de aire comprimido para generar movimiento o fuerza en un sistema, lo cual es el principio físico detrás del funcionamiento de estas válvulas. Estas válvulas están diseñadas específicamente para recibir y controlar la presión del fluido gaseoso (aire).",
+    "ejemplo": "Si tienes que accionar un cilindro grande en un taller usando compresor, estás utilizando un circuito neumático controlado por una válvula adecuada.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0049"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": null,
+    "pregunta": "¿Cuál de los siguientes tipos de bombas es el más común?",
+    "opciones": [
+      "Bomba de pistones.",
+      "Bomba de paletas.",
+      "Bomba de tornillo.",
+      "Bomba de engranajes."
+    ],
+    "correcta": 3,
+    "explicacion": "Las bombas de engranajes son el tipo más habitual por su sencillez mecánica y robustez, además de ser fáciles de mantener en entornos industriales. Funcionan mediante la rotación de dos o más engranajes que atrapan y desplazan un fluido confinado entre sus dientes.",
+    "ejemplo": "Si tienes que montar un circuito hidráulico básico para mover un actuador pequeño, es muy probable que el fabricante haya optado por una bomba de engranajes por su fiabilidad general.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0050"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778171",
+    "pregunta": "¿Cuál de las siguientes afirmaciones no es una limitación de carrera para un actuador neumático?",
+    "opciones": [
+      "Disponibilidad comercial.",
+      "Proporción entre diámetro y vástago.",
+      "Esfuerzos de flexión y pandeo.",
+      "Incompatibilidad de las juntas dinámicas."
+    ],
+    "correcta": 0,
+    "explicacion": "Las limitaciones de carrera se refieren a restricciones físicas o mecánicas del actuador, como los esfuerzos que soporta el vástago o las conexiones. La disponibilidad comercial es un factor económico y logístico, no una limitación física inherente al funcionamiento del sistema.",
+    "ejemplo": "Si necesitas una carrera muy larga en un entorno con mucho polvo, podrías tener problemas de sellado o desgaste prematuro, lo cual sí sería una limitación real.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0051"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778136",
+    "pregunta": "¿Cuál de las siguientes presiones es óptima para trabajar con un compresor de paletas?",
+    "opciones": [
+      "1 bar",
+      "1 Pa.",
+      "10 bar.",
+      "50 bar."
+    ],
+    "correcta": 2,
+    "explicacion": "Los compresores de paletas están diseñados para operar con presiones medias, siendo 10 bares un rango estándar y seguro para la mayoría de las aplicaciones automotrices. Trabajar a presiones muy bajas o excesivamente altas puede comprometer la eficiencia o causar daños al sistema.",
+    "ejemplo": "Si intentas alimentar una herramienta neumática que requiere más presión de la que soporta el compresor, podrías provocar un sobreesfuerzo en los componentes internos del equipo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0052"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778215",
+    "pregunta": "¿Cuál de las siguientes válvulas permite o no el paso de fluido, mediante el apoyo o separación, entre dos órganos de la propia válvula?",
+    "opciones": [
+      "Válvula de secuencia.",
+      "Válvula de corredera.",
+      "Válvula distribuidora.",
+      "Válvula de asiento."
+    ],
+    "correcta": 3,
+    "explicacion": "La válvula de asiento es el elemento que regula el paso del fluido al crear un sello o bloqueo entre dos superficies, permitiendo o impidiendo su tránsito según la posición del mecanismo interno. Su función se basa en el principio de sellado por contacto físico entre sus partes internas.",
+    "ejemplo": "Cuando cierras una llave de paso hidráulica, estás utilizando el principio de asiento para cortar completamente el flujo hacia un actuador.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0053"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778204",
+    "pregunta": "¿Qué válvula cumple la función lógica AND?",
+    "opciones": [
+      "Válvula antirretorno.",
+      "Válvula selectiva.",
+      "Válvula de simultaneidad.",
+      "Válvula estranguladora."
+    ],
+    "correcta": 2,
+    "explicacion": "La válvula de simultaneidad está diseñada para asegurar que dos o más funciones operen al mismo tiempo, cumpliendo con la lógica AND en sistemas neumáticos e hidráulicos. Esto significa que el actuador solo recibirá energía si se activan todas las entradas necesarias simultáneamente.",
+    "ejemplo": "Si necesitas accionar un brazo robótico que requiere tanto presión de aire como una señal eléctrica para moverse, usarías esta válvula para garantizar que ambas condiciones sean ciertas a la vez.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0054"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778133",
+    "pregunta": "¿En los compresores de membrana, qué elemento asegura la estanqueidad del gas?",
+    "opciones": [
+      "Pistón.",
+      "Refrigerante.",
+      "Membrana.",
+      "Válvulas."
+    ],
+    "correcta": 2,
+    "explicacion": "La membrana es el elemento clave en este tipo de compresores, ya que su función principal es separar los fluidos y asegurar un sellado hermético entre las partes móviles o los gases comprimidos. Su flexibilidad permite adaptarse a las presiones operativas sin fugas significativas.",
+    "ejemplo": "Si detectamos una fuga en la conexión del compresor, debemos revisar primero el estado de la membrana para confirmar que no ha sufrido desgaste o rotura.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0055"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778200",
+    "pregunta": "¿Cuál de las siguientes válvulas no pertenece a las válvulas de bloqueo?",
+    "opciones": [
+      "Válvula de presión.",
+      "Válvula antirretorno.",
+      "Válvula selectiva.",
+      "Válvula de purga."
+    ],
+    "correcta": 0,
+    "explicacion": "Las válvulas de bloqueo son aquellas que permiten o impiden el paso del fluido en una dirección determinada, como las antirretorno o selectivas. La válvula de presión actúa limitando la fuerza máxima o la presión máxima del sistema, lo cual es una función diferente a la de bloqueo direccional.",
+    "ejemplo": "Si pones una válvula de presión al circuito de frenos, evitarás que el cilindro se sobrealimente y cause un fallo mecánico por exceso de empuje.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0056"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778138",
+    "pregunta": "¿Cuál es el intervalo de presiones máximo de un compresor de tornillo?",
+    "opciones": [
+      "· 8-10 bar.",
+      "· 8-10 Pa.",
+      "· 2-5 bar.",
+      "· 2-5 Pa."
+    ],
+    "correcta": 0,
+    "explicacion": "Los compresores de tornillo están diseñados para operar en rangos de presión moderada, siendo el rango de 8 a 10 bares típico para la mayoría de las aplicaciones industriales estándar. Este rango permite una buena eficiencia y un caudal adecuado para alimentar sistemas neumáticos sin sobrecargar componentes menores.",
+    "ejemplo": "Si estás instalando un sistema que va a accionar herramientas neumáticas en un taller, es fundamental verificar que el compresor soporte ese rango de presión nominal para garantizar la operatividad segura del equipo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0057"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778108",
+    "pregunta": "¿Qué diferencia la electroneumática de la neumática?",
+    "opciones": [
+      "La electroneumática emplea exclusivamente aire comprimido en todas las etapas de automatización.",
+      "La electroneumática emplea, principalmente, aire comprimido en la etapa de adquisición de datos.",
+      "La electroneumática emplea, principalmente, aire comprimido en el proceso de ejecución de tareas.",
+      "La electroneumática emplea, principalmente, aire comprimido en la etapa de análisis."
+    ],
+    "correcta": 2,
+    "explicacion": "La neumática utiliza exclusivamente aire comprimido para accionar actuadores y realizar trabajos mecánicos. La electroneumática combina la señalización eléctrica, que se usa para controlar o gestionar el sistema, con la potencia del aire comprimido para ejecutar el movimiento físico. Por lo tanto, el aire sigue siendo el medio de trabajo principal en la acción final.",
+    "ejemplo": "Si tienes un actuador lineal controlado por una placa electrónica (eléctrica), pero que mueve un pistón mediante aire, estás utilizando electroneumática.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0058"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778119",
+    "pregunta": "¿De qué manera se compensa el elevado coste de una instalación neumática?",
+    "opciones": [
+      "Vendiendo sobrantes.",
+      "Alquilando los depósitos.",
+      "Elevando el rendimiento.",
+      "Elevando el coste de los componentes."
+    ],
+    "correcta": 2,
+    "explicacion": "La inversión inicial en sistemas neumáticos es considerable, por lo que la rentabilidad debe venir de un aumento significativo de la productividad o eficiencia operativa. Al mejorar el rendimiento, se justifica económicamente el coste elevado del sistema.",
+    "ejemplo": "Si antes tardabas mucho tiempo en realizar una tarea manual, instalar un actuador neumático puede reducir drásticamente ese tiempo, haciendo que la inversión inicial sea rápidamente amortizable.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0059"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778132",
+    "pregunta": "¿Para qué aplicaciones es recomendable el uso de los compresores de una etapa?",
+    "opciones": [
+      "Para pequeñas potencias.",
+      "Para altas potencias.",
+      "Para entornos sin ruido.",
+      "Para altas presiones."
+    ],
+    "correcta": 0,
+    "explicacion": "Los compresores de una etapa están diseñados para generar caudales adecuados en aplicaciones que no requieren grandes volúmenes de aire comprimido. Su funcionamiento se basa en un principio mecánico más sencillo y menos exigente energéticamente que los modelos multietapa.",
+    "ejemplo": "Si tienes que alimentar pequeños actuadores neumáticos en un puesto de trabajo, como sujetadores o pinzas pequeñas, un compresor de una etapa será suficiente y eficiente.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0060"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778159",
+    "pregunta": "¿Cuáles son los elementos estanqueizantes del cilindro?",
+    "opciones": [
+      "Junta estática y dinámica.",
+      "Aro rascador y juntas estáticas y dinámica.",
+      "Aro dinámico y junta estática.",
+      "Aro dinámico y rascador."
+    ],
+    "correcta": 1,
+    "explicacion": "Los elementos estanqueizantes son cruciales para mantener la presión de compresión dentro del cilindro, evitando fugas de gases o fluidos bajo trabajo. Las juntas sellan las uniones fijas (estáticas), mientras que los aros y anillos aseguran el sellado en zonas móviles (dinámicas).",
+    "ejemplo": "Si notas una fuga de aceite por la zona del vástago al accionar el cilindro, es probable que necesites revisar o reemplazar las juntas dinámicas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0061"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778201",
+    "pregunta": "¿Cuál de las siguientes válvulas permite la circulación del aire en un sentido y lo impide en el contrario?",
+    "opciones": [
+      "Válvula antirretorno.",
+      "Válvula selectiva.",
+      "Válvula de purga.",
+      "Válvula estranguladora."
+    ],
+    "correcta": 0,
+    "explicacion": "La válvula antirretorno está diseñada específicamente para permitir el flujo de un fluido en una dirección determinada y sellar completamente la vía cuando se intenta moverlo en sentido contrario. Su funcionamiento se basa en un elemento que actúa como sello unidireccional, impidiendo el reflujo.",
+    "ejemplo": "Si estás trabajando con un actuador neumático y necesitas asegurar que la presión no regrese por la línea de retorno sin querer, debes instalar una válvula antirretorno para garantizar la seguridad del circuito.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0062"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778207",
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre la hidráulica no es correcta?",
+    "opciones": [
+      "Pueden existir problemas de fugas.",
+      "Realiza movimientos regulares.",
+      "Convierte de una manera simple los movimientos giratorios en rectilíneos.",
+      "No requiere un mantenimiento preciso."
+    ],
+    "correcta": 3,
+    "explicacion": "Los sistemas hidráulicos son muy sensibles a la contaminación y al desgaste de sus componentes, por lo que requieren un mantenimiento riguroso para asegurar su correcto funcionamiento. La presión y el caudal dependen directamente del estado de los fluidos y sellados.",
+    "ejemplo": "Si ignoras cambiar el fluido o limpiar los filtros, podrías provocar una pérdida de eficiencia o incluso un fallo catastrófico en la máquina.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0063"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778128",
+    "pregunta": "¿Cuál de las equivalencias es la correcta?",
+    "opciones": [
+      "0 ºC / -273 ºK.",
+      "273 ºC / 0 ºK.",
+      "100 ºC / 273 ºK.",
+      "27 ºC / 300 ºK."
+    ],
+    "correcta": 3,
+    "explicacion": "La conversión entre grados Celsius y Kelvin se realiza sumando 273,15 al valor en Celsius para obtener el equivalente en Kelvin. Por lo tanto, si la temperatura es de 27 ºC, su valor absoluto será de aproximadamente 300 K.",
+    "ejemplo": "Si mides un aceite a 27 ºC en el taller, debes saber que esto corresponde a una presión y comportamiento operativo cercano a los 300 Kelvin para entender sus propiedades termodinámicas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0064"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778140",
+    "pregunta": "¿Qué tipo de compresor se utiliza para la impulsión de materiales polvorientos?",
+    "opciones": [
+      "Compresor roots.",
+      "Compresor de tornillo.",
+      "Compresor de paletas.",
+      "Compresor de una etapa."
+    ],
+    "correcta": 0,
+    "explicacion": "Los compresores Roots son volumétricos y están diseñados para mover grandes volúmenes de aire a presiones moderadas, siendo ideales para materiales que pueden obstruir o desgastar componentes internos con partículas. Su funcionamiento se basa en el aumento del volumen sin alterar significativamente la presión de descarga respecto a la admisión.",
+    "ejemplo": "Si tienes que aspirar polvo fino de una zona de chasis durante un desmontaje, un Roots te dará el caudal necesario sin atascarse fácilmente como lo haría otro tipo de compresor.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0065"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778147",
+    "pregunta": "¿Cuál de las siguientes afirmaciones no es correcta?",
+    "opciones": [
+      "El secador frigorífico instalado después del acumulador evita que la mayor parte de la humedad pase por el refrigerador.",
+      "El secador frigorífico instalado antes del acumulador evita que la mayor parte de la humedad pase por el refrigerador.",
+      "El secador frigorífico instalado antes del acumulador provoca que el funcionamiento sea menos amortiguado.",
+      "El secador frigorífico instalado antes del acumulador evita que el depósito esté sometido al contacto con el aire húmedo."
+    ],
+    "correcta": 1,
+    "explicacion": "La función principal del secador es reducir la cantidad de vapor de agua en el aire comprimido, y su ubicación afecta directamente a la eficiencia del sistema. Colocarlo antes del acumulador no garantiza que pase toda la humedad por el refrigerador porque el proceso de enfriamiento se realiza posteriormente.",
+    "ejemplo": "Si instalas un secador antes del acumulador sin pasar por un refrigerador adecuado, podrías tener condensación excesiva en las tuberías cercanas al depósito.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0066"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778181",
+    "pregunta": "¿A qué proceso se somete la superficie interior de la camisa del cilindro para prolongar la duración de las juntas?",
+    "opciones": [
+      "Rectificado.",
+      "Granallado.",
+      "Pulido.",
+      "Pintado."
+    ],
+    "correcta": 0,
+    "explicacion": "El rectificado es un proceso de mecanizado que busca restaurar o mejorar la geometría y el acabado superficial de una pieza, eliminando desgaste acumulado en superficies críticas como las camisas de cilindro. Este proceso asegura que las tolerancias dimensionales necesarias para el correcto sellado y funcionamiento del motor se mantengan.",
+    "ejemplo": "Si notas un juego excesivo entre los pistones y la camisa debido al uso prolongado, es probable que necesites llevarlo a rectificar para recuperar las dimensiones originales de trabajo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0067"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778145",
+    "pregunta": "¿Qué porcentajes de la humedad aspirada por el compresor son capaces de condensar los refrigeradores posteriores de aire comprimido?",
+    "opciones": [
+      "· 5-10%.",
+      "· 30-50%.",
+      "· 95-100%.",
+      "· 80-90%."
+    ],
+    "correcta": 1,
+    "explicacion": "Los refrigeradores de aire comprimido están diseñados para eliminar una parte significativa del vapor de agua que entra al sistema, pero no pueden alcanzar la condensación total. Este rango porcentual asegura una deshumidificación eficiente sin sobrecargar el equipo.",
+    "ejemplo": "Si notas que el punto de rocío en un racor es excesivamente alto después de pasar por el secador, puede indicar que este último está saturado o que hay una fuga de humedad en algún punto del circuito.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0068"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778189",
+    "pregunta": "¿Con qué símbolo se identifica mediante la norma DIN/ISO a los conductos de trabajo en una instalación neumática?",
+    "opciones": [
+      "P.",
+      "A.",
+      "R.",
+      "L."
+    ],
+    "correcta": 1,
+    "explicacion": "La letra 'A' se utiliza universalmente en la simbología neumática para representar los conductos de trabajo o líneas de potencia que transportan el fluido comprimido desde la fuente hasta los actuadores. Este símbolo indica la trayectoria principal por donde circula el aire a presión.",
+    "ejemplo": "Si estás montando un circuito y ves una línea marcada con 'A' conectada al cilindro, sabes que ahí debe ir el conducto de alimentación principal del sistema.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0069"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778164",
+    "pregunta": "¿Qué es necesario para que se pueda realizar un avance o retroceso en un actuador de doble efecto?",
+    "opciones": [
+      "Diferencia de presión entre las cámaras.",
+      "Diferencia de fuerzas en el vástago.",
+      "Diferencia de peso en los émbolos.",
+      "Diferencia en la composición del aire en las cámaras."
+    ],
+    "correcta": 0,
+    "explicacion": "Para que un actuador cilíndrico se mueva, debe existir una diferencia de presión aplicada a sus dos cámaras internas. Esta diferencia genera la fuerza neta necesaria para vencer la resistencia y mover el vástago.",
+    "ejemplo": "Si aplicas aire a la cámara de avance y mantienes la otra cámara despresurizada, la presión generará un empuje que hará avanzar el pistón.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0070"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778182",
+    "pregunta": "¿Qué tipo de válvula no pertenece a las instalaciones de aire comprimido?",
+    "opciones": [
+      "La válvula distribuidora.",
+      "La válvula de bloqueo.",
+      "La válvula de presión.",
+      "La válvula de temperatura."
+    ],
+    "correcta": 3,
+    "explicacion": "Los sistemas neumáticos y hidráulicos operan mediante fluidos a presión, ya sea aire o aceite, por lo que sus componentes se centran en el control del flujo, la presión y el bloqueo de circuitos. La válvula de temperatura es un componente asociado a sistemas termodinámicos, no al control directo de fluidos comprimidos.",
+    "ejemplo": "Si tienes que controlar si un actuador recibe aire o no, usarías una válvula de bloqueo; para limitar cuánta fuerza puede ejercer, usarías la de presión.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0071"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778129",
+    "pregunta": "¿Cuál es la expresión del trabajo?",
+    "opciones": [
+      "W = fuerza · superficie.",
+      "W = potencia · tiempo.",
+      "W = fuerza · recorrido.",
+      "W = fuerza · volumen."
+    ],
+    "correcta": 2,
+    "explicacion": "El trabajo mecánico se define como el producto de la fuerza aplicada por la distancia o desplazamiento en la dirección de esa fuerza. Esta relación matemática es fundamental para entender la transferencia de energía mecánica.",
+    "ejemplo": "Si tienes que levantar un motor pesado, estás realizando un trabajo porque aplicas una fuerza y lo mueves verticalmente hasta cierta altura.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0072"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778203",
+    "pregunta": "¿Cuál de las siguientes válvulas es una válvula de presión?",
+    "opciones": [
+      "Válvula de secuencia.",
+      "Válvula selectiva.",
+      "Válvula de vía.",
+      "Válvula de asiento cónico."
+    ],
+    "correcta": 0,
+    "explicacion": "Las válvulas de presión, como la válvula de secuencia, están diseñadas para controlar el orden en que se activan los actuadores mediante la acumulación o liberación controlada de presión. Esto permite asegurar una secuencia operativa específica al sistema.",
+    "ejemplo": "Si tienes que accionar un cilindro grande solo después de haber presurizado previamente otro componente más pequeño, usarías una válvula de secuencia para garantizar el orden correcto.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0073"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778196",
+    "pregunta": "¿Cuál de las siguientes válvulas de vías no pueden considerarse como distribuidoras?",
+    "opciones": [
+      "2 /2.",
+      "4/2.",
+      "5/2.",
+      "4/3."
+    ],
+    "correcta": 0,
+    "explicacion": "Las válvulas distribuidoras determinan la cantidad de vías (salidas o entradas) que pueden controlar, y el número de posiciones indica los estados en los que puede operar. Una válvula 2/2 solo tiene dos vías y dos posiciones, lo que limita su capacidad de control respecto a las otras opciones.",
+    "ejemplo": "Si necesitas invertir un actuador lineal simplemente cambiando la dirección del flujo sin necesidad de retornar a una posición neutra, una 2/2 es suficiente para el circuito básico.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0074"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778153",
+    "pregunta": "¿Qué inclinación tienen las tuberías en las disposiciones llamadas como “dientes de sierra”?",
+    "opciones": [
+      "100/3.",
+      "3/100.",
+      "2 /3.",
+      "10/100."
+    ],
+    "correcta": 1,
+    "explicacion": "La inclinación de las tuberías en un sistema de dientes de sierra se calcula generalmente como la relación entre el desnivel vertical y la distancia horizontal recorrida. Este diseño asegura un drenaje eficiente por gravedad, evitando estancamientos.",
+    "ejemplo": "Si al revisar una línea de alimentación hidráulica ves que la pendiente es muy suave, podría ser necesario añadir soportes o ajustar la inclinación para asegurar que no se acumule humedad en los puntos bajos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0075"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778124",
+    "pregunta": "¿Qué se conoce como presión absoluta?",
+    "opciones": [
+      "La suma entre la presión de un recipiente y la presión atmosférica.",
+      "La resta entre la presión de un recipiente y la presión atmosférica.",
+      "La presión absoluta en el habitáculo donde se realice la medición.",
+      "La presión considerada el cero absoluto de presión."
+    ],
+    "correcta": 0,
+    "explicacion": "La presión absoluta es la combinación de la presión manométrica medida en el sistema más la presión ejercida por la atmósfera circundante. Esto se debe a que cualquier medición interna siempre está referenciada respecto al vacío o, más comúnmente, a la presión atmosférica.",
+    "ejemplo": "Si mides un depósito con una presión relativa de 3 bares y estás trabajando en altura, debes sumar la presión atmosférica local para obtener la lectura absoluta correcta del sistema.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0076"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778127",
+    "pregunta": "¿A qué temperatura es nula la energía cinética de las moléculas?",
+    "opciones": [
+      "· A -273 ºC.",
+      "· A 0 ºC.",
+      "· A -273 ºK.",
+      "· A 273 ºC."
+    ],
+    "correcta": 0,
+    "explicacion": "La energía cinética de las moléculas se relaciona directamente con la temperatura absoluta, y esta energía es cero en el cero absoluto. El cero absoluto corresponde a una temperatura de menos 273 grados Celsius.",
+    "ejemplo": "Si un sistema hidráulico opera muy por debajo de esa temperatura, notarás que los fluidos pierden drásticamente su viscosidad y capacidad de transmisión de potencia.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0077"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778209",
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre la hidráulica no es correcta?",
+    "opciones": [
+      "Permite la transmisión de grandes fuerzas en grandes espacios.",
+      "Tiene una elevada densidad de energía.",
+      "Permite una buena regulación de las fuerzas actuantes.",
+      "Posee una elevada dinámica de conmutación."
+    ],
+    "correcta": 0,
+    "explicacion": "La hidráulica es excelente para transmitir altas potencias y fuerzas, pero su gran desventaja comparativa con la neumática es que el fluido (el aceite) tiene una densidad mucho mayor que el aire. Esto hace que los componentes sean más pesados y menos adecuados para espacios muy reducidos o donde el peso sea un factor crítico.",
+    "ejemplo": "Si tienes que montar un actuador en un espacio confinado de maquinaria, la opción neumática suele ser preferible por su ligereza respecto a la hidráulica.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0078"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778139",
+    "pregunta": "¿Qué compresores reciben el nombre de “soplante”?",
+    "opciones": [
+      "Compresores roots.",
+      "Compresores de tornillo.",
+      "Compresores de paletas.",
+      "Compresores de una etapa."
+    ],
+    "correcta": 0,
+    "explicacion": "Los compresores Roots son un tipo específico de máquina que utiliza engranajes interconectados para aumentar el volumen del aire sin modificar significativamente su presión, actuando por desplazamiento positivo. Este mecanismo es característico y les ha valido el nombre popular de \"soplante\" debido a la forma en que mueven grandes volúmenes de aire.",
+    "ejemplo": "Si tienes que inflar rápidamente un gran depósito de aire para una prueba de frenos, un compresor Roots te proporcionará ese caudal elevado sin necesidad de mucha presión inicial.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0079"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778231",
+    "pregunta": "¿Quién fue el inventor de la prensa hidráulica?",
+    "opciones": [
+      "Pascal.",
+      "Brawah.",
+      "Newton.",
+      "Galileo."
+    ],
+    "correcta": 1,
+    "explicacion": "El principio de funcionamiento de la prensa hidráulica se basa en el principio de Pascal, pero su desarrollo práctico y aplicación son atribuidos a Brawah. Este sistema permite transmitir fuerzas grandes mediante fluidos incompresibles.",
+    "ejemplo": "Si tienes que levantar un motor pesado en taller, una prensa hidráulica te permite aplicar una fuerza pequeña en un área grande para generar una fuerza muy grande en el punto de apoyo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0080"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778141",
+    "pregunta": "¿Cuál de las siguientes afirmaciones no corresponde a un depósito de aire comprimido?",
+    "opciones": [
+      "Actúa como amortiguador de las pulsaciones de caudal.",
+      "Actúa como distanciador en los periodos de regulación.",
+      "Se colocan en el exterior.",
+      "Hacen frente a demandas puntuales de caudal."
+    ],
+    "correcta": 2,
+    "explicacion": "Los depósitos de aire comprimido son componentes esenciales que se instalan generalmente dentro del sistema o cerca de la fuente de alimentación para mantener una presión estable y un caudal constante. Su función principal es almacenar el fluido bajo presión, amortiguando así las fluctuaciones de demanda.",
+    "ejemplo": "Si tienes varios actuadores trabajando en secuencia, el depósito asegura que no haya caídas bruscas de presión cuando varios consumen aire al mismo tiempo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0081"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778175",
+    "pregunta": "¿Cuál de las siguientes características no pertenece a los cilindros compactos?",
+    "opciones": [
+      "Tamaño y carrera reducidos.",
+      "Gran fuerza de empuje.",
+      "Baja velocidad de accionamiento.",
+      "Captación de la posición."
+    ],
+    "correcta": 2,
+    "explicacion": "Los cilindros compactos están diseñados para ofrecer un buen rendimiento en espacios reducidos, manteniendo una alta fuerza de empuje y capacidad de posicionamiento. Su funcionamiento se basa en la rápida respuesta del fluido bajo presión.",
+    "ejemplo": "Si necesitas accionar un mecanismo pequeño pero que requiera mucha potencia rápidamente, el diseño compacto te lo va a proporcionar sin ocupar mucho espacio en el montaje.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0082"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778137",
+    "pregunta": "¿Qué compresores son usados para instalaciones de gran envergadura?",
+    "opciones": [
+      "Compresores de tornillo.",
+      "Compresores de paletas.",
+      "Compresores de membrana.",
+      "Compresores de dos etapas."
+    ],
+    "correcta": 0,
+    "explicacion": "Los compresores de tornillo son el tipo más común y eficiente para grandes volúmenes de aire comprimido requeridos en instalaciones industriales o comerciales amplias. Su diseño permite un caudal constante y una gran capacidad de producción sin sobrecalentamiento excesivo.",
+    "ejemplo": "Si trabajamos en una fábrica grande que necesita alimentar múltiples herramientas neumáticas simultáneamente, el compresor de tornillo es la opción más adecuada por su robustez y caudal continuo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0083"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778183",
+    "pregunta": "¿Qué tipo de válvula es la encargada de controlar los valores de presión en una instalación neumática?",
+    "opciones": [
+      "La válvula de caudal.",
+      "La válvula de bloqueo.",
+      "La válvula de presión.",
+      "La válvula de temperatura."
+    ],
+    "correcta": 2,
+    "explicacion": "Las válvulas de presión están diseñadas específicamente para limitar o mantener un valor de presión determinado en un circuito neumático. Su funcionamiento se basa en abrirse o cerrarse según la diferencia entre la presión medida y el umbral establecido por el usuario.",
+    "ejemplo": "Si estás montando un sistema que debe operar a una presión constante, usarías esta válvula para evitar que suba más de lo necesario y proteger los componentes.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0084"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778167",
+    "pregunta": "¿Cuál es la razón por la que el volumen de las diferentes cámaras de un cilindro de doble efecto sea diferente?",
+    "opciones": [
+      "El vástago reduce el volumen de aire que puede alojar la cámara.",
+      "El orificio de las culatas aumenta el volumen de aire alojado.",
+      "Los escapes por las juntas de una cámara a otra son difíciles de controlar.",
+      "Se introduce más aire en la cámara donde se aloja el vástago para contrarrestar esta diferencia."
+    ],
+    "correcta": 0,
+    "explicacion": "La presencia del vástago dentro de una cámara cilíndrica disminuye físicamente el espacio útil disponible para el fluido, ya que ocupa parte del volumen total interno. Este efecto es directo y se debe a la geometría interna del actuador neumático o hidráulico.",
+    "ejemplo": "Si mides el diámetro interior máximo del cilindro, ese valor no representa el volumen real de aire que puede comprimirse porque el vástago reduce esa área efectiva en un tramo intermedio.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0085"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778134",
+    "pregunta": "¿Qué ventaja de los compresores rotativos sobre los compresores alternativos no es correcta?",
+    "opciones": [
+      "Menor ruido.",
+      "Caudal constante.",
+      "Caudal pulsatorio.",
+      "Mayores potencias."
+    ],
+    "correcta": 2,
+    "explicacion": "Los compresores rotativos están diseñados para generar un caudal de aire más continuo y uniforme, lo que se traduce en un caudal constante. El caudal pulsatorio es una característica típica de los sistemas alternativos debido al movimiento de vaivén del pistón.",
+    "ejemplo": "Si necesitas alimentar varios actuadores neumáticos a la vez sin caídas de presión notables, el compresor rotativo te dará un rendimiento más estable en el tiempo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0086"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778222",
+    "pregunta": "¿Cuál de los siguientes tipos de válvulas es la encargada de limitar la carga de trabajo de la bomba?",
+    "opciones": [
+      "Válvulas limitadoras de presión.",
+      "Válvulas reductoras de presión.",
+      "Válvulas de secuencia.",
+      "Válvulas reguladoras de caudal."
+    ],
+    "correcta": 0,
+    "explicacion": "Las válvulas limitadoras de presión están diseñadas específicamente para mantener la presión del sistema por debajo de un valor máximo preestablecido, protegiendo así los componentes de sobrecargas. Su función es actuar como un elemento de seguridad que desvía el exceso de fluido cuando se alcanza ese límite.",
+    "ejemplo": "Si intentas mover una carga más pesada de lo que está diseñada la bomba para soportar, esta válvula evitará que la presión supere el umbral seguro y proteja los sellos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0087"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778155",
+    "pregunta": "¿Qué tipo de tubería no pertenece a las instalaciones de aire comprimido?",
+    "opciones": [
+      "Tubería madre.",
+      "Tubería de urgencia.",
+      "Tubería secundaria.",
+      "Tubería de servicio."
+    ],
+    "correcta": 1,
+    "explicacion": "Las instalaciones neumáticas se organizan típicamente en tuberías madre, secundarias y de servicio para distribuir el aire a los puntos de uso. La tubería de urgencia es un concepto más asociado a sistemas de seguridad o evacuación que no forma parte de la distribución normal del circuito de trabajo.",
+    "ejemplo": "Si tienes que instalar una línea principal por el taller, usarás la madre y las secundarias para llegar hasta los actuadores.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0088"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778176",
+    "pregunta": "¿Qué diámetros tienen los minicilindros?",
+    "opciones": [
+      "· 6 – 20 mm.",
+      "· 1 – 2 mm.",
+      "· 0,1 – 1 m.",
+      "· 6 – 20 m."
+    ],
+    "correcta": 0,
+    "explicacion": "Los minicilindros están diseñados para actuar con fuerzas y movimientos controlados en espacios reducidos, por lo que sus diámetros son pequeños comparados con los cilindros estándar. El rango de 6 a 20 mm es el más adecuado para aplicaciones de precisión y automatización ligera.",
+    "ejemplo": "Si tienes que accionar un mecanismo pequeño en una estación de diagnóstico o en la carrocería de un vehículo, usarías un minicilindro para no ocupar espacio ni generar excesivo par motor.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0089"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778162",
+    "pregunta": "¿Cuál no es una diferencia entre los cilindros de doble con respecto y los cilindros de simple efecto?",
+    "opciones": [
+      "Se emplean las dos caras del émbolo.",
+      "El perfil de las juntas permitirá estanqueidad a los dos lados.",
+      "Se emplean las dos caras de la camisa.",
+      "Las dos culatas tienen un orificio."
+    ],
+    "correcta": 2,
+    "explicacion": "Los cilindros de doble con respecto utilizan el fluido en ambos lados del vástago para generar fuerza, por lo que se aprovechan ambas caras del émbolo y la estanqueidad debe mantenerse en ambos sellos. La camisa solo es relevante si hablamos de guías o sistemas específicos, pero no define la diferencia fundamental entre los dos tipos de cilindros.",
+    "ejemplo": "Si tienes que accionar un brazo mecánico con fuerza máxima en ambas direcciones, usarás un cilindro de doble efecto porque aprovecha el fluido tanto para extender como para retraer el vástago.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0090"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778174",
+    "pregunta": "¿Qué ángulo no suele ser superado por los actuadores de giro tipo piñón cremallera?",
+    "opciones": [
+      "360º.",
+      "180º.",
+      "90º.",
+      "270º."
+    ],
+    "correcta": 0,
+    "explicacion": "Los actuadores de giro tipo piñón cremallera están diseñados para transmitir un movimiento angular limitado, generalmente en el rango que cubre la dirección necesaria para maniobrar el vehículo. Intentar forzar un giro completo de 360º excede su recorrido mecánico y puede provocar daños o una pérdida de eficiencia.",
+    "ejemplo": "Si intentas girar el volante más allá del punto donde las ruedas han completado casi un círculo, es probable que sientas una resistencia anormal o un bloqueo en la columna de dirección.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0091"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778112",
+    "pregunta": "¿Cómo se transporta el aire comprimido hasta el puesto de trabajo?",
+    "opciones": [
+      "Con tuberías.",
+      "Con camiones.",
+      "Con depósitos móviles.",
+      "Con depósitos fijos."
+    ],
+    "correcta": 0,
+    "explicacion": "El aire comprimido se transmite de manera eficiente y continua mediante un sistema cerrado de conductos rígidos o flexibles, que son las tuberías. Este método asegura la presión constante necesaria para el correcto funcionamiento de los actuadores neumáticos en el puesto de trabajo.",
+    "ejemplo": "Si tienes que alimentar una máquina herramienta con varios puntos de agarre neumático repartidos por el taller, conectar todo mediante un tendido de tubería es lo más práctico y seguro.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0092"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778152",
+    "pregunta": "¿Cuál es la razón por la que, en las instalaciones de aire comprimido sin equipos de secado, la disposición es en forma de dientes de sierra?",
+    "opciones": [
+      "Para mejorar la circulación del aire hacia el final del circuito.",
+      "La inclinación hacia las zonas más altas de la red proporciona unas presiones más favorables a la salida.",
+      "La inclinación hacia las partes más bajas de la red hará que el agua condensada corra hacia la parte inferior, donde podrá ser expulsada.",
+      "Esta inclinación permite una distribución más lógica a lo largo del recinto, optimizando el espacio."
+    ],
+    "correcta": 2,
+    "explicacion": "El aire comprimido contiene vapor de agua que se condensa al enfriarse en las tuberías, formando un drenaje natural por gravedad. Diseñar el sistema con pendiente asegura que esta condensación fluya hacia los puntos más bajos del circuito para su correcta evacuación.",
+    "ejemplo": "Si instalas una línea horizontalmente sin pendiente, el agua acumulada puede estancarse y causar problemas de corrosión o atascos en las conexiones bajas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0093"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778115",
+    "pregunta": "¿Qué factor es el inconveniente mayor en la instalación de un sistema de aire comprimido?",
+    "opciones": [
+      "La velocidad.",
+      "La presión.",
+      "El transporte.",
+      "La pureza del aire."
+    ],
+    "correcta": 2,
+    "explicacion": "El sistema de transporte es el más complejo porque implica llevar el fluido desde el punto de generación hasta los actuadores, y cualquier pérdida o restricción en la tubería afecta directamente al rendimiento. Es fundamental calcular correctamente las caídas de presión a lo largo de toda la línea.",
+    "ejemplo": "Si tienes un circuito muy largo con muchas codos y válvulas, tendrás que dimensionar bien el diámetro de las tuberías para evitar una caída de presión excesiva en los cilindros finales.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0094"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778184",
+    "pregunta": "¿Dónde podemos encontrar la simbología que representa las diferentes válvulas a utilizar?",
+    "opciones": [
+      "En la norma DIN/ISO 1219.",
+      "En la norma UNE 1219.",
+      "No está unificado.",
+      "En los catálogos de los fabricantes."
+    ],
+    "correcta": 0,
+    "explicacion": "La simbología estandarizada para representar componentes neumáticos e hidráulicos se encuentra definida por normas internacionales como la DIN/ISO 1219. Esta norma asegura que los técnicos de diferentes fabricantes utilicen un lenguaje gráfico común en los diagramas.",
+    "ejemplo": "Si estás leyendo el diagrama de un frenado asistido, sabrás exactamente qué representa el actuador o la válvula independientemente de si es Bosch o ZF porque siguen este estándar.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0095"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778157",
+    "pregunta": "¿Qué color de tubería se utiliza para las instalaciones neumáticas?",
+    "opciones": [
+      "Azul.",
+      "Verde.",
+      "Gris.",
+      "Naranja."
+    ],
+    "correcta": 0,
+    "explicacion": "El azul es el color estandarizado en España para identificar las tuberías destinadas a sistemas neumáticos, ya que transportan aire comprimido. Este código de colores ayuda a evitar confusiones entre diferentes fluidos o servicios en un mismo entorno industrial.",
+    "ejemplo": "Si vas a instalar una línea de aire para accionar un actuador, debes usar tubería azul y seguir el trazado indicado por el plano eléctrico-neumático.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0096"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778192",
+    "pregunta": "¿Cómo se denominan las válvulas que se accionan mediante vástagos de los cilindros?",
+    "opciones": [
+      "Accionamiento muscular.",
+      "Accionamiento mecánico.",
+      "Accionamiento neumático.",
+      "Accionamiento eléctrico."
+    ],
+    "correcta": 1,
+    "explicacion": "El accionamiento mecánico se refiere al movimiento transmitido por componentes físicos como vástagos o bielas, sin necesidad de fluidos a presión ni electricidad. Este sistema utiliza la fuerza directa generada por el movimiento lineal de los cilindros para operar las válvulas.",
+    "ejemplo": "Si en un tren de aterrizaje hidráulico se usa un actuador que empuja un pistón conectado directamente al mecanismo de bloqueo, estamos hablando de accionamiento mecánico.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0097"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778188",
+    "pregunta": "¿Con qué símbolo se identifica mediante la norma DIN/ISO a los conductos de fuga en una instalación neumática?",
+    "opciones": [
+      "· P.",
+      "· A.",
+      "· R.",
+      "· L."
+    ],
+    "correcta": 2,
+    "explicacion": "El símbolo $\\cdot$ R se utiliza en la simbología neumática estandarizada para representar un conducto de fuga o escape de aire. Este símbolo indica que el fluido puede salir del sistema sin pasar por ningún componente regulador específico.",
+    "ejemplo": "Si ves este símbolo conectado a una válvula, significa que esa línea está destinada a liberar presión residual al ambiente atmosférico.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0098"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778205",
+    "pregunta": "¿Cómo se denominan las válvulas que se accionan por la acción de un efecto electromagnético?",
+    "opciones": [
+      "Accionamiento muscular.",
+      "Accionamiento mecánico.",
+      "Accionamiento neumático.",
+      "Accionamiento eléctrico."
+    ],
+    "correcta": 3,
+    "explicacion": "Este tipo de válvulas están diseñadas para recibir una señal eléctrica que, al pasar por un electroimán o solenoide, genera la fuerza necesaria para cambiar su estado de apertura o cierre. El principio físico aquí es la conversión de energía eléctrica en energía mecánica mediante el campo magnético generado.",
+    "ejemplo": "Cuando trabajamos con sistemas de frenado ABS, los solenoides que controlan las válvulas de freno son ejemplos claros de accionamiento eléctrico.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0099"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778131",
+    "pregunta": "¿Cuál es la energía que poseen los cuerpos por el hecho de tener una velocidad determinada?",
+    "opciones": [
+      "Energía cinética.",
+      "Energía potencial.",
+      "Energía gravitatoria.",
+      "Energía nuclear."
+    ],
+    "correcta": 0,
+    "explicacion": "La energía cinética es la energía asociada al movimiento de un cuerpo y depende directamente de su masa y de la velocidad que alcanza. Esta relación se describe mediante una fórmula física fundamental en el estudio de la mecánica.",
+    "ejemplo": "Cuando accionas un cilindro hidráulico, la fuerza generada por el fluido bajo presión acelera el pistón, transformando la energía potencial del fluido comprimido en energía cinética del movimiento lineal del vástago.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0100"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778213",
+    "pregunta": "¿Cuál de las siguientes afirmaciones es incorrecta?",
+    "opciones": [
+      "Los motores hidráulicos son impulsados por el aceite a presión.",
+      "Los motores desarrollan un par y un movimiento de rotación que es utilizado para el desarrollo de las funciones del circuito.",
+      "El rendimiento del motor depende de la presión de trabajo del circuito.",
+      "El motor es comúnmente conocido como cilindro hidráulico rotativo."
+    ],
+    "correcta": 3,
+    "explicacion": "Un motor hidráulico convierte la energía de presión del fluido en energía mecánica de rotación, mientras que un cilindro hidráulico se utiliza para generar movimiento lineal mediante el desplazamiento de un pistón. Por lo tanto, confundir ambos componentes es un error conceptual básico.",
+    "ejemplo": "Si necesitas mover un brazo robótico en línea recta, usarías un cilindro; si necesitas hacer girar una rueda o un eje, emplearás un motor hidráulico.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0101"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778143",
+    "pregunta": "¿Cómo se expresa generalmente la humedad absoluta?",
+    "opciones": [
+      "Grados de vapor de agua / kg de aire seco.",
+      "Kg de vapor de agua / grados de aire seco.",
+      "Grados de vapor de agua / kg de aire húmedo.",
+      "Grados de aire seco / grados de vapor de agua."
+    ],
+    "correcta": 0,
+    "explicacion": "La humedad absoluta mide la cantidad real de vapor de agua contenida en una masa específica de aire, por lo que se expresa como una masa sobre otra masa. El aire seco es el referente de la masa de aire sin considerar el contenido de vapor.",
+    "ejemplo": "Si estás revisando un sistema neumático y mides la humedad absoluta, te interesa saber cuántos gramos de agua hay en cada kilogramo de aire que circula por las tuberías.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0102"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778218",
+    "pregunta": "¿Cuál de los siguientes tipos de válvulas limita la presión de las partes del circuito donde están instaladas?",
+    "opciones": [
+      "Válvulas limitadoras de presión.",
+      "Válvulas reductoras de presión.",
+      "Válvulas de secuencia.",
+      "Válvulas reguladoras de caudal."
+    ],
+    "correcta": 1,
+    "explicacion": "Las válvulas reductoras de presión están diseñadas específicamente para disminuir la presión de un fluido desde un nivel superior a uno inferior, manteniendo una diferencia controlada. Su funcionamiento se basa en estrangular el flujo o mediante componentes internos que disipan la energía sobrante del sistema.",
+    "ejemplo": "Si tienes un circuito alimentado por un compresor con alta presión y necesitas alimentar un actuador pequeño que solo requiere baja presión de trabajo, instalarás esta válvula para protegerlo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0103"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778151",
+    "pregunta": "¿Cuál de las siguientes afirmaciones acerca de la distribución de aire comprimido es falsa?",
+    "opciones": [
+      "Una buena solución para evitar tiempo sin servicio es colocar dos compresores en paralelo.",
+      "En neumática, siempre se hace referencia a presiones absolutas.",
+      "Cuanto mayor sea la velocidad de circulación de un fluido, menor será la presión.",
+      "Lo primero que ha de saberse cuando se inicia el cálculo de una instalación de aire comprimido es el consumo necesario."
+    ],
+    "correcta": 1,
+    "explicacion": "La mayoría de los cálculos y mediciones en instalaciones neumáticas se realizan con respecto a la presión manométrica, que es la diferencia entre la presión absoluta y la presión atmosférica. Aunque existen presiones absolutas, no es el estándar universal para referenciar sistemas. El consumo real del sistema siempre debe ser el punto de partida para dimensionar correctamente la instalación.",
+    "ejemplo": "Si un cliente necesita operar con una herramienta a 6 bares manométricos, debes calcular todo el circuito basándote en esa diferencia respecto a la presión ambiente.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0104"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778223",
+    "pregunta": "¿Cuál de las siguientes afirmaciones acerca de las bombas hidráulicas no es correcta?",
+    "opciones": [
+      "Las bombas se encargan de aportar el caudal necesario a todo el circuito.",
+      "Las bombas toman la fuerza de giro de algún motor acoplado a ellas.",
+      "El rendimiento de la bomba depende de la temperatura del aceite.",
+      "Las bombas están diseñadas para soportar las vibraciones transmitidas por el motor."
+    ],
+    "correcta": 3,
+    "explicacion": "La función principal de la bomba es generar caudal, no absorber o resistir activamente las vibraciones del motor. Aunque deben estar montadas en un sistema que mitigue estas vibraciones para su correcto funcionamiento, su diseño primario no se centra en ser amortiguadoras de vibración.",
+    "ejemplo": "Si el montaje de la bomba está mal fijado y transmite demasiada vibración al cuerpo de la bomba, esto puede provocar fugas o fallos prematuros en los sellos internos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0105"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778229",
+    "pregunta": "¿Cuál de los siguientes sistemas de impulsión no es utilizado en los sistemas hidráulicos?",
+    "opciones": [
+      "Bombas.",
+      "Acumuladores.",
+      "Multiplicadores de presión.",
+      "Filtros."
+    ],
+    "correcta": 3,
+    "explicacion": "Los filtros son componentes auxiliares esenciales para la limpieza del fluido, pero no constituyen un elemento activo o principal generador de potencia dentro del circuito hidráulico. Los otros elementos mencionados son fundamentales para generar, almacenar o modificar la energía fluida en el sistema.",
+    "ejemplo": "Si notas que los actuadores funcionan con movimientos erráticos o lentos, lo primero que debes revisar es si hay obstrucciones o contaminación que requiera un cambio de filtro.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0106"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778214",
+    "pregunta": "¿Cuál de las siguientes válvulas regula el paso del fluido mediante una corredera?",
+    "opciones": [
+      "Válvula de secuencia.",
+      "Válvula reductora de presión.",
+      "Válvula distribuidora.",
+      "Válvula de asiento."
+    ],
+    "correcta": 2,
+    "explicacion": "La válvula distribuidora es un componente que dirige el flujo del fluido hacia diferentes actuadores o circuitos según la señal de control recibida. Su función principal es seleccionar y enviar el caudal a la línea de trabajo adecuada.",
+    "ejemplo": "Si tienes un brazo robótico con tres movimientos independientes, necesitarás una válvula distribuidora para gestionar qué motor recibe presión en cada momento.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0107"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778173",
+    "pregunta": "¿Qué ángulo no suele ser superado por los actuadores de giro tipo paleta?",
+    "opciones": [
+      "360º.",
+      "180º.",
+      "90º.",
+      "270º."
+    ],
+    "correcta": 3,
+    "explicacion": "Los actuadores de giro tipo paleta están diseñados para movimientos angulares limitados, generalmente por la geometría del mecanismo o el sistema de control asociado. Superar los ángulos más grandes como 270º requeriría un diseño diferente o una sobrecarga del componente.",
+    "ejemplo": "Si intentas forzar un giro excesivo en un actuador de dirección con este tipo de paleta, podrías encontrar resistencia mecánica o que el sistema se detenga antes de alcanzar ese ángulo teórico.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0108"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778142",
+    "pregunta": "¿Cuál de los siguientes efectos no se corresponde a la condensación de agua en el aire comprimido?",
+    "opciones": [
+      "Oxidación.",
+      "Cortocircuitos en el soplado de arcos.",
+      "Disminución del paso efectivo en las conducciones.",
+      "Aumento de la temperatura."
+    ],
+    "correcta": 3,
+    "explicacion": "La condensación es un proceso de cambio de fase que ocurre cuando el vapor de agua se enfría y pasa a estado líquido, lo cual no implica necesariamente un aumento significativo de la temperatura del sistema. Los otros efectos sí están relacionados con la presencia de humedad en los circuitos neumáticos.",
+    "ejemplo": "Si tienes una línea de aire muy larga sin secador, es habitual encontrar acumulación de óxido o corrosión por el agua que se condensa y estanca en las tuberías bajas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0109"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778166",
+    "pregunta": "¿Por qué se produce el desfase entre la fuerza provocada a la salida y a la entrada del vástago en un cilindro de doble efecto?",
+    "opciones": [
+      "Diferente volumen de las cámaras.",
+      "Rozamiento con el interior de la camisa.",
+      "El vástago ejerce una fuerza contraria a la fuerza de salida.",
+      "No se produce ningún desfase."
+    ],
+    "correcta": 0,
+    "explicacion": "En un cilindro de doble efecto, el área efectiva sobre la que actúa la presión es diferente en cada extremo debido a la geometría del vástago. Esta diferencia de áreas genera una disparidad en las fuerzas generadas al expandir o retraer el pistón.",
+    "ejemplo": "Si mides la fuerza con un dinamómetro en ambos extremos, notarás que la lectura no será simétrica porque el área sobre la que se aplica la presión es distinta en cada caso.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0110"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778168",
+    "pregunta": "¿Con qué objetivo se colocan amortiguadores en el interior de los cilindros neumáticos?",
+    "opciones": [
+      "Para evitar el rozamiento con el interior de la camisa.",
+      "Para evitar el choque del conjunto pistón con la culata cuando alcanza su posición máxima.",
+      "Para evitar el choque de la camisa con la culata cuando se alcanza la posición de final de carrera.",
+      "Para evitar el desgaste de las juntas dinámicas del conjunto."
+    ],
+    "correcta": 1,
+    "explicacion": "Los amortiguadores se instalan para absorber la energía cinética generada por el movimiento rápido del pistón al llegar a sus límites de carrera. Esto evita que el conjunto pistón golpee violentamente contra la culata o tope final.",
+    "ejemplo": "Si un cilindro neumático está en una máquina de embalaje y debe detenerse bruscamente, los amortiguadores aseguran un frenado suave para proteger el pistón y reducir el desgaste del sistema.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0111"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778211",
+    "pregunta": "¿Qué tipo de circuitos hidráulicos permiten automatizar el circuito?",
+    "opciones": [
+      "Sistemas con bomba manual.",
+      "Sistemas hidráulicos manuales.",
+      "Sistemas electrohidráulicos.",
+      "Sistemas con bombas de caudal variable."
+    ],
+    "correcta": 2,
+    "explicacion": "Los sistemas electrohidráulicos combinan actuadores eléctricos y componentes hidráulicos, permitiendo un control preciso y automatizado de los movimientos mediante señales eléctricas. Esto permite la gestión compleja de válvulas y bombas sin necesidad de intervención mecánica directa del operario en el circuito principal.",
+    "ejemplo": "En una grúa moderna, el sistema electrohidráulico gestiona la elevación y extensión de brazos basándose en comandos desde un panel de control eléctrico.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0112"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778178",
+    "pregunta": "¿Qué elementos forman el conjunto pistón?",
+    "opciones": [
+      "Camisa del cilindro y culatas.",
+      "Émbolo y culatas.",
+      "Camisa del cilindro y vástago.",
+      "Émbolo y vástago."
+    ],
+    "correcta": 3,
+    "explicacion": "El conjunto pistón está compuesto por el émbolo, que es la pieza móvil dentro del cilindro, y su vástago, que es lo que transmite el movimiento lineal hacia fuera o hacia dentro. Estos dos elementos trabajan juntos para generar o transmitir fuerza en sistemas neumáticos e hidráulicos.",
+    "ejemplo": "Si tienes que accionar un gato hidráulico, el émbolo empuja contra el fluido confinado por el cilindro y el vástago es la parte visible que soporta la carga levantada.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0113"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778232",
+    "pregunta": "¿Cuál de las siguientes afirmaciones corresponde a la ley de Pascal?",
+    "opciones": [
+      "El incremento de presión aplicado a una superficie de un fluido incompresible, contenido en un recipiente indeformable, se transmite con el mismo valor a cada una de las partes del mismo.",
+      "El incremento de presión aplicado a una superficie de un fluido compresible, contenido en un recipiente indeformable, se transmite con el mismo valor a cada una de las partes del mismo.",
+      "El incremento de presión aplicado a una superficie de un fluido incompresible, contenido en un recipiente deformable, se transmite con el mismo valor a cada una de las partes del mismo.",
+      "El incremento de presión aplicado a una superficie de un fluido incompresible, contenido en un recipiente indeformable, se transmite con el mismo valor a las paredes que delimitan esa superficie."
+    ],
+    "correcta": 0,
+    "explicacion": "La ley de Pascal establece que la presión aplicada a un fluido confinad en un sistema cerrado se distribuye uniformemente por todo el volumen del fluido. Es fundamental que el fluido sea incompresible y que el recipiente no sufra deformaciones para que esta transmisión sea efectiva.",
+    "ejemplo": "Cuando usamos un gato hidráulico, al ejercer fuerza en una pequeña superficie, la presión generada se transmite por el aceite hasta levantar un peso mucho mayor gracias a la distribución uniforme de esa presión.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0114"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778126",
+    "pregunta": "¿Cuáles con las condiciones normales marcadas por la norma CETOP?",
+    "opciones": [
+      "20 ºC y 1,013 mbar.",
+      "25 ºC, 2 bar.",
+      "20 ºC, 1 Pa.",
+      "20 ºC , Pa."
+    ],
+    "correcta": 0,
+    "explicacion": "Las condiciones normales de temperatura y presión atmosférica se establecen internacionalmente para estandarizar mediciones en el sector automoción. Estas condiciones representan la referencia física utilizada por los fabricantes al diseñar y probar sistemas neumáticos e hidráulicos.",
+    "ejemplo": "Si mides la presión de un actuador a estas condiciones, sabrás que tu lectura es comparable con las especificaciones del manual técnico sin importar dónde se haya realizado la prueba.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0115"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778161",
+    "pregunta": "En ocasiones, en los cilindros de simple efecto se coloca un muelle en el vástago del cilindro, ¿cuál es su función?",
+    "opciones": [
+      "Mantener la presión constante.",
+      "Recuperar la presión atmosférica.",
+      "Aumentar la resistencia de la presión del aire.",
+      "Recuperar la posición de estable."
+    ],
+    "correcta": 3,
+    "explicacion": "El muelle está diseñado para ejercer una fuerza constante que empuja el vástago del cilindro cuando se suelta la alimentación de presión. Esto asegura que el actuador vuelva automáticamente a su posición inicial o de reposo predeterminada.",
+    "ejemplo": "Si utilizas un cilindro en una prensa y quieres que siempre regrese a la posición abierta después de accionar, debes incorporar este muelle.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0116"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778156",
+    "pregunta": "¿Qué tubería es la encargada de suministrar directamente aire comprimido a las máquinas o herramientas?",
+    "opciones": [
+      "La tubería madre.",
+      "La tubería de urgencia.",
+      "La tubería secundaria.",
+      "La tubería de servicio."
+    ],
+    "correcta": 3,
+    "explicacion": "La tubería de servicio es el ramal final que distribuye la presión desde las líneas principales hasta los puntos de consumo reales, como actuadores o herramientas neumáticas. Su función es garantizar que el aire llegue con la presión adecuada al punto de utilización.",
+    "ejemplo": "Si estás trabajando en un taller y necesitas alimentar una pistola de impacto específica, el racor de esa herramienta estará conectado a la tubería de servicio correspondiente.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0117"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778208",
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre la hidráulica no es correcta?",
+    "opciones": [
+      "Es un sistema totalmente seguro en todas sus situaciones de uso.",
+      "Da la posibilidad de utilizar elementos y módulos estándar.",
+      "Requiere una capacitación profesional del personal que maneja el sistema.",
+      "Posee una elevada dinámica de conmutación."
+    ],
+    "correcta": 0,
+    "explicacion": "Ningún sistema mecánico, incluida la hidráulica, puede garantizarse como totalmente seguro bajo cualquier circunstancia operativa o de mantenimiento. La seguridad depende siempre del correcto diseño, instalación y mantenimiento por parte de personal cualificado.",
+    "ejemplo": "Si se excede la presión máxima admisible en un circuito, el fluido podría provocar fugas o fallos estructurales graves, independientemente de su robustez inicial.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0118"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778228",
+    "pregunta": "¿Con cuál de los siguientes elementos no se puede controlar la presión?",
+    "opciones": [
+      "Con bombas.",
+      "Con presostatos.",
+      "Con manómetros.",
+      "Con válvulas de seguridad."
+    ],
+    "correcta": 0,
+    "explicacion": "Las bombas son elementos que generan o aumentan la presión en un fluido, por lo que su función es precisamente crear presión y no controlarla. Los presostatos y las válvulas de seguridad están diseñados para actuar como reguladores, manteniendo la presión dentro de límites seguros.",
+    "ejemplo": "Si el sistema necesita una presión constante para accionar los frenos, se utiliza un presostato que cortará o activará la bomba cuando se alcance el valor deseado.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0119"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778169",
+    "pregunta": "¿Cuál de las siguientes constituciones de amortiguación no es correcta?",
+    "opciones": [
+      "Amortiguación en dos extremos no regulable.",
+      "Amortiguación en un extremo no regulable.",
+      "Amortiguación en tres extremos no regulable.",
+      "Amortiguación en dos extremos regulable."
+    ],
+    "correcta": 2,
+    "explicacion": "Los sistemas de suspensión modernos suelen incorporar amortiguadores con capacidad de ajuste en al menos un extremo, lo que permite optimizar el comportamiento del vehículo según las condiciones de uso. La configuración de tres extremos sin regulación es poco común o inexistente en los diseños actuales por la complejidad y coste añadido.",
+    "ejemplo": "Si tienes que cambiar la suspensión para pasar de un uso deportivo a uno familiar, necesitarás amortiguadores con ajuste en al menos dos puntos para adaptar la firmeza deseada.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0120"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778206",
+    "pregunta": "¿Cuál de las siguientes aplicaciones no es la más correcta para la hidráulica?",
+    "opciones": [
+      "En excavadoras.",
+      "En grúas.",
+      "En tijeras para excarcelación.",
+      "En elevalunas."
+    ],
+    "correcta": 3,
+    "explicacion": "Los sistemas hidráulicos están diseñados para transmitir grandes potencias y fuerzas, lo cual es esencial en maquinaria pesada como excavadoras o grúas. Los elevalunas son componentes que requieren un movimiento controlado pero de baja potencia, siendo más adecuados para accionamientos eléctricos o neumáticos ligeros.",
+    "ejemplo": "Si tienes que levantar una carga muy pesada en el taller, usarías la hidráulica; si solo necesitas subir un cristal, basta con un motor eléctrico pequeño.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0121"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778146",
+    "pregunta": "¿De qué manera se expulsan al exterior las condensaciones producidas por los secadores frigoríficos?",
+    "opciones": [
+      "Purgas manuales.",
+      "Expulsión por la porosidad de las tuberías.",
+      "Purgas automáticas.",
+      "Acumulaciones a lo largo de la tubería."
+    ],
+    "correcta": 2,
+    "explicacion": "Los secadores frigoríficos están diseñados para eliminar la humedad del aire comprimido, y esta condensación debe ser eliminada de forma continua para mantener el sistema seco. Las purgaciones automáticas son sistemas que detectan la presencia de líquido o saturación y expulsan esa agua sin intervención manual.",
+    "ejemplo": "Si en un taller no se purgan automáticamente los secadores, el exceso de humedad puede corroer las herramientas neumáticas o afectar al funcionamiento de actuadores sensibles.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0122"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778190",
+    "pregunta": "¿Qué significa la anotación “3/2” junto a la denominación de una válvula?",
+    "opciones": [
+      "Posee tres orificios y dos posiciones.",
+      "Posee tres posiciones y dos orificios.",
+      "El aire está comprimido en una relación 3/2 con respecto a la presión atmosférica.",
+      "Las pulgadas que tienen las tuberías de la instalación."
+    ],
+    "correcta": 0,
+    "explicacion": "Esta anotación describe la configuración de accionamiento de la válvula, indicando el número de vías o puertos (el primer número) y el número de posiciones que puede adoptar (el segundo número). Por lo tanto, 3/2 significa tres vías y dos posiciones.",
+    "ejemplo": "Si ves una válvula 5/3, significa que tiene cinco vías para conectar los actuadores y puede cambiar entre tres estados operativos diferentes.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0123"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778120",
+    "pregunta": "¿Cuál es la expresión de la presión?",
+    "opciones": [
+      "Presión = masa / volumen.",
+      "Presión = fuerza / volumen.",
+      "Presión = fuerza / superficie.",
+      "Presión = masa / fuerza."
+    ],
+    "correcta": 2,
+    "explicacion": "La presión se define físicamente como la magnitud de la fuerza aplicada sobre un área determinada. Por lo tanto, su unidad de medida resulta de dividir la fuerza entre el área que soporta dicha fuerza.",
+    "ejemplo": "Si tienes que calcular la presión ejercida por un gato hidráulico al levantar un coche, debes medir la fuerza total y dividirla entre el área de contacto del punto de apoyo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0124"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778180",
+    "pregunta": "¿Qué componentes forman un actuador de simple efecto?",
+    "opciones": [
+      "Tubo, culatas posterior y anterior, émbolo, vástago y otros.",
+      "Tubo, culata posterior, émbolo, vástago y otros.",
+      "Tubo, culatas posterior y anterior, émbolo y otros.",
+      "Tubo, camisa, culata anterior, émbolo, vástago y otros."
+    ],
+    "correcta": 0,
+    "explicacion": "Un actuador de simple efecto está diseñado para generar movimiento en una sola dirección, lo cual requiere elementos que guíen el pistón tanto al extenderlo como a retraerlo. La presencia de culatas tanto posterior como anterior asegura la contención y el sellado del fluido en ambos extremos del recorrido.",
+    "ejemplo": "Si tienes un cilindro hidráulico para sujetar algo temporalmente, necesitas ambas culatas para que el émbolo no solo se empuje hacia afuera sino que también pueda ser retenido por presión al retraerse.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0125"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778197",
+    "pregunta": "¿Cuál de las siguientes disposiciones no dispone de orificio de escape?",
+    "opciones": [
+      "2/2.",
+      "3/2.",
+      "4/2.",
+      "5/2."
+    ],
+    "correcta": 0,
+    "explicacion": "Los símbolos de electroválvulas neumáticos representan la secuencia y el número de vías que gestionan, por lo que un elemento 2/2 tiene dos vías y dos posiciones estables sin salida de escape. Las otras opciones indican más vías o posiciones que requieren una gestión activa del aire para su retorno.",
+    "ejemplo": "Si utilizas un cilindro accionado por un circuito 2/2, al cambiar la posición el aire no se descarga directamente sino que debe pasar por otra vía antes de ser expulsado.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0126"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778177",
+    "pregunta": "¿Cuál de las siguientes características no se corresponde con los cilindros de fuelle?",
+    "opciones": [
+      "Son de larga duración y están exentos de mantenimiento.",
+      "No se producen rozamientos en la maniobra.",
+      "Tienen una instalación compleja.",
+      "Buena relación de volumen ocupado entre compresión-expansión."
+    ],
+    "correcta": 2,
+    "explicacion": "Los cilindros de fuelle son sistemas neumáticos muy eficientes que transmiten fuerza mediante el sellado del aire comprimido dentro de un cuerpo flexible. Su diseño permite movimientos suaves y controlados sin necesidad de elementos mecánicos complejos como varillas o guías.",
+    "ejemplo": "En lugar de usar un cilindro convencional con una varilla, en la suspensión podrías emplear uno de fuelle para absorber impactos manteniendo el sellado del aire comprimido.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0127"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778230",
+    "pregunta": "¿Cuál de los siguientes grupos de elementos no pertenece a un sistema hidráulico?",
+    "opciones": [
+      "Circuitos de aceite.",
+      "Sistemas de impulsión.",
+      "Engranajes.",
+      "Válvulas de regulación."
+    ],
+    "correcta": 2,
+    "explicacion": "Los sistemas hidráulicos se basan en la transmisión de energía mediante fluidos incompresibles, como el aceite, para generar movimiento o fuerza. Los engranajes son elementos mecánicos que transmiten movimiento rotatorio por contacto físico entre dientes y no forman parte del principio operativo fluido de estos sistemas.",
+    "ejemplo": "Si tienes que diagnosticar un fallo en la dirección asistida, revisarás las bombas, válvulas y el nivel de aceite, pero no buscarás desgaste en los engranajes de transmisión como si fuera un cambio manual.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0128"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778158",
+    "pregunta": "¿Qué elemento se encarga del guiado del vástago dentro de la camisa?",
+    "opciones": [
+      "El cojinete.",
+      "La camisa.",
+      "La junta.",
+      "La culata."
+    ],
+    "correcta": 0,
+    "explicacion": "El cojinete es el componente diseñado específicamente para reducir la fricción entre dos piezas móviles, permitiendo que un vástago se deslice de manera precisa dentro de su alojamiento o camisa. Su función principal es soportar cargas y guiar el movimiento con mínima resistencia.",
+    "ejemplo": "Si notas juego excesivo en el árbol de levas al desmontarlo, es posible que los cojinetes hayan desgastado más allá de sus límites operativos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0129"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778110",
+    "pregunta": "¿Cuál es la expresión de la densidad?",
+    "opciones": [
+      "f = presión / volumen.",
+      "f = masa / volumen.",
+      "f =presión / temperatura.",
+      "f = fuerza / superficie."
+    ],
+    "correcta": 1,
+    "explicacion": "La densidad se define como la relación entre la cantidad de materia contenida en un cuerpo y el espacio que ocupa, es decir, su masa dividida por su volumen. Esta magnitud nos indica cuánta \"sustancia\" hay en un determinado espacio tridimensional.",
+    "ejemplo": "Si tienes dos líquidos con el mismo volumen pero diferente densidad, uno será más pesado porque tiene mayor masa ocupando ese mismo espacio.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0130"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778111",
+    "pregunta": "¿Qué elemento es el encargado de aumentar el valor de la presión del aire?",
+    "opciones": [
+      "El motor.",
+      "El expansor.",
+      "El compresor.",
+      "El manómetro."
+    ],
+    "correcta": 2,
+    "explicacion": "El compresor es el componente diseñado específicamente para aumentar la presión de un fluido, en este caso, el aire comprimido. Funciona mediante un mecanismo que reduce el volumen del gas sin dejar escapar su energía interna, lo cual eleva su presión.",
+    "ejemplo": "Si tienes que inflar neumáticos o accionar una herramienta neumática en taller, es el compresor el que genera la fuerza necesaria para ello.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0131"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778219",
+    "pregunta": "¿Cuál de los siguientes tipos de válvulas es el encargado de alimentar los subcircuitos?",
+    "opciones": [
+      "Válvulas limitadoras de presión.",
+      "Válvulas reductoras de presión.",
+      "Válvulas de secuencia.",
+      "Válvulas reguladoras de caudal."
+    ],
+    "correcta": 1,
+    "explicacion": "Las válvulas reductoras de presión están diseñadas específicamente para disminuir la presión de un fluido que llega a ellas, manteniendo una salida estable y controlada. Esto permite alimentar subcircuitos que requieren operar con una presión menor que la fuente principal.",
+    "ejemplo": "Si tienes un sistema hidráulico principal a alta presión alimentando un actuador pequeño, usarás esta válvula para bajar la presión antes de llegar al cilindro, protegiéndolo y optimizando el consumo energético.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0132"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778160",
+    "pregunta": "Para la fabricación de juntas de estanqueidad se utiliza teflón, ¿qué rango de temperaturas soporta?",
+    "opciones": [
+      "Junta estática y dinámica.",
+      "-80 ºC a +200 ºC.",
+      "Cero.",
+      "-100ºC y +500ºC"
+    ],
+    "correcta": 1,
+    "explicacion": "El teflón, o PTFE, es un material conocido por su gran estabilidad química y térmica en rangos moderados de temperatura. Este rango específico asegura que el elastómero mantenga sus propiedades mecánicas sin degradarse ni perder sellado bajo condiciones operativas normales.",
+    "ejemplo": "Si estás montando una junta en un sistema hidráulico que opera a temperaturas medias, te asegurarás de que el material seleccionado soporte tanto los picos como las bajas temperaturas esperadas para evitar fugas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0133"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778221",
+    "pregunta": "¿Cuál de los siguientes tipos de válvulas es el encargado de proteger los componentes de un circuito hidráulico de los excesos de presión?",
+    "opciones": [
+      "Válvulas limitadoras de presión.",
+      "Válvulas reductoras de presión.",
+      "Válvulas de secuencia.",
+      "Válvulas reguladoras de caudal."
+    ],
+    "correcta": 0,
+    "explicacion": "Las válvulas limitadoras de presión están diseñadas específicamente para actuar como un elemento de seguridad, desviando el exceso de flujo cuando la presión supera un umbral preestablecido. Su función es mantener la presión dentro de los límites operativos seguros del sistema hidráulico.",
+    "ejemplo": "Si intentas mover un actuador con demasiada fuerza o resistencia en el circuito, esta válvula se abrirá momentáneamente para aliviar esa sobrepresión y evitar daños mayores.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0134"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778226",
+    "pregunta": "¿Con cuál de los siguientes elementos no se puede controlar la dirección del aceite en los sistemas hidráulicos?",
+    "opciones": [
+      "Con presostatos.",
+      "Con elementos distribuidores.",
+      "Con llaves antirretorno.",
+      "Con válvulas antirretorno."
+    ],
+    "correcta": 0,
+    "explicacion": "Los presostatos son dispositivos diseñados para medir y regular la presión, actuando generalmente abriendo o cerrando un circuito cuando se alcanza un valor preestablecido de presión. No tienen función intrínseca para desviar o controlar el flujo direccional del fluido hacia diferentes puntos del sistema.",
+    "ejemplo": "Si necesitas que el aceite vaya a un actuador solo cuando la presión supere cierto umbral, usarías un presostato; pero si quieres forzarlo por una línea específica, necesitarás válvulas direccionales.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0135"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778199",
+    "pregunta": "¿Qué tipo de válvula es la utilizada para el control de cilindros de doble efecto?",
+    "opciones": [
+      "2/2 y 3/2.",
+      "2/2 y 4/2.",
+      "4/2 y 3/2.",
+      "5/2 y 4/2."
+    ],
+    "correcta": 3,
+    "explicacion": "Los cilindros de doble efecto requieren una señal para extender y otra para retraer, lo que implica un control de dos vías distintas. Las válvulas 5/2 son las más comunes porque tienen cinco posiciones (cinco elementos) y dos salidas de aire o fluido, permitiendo el bloqueo en ambas direcciones.",
+    "ejemplo": "Si tienes que accionar un brazo hidráulico que debe ir tanto hacia adelante como hacia atrás, necesitarás una válvula 5/2 para controlar ambos movimientos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0136"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778220",
+    "pregunta": "¿Cuál de los siguientes tipos de válvulas es el encargado de proteger los subcircuitos existentes?",
+    "opciones": [
+      "Válvulas limitadoras de presión.",
+      "Válvulas reductoras de presión.",
+      "Válvulas de secuencia.",
+      "Válvulas reguladoras de caudal."
+    ],
+    "correcta": 0,
+    "explicacion": "Las válvulas limitadoras de presión están diseñadas para mantener la presión del sistema por debajo de un valor máximo preestablecido, protegiendo así los componentes sensibles. Su función principal es actuar como un fusible hidráulico o neumático ante sobrepresiones inesperadas.",
+    "ejemplo": "Si el actuador se bloquea en extensión y genera una resistencia excesiva, la válvula limitadora evitará que la presión supere el límite seguro del sistema.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0137"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778191",
+    "pregunta": "¿Cómo se denominan las válvulas que se accionan por fuerzas exteriores de origen muscular?",
+    "opciones": [
+      "Accionamiento muscular.",
+      "Accionamiento mecánico.",
+      "Accionamiento neumático.",
+      "Accionamiento eléctrico."
+    ],
+    "correcta": 0,
+    "explicacion": "Este tipo de accionamiento se refiere a que el movimiento o la apertura/cierre de las válvulas es provocado directamente por la fuerza ejercida por un actuador conectado al sistema, como un cilindro accionado por un brazo mecánico. El principio físico aquí es la transmisión directa de una fuerza externa para modificar el estado del circuito.",
+    "ejemplo": "Al usar un gato hidráulico manual en el taller, estás aplicando una fuerza muscular que se transmite a través del émbolo y controla el movimiento de las válvulas o pistones del sistema.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0138"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778109",
+    "pregunta": "¿Cuál es la composición de aire utilizado en aplicaciones neumáticas?",
+    "opciones": [
+      "78% nitrógeno, 20% oxígeno, 1,3% gases nobles y otros.",
+      "78% oxígeno, 20% nitrógeno, 1,3% gases nobles y otros.",
+      "78% hidrógeno, 20% oxígeno, 1,3% gases nobles y otros.",
+      "78% nitrógeno, 20% gases nobles, 1,3% oxígeno y otros."
+    ],
+    "correcta": 0,
+    "explicacion": "El aire atmosférico está compuesto principalmente por nitrógeno y oxígeno; la composición indicada en la opción A es la que se aproxima más a los componentes reales del aire que se utiliza tras un proceso de filtrado y secado. En sistemas neumáticos, aunque el objetivo sea usar aire limpio, su base química sigue siendo esta mezcla gaseosa.",
+    "ejemplo": "Si detectas una alta humedad o partículas en el aire de alimentación, es crucial pasarlo por un secador y filtro para proteger los componentes del sistema neumático.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0139"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778212",
+    "pregunta": "¿Cuál de los siguientes componentes sirve como regulador de la presión del circuito?",
+    "opciones": [
+      "Motor hidráulico.",
+      "Cilindro hidráulico.",
+      "Bomba.",
+      "Acumulador."
+    ],
+    "correcta": 3,
+    "explicacion": "El acumulador está diseñado específicamente para almacenar energía bajo presión, actuando como un amortiguador o regulador de picos de demanda en el sistema hidráulico. Su función es mantener una presión constante suministrando fluido cuando la bomba no puede compensar instantáneamente las variaciones de carga.",
+    "ejemplo": "Si estás trabajando con maquinaria pesada y hay un movimiento brusco que requiere mucha potencia repentinamente, el acumulador evita que la caída momentánea de presión detenga el ciclo de trabajo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0140"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778118",
+    "pregunta": "¿Qué es necesario recoger en los puntos de escape?",
+    "opciones": [
+      "Impurezas.",
+      "Aire sobrante.",
+      "Aceite.",
+      "Agua."
+    ],
+    "correcta": 2,
+    "explicacion": "Los puntos de escape en los sistemas hidráulicos están diseñados para recoger y gestionar el fluido que retorna al depósito o a un punto de control. Este fluido puede contener contaminantes, pero es crucial controlar la presencia de aceite para mantener la pureza del sistema.",
+    "ejemplo": "Si notas que el nivel de aceite del acumulador está bajo tras una prueba de frenado intensa, debes revisar si hay fugas en los puntos de escape o conexiones.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0141"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778217",
+    "pregunta": "¿Cuál de los siguientes tipos de válvulas mantiene y limita la presión de un cierto recinto del circuito?",
+    "opciones": [
+      "Válvulas limitadoras de presión.",
+      "Válvulas reductoras de presión.",
+      "Válvulas de secuencia.",
+      "Válvulas reguladoras de caudal."
+    ],
+    "correcta": 2,
+    "explicacion": "Las válvulas de secuencia están diseñadas para controlar el orden en que se activan diferentes elementos del circuito, lo cual implica mantener una presión o estado específico hasta que se cumpla una condición previa. Esto se logra mediante la retención de energía o la limitación de la acción hasta un punto determinado.",
+    "ejemplo": "Si tienes que accionar primero un cilindro y solo después otro, usarás una válvula de secuencia para asegurar el orden correcto de los movimientos en tu montaje.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0142"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778165",
+    "pregunta": "¿Cuál de las siguientes afirmaciones no es una ventaja de los cilindros de doble efecto sobre los cilindros de simple efecto?",
+    "opciones": [
+      "Se puede realizar trabajo en ambos sentidos.",
+      "No se pierde fuerza en el accionamiento debido a la inexistencia de muelle en posición.",
+      "Al no existir muelle en los cilindros de doble efecto, la carrera es más larga porque no es necesario el alojamiento del muelle.",
+      "Los cilindros de doble efecto consumen la mitad que los cilindros de simple efecto."
+    ],
+    "correcta": 3,
+    "explicacion": "Los cilindros de doble efecto son más eficientes energéticamente en general, pero no necesariamente consumen la mitad que un sistema de simple efecto; el consumo depende mucho del ciclo de trabajo y las pérdidas por fricción. La afirmación es incorrecta porque su consumo energético total debe evaluarse considerando todos los componentes del circuito.",
+    "ejemplo": "Si tienes que empujar algo con mucha fuerza en ambos sentidos, aunque consuman más aire o fluido que un simple efecto, la ventaja de tener control en el retorno suele compensar esa diferencia energética puntual.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0143"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778186",
+    "pregunta": "¿Cuál de los siguientes tipos de vías está destinado para que el aire comprimido pase a la válvula?",
+    "opciones": [
+      "Alimentación.",
+      "Aplicación.",
+      "Escape.",
+      "Pilotajes neumáticos."
+    ],
+    "correcta": 0,
+    "explicacion": "La vía de alimentación es la que transporta el aire comprimido desde la fuente, como un compresor o un depósito regulado, hasta el sistema. Por lo tanto, es por esta línea donde se introduce la energía neumática al circuito.",
+    "ejemplo": "Si notas una caída de presión en el inicio del circuito, debes revisar las conexiones y mangueras de alimentación para asegurar que no haya fugas significativas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0144"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778187",
+    "pregunta": "¿Cuál de los siguientes tipos de vías son los orificios encargados de realizar la conmutación de posiciones en otras válvulas?",
+    "opciones": [
+      "Alimentación.",
+      "Aplicaciones.",
+      "Escapes.",
+      "Pilotajes neumáticos."
+    ],
+    "correcta": 3,
+    "explicacion": "Los pilotajes neumáticos son conductos de baja potencia que se utilizan para accionar o controlar el movimiento de válvulas más grandes, como las de distribución principales. Permiten modular la presión y dirigir el flujo sin necesidad de alimentar directamente los actuadores potentes.",
+    "ejemplo": "Si tienes un cilindro grande controlado por una válvula direccional principal, puedes usar un pilotaje neumático para abrir o cerrar esa válvula desde un punto de control más pequeño.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0145"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778130",
+    "pregunta": "¿Cuál es la unidad de medida de la potencia?",
+    "opciones": [
+      "Julio.",
+      "Newton.",
+      "Kilogramo · m.",
+      "Watio."
+    ],
+    "correcta": 3,
+    "explicacion": "La potencia se define como el trabajo realizado por unidad de tiempo, y su unidad coherente en el Sistema Internacional es el vatio (W). El julio mide la energía o el trabajo, mientras que el newton es una unidad de fuerza.",
+    "ejemplo": "Si un motor hidráulico realiza un trabajo constante aplicando cierta fuerza durante un tiempo determinado, la potencia desarrollada se calculará usando esa relación fundamental.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0146"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778202",
+    "pregunta": "¿Cuál de las siguientes válvulas direcciona el aire desde cualquiera de sus dos entradas, evitando fugas?",
+    "opciones": [
+      "Válvula antirretorno.",
+      "Válvula selectiva.",
+      "Válvula de purga.",
+      "Válvula estranguladora."
+    ],
+    "correcta": 1,
+    "explicacion": "La válvula selectiva está diseñada específicamente para permitir el paso del fluido en una dirección y bloquearlo totalmente en la otra, garantizando un sellado hermético cuando no debe haber flujo. Su función principal es dirigir el caudal de manera precisa hacia un actuador o circuito específico.",
+    "ejemplo": "Si tienes que accionar un cilindro solo por un lado sin que haya retorno accidental por fugas internas, debes usar una válvula selectiva para controlar esa dirección.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0147"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778172",
+    "pregunta": "¿Qué cilindros utilizamos en la neumática en energía mecánica de rotación?",
+    "opciones": [
+      "Cilindros de simple efecto.",
+      "Cilindros de doble efecto.",
+      "Cilindros giratorios.",
+      "Actuador rotativo."
+    ],
+    "correcta": 3,
+    "explicacion": "Los cilindros son elementos lineales que convierten la energía comprimida en movimiento rectilíneo, mientras que el actuador rotativo está diseñado específicamente para generar un par motor y mover cargas en un ángulo determinado. Este último componente es el encargado de proporcionar el movimiento angular necesario en sistemas mecánicos.",
+    "ejemplo": "Si necesitas abrir una compuerta o girar un brazo mecánico, utilizarás un actuador rotativo en lugar de un cilindro lineal simple o doble efecto.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0148"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778185",
+    "pregunta": "¿Cuál de los siguientes tipos de vías están destinados a expulsar el aire comprimido hacia la atmósfera?",
+    "opciones": [
+      "Alimentación.",
+      "Aplicaciones.",
+      "Escapes.",
+      "Pilotajes neumáticos."
+    ],
+    "correcta": 2,
+    "explicacion": "Las vías de escape están diseñadas específicamente para la descarga controlada del aire comprimido sobrante o residual hacia el ambiente. Este proceso es fundamental para liberar la presión acumulada en el sistema sin causar sobretensiones ni daños por acumulación excesiva.",
+    "ejemplo": "Cuando desmontas un actuador, debes abrir la válvula de escape para que el aire salga gradualmente y no quede atrapado bajo presión.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0149"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778135",
+    "pregunta": "¿Cuál de los siguientes compresores no pertenece al grupo de los compresores rotativos?",
+    "opciones": [
+      "Compresor de paletas.",
+      "Compresor de tornillo.",
+      "Compresor tipo roots.",
+      "Compresor de membrana."
+    ],
+    "correcta": 3,
+    "explicacion": "Los compresores rotativos son aquellos que utilizan un mecanismo giratorio para aumentar la presión del aire, como el tornillo o las paletas. El compresor de membrana funciona mediante la acción de una membrana flexible que se comprime y expande, sin partes móviles complejas tipo engranajes o roscas internas.",
+    "ejemplo": "Si tienes que elegir entre un sistema neumático basado en aceite (tornillo) o uno más simple para aire comprimido puntual, el compresor de membrana es conceptualmente distinto al resto por su principio de acción.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0150"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778121",
+    "pregunta": "¿Cómo se define la presión atmosférica?",
+    "opciones": [
+      "La presión que ejerce el aire en un punto de la atmósfera.",
+      "La presión que ejercen los anticiclones de la atmósfera.",
+      "La presión que ejerce la gravedad bajo la atmósfera.",
+      "La presión que soportan las nubes."
+    ],
+    "correcta": 0,
+    "explicacion": "La presión atmosférica es simplemente la fuerza ejercida por el peso del aire sobre una superficie determinada. Esta presión varía con la altitud porque hay menos masa de aire encima cuanto más alto se sube.",
+    "ejemplo": "Cuando trabajamos en un túnel o en una zona elevada, notarás que las mediciones de presión pueden ser diferentes a las realizadas al nivel del mar debido a esta variación natural.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0151"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778116",
+    "pregunta": "¿Cuál es la unidad destinada a la fuerza en el Sistema Internacional?",
+    "opciones": [
+      "Kilopondios.",
+      "Kilogramos.",
+      "Watios.",
+      "Newtons."
+    ],
+    "correcta": 3,
+    "explicacion": "El Newton es la unidad de fuerza en el Sistema Internacional porque está definido como kilogramo metro por segundo al cuadrado, representando la interacción entre masa y aceleración. Los watios son unidades de potencia y los kilogramos representan masa.",
+    "ejemplo": "Cuando tensamos un actuador hidráulico para levantar una carga, la fuerza que genera se mide en Newtons para calcular el par necesario en el circuito.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0152"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778194",
+    "pregunta": "¿Cuál de los siguientes accionamientos no pertenece a las válvulas de accionamiento muscular?",
+    "opciones": [
+      "Accionamiento mediante pulsador.",
+      "Accionamiento mediante palanca.",
+      "Accionamiento mediante pedal.",
+      "Accionamiento de rodillo escamoteable."
+    ],
+    "correcta": 3,
+    "explicacion": "Los accionamientos musculares en sistemas neumáticos e hidráulicos se basan en la acción directa o indirecta del cuerpo humano, utilizando elementos como pulsadores, palancas o pedales para generar el movimiento. El rodillo escamoteable es un mecanismo de alimentación o guía y no representa una fuente primaria de potencia aplicada por el operario.",
+    "ejemplo": "Si tienes que accionar un actuador pequeño en el taller, usarás un pulsador manual; si necesitas fuerza mayor, podrías emplear un pedal conectado a la bomba hidráulica.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0153"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778163",
+    "pregunta": "¿Cuál de las siguientes afirmaciones acerca de los cilindros de doble efecto es correcta?",
+    "opciones": [
+      "Los cilindros de doble efecto realizan su carrera de avance y la de retroceso por acción del aire.",
+      "Los cilindros de doble efecto realizan la carrera de avance y la de retroceso por la acción del aire y la atmósfera.",
+      "Los cilindros de doble efecto realizan la carrera de retroceso por la acción de la gravedad.",
+      "Los cilindros de doble efecto solo realizan la carrera de avance por la acción del aire."
+    ],
+    "correcta": 0,
+    "explicacion": "Un cilindro de doble efecto está diseñado para recibir alimentación de presión en ambos extremos, lo que permite controlar el movimiento tanto al extenderse como al retraerse. Esta capacidad dual asegura un control preciso y reversible del actuador mediante la gestión del caudal de aire comprimido.",
+    "ejemplo": "Si tienes que prensar una pieza con un brazo neumático, usarás este cilindro para asegurar que tanto el cierre como la apertura se realicen bajo presión constante.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0154"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778227",
+    "pregunta": "¿Con cuál de los siguientes elementos no se puede controlar el caudal?",
+    "opciones": [
+      "Con bombas.",
+      "Con reguladores.",
+      "Con manómetros.",
+      "Con combinación de bombas."
+    ],
+    "correcta": 2,
+    "explicacion": "Los manómetros son instrumentos de medición que indican la presión en un sistema, pero no tienen capacidad para modificar ni controlar el flujo o caudal del fluido. Para regular el caudal se utilizan elementos activos como bombas o reguladores.",
+    "ejemplo": "Si necesitas saber si hay una sobrepresión en el circuito de frenos, usas el manómetro; si tienes que reducir la velocidad de actuación de un actuador, debes ajustar un regulador de caudal.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0155"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778170",
+    "pregunta": "¿Cuál es la fórmula que expresa la fuerza que producen los actuadores neumáticos?",
+    "opciones": [
+      "Fuerza = presión · área.",
+      "Fuerza = volumen · presión.",
+      "Fuerza = caudal · área.",
+      "Fuerza = masa · velocidad."
+    ],
+    "correcta": 0,
+    "explicacion": "La fuerza generada por un actuador neumático se calcula multiplicando la presión del aire que actúa sobre él por el área de la superficie que empuja o resiste. Esta relación deriva directamente de los principios básicos de la mecánica y la estática aplicada a fluidos confinados.",
+    "ejemplo": "Si tienes un cilindro con una sección transversal conocida, al aplicar una determinada presión de aire en la fuente, podrás calcular la fuerza máxima teórica que ejercerá el pistón.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0156"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778149",
+    "pregunta": "¿Cuál de las siguientes afirmaciones no es correcta?",
+    "opciones": [
+      "Un regulador de presión proporciona una regularidad en la presión de trabajo.",
+      "Un regulador de presión proporciona una presión de cálculo a todos los componentes.",
+      "Un regulador de presión proporciona unas regulaciones óptimas de presión.",
+      "Un regulador de presión proporciona una baja humedad en todo el circuito."
+    ],
+    "correcta": 3,
+    "explicacion": "El regulador de presión se encarga exclusivamente de mantener un valor constante de la presión de trabajo, independientemente de las variaciones del caudal o la presión de alimentación. La gestión de la humedad en el circuito es función de filtros secadores específicos y no del regulador de presión.",
+    "ejemplo": "Si hay condensación en una línea de aire comprimido, aunque el regulador mantenga la presión correcta, seguirán existiendo gotas de agua que pueden causar fallos en los actuadores neumáticos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0157"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778114",
+    "pregunta": "¿Qué factor puede deteriorar los componentes neumáticos?",
+    "opciones": [
+      "Bloqueo mecánico.",
+      "Presión.",
+      "Velocidad.",
+      "Temperatura."
+    ],
+    "correcta": 1,
+    "explicacion": "Los sistemas neumáticos funcionan bajo la transmisión de energía mediante gases comprimidos, y el nivel de presión es el parámetro fundamental que determina la fuerza disponible en los actuadores. Un exceso o una variación brusca de presión puede causar sobrecargas o fallos prematuros en sellados y componentes internos.",
+    "ejemplo": "Si un cilindro neumático opera con una presión superior a la recomendada por el fabricante, podrías ver deformación del vástago o rotura de los sellos estáticos.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0158"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778198",
+    "pregunta": "¿Qué tipo de válvula es la utilizada para el control de actuadores de simple efecto?",
+    "opciones": [
+      "3/2.",
+      "2/2.",
+      "4/2.",
+      "5/2."
+    ],
+    "correcta": 0,
+    "explicacion": "Una válvula de tres vías y dos posiciones (3/2) está diseñada para controlar un actuador que solo necesita moverse en una dirección, lo cual es característico de los actuadores de simple efecto. Al cambiar su posición, se puede dirigir el flujo o cerrarlo completamente hacia la fuente de energía.",
+    "ejemplo": "Si tienes un cilindro que solo empuja (como un pistón de freno), usarás esta válvula para controlar cuándo debe recibir aire y cuándo debe detenerse.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0159"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778117",
+    "pregunta": "¿A qué se denomina “escape” en un sistema de aire comprimido?",
+    "opciones": [
+      "A los insonorizantes del ruido del aire expulsado a la atmósfera.",
+      "A las pérdidas de presión a lo largo de las tuberías de transporte.",
+      "A las pérdidas de parte del aire en el transporte.",
+      "A las pérdidas de presión por las impurezas contenidas."
+    ],
+    "correcta": 0,
+    "explicacion": "El término \"escape\" en el contexto de un sistema neumático se refiere específicamente al componente encargado de mitigar el ruido generado por la descarga del aire a la atmósfera. Estos dispositivos están diseñados para absorber y reducir la energía sonora del flujo expulsado.",
+    "ejemplo": "Si notas un ruido excesivo al desconectar una herramienta neumática, es probable que necesites instalar o revisar los silenciadores o insonorizantes de escape.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0160"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778216",
+    "pregunta": "¿Cuál de los siguientes tipos de válvulas se conoce comúnmente como válvulas estranguladoras?",
+    "opciones": [
+      "Válvulas limitadoras de presión.",
+      "Válvulas reductoras de presión.",
+      "Válvulas de secuencia.",
+      "Válvulas reguladoras de caudal."
+    ],
+    "correcta": 3,
+    "explicacion": "Las válvulas estranguladoras son un tipo específico de válvula que se utiliza para controlar el flujo o caudal del fluido, creando una restricción controlada en la línea. Su función principal es modular la cantidad de fluido que pasa por un punto determinado manteniendo generalmente una presión constante aguas arriba.",
+    "ejemplo": "Si tienes que reducir el chorro de aire de un actuador neumático sin cambiar su presión de alimentación, usarías una válvula estranguladora para limitar ese caudal.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0161"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778179",
+    "pregunta": "¿Cómo se denominan los cilindros que utilizan dos caras del émbolo?",
+    "opciones": [
+      "Simple efecto.",
+      "Efecto reversible.",
+      "Efecto sencillo.",
+      "Doble efecto."
+    ],
+    "correcta": 3,
+    "explicacion": "El sistema de doble efecto está diseñado para accionar el pistón en ambas direcciones, ya que recibe presión tanto en la entrada como en la salida del cilindro. Esto permite realizar un movimiento controlado tanto al extenderlo como al retraerlo utilizando fluidos a alta presión.",
+    "ejemplo": "Si tienes que empujar una prensa o sujetar algo con fuerza en ambos sentidos, necesitarás un cilindro de doble efecto para asegurar el recorrido completo y seguro.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0162"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778195",
+    "pregunta": "Si se clasifican las válvulas según su función, ¿cuál de las siguientes válvulas no corresponde a dicha clasificación?",
+    "opciones": [
+      "Válvulas de vía.",
+      "Válvulas de bloqueo.",
+      "Válvulas de presión.",
+      "Válvula monoestable."
+    ],
+    "correcta": 3,
+    "explicacion": "Las válvulas se clasifican funcionalmente según su acción o el efecto que producen en un circuito, como controlar la vía, bloquear el paso o regular la presión. La monoestabilidad es más bien una característica de funcionamiento o de accionamiento de una válvula (como si solo actúa con un tipo de señal).",
+    "ejemplo": "Si tienes que seleccionar una válvula para mantener la presión constante mientras se realiza un trabajo, usarías una válvula reguladora de presión; la monoestable no describe esa función principal.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0163"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778113",
+    "pregunta": "¿A qué fenómeno es insensible el aire comprimido?",
+    "opciones": [
+      "Presión relativa.",
+      "Fuerza.",
+      "Temperatura.",
+      "Presión absoluta."
+    ],
+    "correcta": 2,
+    "explicacion": "El aire comprimido, por definición, es un fluido gaseoso cuya presión se incrementa mediante compresión adiabática, lo que provoca un aumento de su temperatura. Sin embargo, la capacidad del sistema para transmitir fuerza o realizar trabajo depende primariamente de las variaciones de presión y volumen, no directamente de la temperatura en condiciones operativas normales.",
+    "ejemplo": "Si trabajamos con un actuador neumático y el aire se calienta mucho por fricción interna sin que cambie significativamente su presión de alimentación, la fuerza generada será prácticamente la misma.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0164"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "sistemas-neumaticos-e-hidraulicos",
+    "submodulo": "SISTEMAS NEUMATICOS E HIDRAULICOS",
+    "idExterno": "2778144",
+    "pregunta": "¿Qué aparato no es usado para depurar el aire comprimido?",
+    "opciones": [
+      "Refrigeradores de aire.",
+      "Separadores de condensador.",
+      "Deshidratadores",
+      "Depósitos."
+    ],
+    "correcta": 3,
+    "explicacion": "Los depósitos son principalmente elementos de almacenamiento y regulación de caudal, no están diseñados para eliminar impurezas del aire comprimido. Para la depuración se utilizan equipos que eliminan agua, aceite o partículas sólidas.",
+    "ejemplo": "Si notas un mal funcionamiento en una herramienta neumática por golpes irregulares, es posible que necesites revisar el secador o separadores de condensado antes de culpar al depósito.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0165"
   }
 ]
