@@ -4462,8 +4462,8 @@
       "Está formada por un cuerpo con unos orificios por los que circula el aire controlados mediante un inducido combinado con la acción de una bobina."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Esta válvula opera basándose en el principio de equilibrio entre la fuerza del fluido presurizado que intenta abrirla y la fuerza constante ejercida por el muelle. El émbolo se mueve hasta alcanzar un punto donde las fuerzas opuestas se compensan, manteniendo una presión máxima segura.",
+    "ejemplo": "Si el sistema detecta una sobrepresión brusca al frenar bruscamente, el émbolo cederá ligeramente, permitiendo que parte del exceso de aire regrese al depósito y evitando daños en los componentes hidráulicos.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4489,8 +4489,8 @@
       "Variando el diámetro de una u otra válvula se consigue distinto efecto."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El amortiguador de doble efecto permite controlar la resistencia al movimiento en ambas direcciones, ya que tiene dos circuitos hidráulicos independientes. Esto se logra ajustando las válvulas internas para modular el caudal y la fuerza de frenado en cada sentido.",
+    "ejemplo": "Si notas que el coche rebota mucho al pasar por un bache fuerte, es posible que necesites ajustar la válvula del recorrido de compresión o extensión para mejorar la absorción de impactos.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4514,8 +4514,8 @@
       "Falso"
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión hidroneumática combina resortes neumáticos con amortiguadores hidráulicos, y la esfera es un componente clave que asegura el correcto funcionamiento conjunto de ambos sistemas. Mantener la idéntica configuración garantiza que las fuerzas de compresión y extensión se gestionen según el diseño original del fabricante.",
+    "ejemplo": "Si cambias una esfera por una de diferente especificación, podrías notar que el vehículo rebota más o que la respuesta al pasar un bache es notablemente distinta a la habitual.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4541,8 +4541,8 @@
       "150 cm3"
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La capacidad del acumulador está diseñada para almacenar un volumen específico de fluido hidráulico, lo cual es crucial para mantener la presión constante en el sistema. Este volumen determina cuánta energía puede suministrar al actuador durante un ciclo de trabajo sin que caiga bruscamente la presión.",
+    "ejemplo": "Si el acumulador tuviera una capacidad insuficiente, notarías que al accionar el brazo hidráulico, este se detiene o pierde fuerza antes de alcanzar su recorrido máximo.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4568,8 +4568,8 @@
       "Todas las respuestas anteriores son correctas."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las ballestas, como elemento de suspensión, pueden orientarse en diferentes planos para adaptarse a la geometría específica del vehículo y al tipo de carga que deben soportar. La elección entre montaje transversal o longitudinal depende del diseño estructural general del eje y el chasis.",
+    "ejemplo": "Si tienes un vehículo con un tren trasero muy largo, es posible que se requiera un montaje más longitudinal para distribuir mejor las fuerzas de torsión.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4595,8 +4595,8 @@
       "Las barras de torsión."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los amortiguadores son sistemas que disipan la energía del movimiento mediante fluidos, mientras que los muelles, ballestas y barras de torsión almacenan y liberan energía elástica. Estos últimos están diseñados específicamente para soportar cargas verticales o resistir torsiones.",
+    "ejemplo": "Si notas un bote excesivo en la suspensión al pasar por un bache, es posible que necesites revisar el fluido o los sellos del amortiguador.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4622,8 +4622,8 @@
       "Está formada por una válvula de paso fijada al bastidor y unida mediante una varilla al eje de la rueda."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La válvula de nivel es un componente mecánico que utiliza un sistema de palanca o varillaje para transmitir el movimiento del eje de la rueda a una válvula reguladora. Este diseño permite controlar la presión o el caudal en función del recorrido físico de la suspensión.",
+    "ejemplo": "Si tienes que revisar la conexión de una válvula de nivel, comprueba siempre que la varilla que une la válvula al eje no tenga holguras ni esté doblada para asegurar la correcta transmisión del movimiento.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4649,8 +4649,8 @@
       "Un tope de goma."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los ojos de las ballestas están diseñados para alojar pasadores que atraviesan tanto la ballesta como el punto de anclaje del chasis. Este sistema permite transmitir la fuerza de tensión y compresión a través de un eje definido, manteniendo la alineación estructural.",
+    "ejemplo": "Si al montar una suspensión encuentras que los orificios no son lo suficientemente grandes para pasar el pasador, es crucial revisar si hay corrosión o desgaste excesivo en el ojo de la ballesta antes de intentar forzarlo.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4676,8 +4676,8 @@
       "Las barras de torsión"
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El término \"muelle\" engloba a varios componentes que cumplen la función de almacenar y liberar energía elástica, como los resortes helicoidales o las ballestas. Estos elementos están diseñados con aceros especiales y tratamientos térmicos específicos para optimizar su comportamiento bajo carga cíclica.",
+    "ejemplo": "Cuando revisamos un eje de suspensión, debemos identificar si es una barra de torsión, una ballesta o un muelle helicoidal para aplicar el par de apriete correcto en los anclajes.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4701,8 +4701,8 @@
       "Falso"
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La descarga previa de la presión es fundamental para garantizar la seguridad y evitar daños en los componentes al manipular el sistema. Al liberar la tensión acumulada, se asegura que no haya fuerzas inesperadas actuando sobre las piezas durante el desmontaje o montaje.",
+    "ejemplo": "Si intentas desenroscar un amortiguador sin purgarlo primero, podrías sufrir una expulsión violenta del vástago por la presión interna residual.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4728,8 +4728,8 @@
       "Conjunto muelle amortiguador."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El bloque de suspensión es un conjunto integral que combina la función de amortiguación y el soporte elástico en una única unidad. Este diseño optimiza la gestión de fuerzas y reduce componentes sueltos o puntos de montaje complejos.",
+    "ejemplo": "Si tienes que reemplazar la suspensión completa por desgaste, cambiar el bloque asegura que tanto el resorte como el amortiguador trabajen sincronizadamente desde el mismo punto de anclaje.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4755,8 +4755,8 @@
       "Los brazos de suspensión de los ejes delantero y trasero."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los tirantes actúan como elementos estructurales que conectan la carrocería o chasis con los componentes de la suspensión. Su función principal es mantener la geometría correcta del tren de rodaje y proporcionar rigidez al conjunto.",
+    "ejemplo": "Si un tirante se rompe, el vehículo perderá estabilidad lateral porque la conexión entre la estructura y la suspensión no será adecuada durante una curva.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4782,8 +4782,8 @@
       "Suspensiones independientes."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las suspensiones mecánicas se clasifican según su geometría y cómo aíslan la rueda de los movimientos del chasis, como ocurre con las rígidas, independientes o semirrígidas. El término \"suspensión automática\" no es una clasificación técnica basada en el principio físico de amortiguación o conexión entre ruedas.",
+    "ejemplo": "Si un vehículo tiene suspensión independiente, significa que el movimiento de una rueda no afecta directamente a la geometría ni al comportamiento de la otra rueda del mismo eje.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4809,8 +4809,8 @@
       "Tiene un fuelle de caucho que va cerrado en su parte inferior por una placa unida al bastidor."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión neumática sustituye a los resortes helicoidales por cámaras de aire comprimido que se encargan de absorber y almacenar la energía del impacto en el camino. Su funcionamiento se basa en la compresibilidad del gas para mantener un confort superior al vehículo.",
+    "ejemplo": "Si pasas por un bache grande, el resorte neumático se comprimirá mucho más que uno convencional, absorbiendo mejor el golpe y manteniendo una altura constante.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4836,8 +4836,8 @@
       "El balanceo de la carrocería es elevado."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Cabecear en aceleración se debe a un momento de inercia vertical que afecta al tren delantero o trasero, y no es el síntoma principal del desgaste general de la suspensión. El desgaste suele provocar oscilaciones excesivas o movimientos laterales anómalos.",
+    "ejemplo": "Si tienes amortiguadores muy gastados, notarás que el coche rebota mucho después de pasar por un bache, aunque en aceleración pura el movimiento es más lineal.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4861,8 +4861,8 @@
       "Falso"
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las unidades autonivelantes utilizan el movimiento vertical del vehículo para accionar una bomba que genera la presión hidráulica necesaria. Este sistema permite mantener una altura constante de la carrocería independientemente de la carga o el remolque.",
+    "ejemplo": "Si enganchas un remolque muy pesado, las suspensiones bajarán y el sistema autonivelante compensará automáticamente elevando la parte trasera para que la marcha se mantenga nivelada.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4888,8 +4888,8 @@
       "Fuelles neumáticos."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión hidroneumática combina la acción de un fluido (líquido) con la compresión de un gas, típicamente nitrógeno, para gestionar los movimientos verticales del vehículo. Esta combinación permite un control más avanzado y adaptable que el ofrecido por resortes puros o amortiguadores hidráulicos convencionales.",
+    "ejemplo": "Si notas que en superficies muy irregulares la suspensión se comporta con un balanceo excesivo, es posible que necesite una revisión de sus componentes neumáticos para asegurar la correcta interacción entre el fluido y el gas.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4915,8 +4915,8 @@
       "Todas las respuestas anteriores son correctas."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La presión aplicada sobre cualquier superficie genera una fuerza, lo cual es un principio fundamental de la mecánica de fluidos. Además, los gases se consideran fluidos compresibles porque su volumen cambia significativamente al variar la presión, y esta característica permite almacenarlos en tanques o acumuladores.",
+    "ejemplo": "Cuando trabajamos con sistemas neumáticos, el aire comprimido que guardamos en un depósito es un ejemplo claro de gas comprimible que almacena energía potencial.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4942,8 +4942,8 @@
       "25 a 45%."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La eficacia de un amortiguador se refiere a su capacidad para disipar la energía del movimiento, y un desgaste significativo reduce esta función. Se aconseja el cambio cuando la pérdida de rendimiento cae dentro de ese rango porcentual para garantizar la seguridad y el confort.",
+    "ejemplo": "Si notas que el vehículo rebota excesivamente después de pasar por un bache o una curva, es probable que los amortiguadores ya no estén disipando la energía correctamente.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4969,8 +4969,8 @@
       "Depósito lleno de carburante o según indicación del fabricante."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El control de alturas, ya sea en sistemas hidráulicos o neumáticos, requiere que el vehículo esté estable y la suspensión pueda operar libremente sin interferencias externas. Por lo tanto, no es necesario accionar el freno de mano para realizar estas comprobaciones.",
+    "ejemplo": "Si aprietas el freno de mano mientras mides la altura de un amortiguador, podrías introducir una tensión o deformación que altere la lectura real del sistema.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -4996,8 +4996,8 @@
       "Alejar el centro de gravedad del suelo."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión independiente permite que cada rueda opere de forma aislada respecto a las demás, lo que reduce el movimiento vertical general del cuerpo del vehículo. Esto mejora notablemente la respuesta dinámica y el confort al absorber mejor las irregularidades del terreno.",
+    "ejemplo": "Al pasar por un bache en una rueda, el sistema no afecta significativamente a la trayectoria o al contacto de la rueda opuesta con el asfalto.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5023,8 +5023,8 @@
       "Unir el bastidor con la mangueta."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las barras estabilizadoras están diseñadas para conectar ambos lados del mismo eje, limitando la diferencia de altura entre las ruedas cuando el vehículo circula por superficies irregulares. Esto reduce significativamente el balanceo lateral del vehículo en curvas.",
+    "ejemplo": "Si pasas por un bache grande en una rueda y no en la otra, la barra estabilizadora evitará que el coche se incline excesivamente hacia ese lado.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5050,8 +5050,8 @@
       "Sirven de elemento soporte sólo para el amortiguador."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los brazos de suspensión son componentes estructurales fundamentales que conectan mecánicamente el chasis o bastidor con los conjuntos rueda, permitiendo el movimiento vertical necesario para absorber irregularidades del terreno. Esta función de unión es clave porque deben soportar las cargas verticales y también transmitir los movimientos laterales generados por la dirección.",
+    "ejemplo": "Si un brazo fallase en su punto de anclaje al chasis, no solo perderías la amortiguación sino que el conjunto rueda quedaría descolgado o mal alineado respecto a la carrocería.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5075,8 +5075,8 @@
       "Falso"
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El conjuntor-disyuntor es un componente clave en estos sistemas porque gestiona el flujo de fluidos hidráulicos. Permite dirigir la presión acumulada hacia los elementos actuadores o devolverla al sistema de depósito para su reciclaje.",
+    "ejemplo": "Si necesitas bajar la altura del vehículo, el conjunto dirige la presión a los cilindros; si no se requiere ajuste, devuelve el fluido al depósito.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5102,8 +5102,8 @@
       "Reposa el líquido espumoso."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El depósito tiene como función principal almacenar y mantener un volumen constante de fluido hidráulico o refrigerante para asegurar su disponibilidad en el sistema. No está diseñado para recoger directamente lo que la bomba está suministrando activamente al circuito, ya que esto es parte del flujo de trabajo continuo.",
+    "ejemplo": "Si abres el tapón de purga o hay una fuga grande, el depósito ayuda a mantener la presión mínima y evita un vacío total en el sistema hidráulico.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5127,8 +5127,8 @@
       "Falso"
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Este nombre se utiliza porque la geometría que forma el conjunto de brazos y puntos de anclaje en un plano lateral recuerda a la figura de un trapecio o a dos triángulos superpuestos. Su diseño permite controlar los movimientos de la rueda con mayor precisión angular que otros sistemas.",
+    "ejemplo": "Si notas que al girar el volante el coche tiende a tirar hacia un lado, podría ser que la geometría de suspensión no esté compensando bien las fuerzas laterales en ese eje.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5154,8 +5154,8 @@
       "Ninguno."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los acumuladores hidráulicos se cargan con un gas inerte, como el nitrógeno, para separar la presión de aire del fluido hidráulico. Este gas actúa como amortiguador y reserva energética sin reaccionar químicamente con el aceite.",
+    "ejemplo": "Si en un sistema de frenos asistido por acumulador hay una pérdida momentánea de presión, el nitrógeno comprimido garantiza que el sistema mantenga suficiente soporte para evitar fallos críticos.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5181,8 +5181,8 @@
       "Depósito."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las fuentes de presión son componentes activos o pasivos diseñados para generar, mantener o regular la energía hidráulica necesaria en el sistema. El depósito actúa principalmente como un acumulador y reservorio del fluido, no generando por sí mismo la fuerza motriz principal.",
+    "ejemplo": "Si tienes que purgar un circuito hidráulico, es normal que veas que el líquido regresa al depósito, pero este solo almacena lo que ya ha sido presurizado por la bomba.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5208,8 +5208,8 @@
       "El tirante longitudinal."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La barra estabilizadora está diseñada para conectar los ejes o ruedas de manera que limite el movimiento diferencial de la carrocería respecto al eje vertical. Su función principal es resistir el momento de vuelco generado por las fuerzas laterales durante una curva, manteniendo un comportamiento más nivelado.",
+    "ejemplo": "Si en una curva fuerte se comprime mucho una rueda y estira otra, la barra estabilizadora limita esa diferencia de movimiento para mejorar la adherencia general del vehículo.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5233,8 +5233,8 @@
       "Falso"
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión está diseñada precisamente para aislar los componentes superiores del vehículo de las vibraciones y golpes generados por la irregularidad del terreno. Su función principal es garantizar el confort de marcha y, fundamentalmente, mantener una presión constante entre el neumático y la superficie de rodadura.",
+    "ejemplo": "Si pasas sobre un bache grande, la suspensión absorbe el impacto para que las ruedas sigan pegadas al suelo y puedas frenar o girar con seguridad sin perder tracción.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5260,8 +5260,8 @@
       "Protegen solamente a los ocupantes."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión tiene la función principal de mantener el contacto constante y adecuado de los neumáticos con la superficie de rodadura, absorbiendo las irregularidades del terreno. Esto implica que debe soportar dinámicamente todo el peso del vehículo en todas las condiciones de carga y movimiento.",
+    "ejemplo": "Si pasas por un bache fuerte, es la suspensión la encargada de absorber ese impacto para que las ruedas no pierdan contacto con el asfalto.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5287,8 +5287,8 @@
       "Una parte eléctrica de la suspensión neumática y un circuito hidráulico."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión neumática combina elementos mecánicos para soportar el peso del vehículo con actuadores que utilizan aire a presión como medio de trabajo. Este sistema requiere tanto la estructura física (muelles, brazos) como un suministro controlado de aire comprimido para ajustar la altura o amortiguar vibraciones.",
+    "ejemplo": "Si tienes que subir la altura de un furgón para cargar mercancía pesada en un terreno irregular, el compresor llenará los acumuladores y se activarán las válvulas para elevar el vehículo mediante la presión del aire.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5314,8 +5314,8 @@
       "· 30.000 km."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La limpieza periódica del depósito es fundamental para mantener la pureza del fluido hidráulico y asegurar el correcto funcionamiento de los amortiguadores. Este intervalo está determinado por el fabricante para evitar la contaminación que puede afectar a las válvulas internas.",
+    "ejemplo": "Si ignoras este mantenimiento, podrías notar un comportamiento errático o una pérdida progresiva de altura en el vehículo al circular por baches.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5341,8 +5341,8 @@
       "Eje semirrígido."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El paralelogramo deformable es un concepto geométrico que busca mantener la trayectoria de las ruedas lo más paralela posible a sí misma durante el recorrido de la suspensión. La suspensión multibrazo independiente mejora esta geometría al controlar mejor los movimientos longitudinales y laterales de las ruedas.",
+    "ejemplo": "Al pasar por un bache, la suspensión mantiene una alineación más estable que un sistema menos controlado, reduciendo el desgaste irregular de neumáticos.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5368,8 +5368,8 @@
       "· 50.000 km."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La frecuencia de cambio del líquido depende fundamentalmente de las especificaciones del fabricante y del uso que haga el vehículo. Generalmente, se recomienda un intervalo amplio para asegurar la correcta lubricación y sellado interno de los componentes neumáticos.",
+    "ejemplo": "Si notas fugas o una pérdida notable de altura en suspensión, aunque no sea el kilometraje previsto, debes llevarlo a revisar inmediatamente.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5395,8 +5395,8 @@
       "Realizan el arrastre del vehículo y están elaborados en un material de resistencia media."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los brazos de suspensión son componentes estructurales diseñados para soportar las cargas verticales y controlar los movimientos de la rueda respecto al chasis. Su función principal no es generar arrastre, sino mantener el contacto constante del neumático con la superficie de rodadura.",
+    "ejemplo": "Si un brazo tuviera baja resistencia, podría deformarse excesivamente bajo una carga lateral fuerte, afectando la geometría de la dirección y causando un comportamiento errático en curva.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5422,8 +5422,8 @@
       "Las dos ruedas están unidas entre sí, pero transmiten menos irregularidades."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "En una suspensión semirrígida, las dos ruedas de un mismo eje están conectadas mecánicamente para que se muevan juntas, lo cual reduce la transmisión de vibraciones y movimientos verticales al chasis. Sin embargo, esta conexión limita la capacidad de cada rueda para seguir perfectamente el perfil del terreno de forma independiente.",
+    "ejemplo": "Si conduces por un bache pequeño, ambas ruedas subirán y bajarán casi simultáneamente gracias a la unión, lo que mejora ligeramente el confort respecto a una suspensión totalmente independiente.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5449,8 +5449,8 @@
       "Un depósito."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El aire comprimido necesario para operar los actuadores neumáticos debe ser generado a una presión superior a la atmosférica mediante un equipo especializado. Este proceso de aumento de presión se realiza específicamente con un compresor, que comprime el gas en un volumen reducido.",
+    "ejemplo": "Si detectamos fugas o baja presión en el sistema neumático al revisar el coche, lo primero que debemos comprobar es el estado y funcionamiento del compresor para asegurar la alimentación adecuada.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5476,8 +5476,8 @@
       "Mayor cuando disminuye la carga."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El sistema autonivelante está diseñado para mantener una altura de marcha constante compensando variaciones en el peso del vehículo. Esto se logra mediante un actuador que ajusta la presión o extensión hidráulica para contrarrestar cualquier desnivel causado por la carga.",
+    "ejemplo": "Si llevas el coche cargado con material pesado en la parte trasera, el sistema automáticamente extenderá los amortiguadores o actuadores para que la altura percibida sea la misma que cuando vas vacío.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5503,8 +5503,8 @@
       "Bloque hidroneumático."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El resorte neumático utiliza la presión de un gas incompresible, generalmente nitrógeno, para almacenar y liberar energía elástica. Esto permite absorber vibraciones y mantener una altura constante independientemente de la carga o del terreno.",
+    "ejemplo": "Si trabajamos en un vehículo que debe pasar por baches repetitivos, este sistema ajustará automáticamente la rigidez para ofrecer siempre un confort óptimo al pasajero.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5530,8 +5530,8 @@
       "La longitud de la varilla que se desplaza con el pistón."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La carrera del amortiguador es el recorrido total que realiza el vástago o varilla hidráulica desde su posición más extendida hasta la más comprimida. Este recorrido físico está determinado por las dimensiones geométricas del conjunto de suspensión y amortiguación.",
+    "ejemplo": "Si al medir un amortiguador vemos que recorre 10 centímetros entre los topes, esa es su carrera máxima definida por el diseño.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5557,8 +5557,8 @@
       "Suministrar el líquido solamente al sistema de suspensión."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El diseño de estos sistemas prioriza siempre la seguridad del vehículo, y el fallo hidráulico nunca debe comprometer la capacidad de frenado. Por ello, las válvulas de seguridad están configuradas para asegurar que los actuadores de frenado reciban presión antes que cualquier otro sistema auxiliar.",
+    "ejemplo": "Si se detecta una caída brusca de presión en el circuito principal por un fallo grave, la válvula desviará inmediatamente el caudal hacia los cilindros de rueda para mantener la capacidad de parada del vehículo.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5584,8 +5584,8 @@
       "Tiene como función principal absorber la variación de las oscilaciones debidas a las irregularidades del pavimento reduciendo la frecuencia de dichas oscilaciones."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El amortiguador controla el movimiento vertical de la suspensión, disipando la energía cinética generada por los impactos. Al hacer esto, su función es reducir la amplitud y frecuencia de las oscilaciones para que el vehículo se mantenga estable.",
+    "ejemplo": "Si pasas sobre un bache fuerte, el amortiguador evita que la rueda rebote excesivamente después del impacto, manteniendo el contacto constante con el suelo.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5611,8 +5611,8 @@
       "Se caracteriza por que las ruedas van montadas sobre un mismo eje."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión semirrígida mantiene las ruedas conectadas por un eje o semi-eje, lo que limita la capacidad de cada rueda para moverse verticalmente de forma independiente. Sin embargo, al incorporar elementos elásticos como muelles y amortiguadores, se logra filtrar parte de las vibraciones del terreno antes de que lleguen a la carrocería.",
+    "ejemplo": "En un vehículo con suspensión semirrígida, si una rueda pasa por un bache grande, la otra rueda no reaccionará completamente al mismo tiempo ni con la misma magnitud de movimiento vertical.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5638,8 +5638,8 @@
       "Ninguna respuesta es correcta."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las barras de torsión son elementos que almacenan y disipan energía mediante la deformación angular de un eje, lo cual implica una resistencia al giro sin necesidad de grandes desplazamientos lineales. Su comportamiento elástico se basa en la tensión generada por el par aplicado sobre su sección transversal.",
+    "ejemplo": "En suspensión, si hay un gran recorrido de rueda, las barras de torsión limitarán ese movimiento aplicando un par resistivo que ayuda a mantener la geometría deseada del tren de rodaje.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5663,8 +5663,8 @@
       "Falso"
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las barras de torsión son elementos elásticos que transmiten fuerzas rotacionales entre componentes del tren de rodaje. Su diseño aprovecha la deformación helicoidal del material para gestionar los movimientos verticales y laterales.",
+    "ejemplo": "Si una rueda encuentra un bache, la barra se torsionará momentáneamente, aplicando una fuerza reactiva al otro lado del eje para mantener el equilibrio direccional.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5690,8 +5690,8 @@
       "Cada rueda va montada en un brazo longitudinal."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "En la suspensión rígida, el tren de rodaje está conectado al chasis mediante un conjunto que mantiene ambas ruedas unidas por un eje común. Este diseño implica que ambos ejes se mueven verticalmente y lateralmente como una unidad respecto al vehículo.",
+    "ejemplo": "Es lo que encontramos comúnmente en los vehículos más antiguos o en ciertos diseños todoterreno donde la simplicidad mecánica es prioritaria sobre el confort de marcha.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5717,8 +5717,8 @@
       "El fuelle neumático actúa en cada uno de los lados del soporte balancín que se apoya sobre el eje del propulsor."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "En este tipo de suspensión, el diseño del fuelle permite transmitir las fuerzas entre el eje y la estructura mediante un sistema de soporte en dos puntos distintos. Esto asegura una correcta absorción de vibraciones y movimientos verticales al estar anclado tanto al elemento móvil como a la carrocería.",
+    "ejemplo": "Si tienes que revisar los soportes de suspensión, notarás que el fuelle tiene una conexión inferior con el eje y otra superior fijada al chasis del vehículo.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5744,8 +5744,8 @@
       "Alrededor de 570kPa."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las válvulas de alivio están diseñadas para operar a una presión preestablecida que evita el sobreesfuerzo del sistema hidráulico o neumático. Esta presión se determina en función de los componentes y la aplicación específica del circuito.",
+    "ejemplo": "Si notas fugas excesivas o un comportamiento errático en el tren delantero al pasar por un bache, es posible que la válvula de alivio esté regulando una presión incorrecta para esa suspensión.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5771,8 +5771,8 @@
       "Llenar la bomba de líquido hidráulico por el tubo de aspiración."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El proceso de cebado busca eliminar el aire del sistema antes de que la bomba entre en funcionamiento, por lo que arrancar el motor prematuramente puede introducir o no expulsar correctamente las burbujas. Debes asegurar un llenado adecuado y una purga controlada para garantizar el correcto funcionamiento hidráulico.",
+    "ejemplo": "Si arrancas el motor sin haber cebado bien, podrías forzar la entrada de aire al sistema, lo que provocaría fallos en el comportamiento de la suspensión o incluso sobrecalentamiento del fluido.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5798,8 +5798,8 @@
       "Todas las respuestas anteriores son correctas."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los fuelles de una suspensión neumática están sometidos a múltiples factores que degradan su material el tiempo, como la exposición ambiental y los ciclos de presión. Estas condiciones provocan tanto fisuras superficiales como un deterioro general del elastómero, lo que lleva inevitablemente a fugas de aire.",
+    "ejemplo": "Si notas que la altura de marcha de tu vehículo es menor de lo habitual o si hay ruidos extraños al pasar por baches, podría deberse a un desgaste avanzado de los fuelles neumáticos.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5825,8 +5825,8 @@
       "Todas se utilizan por igual."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La suspensión McPherson es un diseño muy común porque integra el amortiguador y el muelle helicoidal en una única unidad que actúa sobre el eje delantero. Este sistema permite mantener la geometría de las ruedas bajo diversas condiciones de carga y recorrido.",
+    "ejemplo": "Cuando revisamos un coche antiguo o un modelo popular, lo más habitual es encontrar este tipo de montaje por su eficiencia y sencillez mecánica.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5852,8 +5852,8 @@
       "La esfera."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El conjunto disyuntor es el componente encargado de regular y mantener la presión del sistema hidráulico en un nivel constante, protegiendo además los elementos internos ante sobrepresiones o bajadas bruscas. Su función se basa en medir continuamente la presión y actuar sobre las válvulas para compensar variaciones.",
+    "ejemplo": "Si al pasar por un bache grande el coche necesita mucha amortiguación de golpe, el conjunto disyuntor asegura que la presión hidráulica no caiga bruscamente ni suba demasiado.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5879,8 +5879,8 @@
       "Válvula limitadora de altura."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La válvula de nivel está diseñada específicamente para mantener un volumen de aire constante dentro del fuelle, regulando la entrada y salida según el desplazamiento necesario. Su función es evitar que el sistema se vacíe o sobrepresurice excesivamente en condiciones normales de operación.",
+    "ejemplo": "Si notas que el coche pierde altura notablemente al pasar por baches grandes, podría ser un fallo en esta válvula que no está manteniendo la presión adecuada.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5906,8 +5906,8 @@
       "Barra estabilizadora."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "La ballesta es un elemento estructural primario diseñado específicamente para soportar y distribuir el peso longitudinal de la carrocería sobre los ejes. Los otros componentes son elementos secundarios que gestionan movimientos o fuerzas laterales, no el soporte principal del peso estático.",
+    "ejemplo": "Si notas grietas en la zona donde se fija la ballesta al chasis, es crucial revisar su integridad estructural antes de cualquier prueba de carga.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5931,8 +5931,8 @@
       "Falso."
     ],
     "correcta": 0,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "El sistema de suspensión determina la altura total del vehículo, y al cambiar esta geometría se altera el ángulo de convergencia o divergencia de los faros. Esto provoca que el haz luminoso no ilumine correctamente la vía en condiciones normales de conducción.",
+    "ejemplo": "Si subes mucho la altura con un elevador hidráulico, los faros apuntarán demasiado alto, deslumbrando a otros conductores y sin iluminar bien el asfalto delante.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5958,8 +5958,8 @@
       "Muelle con su correspondiente amortiguador."
     ],
     "correcta": 2,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los resortes son elementos elásticos diseñados para almacenar y liberar energía mediante la deformación de su material. Las ballestas y las barras de torsión son ejemplos clásicos de sistemas que utilizan este principio físico para soportar cargas o generar un par de fuerza.",
+    "ejemplo": "Si tienes que cambiar los muelles de suspensión de una moto antigua, estás sustituyendo el elemento encargado de absorber el impacto vertical en lugar de usar solo amortiguadores.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -5985,8 +5985,8 @@
       "Las tres respuestas anteriores son correctas."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Un amortiguador pierde eficacia cuando hay fugas de fluido hidráulico, ya que este es el encargado de disipar la energía del movimiento. El deterioro estructural o corrosivo afecta a la integridad mecánica necesaria para soportar las fuerzas de trabajo. Además, el óxido en el vástago impide un sellado y un recorrido suave y controlado.",
+    "ejemplo": "Si notas manchas de aceite bajo el coche o si al pasar por un bache sientes que el amortiguador \"rebota\" más de lo normal, es señal de que necesita revisión completa.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -6012,8 +6012,8 @@
       "La instalación está dotada de unos racores para conectar manómetros."
     ],
     "correcta": 3,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Los sistemas neumáticos e hidráulicos están diseñados con puntos de conexión específicos, llamados racores o puertos, precisamente para facilitar la medición y el diagnóstico. Estos puntos aseguran que la toma de presión se realice en un lugar designado por el fabricante sin comprometer la integridad del circuito.",
+    "ejemplo": "Si tienes que comprobar la presión de retorno de un cilindro, debes conectar el manómetro al puerto de prueba que el manual especifica, no a cualquier manguera visible.",
     "revisado": false,
     "material": {
       "pdf": null,
@@ -6039,8 +6039,8 @@
       "Se pueden utilizar en las uniones que queramos."
     ],
     "correcta": 1,
-    "explicacion": "",
-    "ejemplo": "",
+    "explicacion": "Las tuberías de goma son componentes flexibles esenciales que gestionan el flujo de fluidos dentro del sistema, asegurando tanto los caminos de retorno como la alimentación a los componentes principales. Su función principal es conectar y canalizar estos fluidos bajo las condiciones operativas del sistema.",
+    "ejemplo": "Si detectamos una fuga menor en un conducto rígido cerca de un depósito, podríamos usar una manguera de goma para desviar temporalmente el fluido hacia el área de recogida sin comprometer la integridad estructural.",
     "revisado": false,
     "material": {
       "pdf": null,
