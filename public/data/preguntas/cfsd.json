@@ -4447,5 +4447,1609 @@
     },
     "tags": [],
     "id": "cfsd-0165"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778288",
+    "pregunta": "La válvula limitadora de presión...",
+    "opciones": [
+      "Está formada por un cuerpo y un émbolo con su correspondiente muelle antagonista.",
+      "Está formada por una válvula de paso fijada al bastidor y unida mediante una varilla al eje de la rueda.",
+      "Está formada por una válvula de paso con su correspondiente muelle tarado.",
+      "Está formada por un cuerpo con unos orificios por los que circula el aire controlados mediante un inducido combinado con la acción de una bobina."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0166"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778239",
+    "pregunta": "La ventaja del amortiguador de doble efecto es que...",
+    "opciones": [
+      "El movimiento del aceite a través de los orificios es más rápido.",
+      "Sólo trabaja en un sentido.",
+      "La sujeción a la carrocería y brazos de suspensión se realiza sin cojinetes elásticos.",
+      "Variando el diámetro de una u otra válvula se consigue distinto efecto."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0167"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778263",
+    "pregunta": "En la suspensión hidroneumática, el amortiguador y la esfera son dos elementos indisociables determinados para cada eje y cada vehículo. Por tanto, es necesario sustituir una esfera por otra idéntica, correspondiente al vehículo. De lo contrario, la amortiguación y la flexibilidad sufrirán alteraciones.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0168"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778281",
+    "pregunta": "¿Cuál es la capacidad total del acumulador?",
+    "opciones": [
+      "300 cm3",
+      "200 cm3",
+      "400 cm3",
+      "150 cm3"
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0169"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778252",
+    "pregunta": "En los turismos las ballestas se montan de forma ...",
+    "opciones": [
+      "Transversal o longitudinal",
+      "Longitudinal.",
+      "Vertical",
+      "Todas las respuestas anteriores son correctas."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0170"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778233",
+    "pregunta": "¿Cuál de los siguientes elementos no es considerado un resorte?",
+    "opciones": [
+      "Los muelles.",
+      "Los amortiguadores.",
+      "Las ballestas.",
+      "Las barras de torsión."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0171"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778282",
+    "pregunta": "La válvula de nivel...",
+    "opciones": [
+      "Está formada por una válvula de paso con su correspondiente muelle tarado.",
+      "Está formada por un cuerpo y un émbolo con su correspondiente muelle antagonista.",
+      "Está formada por un cuerpo con unos orificios por los que circula el aire controlado mediante un inducido combinado con la acción de una bobina.",
+      "Está formada por una válvula de paso fijada al bastidor y unida mediante una varilla al eje de la rueda."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0172"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778251",
+    "pregunta": "En las ballestas la lámina más larga tiene en sus extremos unos orificios denominados ojos, para sujetarlas al chasis con ...",
+    "opciones": [
+      "Una brida en U.",
+      "Un perno central.",
+      "Unos pasadores.",
+      "Un tope de goma."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0173"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": null,
+    "pregunta": "Los muelles son unos elementos construidos de acero especial para resortes (acero al manganeso, al silicio, al silicio manganeso o al vanadio), a los que se le aplican diferentes tratamientos térmicos para mejorar sus propiedades, tales como elasticidad, resistencia mecánica...",
+    "opciones": [
+      "Todos ellos",
+      "Los muelles.",
+      "Las ballestas",
+      "Las barras de torsión"
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0174"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778267",
+    "pregunta": "En la suspensión hidroneumática, antes de realizar cualquier intervención sobre algún órgano del sistema hidráulico se debe descargar la presión a través del tornillo de purga.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0175"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778264",
+    "pregunta": "El bloque de suspensión sustituye a...",
+    "opciones": [
+      "Los muelles, ballestas y barras de torsión.",
+      "Amortiguador.",
+      "Sistema de unión de cojinetes elásticos.",
+      "Conjunto muelle amortiguador."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0176"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778242",
+    "pregunta": "Los tirantes son brazos de acero muy resistentes, con articulaciones elásticas en sus extremos, colocados entre...",
+    "opciones": [
+      "Los brazos de suspensión del mismo eje.",
+      "Las ruedas motrices para absorber las reacciones en las aceleraciones y frenadas.",
+      "La estructura del vehículo y los sistemas de suspensión.",
+      "Los brazos de suspensión de los ejes delantero y trasero."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0177"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778257",
+    "pregunta": "¿Cuál de los siguientes grupos no pertenece a una suspensión mecánica o convencional?",
+    "opciones": [
+      "Suspensiones rígidas.",
+      "Suspensiones automáticas.",
+      "Suspensiones semirrígidas.",
+      "Suspensiones independientes."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0178"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778291",
+    "pregunta": "La suspensión neumática...",
+    "opciones": [
+      "Tiene un fuelle de caucho que está formado por una estructura de goma natural.",
+      "Utiliza como fuente de energía el aceite.",
+      "Consiste en intercalar, entre le bastidor y el eje de las ruedas o los brazos de suspensión, un resorte neumático.",
+      "Tiene un fuelle de caucho que va cerrado en su parte inferior por una placa unida al bastidor."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0179"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778260",
+    "pregunta": "Indica cuál de las siguientes afirmaciones no es correcta respecto a la manifestación del desgaste de la suspensión.",
+    "opciones": [
+      "El coche cabecea en las aceleraciones.",
+      "Sensación de inestabilidad.",
+      "Los neumáticos se desgastan de forma irregular.",
+      "El balanceo de la carrocería es elevado."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0180"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778268",
+    "pregunta": "Las unidades autonivelantes están dotadas con una acción interna de bombeo propia. La energía necesaria se obtiene íntegramente de los movimientos verticales de la carrocería del coche. Cuando el coche se mueve, intervienen las suspensiones y con ellas la bomba interna, que aspira el fluido hidráulico de un depósito interno y lo envía a una cámara de presión en la que actúa un gas comprimido. De esta forma, la carrocería del coche se eleva a la altura predeterminada para una marcha óptima en cuanto el coche empieza a moverse, compensando el desplazamiento hacia abajo de la carrocería debido a la carga o a un remolque.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0181"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778269",
+    "pregunta": "Los resortes utilizados en la suspensión convencional son sustituidos en la suspensión hidroneumática por...",
+    "opciones": [
+      "Un líquido y un gas.",
+      "Muelles helicoidales.",
+      "Láminas.",
+      "Fuelles neumáticos."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0182"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778276",
+    "pregunta": "¿Cuál de estas afirmaciones es correcta?",
+    "opciones": [
+      "Una presión aplicada sobre una superficie genera una fuerza.",
+      "El líquido hidráulico es incomprensible.",
+      "El gas es un fluido comprimible y puede ser acumulado bajo presión.",
+      "Todas las respuestas anteriores son correctas."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0183"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778259",
+    "pregunta": "En un banco de suspensiones ¿En qué porcentajes de eficacia aconsejamos un cambio de amortiguadores?",
+    "opciones": [
+      "25 a 50%",
+      "20 a 45%.",
+      "15 a 50%",
+      "25 a 45%."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0184"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778261",
+    "pregunta": "Indica cuál de las siguientes condiciones no está dentro de las que tenemos que cumplir antes de realizar un control de alturas.",
+    "opciones": [
+      "Presión de los neumáticos correcta.",
+      "Freno de mano puesto.",
+      "Vehículo en posición horizontal.",
+      "Depósito lleno de carburante o según indicación del fabricante."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0185"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778246",
+    "pregunta": "En la suspensión independiente se consigue...",
+    "opciones": [
+      "Menor desplazamiento de la carrocería y más comodidad.",
+      "Mayor comodidad para los ocupantes",
+      "Repartir en partes iguales la masa suspendida del vehículo.",
+      "Alejar el centro de gravedad del suelo."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0186"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778255",
+    "pregunta": "Las barras estabilizadoras tienen como misión...",
+    "opciones": [
+      "De unir longitudinalmente la suspensión al chasis para absorber los desplazamientos longitudinales y esfuerzos de reacción en las frenadas y aceleraciones del vehículo.",
+      "Evitar el desplazamiento longitudinal del eje, actuando de tirante.",
+      "Compensar los esfuerzos de la suspensión en una rueda sobre la otra en el mismo eje.",
+      "Unir el bastidor con la mangueta."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0187"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778248",
+    "pregunta": "Los brazos de suspensión...",
+    "opciones": [
+      "Sirven de elemento soporte sólo para el resorte.",
+      "Siempre son transversales.",
+      "Realizan la unión entre la carrocería y las ruedas.",
+      "Sirven de elemento soporte sólo para el amortiguador."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0188"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778273",
+    "pregunta": "En la suspensión hidroneumática, el conjuntor-disyuntor permite, mediante un sistema de eje distribuidor, alimentar con líquido la esfera y el cilindro o enviar el líquido hacia el depósito.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0189"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778279",
+    "pregunta": "Indica cuál de las siguientes afirmaciones no es una de las funciones que realiza el depósito.",
+    "opciones": [
+      "Almacena el líquido necesario para un buen funcionamiento de los órganos.",
+      "Recoge el líquido suministrado por la bomba cuando esta se encuentra conectada al circuito.",
+      "Recoge los retornos de utilización para su almacenamiento y posterior utilización.",
+      "Reposa el líquido espumoso."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0190"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778234",
+    "pregunta": "La suspensión de paralelogramo deformable también es llamada de trapecio articulado o de triángulos superpuestos.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0191"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778274",
+    "pregunta": "El gas que utilizan los acumuladores es",
+    "opciones": [
+      "Hidrógeno.",
+      "Nitrógeno.",
+      "Oxígeno.",
+      "Ninguno."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0192"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778278",
+    "pregunta": "¿Cuál de los siguientes elementos no pertenece a una fuente de presión?",
+    "opciones": [
+      "Bomba de alta presión.",
+      "Válvula de seguridad.",
+      "Válvula de descarga.",
+      "Depósito."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0193"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778244",
+    "pregunta": "¿Qué elemento de suspensión impide que el vehículo se incline en una curva?",
+    "opciones": [
+      "La barra estabilizadora.",
+      "El amortiguador.",
+      "El resorte elástico.",
+      "El tirante longitudinal."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0194"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778237",
+    "pregunta": "La suspensión consiste en interponer entre el chasis-carrocería y las ruedas ciertos elementos deformables capaces de absorber las irregularidades del pavimento. Su misión es la de evitar al máximo que las incidencias de la carretera se trasmitan a los órganos del vehículo y que se mantenga siempre el contacto del neumático con el pavimento,",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0195"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778245",
+    "pregunta": "Los elementos de suspensión en un vehículo....",
+    "opciones": [
+      "No permiten alcanzar mayor velocidad",
+      "Han de soportar todo el peso del vehículo en cualquier situación de la marcha.",
+      "Contribuyen a la seguridad pasiva.",
+      "Protegen solamente a los ocupantes."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0196"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778289",
+    "pregunta": "La suspensión neumática consta de...",
+    "opciones": [
+      "Una parte mecánica de la suspensión neumática y un circuito hidráulico.",
+      "Una parte eléctrica de la suspensión neumática y un circuito de aire comprimido.",
+      "Una parte mecánica de la suspensión neumática y un circuito de aire comprimido.",
+      "Una parte eléctrica de la suspensión neumática y un circuito hidráulico."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0197"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778284",
+    "pregunta": "¿Cada cuántos km se debe realizar una limpieza del depósito en una suspensión hidroneumática?",
+    "opciones": [
+      "· 25.000 km.",
+      "· 33.000 km.",
+      "· 15.000 km.",
+      "· 30.000 km."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0198"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778243",
+    "pregunta": "La suspensión independiente multibrazo es una evolución de la suspensión de...",
+    "opciones": [
+      "Mcpherson.",
+      "Eje rígido.",
+      "Paralelogramo deformable.",
+      "Eje semirrígido."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0199"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778286",
+    "pregunta": "¿Cada cuántos km se debe realizar una sustitución del líquido del depósito en una suspensión hidroneumática?",
+    "opciones": [
+      "· 40.000 km.",
+      "· 35.000 km.",
+      "· 60.000 km.",
+      "· 50.000 km."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0200"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778256",
+    "pregunta": "Indica cuál de las siguientes afirmaciones no es correcta sobre los brazos de suspensión...",
+    "opciones": [
+      "Su misión es realizar la unión entre la carrocería y las ruedas.",
+      "Pueden ser colocados de forma transversal o longitudinal.",
+      "Una de sus misiones es la de servir de elemento de soporte para el resorte y el amortiguador.",
+      "Realizan el arrastre del vehículo y están elaborados en un material de resistencia media."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0201"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778240",
+    "pregunta": "En la suspensión semirrígida...",
+    "opciones": [
+      "Ambas ruedas se unen mediante un eje rígido y brazos transversales.",
+      "Las ruedas están unidas mediante, un eje rigido y trapecios",
+      "Cada rueda va montada de forma independiente. Semiejes articulados al diferencial.",
+      "Las dos ruedas están unidas entre sí, pero transmiten menos irregularidades."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0202"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778265",
+    "pregunta": "La alimentación de aire comprimido en la suspensión neumática es proporcionada por",
+    "opciones": [
+      "Una bomba.",
+      "Un compresor.",
+      "Directamente de la atmósfera.",
+      "Un depósito."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0203"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778270",
+    "pregunta": "Las unidades autonivelantes permiten obtener una altura...",
+    "opciones": [
+      "Constante independientemente de la carga.",
+      "Mayor cuando aumenta la carga.",
+      "Menor cuando aumenta la carga.",
+      "Mayor cuando disminuye la carga."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0204"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778271",
+    "pregunta": "La suspensión neumática consiste en intercalar, entre el bastidor y el eje de las ruedas o los brazos de suspensión, un...",
+    "opciones": [
+      "Resorte neumático.",
+      "Amortiguador.",
+      "Resorte elástico.",
+      "Bloque hidroneumático."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0205"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778253",
+    "pregunta": "La carrera del amortiguador se define por",
+    "opciones": [
+      "El calibrado o válvulas de paso.",
+      "El gas que absorbe las diferencias de volumen entre las cámaras.",
+      "El aceite entre un lado y el otro del pistón.",
+      "La longitud de la varilla que se desplaza con el pistón."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0206"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778266",
+    "pregunta": "En caso de fallo en el circuito hidráulico, la válvula de seguridad interviene para...",
+    "opciones": [
+      "Conceder prioritariamente la alimentación del sistema de suspensión.",
+      "Distribuir el líquido para cada bloque de suspensión.",
+      "Suministrar prioritariamente la alimentación a los frenos.",
+      "Suministrar el líquido solamente al sistema de suspensión."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0207"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778292",
+    "pregunta": "El amortiguador...",
+    "opciones": [
+      "Está situado entre la esfera y la válvula de seguridad.",
+      "Está compuesto por una arandela de teflón sinterizado macizo.",
+      "Tiene como función principal absorber la variación de las oscilaciones debidas a las irregularidades del pavimento ampliando la frecuencia y la amplitud de dichas oscilaciones.",
+      "Tiene como función principal absorber la variación de las oscilaciones debidas a las irregularidades del pavimento reduciendo la frecuencia de dichas oscilaciones."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0208"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778258",
+    "pregunta": "La suspensión semirrígida...",
+    "opciones": [
+      "Tienen como objetivo mejorar el confort y la estabilidad y, al mismo tiempo, reducir las oscilaciones recibidas del firme y nos trasmitirlas de una rueda a otra.",
+      "Tiene como característica que las ruedas están unidas entre sí, como el eje rígido, pero transmiten menos irregularidades recibidas del firme al resto del vehículo.",
+      "Tienen 2 modelos; si el eje es propulsor o si el eje es arrastrado.",
+      "Se caracteriza por que las ruedas van montadas sobre un mismo eje."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0209"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778250",
+    "pregunta": "¿Qué elementos tienen excelentes cualidades elásticas, pero poca capacidad para almacenar energía?",
+    "opciones": [
+      "Las ballestas.",
+      "Los muelles.",
+      "Las barras de torsión.",
+      "Ninguna respuesta es correcta."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0210"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778238",
+    "pregunta": "Las barras de torsión consisten en unas barras macizas fabricadas de un material elástico que le confieren una elasticidad excepcional. Poseen en los extremos una forma particular (estriado), que sirve de anclaje. Un extremo va unido al chasis y el otro al brazo de suspensión.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0211"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778247",
+    "pregunta": "En la suspensión rígida...",
+    "opciones": [
+      "Cada rueda va montada en un brazo transversal.",
+      "Las dos ruedas van montadas sobre un mismo eje.",
+      "Ambas ruedas van colocadas en brazos oscilantes.",
+      "Cada rueda va montada en un brazo longitudinal."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0212"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778283",
+    "pregunta": "En la posición de un solo eje propulsor...",
+    "opciones": [
+      "Existe una adopción de dos fuelles por cada lado.",
+      "El fuelle neumático se encuentra apoyado en su parte inferior al eje y unido por la parte superior al bastidor.",
+      "El eje es conducido y elevable.",
+      "El fuelle neumático actúa en cada uno de los lados del soporte balancín que se apoya sobre el eje del propulsor."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0213"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778290",
+    "pregunta": "¿Qué presión tiene que alcanzar el aire para que una válvula de alivio permita su paso?",
+    "opciones": [
+      "Alrededor de 800kPa.",
+      "Alrededor de 700kPa.",
+      "Alrededor de 670kPa.",
+      "Alrededor de 570kPa."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0214"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778285",
+    "pregunta": "¿Cuál de las siguientes acciones no realizaremos cuando cebemos la bomba en una suspensión hidroneumática?",
+    "opciones": [
+      "Aflojar el tornillo de purga del conjuntor - propulsor.",
+      "Poner el motor en marcha.",
+      "Acoplar rápidamente el tubo de aspiración en cuanto la bomba parezca cebarse.",
+      "Llenar la bomba de líquido hidráulico por el tubo de aspiración."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0215"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778287",
+    "pregunta": "En una suspensión neumática el desgaste de los fuelles es producido por.....",
+    "opciones": [
+      "La rotura de las fijaciones de los mismos.",
+      "El envejecimiento que provoca pequeñas fugas de aire que impiden a estos alcanzar la altura máxima.",
+      "El envejecimiento que produce pequeñas fisuras en ellos.",
+      "Todas las respuestas anteriores son correctas."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0216"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778262",
+    "pregunta": "¿Qué suspensión es la más empleada en el eje delantero?",
+    "opciones": [
+      "Suspensión independiente de paralelogramo deformable.",
+      "Suspensión independiente multibrazo.",
+      "Suspensión independiente McPherson.",
+      "Todas se utilizan por igual."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0217"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778280",
+    "pregunta": "¿Qué elemento tiene la misión de mantener la presión constante de acuerdo con los valores establecidos por el fabricante?",
+    "opciones": [
+      "Conjunto disyuntor.",
+      "Acumulador principal.",
+      "Depósito.",
+      "La esfera."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0218"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778272",
+    "pregunta": "¿Qué válvula accionada por el efecto de la carga y descarga regula la cantidad de aire que entra y sale del fuelle?",
+    "opciones": [
+      "Válvula de alivio.",
+      "Válvula limitadora de presión.",
+      "Válvula de nivel.",
+      "Válvula limitadora de altura."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0219"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778254",
+    "pregunta": "Indica que elemento soporta directamente el peso de la carrocería.",
+    "opciones": [
+      "Ballesta.",
+      "Tirantes.",
+      "Rótula de suspensión,",
+      "Barra estabilizadora."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0220"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778236",
+    "pregunta": "Tras cualquier modificación de altura bajo casco, es conveniente verificar el reglaje de faros.",
+    "opciones": [
+      "Verdadero.",
+      "Falso."
+    ],
+    "correcta": 0,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0221"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778249",
+    "pregunta": "Los resortes, por su forma constructiva, pueden ser...",
+    "opciones": [
+      "Silentblocks elásticos.",
+      "Láminas unidas por un perno central.",
+      "Muelles, ballestas o barras de torsión.",
+      "Muelle con su correspondiente amortiguador."
+    ],
+    "correcta": 2,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0222"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778241",
+    "pregunta": "Un amortiguador se encuentra en mal estado cuando...",
+    "opciones": [
+      "Existen huellas de fugas de aceite.",
+      "Las zonas de unión entre el amortiguador y el vehículo están deterioradas por rozamiento, corrosión, etc.",
+      "El vástago está oxidado.",
+      "Las tres respuestas anteriores son correctas."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0223"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778275",
+    "pregunta": "Para realizar las comprobaciones de presión...",
+    "opciones": [
+      "Se intercala el manómetro en cualquier punto.",
+      "Se conecta el manómetro en el elemento defectuoso.",
+      "No es necesario realizar comprobaciones porque se visualizan en el cuadro de abordo.",
+      "La instalación está dotada de unos racores para conectar manómetros."
+    ],
+    "correcta": 3,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0224"
+  },
+  {
+    "moduloId": "cfsd",
+    "modulo": "CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN",
+    "submoduloId": "suspension-mecanica-e-hidroneumatica",
+    "submodulo": "SUSPENSION MECANICA E HIDRONEUMATICA",
+    "idExterno": "2778277",
+    "pregunta": "En una suspensión hidroneumática, las tuberías de goma...",
+    "opciones": [
+      "Sirven para algunos retornos tomas de atmósferas.",
+      "Se utilizan para los retornos del líquido de los órganos, para la aspiración de la bomba del depósito y en algunos retornos de fugas.",
+      "Se utilizan cuando los elementos a unir funcionan bajo una presión elevada.",
+      "Se pueden utilizar en las uniones que queramos."
+    ],
+    "correcta": 1,
+    "explicacion": "",
+    "ejemplo": "",
+    "revisado": false,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "cfsd-0225"
   }
 ]
