@@ -66,10 +66,26 @@ gh auth login
 Sin eso funciona igual, pero GitHub pedirá permiso al subir y hay que resolverlo
 a mano.
 
+### Qué sube el botón Publicar
+
+Todo lo que haya cambiado: las preguntas del banco **y** el programa. El panel te
+lo desglosa antes («3 archivos: 1 de preguntas y 2 del programa») y el registro
+enumera los archivos que sube.
+
+Es importante que suba las dos cosas: si el programa se actualiza y no se publica,
+los arreglos no llegan nunca a la app del móvil.
+
 ### 2. Activar GitHub Pages
 
-Si el repositorio se creó desde el panel, esto ya está hecho. Si no:
-**Settings → Pages → Source → GitHub Actions**.
+En la pestaña **Publicar**, debajo del estado, el panel te dice si GitHub está
+sirviendo la app o no, y te da el botón que falte:
+
+- **404 al abrir la dirección** → «Activar Pages y construir».
+- **Repositorio privado** → «Hacerlo público», porque Pages gratuito sólo publica
+  los públicos. Ojo: al hacerlo, cualquiera podrá ver tus preguntas.
+- **Todo listo** → sale la dirección de tu app, para abrirla en el móvil.
+
+A mano también se puede: **Settings → Pages → Source → GitHub Actions**.
 
 **El repositorio tiene que ser público** para que Pages funcione con una cuenta
 gratuita. En privado tendrás el respaldo de las preguntas, pero no la dirección web.
@@ -616,6 +632,7 @@ test-automocion/
 │   ├── probar-importador.mjs    pruebas del importador con la captura real
 │   ├── probar-panel.mjs         pruebas de la API del panel
 │   ├── probar-banco.mjs         pruebas del Banco pulsando de verdad
+│   ├── probar-movil.mjs         pruebas del gesto y de la barra del móvil
 │   ├── probar-macos.mjs         pruebas del lector de macOS
 │   ├── ver-lectura.mjs          diagnóstico de una captura suelta
 │   └── probar-app.mjs           pruebas de la app de test renderizada
@@ -675,7 +692,7 @@ declararlos antes de tenerlas.
 ## Comprobaciones
 
 ```bash
-npm run probar    # 331 comprobaciones automáticas
+npm run probar    # 377 comprobaciones automáticas
 npm run build     # que la app compila sin errores
 ```
 
@@ -690,6 +707,7 @@ Qué cubre cada bloque:
 | `probar-ia` | El flujo con Ollama contra un servidor simulado, con Ollama caído y con un modelo que se sale del formato |
 | `probar-banco` | El Banco montado en un navegador simulado: que la casilla no abra el editor, que escribir en una respuesta no la marque como correcta, quitar y añadir respuestas, y las acciones en bloque |
 | `probar-macos` | El lector de macOS: la conversión de coordenadas de Vision y el agrupado de líneas en opciones |
+| `probar-movil` | Lo que sólo falla con el dedo: el gesto de deslizar reproducido con eventos de puntero de verdad, y que se pueda salir del test sin la cabecera |
 | `probar-app` | La app de test renderizada de verdad: responder, colores, swipe, marcar, resultados, estadísticas |
 
 Si tocas el parseo, el OCR o las expresiones regulares, ejecútalo antes de fiarte.

@@ -118,12 +118,11 @@ export default function TarjetaPregunta({
         ))}
       </div>
 
-      {/* Explicación y ejemplo */}
+      {/* Explicación y ejemplo.
+          Sin data-sin-swipe a propósito: después de responder ocupa media
+          pantalla, y es justo cuando quieres deslizar a la siguiente. */}
       {revelada && (pregunta.explicacion || pregunta.ejemplo) && (
-        <div
-          data-sin-swipe
-          className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/60"
-        >
+        <div className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/60">
           {pregunta.explicacion && (
             <div>
               <div className="mb-1.5 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wide text-sky-600 dark:text-sky-400">

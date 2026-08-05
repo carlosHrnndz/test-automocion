@@ -356,6 +356,42 @@ Aquí tienes el resultado:
        /GIT_TERMINAL_PROMPT=0/.test(fs.readFileSync(path.join(RAIZ, 'panel', 'servidor.mjs'), 'utf8')));
   }
 
+  console.log('\n--- Que se publica ---');
+  {
+    const est = await api('/api/estado');
+    ok('cuenta por separado las preguntas', typeof est.git.cambiosBanco === 'number');
+    ok('y el programa', typeof est.git.cambiosPrograma === 'number');
+    ok('el total cuadra con la suma',
+       est.git.cambios === est.git.cambiosBanco + est.git.cambiosPrograma);
+
+    // El fallo que se vio en uso: el panel contaba archivos del programa pero
+    // el botón sólo subía la carpeta de preguntas, así que no subía nada.
+    const servidor = fs.readFileSync(path.join(RAIZ, 'panel', 'servidor.mjs'), 'utf8');
+    const publicar = servidor.slice(servidor.indexOf("'POST /api/publicar'"),
+                                    servidor.indexOf("'POST /api/publicar'") + 1200);
+    ok('publicar sube todo lo que ha cambiado', /git add -A\\n/.test(publicar));
+    ok('y ya no se limita a public/data', !/git add -A public\/data/.test(publicar));
+    ok('el push tampoco se queda esperando una contrasena',
+       /GIT_TERMINAL_PROMPT=0/.test(publicar));
+    ok('enumera los archivos antes de subirlos', /--name-only/.test(publicar));
+
+    const pagina = await (await fetch(base + '/')).text();
+    ok('la interfaz desglosa preguntas y programa',
+       /de preguntas/.test(pagina) && /del programa/.test(pagina));
+  }
+
+  console.log('\n--- Donde ha quedado publicada ---');
+  {
+    const d = await api('/api/pages');
+    ok('responde sin romperse aunque no haya repositorio', typeof d.hay === 'boolean');
+
+    const pagina = await (await fetch(base + '/')).text();
+    ok('la interfaz reserva sitio para la direccion de la app', /id="estadoPages"/.test(pagina));
+    const servidor = fs.readFileSync(path.join(RAIZ, 'panel', 'servidor.mjs'), 'utf8');
+    ok('sabe deducir la direccion desde el repositorio', /github\.io/.test(servidor));
+    ok('avisa si el repositorio es privado', /privado/.test(pagina));
+  }
+
   console.log('\n--- Deteccion de actualizaciones ---');
   const act = await api('/api/actualizacion');
   ok('responde sin romperse', typeof act.hay === 'boolean' || act.motivo === 'no encontrada');

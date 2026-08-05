@@ -432,9 +432,10 @@ Todas las demás respuestas son correctas."></textarea>
     <h2>Publicar en GitHub</h2>
     <p class="ayuda">Sube los cambios del banco. GitHub reconstruye y actualiza la app sola.</p>
     <div id="estadoGit"></div>
+    <div id="estadoPages"></div>
     <div style="margin-top:13px">
       <label for="mensajeCommit">Descripción del cambio</label>
-      <input id="mensajeCommit" value="Nuevas preguntas">
+      <input id="mensajeCommit" value="Actualizar preguntas">
     </div>
     <div class="fila" style="margin-top:14px">
       <button class="b grande verde" id="btnPublicar">Publicar</button>
@@ -1146,10 +1147,20 @@ function pintarGit() {
   if (primeraVez) return pintarPasosGit();
 
   $('#btnPublicar').disabled = g.cambios === 0;
+
+  // Se desglosa qué se va a subir. Antes ponía "13 archivos" y luego el
+  // registro decía que no había nada, porque sólo se subían las preguntas.
+  const detalle = [
+    g.cambiosBanco ? `${g.cambiosBanco} de preguntas` : '',
+    g.cambiosPrograma ? `${g.cambiosPrograma} del programa` : '',
+  ].filter(Boolean).join(' y ');
+
   $('#estadoGit').innerHTML = g.cambios
-    ? `<div class="aviso bien"><b>${g.cambios} archivo(s) con cambios</b> listos para publicar.<br>
+    ? `<div class="aviso bien"><b>${g.cambios} archivo(s) por publicar</b>${
+         detalle ? `: ${detalle}` : ''}.<br>
        <span class="fin">Rama ${esc(g.rama)} · ${esc(g.remoto)}</span></div>`
-    : `<div class="aviso bien">Todo publicado. No hay cambios pendientes.<br>
+    : `<div class="aviso bien">Todo subido a GitHub: ni preguntas ni programa
+       tienen cambios pendientes.<br>
        <span class="fin">Rama ${esc(g.rama)} · ${esc(g.remoto)}</span></div>`;
 
   if (ESTADO.banco.sinRevisar) {
@@ -1157,6 +1168,82 @@ function pintarGit() {
       Ojo: ${ESTADO.banco.sinRevisar} explicación(es) siguen sin revisar. Se publicarán igual,
       pero en la app saldrán marcadas.</div>`);
   }
+  pintarPages();
+}
+
+// Dónde ha quedado la app y si GitHub la está sirviendo. Sin esto no hay forma
+// de saber si "todo publicado" quiere decir que ya se puede abrir en el móvil.
+async function pintarPages() {
+  const caja = $('#estadoPages');
+  caja.innerHTML = '<div class="fin">Consultando a GitHub…</div>';
+  let d;
+  try { d = await api('/api/pages'); } catch { return caja.innerHTML = ''; }
+  if (!d.hay) return caja.innerHTML = '';
+
+  const partes = [];
+
+  if (d.visibilidad === 'private') {
+    partes.push(`<div class="aviso">
+      El repositorio es <b>privado</b>, y con una cuenta gratuita GitHub Pages sólo
+      publica los públicos. Tus preguntas están guardadas y a salvo, pero todavía no
+      hay dirección web para el móvil.<br>
+      <span class="fin">Al hacerlo público, cualquiera podrá ver tus preguntas.
+        Piénsalo antes: son las de tu academia.</span>
+      <div class="fila" style="margin-top:10px">
+        <button class="b" id="btnRepoPublico">Hacerlo público</button>
+        <button class="mini" id="btnRecargarPages">Volver a comprobar</button>
+      </div>
+    </div>`);
+  } else if (d.pages?.activo) {
+    const url = d.pages.url || d.prevista;
+    partes.push(`<div class="aviso bien">
+      Tu app está publicada en<br>
+      <a href="${esc(url)}" target="_blank" style="font-size:15px;font-weight:700">${esc(url)}</a>
+      <br><span class="fin">Ábrela en el móvil y elige «Añadir a pantalla de inicio».</span>
+    </div>`);
+  } else {
+    partes.push(`<div class="aviso">
+      GitHub todavía no está sirviendo la app: por eso sale un <b>404</b> si abres la
+      dirección. Falta activarlo, y es una sola vez.
+      ${d.prevista ? `<br><span class="fin">Quedará en ${esc(d.prevista)}</span>` : ''}
+      <div class="fila" style="margin-top:10px">
+        <button class="b verde" id="btnActivarPages">Activar Pages y construir</button>
+        <button class="mini" id="btnRecargarPages">Volver a comprobar</button>
+        ${d.repoWeb ? `<a class="fin" href="${esc(d.repoWeb)}/settings/pages" target="_blank">
+          o hacerlo a mano en GitHub</a>` : ''}
+      </div>
+    </div>`);
+  }
+
+  if (d.construccion) {
+    const c = d.construccion;
+    const enMarcha = c.estado && c.estado !== 'completed';
+    const mal = c.resultado && c.resultado !== 'success';
+    partes.push(`<div class="aviso${mal ? ' malo' : ''}">
+      Última construcción: ${enMarcha ? 'en marcha, tarda un par de minutos'
+        : mal ? 'ha fallado' : 'terminada bien'}.
+      ${c.url ? `<a href="${esc(c.url)}" target="_blank">Ver el detalle</a>` : ''}
+    </div>`);
+  }
+
+  caja.innerHTML = partes.join('');
+  $('#btnRecargarPages')?.addEventListener('click', pintarPages);
+
+  $('#btnActivarPages')?.addEventListener('click', async () => {
+    try {
+      await api('/api/pages-activar', { method: 'POST' });
+      registroPublicar();
+    } catch (e) { toast(e.message, true); }
+  });
+
+  $('#btnRepoPublico')?.addEventListener('click', async () => {
+    if (!confirm('El repositorio pasará a ser público y cualquiera podrá ver las ' +
+                 'preguntas. ¿Seguro?')) return;
+    try {
+      await api('/api/repo-publico', { method: 'POST' });
+      registroPublicar();
+    } catch (e) { toast(e.message, true); }
+  });
 }
 
 // Asistente de la primera vez. Dos pasos: preparar la carpeta y conectarla con

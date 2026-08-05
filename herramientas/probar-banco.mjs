@@ -88,7 +88,10 @@ const dom = new JSDOM(html, { url: 'http://localhost:5174/', runScripts: 'danger
                               pretendToBeVisual: true, beforeParse(win) {
   win.fetch = async (url, opciones = {}) => {
     const ruta = String(url).replace('http://localhost:5174', '');
-    if (opciones.body) enviados.push({ ruta, cuerpo: JSON.parse(opciones.body) });
+    // Se apuntan todas las llamadas que cambian algo, lleven cuerpo o no.
+    if (opciones.body || (opciones.method && opciones.method !== 'GET')) {
+      enviados.push({ ruta, cuerpo: opciones.body ? JSON.parse(opciones.body) : {} });
+    }
     const responder = (datos) => ({ ok: true, status: 200, json: async () => datos, text: async () => html });
     if (ruta.startsWith('/api/estado')) return responder(ESTADO);
     if (ruta.startsWith('/api/preguntas')) return responder({ preguntas: PREGUNTAS });
@@ -306,6 +309,66 @@ console.log('\n--- Primera publicacion ---');
   ok('con todo listo se esconde el asistente', $('#cajaPrimeraVez').hidden === true);
   ok('y se puede publicar', $('#btnPublicar').disabled === false);
   ok('dice cuantos archivos van', $('#estadoGit').textContent.includes('3 archivo'));
+}
+
+// --- Dónde ha quedado publicada la app --------------------------------------
+console.log('\n--- Estado de GitHub Pages ---');
+{
+  const respuestaPages = { valor: null };
+  const fetchOriginal = window.fetch;
+  window.fetch = async (url, opciones = {}) => {
+    if (String(url).includes('/api/pages') && !String(url).includes('activar')) {
+      return { ok: true, status: 200, json: async () => respuestaPages.valor };
+    }
+    return fetchOriginal(url, opciones);
+  };
+  ESTADO.git = { esRepo: true, cambios: 0, rama: 'main',
+                 remoto: 'https://github.com/carlos/test-automocion.git',
+                 identidad: { nombre: 'C', correo: 'c@e.com' }, gh: true, carpeta: 'x' };
+
+  // Caso 1: Pages sin activar. Es el que da el 404 al abrir la dirección.
+  respuestaPages.valor = { hay: true, prevista: 'https://carlos.github.io/test-automocion/',
+                           visibilidad: 'public', repoWeb: 'https://github.com/carlos/test-automocion',
+                           pages: { activo: false } };
+  clic($('nav button[data-v=publicar]'));
+  await esperar(150);
+  ok('explica que el 404 es que falta activar Pages',
+     $('#estadoPages').textContent.includes('404'));
+  ok('ofrece activarlo desde el panel', !!$('#btnActivarPages'));
+
+  enviados.length = 0;
+  clic($('#btnActivarPages'));
+  await esperar(60);
+  ok('manda activar Pages', enviados.some((e) => e.ruta.startsWith('/api/pages-activar')));
+
+  // Caso 2: repositorio privado. Pages gratis no lo publica.
+  respuestaPages.valor = { hay: true, prevista: 'https://carlos.github.io/test-automocion/',
+                           visibilidad: 'private', repoWeb: 'https://github.com/carlos/test-automocion',
+                           pages: { activo: false } };
+  clic($('nav button[data-v=publicar]'));
+  await esperar(150);
+  ok('avisa de que el repositorio es privado',
+     $('#estadoPages').textContent.includes('privado'));
+  ok('advierte de que se veran las preguntas',
+     $('#estadoPages').textContent.includes('cualquiera podrá ver'));
+  ok('ofrece hacerlo publico', !!$('#btnRepoPublico'));
+  ok('y no ofrece activar Pages todavia', !$('#btnActivarPages'));
+
+  // Caso 3: todo listo. Sale la dirección para el móvil.
+  respuestaPages.valor = { hay: true, visibilidad: 'public',
+                           pages: { activo: true, url: 'https://carlos.github.io/test-automocion/' },
+                           construccion: { estado: 'completed', resultado: 'success', url: 'https://x/1' } };
+  clic($('nav button[data-v=publicar]'));
+  await esperar(150);
+  ok('ensena la direccion de la app',
+     $('#estadoPages').innerHTML.includes('https://carlos.github.io/test-automocion/'));
+  ok('con un enlace para abrirla', !!$('#estadoPages a[target=_blank]'));
+  ok('dice como instalarla en el movil',
+     $('#estadoPages').textContent.includes('pantalla de inicio'));
+  ok('informa de la ultima construccion',
+     $('#estadoPages').textContent.includes('terminada bien'));
+
+  window.fetch = fetchOriginal;
 }
 
 console.log(fallos.length ? `\n>>> ${fallos.length} FALLOS: ${fallos.join(' | ')}` : '\n>>> Todo correcto');

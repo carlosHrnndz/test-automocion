@@ -334,6 +334,17 @@ const rutas = {
       git: {
         esRepo: git.ok,
         cambios: git.ok ? git.salida.split('\n').filter(Boolean).length : 0,
+        // Separado para poder decir en claro qué se va a subir: las preguntas
+        // o el programa. Cuando no cuadraban los números no había quien lo
+        // entendiera.
+        ...(() => {
+          const lineas = git.ok ? git.salida.split('\n').filter(Boolean) : [];
+          const esBanco = (l) => l.slice(3).replace(/^"|"$/g, '').startsWith('public/data/');
+          return {
+            cambiosBanco: lineas.filter(esBanco).length,
+            cambiosPrograma: lineas.filter((l) => !esBanco(l)).length,
+          };
+        })(),
         rama: rama.ok ? rama.salida.trim() : null,
         remoto: remoto.ok ? remoto.salida.trim() : null,
         identidad: nombre.ok && correo.ok && nombre.salida.trim() && correo.salida.trim()
@@ -646,6 +657,97 @@ const rutas = {
 
   // --- Publicar ------------------------------------------------------------
 
+  // Dónde ha quedado publicada la app y si GitHub la está sirviendo.
+  //
+  // Va aparte de /api/estado porque consulta a GitHub por la red y ese estado
+  // se pide muy a menudo; aquí sólo se mira al abrir la pestaña Publicar.
+  async 'GET /api/pages'(req, res) {
+    const remoto = await ejecutar('git', ['remote', 'get-url', 'origin']);
+    if (!remoto.ok) return json(res, { hay: false });
+
+    // De la dirección del repositorio sale la de la app, sin preguntar a nadie.
+    const m = remoto.salida.trim()
+      .match(/github\.com[:/]([\w.-]+)\/([\w.-]+?)(?:\.git)?\/?$/);
+    const prevista = m ? `https://${m[1].toLowerCase()}.github.io/${m[2]}/` : null;
+
+    const datos = { hay: true, repo: remoto.salida.trim(), prevista };
+
+    const info = await ejecutar('gh', ['repo', 'view', '--json', 'visibility,url']);
+    if (info.ok) {
+      try {
+        const j = JSON.parse(info.salida);
+        datos.visibilidad = String(j.visibility || '').toLowerCase();  // public | private
+        datos.repoWeb = j.url;
+      } catch { /* si gh cambia el formato, se sigue sin este dato */ }
+    }
+
+    const pages = await ejecutar('gh', ['api', 'repos/{owner}/{repo}/pages']);
+    if (pages.ok) {
+      try {
+        const j = JSON.parse(pages.salida);
+        datos.pages = { activo: true, url: j.html_url, estado: j.status || null };
+      } catch { /* idem */ }
+    } else {
+      datos.pages = { activo: false };
+    }
+
+    // La última tanda de construcción, para saber si va, si ya está o si falló.
+    const run = await ejecutar('gh', ['run', 'list', '--limit', '1',
+      '--json', 'status,conclusion,url,createdAt']);
+    if (run.ok) {
+      try {
+        const [r] = JSON.parse(run.salida);
+        if (r) datos.construccion = { estado: r.status, resultado: r.conclusion, url: r.url };
+      } catch { /* idem */ }
+    }
+
+    json(res, datos);
+  },
+
+  // Activar Pages y lanzar la construcción, sin ir a buscarlo por la web.
+  async 'POST /api/pages-activar'(req, res) {
+    const guion = [
+      'set -e',
+      'echo "Comprobando el repositorio…"',
+      'VISIBILIDAD=$(gh repo view --json visibility -q .visibility)',
+      'echo "Visibilidad: $VISIBILIDAD"',
+      'if [ "$VISIBILIDAD" != "PUBLIC" ]; then',
+      '  echo "" >&2',
+      '  echo "El repositorio es privado y GitHub Pages gratuito solo publica los" >&2',
+      '  echo "publicos. Usa el boton \\"Hacerlo publico\\" del panel y vuelve aqui." >&2',
+      '  exit 1',
+      'fi',
+      'echo "Activando GitHub Pages…"',
+      'gh api -X POST "repos/{owner}/{repo}/pages" -f "build_type=workflow" >/dev/null 2>&1 \\',
+      '  || gh api -X PUT "repos/{owner}/{repo}/pages" -f "build_type=workflow" >/dev/null 2>&1 \\',
+      '  || echo "(ya estaba activado)"',
+      'echo "Lanzando la construcción…"',
+      'gh workflow run deploy.yml >/dev/null 2>&1 || echo "(se construirá con la próxima publicación)"',
+      'echo ""',
+      'echo "Listo. GitHub tarda un par de minutos."',
+      'gh repo view --json owner,name -q "\\"Tu app estará en https://\\" + (.owner.login | ascii_downcase) + \\".github.io/\\" + .name + \\"/\\""',
+    ].join('\n');
+    try {
+      lanzar('Activar GitHub Pages', '/bin/bash', ['-c', guion]);
+      json(res, { ok: true });
+    } catch (e) { json(res, { error: e.message }, 409); }
+  },
+
+  // Cambiar el repositorio a público. Es una decisión del usuario, así que la
+  // interfaz pide confirmación antes de llamar aquí.
+  async 'POST /api/repo-publico'(req, res) {
+    const guion = [
+      'set -e',
+      'gh repo edit --visibility public --accept-visibility-change-consequences',
+      'echo "El repositorio ya es público."',
+      'echo "Ahora dale a «Activar Pages y construir»."',
+    ].join('\n');
+    try {
+      lanzar('Hacer público el repositorio', '/bin/bash', ['-c', guion]);
+      json(res, { ok: true });
+    } catch (e) { json(res, { error: e.message }, 409); }
+  },
+
   // --- Primera publicación -------------------------------------------------
   //
   // Todo esto se hace UNA vez. Se parte en tres pasos para que cada uno tenga
@@ -747,12 +849,20 @@ const rutas = {
 
   async 'POST /api/publicar'(req, res) {
     const { mensaje = 'Actualizar preguntas' } = await leerCuerpo(req);
+    // Se sube TODO lo que haya cambiado, no sólo las preguntas: si el programa
+    // se ha actualizado y no se sube, los arreglos nunca llegan a la app del
+    // móvil, y el panel decía "13 archivos" y luego "nada que publicar".
     const guion =
       'set -e\n' +
-      'git add -A public/data\n' +
+      'git add -A\n' +
       'if git diff --cached --quiet; then echo "No hay cambios que publicar."; exit 0; fi\n' +
+      'echo "Se van a subir:"\n' +
+      'git diff --cached --name-only | sed "s/^/   /"\n' +
+      'echo ""\n' +
       `git commit -m ${JSON.stringify(mensaje)}\n` +
+      'export GIT_TERMINAL_PROMPT=0\n' +
       'git push\n' +
+      'echo ""\n' +
       'echo "Publicado. GitHub tarda un par de minutos en actualizar la app."\n';
     try {
       lanzar('Publicar en GitHub', '/bin/bash', ['-c', guion]);

@@ -69,12 +69,33 @@ export default function Estudio({ preguntas, titulo, alSalir }) {
       </div>
 
       <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
-        <div className="mx-auto flex max-w-3xl items-center gap-2 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-          <Boton variante="secundario" onClick={() => ir(indice - 1)} disabled={indice === 0} className="flex-1">
-            <Icono nombre="izquierda" size={18} /> Anterior
+        <div className="mx-auto flex max-w-3xl items-center gap-2 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+          {/* La salida también aquí: la cabecera se pierde al desplazarse. */}
+          <button
+            onClick={alSalir}
+            aria-label="Salir al menú"
+            className="shrink-0 rounded-xl p-3 text-slate-500 active:scale-95 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
+          >
+            <Icono nombre="casa" size={20} />
+          </button>
+          <Boton
+            variante="secundario"
+            onClick={() => ir(indice - 1)}
+            disabled={indice === 0}
+            aria-label="Anterior"
+            className="flex-1"
+          >
+            <Icono nombre="izquierda" size={18} />
+            <span className="hidden sm:inline">Anterior</span>
           </Boton>
-          <Boton onClick={() => ir(indice + 1)} disabled={indice === total - 1} className="flex-1">
-            Siguiente <Icono nombre="derecha" size={18} />
+          <Boton
+            onClick={() => ir(indice + 1)}
+            disabled={indice === total - 1}
+            aria-label="Siguiente"
+            className="flex-1"
+          >
+            <span className="hidden sm:inline">Siguiente</span>
+            <Icono nombre="derecha" size={18} />
           </Boton>
         </div>
       </nav>

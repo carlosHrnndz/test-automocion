@@ -106,6 +106,13 @@ export function Icono({ nombre, size = 20, className = '' }) {
   };
   const rutas = {
     play: <path d="M6 3l14 9-14 9V3z" />,
+    casa: (
+      <>
+        <path d="M3 10.5L12 3l9 7.5" />
+        <path d="M5 9.8V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.8" />
+        <path d="M9.5 21v-6h5v6" />
+      </>
+    ),
     marcador: <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />,
     repaso: <path d="M3 12a9 9 0 1 0 3-6.7L3 8m0-5v5h5" />,
     libro: (
