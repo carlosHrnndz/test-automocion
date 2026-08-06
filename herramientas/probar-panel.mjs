@@ -356,6 +356,51 @@ Aquí tienes el resultado:
        /GIT_TERMINAL_PROMPT=0/.test(fs.readFileSync(path.join(RAIZ, 'panel', 'servidor.mjs'), 'utf8')));
   }
 
+  console.log('\n--- Esquemas ---');
+  {
+    const { guardarEsquema, borrarEsquema, DATOS } =
+      await import('../panel/banco.mjs');
+
+    const ruta = guardarEsquema('cfsd-9999', '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
+    ok('devuelve una ruta relativa a public', ruta === 'data/esquemas/cfsd-9999.svg');
+    const enDisco = path.join(DATOS, 'esquemas', 'cfsd-9999.svg');
+    ok('escribe el archivo', fs.existsSync(enDisco));
+
+    // Un identificador con barras no puede salirse de la carpeta.
+    let escapo = false;
+    try { guardarEsquema('../../fuera', '<svg/>'); } catch { escapo = true; }
+    ok('no deja escribir fuera de su carpeta',
+       escapo || !fs.existsSync(path.join(RAIZ, 'fuera.svg')));
+
+    borrarEsquema('cfsd-9999');
+    ok('se puede borrar', !fs.existsSync(enDisco));
+    ok('borrar uno que no existe no revienta',
+       (() => { try { borrarEsquema('no-existe'); return true; } catch { return false; } })());
+
+    // Al borrar preguntas se lleva por delante su esquema.
+    const analisis = await api('/api/analizar', {
+      method: 'POST',
+      cuerpo: { texto: 'PREGUNTA: (Identificador nº 7777)\n¿Con esquema?\nRespuestas\nuno*\ndos\ntres' },
+    });
+    await api('/api/anadir', { method: 'POST', cuerpo: { moduloId: 'mot', preguntas: analisis.preguntas } });
+    const creada = (await api('/api/preguntas')).preguntas.find((p) => p.idExterno === '7777');
+    guardarEsquema(creada.id, '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
+    const suyo = path.join(DATOS, 'esquemas', `${creada.id}.svg`);
+    ok('el esquema de la pregunta existe', fs.existsSync(suyo));
+    await api('/api/borrar', { method: 'POST', cuerpo: { ids: [creada.id] } });
+    ok('al borrar la pregunta se borra su esquema', !fs.existsSync(suyo));
+
+    const sinOllama = await api('/api/esquemas', { method: 'POST', cuerpo: {} });
+    ok('la peticion de esquemas se acepta o avisa',
+       sinOllama.ok === true || !!sinOllama.error);
+
+    const pagina = await (await fetch(base + '/')).text();
+    ok('la interfaz tiene el boton de laminas', /id="btnEsquemas"/.test(pagina));
+    ok('deja elegir modulo', /id="esquemaModulo"/.test(pagina));
+    ok('y rehacer las que ya tienen', /id="esquemaRehacer"/.test(pagina));
+    ok('explica que el modelo no dibuja', /no dibuja/.test(pagina));
+  }
+
   console.log('\n--- Que se publica ---');
   {
     const est = await api('/api/estado');

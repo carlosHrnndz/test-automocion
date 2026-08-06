@@ -161,12 +161,24 @@ export default function App() {
     const s = almacenSesion.leer();
     if (!s || !banco) return;
     const porId = new Map(banco.preguntas.map((p) => [p.id, p]));
-    const preguntas = s.ids.map((id) => porId.get(id)).filter(Boolean);
+    let preguntas = s.ids.map((id) => porId.get(id)).filter(Boolean);
     if (preguntas.length !== s.ids.length) {
       alert('El banco de preguntas ha cambiado y no se puede reanudar este test.');
       almacenSesion.borrar();
       setSesionGuardada(null);
       return;
+    }
+
+    // Se recupera el orden de las opciones que tenías delante. Sin esto, al
+    // continuar salían sin barajar y las respuestas ya dadas señalaban a la
+    // opción equivocada. Las sesiones guardadas antes de este arreglo no traen
+    // este dato: se reanudan como se pueda, con el orden del banco.
+    if (Array.isArray(s.orden) && s.orden.length === preguntas.length) {
+      preguntas = preguntas.map((p, i) => {
+        const guardada = s.orden[i];
+        if (!guardada || guardada.id !== p.id || !Array.isArray(guardada.opciones)) return p;
+        return { ...p, opciones: guardada.opciones, correcta: guardada.correcta };
+      });
     }
     setTest({
       preguntas,

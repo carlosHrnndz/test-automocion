@@ -31,7 +31,7 @@ export default function Resultados({ resultado, alInicio, alRepetirFallos, alRep
           subtitulo={`${listaVisible.length} preguntas`}
           alVolver={() => setVer(null)}
         />
-        <div className="mx-auto flex max-w-3xl flex-col gap-4 px-4 py-5">
+        <div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-5">
           {listaVisible.map(({ p, i }) => (
             <Tarjeta key={p.id + i}>
               <TarjetaPregunta
@@ -51,7 +51,7 @@ export default function Resultados({ resultado, alInicio, alRepetirFallos, alRep
   return (
     <div className="min-h-dvh pb-16">
       <Cabecera titulo="Resultado" subtitulo={subtitulo || titulo} alVolver={alInicio} />
-      <div className="mx-auto flex max-w-3xl flex-col gap-4 px-4 py-6">
+      <div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-6">
         <Tarjeta className="flex flex-col items-center gap-3 py-8 text-center">
           <Anillo pct={pct} aprobado={aprobado} />
           <div>

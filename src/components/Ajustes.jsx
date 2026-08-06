@@ -31,7 +31,7 @@ export default function Ajustes({ ajustes, alCambiar, alVolver, totalPreguntas }
   return (
     <div className="min-h-dvh pb-16">
       <Cabecera titulo="Ajustes" alVolver={alVolver} />
-      <div className="mx-auto flex max-w-3xl flex-col gap-4 px-4 py-5">
+      <div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-5">
         <Tarjeta className="flex flex-col divide-y divide-slate-200 p-0 dark:divide-slate-800">
           <Interruptor
             titulo="Tema oscuro"

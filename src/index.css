@@ -13,6 +13,14 @@
     overscroll-behavior-y: none;
   }
 
+  /* Instalada en el iPhone, la app ocupa la pantalla entera, barra de estado
+     incluida (así lo pide `apple-mobile-web-app-status-bar-style` para que se
+     vea a pantalla completa). El precio es que hay que apartar el contenido a
+     mano: sin esto, la cabecera queda debajo de la hora y la batería. */
+  .zonaSegura {
+    padding-top: env(safe-area-inset-top);
+  }
+
   /* Evita el resaltado azul al tocar en móvil */
   button,
   a {

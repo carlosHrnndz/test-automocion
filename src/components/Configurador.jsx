@@ -31,7 +31,7 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
           subtitulo="Elige el módulo"
           alVolver={alVolver}
         />
-        <div className="mx-auto flex max-w-3xl flex-col gap-2.5 px-4 py-5">
+        <div className="mx-auto flex max-w-5xl flex-col gap-2.5 px-4 py-5">
           {modulos.map((m) => (
             <button
               key={m.id}
@@ -66,7 +66,7 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
         subtitulo={`${modulo.total} preguntas en el módulo`}
         alVolver={() => setModuloId(null)}
       />
-      <div className="mx-auto flex max-w-3xl flex-col gap-5 px-4 py-5">
+      <div className="mx-auto flex max-w-5xl flex-col gap-5 px-4 py-5">
         <section>
           <h2 className="mb-2.5 text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
             Tema
@@ -155,7 +155,7 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl">
           <Boton
             className="w-full py-4 text-base"
             disabled={maximo === 0}

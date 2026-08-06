@@ -36,7 +36,7 @@ export default function Estadisticas({ banco, modulos, alVolver }) {
   return (
     <div className="min-h-dvh pb-16">
       <Cabecera titulo="Estadísticas" subtitulo="Tu progreso" alVolver={alVolver} />
-      <div className="mx-auto flex max-w-3xl flex-col gap-5 px-4 py-5">
+      <div className="mx-auto flex max-w-5xl flex-col gap-5 px-4 py-5">
         <section className="flex flex-col gap-2.5">
           <h2 className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
             Por módulo

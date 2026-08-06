@@ -1,4 +1,4 @@
-import { LETRAS } from '../lib/banco.js';
+import { LETRAS, rutaDeArchivo } from '../lib/banco.js';
 import { Etiqueta, Icono } from './ui.jsx';
 
 /**
@@ -43,8 +43,16 @@ export default function TarjetaPregunta({
     return `${base} bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500`;
   }
 
+  // En pantalla ancha se parte en dos columnas: la pregunta con sus opciones
+  // a la izquierda y la explicación a la derecha, para leer las dos cosas a la
+  // vez sin desplazarse. En el móvil sigue siendo una sola columna.
+  const enDosColumnas = revelada && (pregunta.explicacion || pregunta.ejemplo);
+
   return (
-    <div className="flex flex-col gap-4">
+    <div className={enDosColumnas
+      ? 'grid gap-4 lg:grid-cols-2 lg:items-start'
+      : 'flex flex-col gap-4'}>
+      <div className="flex flex-col gap-4">
       {/* Encabezado */}
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-wrap items-center gap-1.5">
@@ -87,14 +95,7 @@ export default function TarjetaPregunta({
         {pregunta.pregunta}
       </h2>
 
-      {pregunta.imagen && (
-        <img
-          src={pregunta.imagen}
-          alt=""
-          className="max-h-64 w-full rounded-xl object-contain"
-          draggable={false}
-        />
-      )}
+
 
       {/* Opciones */}
       <div className="flex flex-col gap-2.5">
@@ -116,6 +117,8 @@ export default function TarjetaPregunta({
             )}
           </button>
         ))}
+      </div>
+
       </div>
 
       {/* Explicación y ejemplo.
@@ -153,6 +156,21 @@ export default function TarjetaPregunta({
                 {pregunta.ejemplo}
               </p>
             </div>
+          )}
+
+          {pregunta.imagen && (
+            <figure>
+              <img
+                src={rutaDeArchivo(pregunta.imagen)}
+                alt={`Esquema de la pregunta ${pregunta.id ?? ''}`}
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 dark:brightness-[0.82] dark:contrast-[1.06]"
+                loading="lazy"
+                draggable={false}
+              />
+              <figcaption className="mt-1.5 text-center text-[11px] text-slate-400 dark:text-slate-600">
+                Lámina del cuaderno
+              </figcaption>
+            </figure>
           )}
 
           <EnlacesMaterial material={pregunta.material} />

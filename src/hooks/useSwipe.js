@@ -1,109 +1,172 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 
 /**
- * Swipe horizontal con Pointer Events (funciona con dedo, ratón y lápiz).
+ * Deslizar horizontalmente para cambiar de pregunta.
  *
- * Dos cosas que en el móvil son imprescindibles y no son obvias:
+ * Va con eventos táctiles nativos (touchstart / touchmove / touchend) puestos a
+ * mano sobre el elemento, no con las props de React. Hay dos motivos, y los dos
+ * se descubrieron probando en un iPhone de verdad:
  *
- * 1. Se captura el puntero en cuanto se decide que el gesto es horizontal.
- *    Sin eso, al arrastrar el dedo fuera del elemento —o sobre un botón de
- *    dentro— los eventos dejan de llegar, nunca salta el "pointerup" y el
- *    gesto se pierde. Era la razón por la que en el móvil no pasaba nada.
+ * 1. React registra `onTouchMove` como oyente PASIVO, y un oyente pasivo tiene
+ *    prohibido llamar a preventDefault(). Sin preventDefault, Safari se queda
+ *    el gesto para hacer scroll o para su "volver atrás" y a nosotros no nos
+ *    llega nada. Poniendo el oyente a mano con { passive: false } sí se puede.
  *
- * 2. `touch-action: pan-y` deja el scroll vertical al navegador y nos reserva
- *    el horizontal. Si se omite, el navegador se queda el gesto entero.
+ * 2. Los Pointer Events, que es lo que se usaba antes, funcionan en el
+ *    escritorio pero en iOS los cancela el propio sistema en cuanto sospecha
+ *    que quieres desplazarte. Los eventos táctiles son los de casa allí.
  *
- * Ignora los gestos que empiezan sobre un elemento marcado con
- * [data-sin-swipe], pensado para zonas que tengan su propio desplazamiento
- * horizontal (un carrusel, una tabla ancha). No se debe marcar así el texto
- * normal: pasar de pregunta tiene que funcionar desde cualquier sitio.
+ * El ratón sigue funcionando aparte, con Pointer Events, que en el escritorio
+ * no dan problemas.
  *
- * Devuelve { manejadores, desplazamiento, arrastrando }.
+ * Devuelve { ref, manejadores, desplazamiento, arrastrando }:
+ * el `ref` hay que ponerlo en el mismo elemento que los `manejadores`.
  */
-export function useSwipe({ alIzquierda, alDerecha, umbral = 60, activo = true } = {}) {
+export function useSwipe({ alIzquierda, alDerecha, umbral = 55, activo = true } = {}) {
+  const ref = useRef(null);
   const inicio = useRef(null);
-  const eje = useRef(null);        // 'x' | 'y' | null
-  const capturado = useRef(false);
+  const eje = useRef(null);            // 'x' | 'y' | null
   const [desplazamiento, setDesplazamiento] = useState(0);
   const [arrastrando, setArrastrando] = useState(false);
+
+  // Las funciones que recibe el hook cambian en cada render (son flechas
+  // nuevas). Se guardan en una caja para que los oyentes nativos no haya que
+  // volver a registrarlos cada vez.
+  const acciones = useRef({ alIzquierda, alDerecha, umbral, activo });
+  acciones.current = { alIzquierda, alDerecha, umbral, activo };
 
   const limpiar = useCallback(() => {
     inicio.current = null;
     eje.current = null;
-    capturado.current = false;
     setArrastrando(false);
     setDesplazamiento(0);
   }, []);
 
-  const onPointerDown = useCallback(
-    (e) => {
-      if (!activo) return;
-      if (e.pointerType === 'mouse' && e.button !== 0) return;
-      if (e.target.closest && e.target.closest('[data-sin-swipe]')) return;
-      inicio.current = { x: e.clientX, y: e.clientY, t: Date.now(), id: e.pointerId };
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const empezar = (x, y, destino) => {
+      if (!acciones.current.activo) return;
+      if (destino?.closest && destino.closest('[data-sin-swipe]')) return;
+      inicio.current = { x, y, t: Date.now() };
       eje.current = null;
-      capturado.current = false;
       setArrastrando(true);
-    },
-    [activo]
-  );
+    };
 
-  const onPointerMove = useCallback((e) => {
-    const ini = inicio.current;
-    if (!ini) return;
-    const dx = e.clientX - ini.x;
-    const dy = e.clientY - ini.y;
+    const mover = (x, y, e) => {
+      const ini = inicio.current;
+      if (!ini) return;
+      const dx = x - ini.x;
+      const dy = y - ini.y;
 
-    if (eje.current === null) {
-      // Hasta que el gesto no se define, no se hace nada: así un toque para
-      // responder sigue siendo un toque, y un scroll sigue siendo un scroll.
-      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
-      eje.current = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
-
-      // A partir de aquí el gesto es nuestro: se captura para que no se
-      // escape aunque el dedo pase por encima de un botón o salga del área.
-      if (eje.current === 'x') {
-        try {
-          e.currentTarget.setPointerCapture?.(e.pointerId);
-          capturado.current = true;
-        } catch { /* si el navegador no deja, se sigue sin captura */ }
+      if (eje.current === null) {
+        // Hasta que no está claro hacia dónde va, no se toca nada: así un
+        // toque sigue siendo un toque y un scroll sigue siendo un scroll.
+        if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+        eje.current = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
       }
-    }
-    if (eje.current !== 'x') return;
+      if (eje.current !== 'x') return;
 
-    // Resistencia: cuanto más arrastras, menos se mueve.
-    setDesplazamiento(Math.sign(dx) * Math.min(Math.abs(dx) * 0.6, 120));
-  }, []);
+      // Es nuestro: se le dice al navegador que no lo use para desplazar.
+      if (e.cancelable) e.preventDefault();
+      setDesplazamiento(Math.sign(dx) * Math.min(Math.abs(dx) * 0.6, 120));
+    };
 
-  const terminar = useCallback(
-    (e) => {
+    const acabar = (x) => {
       const ini = inicio.current;
       const eraX = eje.current === 'x';
-      if (capturado.current) {
-        try { e.currentTarget.releasePointerCapture?.(e.pointerId); } catch { /* ya soltado */ }
-      }
       limpiar();
       if (!ini || !eraX) return;
 
-      const dx = e.clientX - ini.x;
-      // Un gesto rápido cuenta aunque sea corto: así se puede pasar de
-      // pregunta con un golpe de pulgar sin recorrer media pantalla.
+      const dx = x - ini.x;
+      const { umbral: u, alIzquierda: izq, alDerecha: der } = acciones.current;
+      // Un gesto rápido cuenta aunque sea corto: es como se pasa con el pulgar.
       const rapido = Date.now() - ini.t < 350 && Math.abs(dx) > 30;
-      if (dx <= -umbral || (rapido && dx < 0)) alIzquierda?.();
-      else if (dx >= umbral || (rapido && dx > 0)) alDerecha?.();
-    },
-    [alIzquierda, alDerecha, umbral, limpiar]
-  );
+      if (dx <= -u || (rapido && dx < 0)) izq?.();
+      else if (dx >= u || (rapido && dx > 0)) der?.();
+    };
+
+    const onTouchStart = (e) => {
+      if (e.touches.length !== 1) return limpiar();   // dos dedos: es un zoom
+      empezar(e.touches[0].clientX, e.touches[0].clientY, e.target);
+    };
+    const onTouchMove = (e) => {
+      if (e.touches.length !== 1) return limpiar();
+      mover(e.touches[0].clientX, e.touches[0].clientY, e);
+    };
+    const onTouchEnd = (e) => acabar(e.changedTouches[0]?.clientX ?? 0);
+
+    // passive:false es lo que permite llamar a preventDefault en touchmove.
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    el.addEventListener('touchend', onTouchEnd, { passive: true });
+    el.addEventListener('touchcancel', limpiar, { passive: true });
+    return () => {
+      el.removeEventListener('touchstart', onTouchStart);
+      el.removeEventListener('touchmove', onTouchMove);
+      el.removeEventListener('touchend', onTouchEnd);
+      el.removeEventListener('touchcancel', limpiar);
+    };
+  }, [limpiar]);
+
+  // --- Ratón y lápiz en el escritorio ---------------------------------------
+  // Aquí sí valen los Pointer Events. Se ignora el dedo para no duplicar el
+  // gesto: de eso ya se encargan los eventos táctiles de arriba.
+  const raton = useRef(null);
+
+  const onPointerDown = (e) => {
+    if (e.pointerType === 'touch' || !activo) return;
+    if (e.button !== 0) return;
+    if (e.target.closest && e.target.closest('[data-sin-swipe]')) return;
+    raton.current = { x: e.clientX, y: e.clientY, t: Date.now(), eje: null };
+    setArrastrando(true);
+  };
+
+  const onPointerMove = (e) => {
+    const ini = raton.current;
+    if (!ini) return;
+    const dx = e.clientX - ini.x;
+    const dy = e.clientY - ini.y;
+    if (ini.eje === null) {
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+      ini.eje = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      if (ini.eje === 'x') {
+        try { e.currentTarget.setPointerCapture?.(e.pointerId); } catch { /* da igual */ }
+      }
+    }
+    if (ini.eje !== 'x') return;
+    setDesplazamiento(Math.sign(dx) * Math.min(Math.abs(dx) * 0.6, 120));
+  };
+
+  const onPointerUp = (e) => {
+    const ini = raton.current;
+    raton.current = null;
+    setArrastrando(false);
+    setDesplazamiento(0);
+    if (!ini || ini.eje !== 'x') return;
+    const dx = e.clientX - ini.x;
+    const rapido = Date.now() - ini.t < 350 && Math.abs(dx) > 30;
+    if (dx <= -umbral || (rapido && dx < 0)) alIzquierda?.();
+    else if (dx >= umbral || (rapido && dx > 0)) alDerecha?.();
+  };
+
+  const soltar = () => {
+    raton.current = null;
+    setArrastrando(false);
+    setDesplazamiento(0);
+  };
 
   return {
+    ref,
     manejadores: {
       onPointerDown,
       onPointerMove,
-      onPointerUp: terminar,
-      onPointerCancel: limpiar,
-      // Si el sistema le quita la captura al elemento (una llamada entrante,
-      // el gesto de "atrás" del móvil), se deja todo como estaba.
-      onLostPointerCapture: limpiar,
+      onPointerUp,
+      onPointerCancel: soltar,
+      onLostPointerCapture: soltar,
+      // Deja el desplazamiento vertical al navegador y nos reserva el
+      // horizontal. Sin esto, Safari se queda el gesto entero.
       style: { touchAction: 'pan-y' },
     },
     desplazamiento,

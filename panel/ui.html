@@ -366,6 +366,24 @@
       <span class="fin" id="infoExplicar"></span>
     </div>
   </div>
+
+  <div class="caja">
+    <h2>Láminas</h2>
+    <p class="ayuda">
+      Una ilustración debajo de la explicación, con aire de lámina de cuaderno: sepia sobre
+      pergamino, trazo a mano y sus ejes X/Y/Z. Hay un cuaderno de dibujos ya hechos y el
+      modelo <b>no dibuja</b>: sólo dice cuál viene a cuento en cada pregunta. Si ninguna
+      encaja, la pregunta se queda sin lámina, que es mejor que ponerle una que despiste.
+    </p>
+    <div class="fila">
+      <select id="esquemaModulo" style="width:auto;min-width:230px"></select>
+      <label class="interruptor" style="padding:8px 12px">
+        <input type="checkbox" id="esquemaRehacer"><span>Rehacer los que ya tienen</span></label>
+      <button class="b" id="btnEsquemas">Generar láminas</button>
+    </div>
+    <p class="ayuda" style="margin-top:9px">Necesita que la pregunta ya tenga explicación:
+      el esquema sale de ahí.</p>
+  </div>
 </section>
 
 <!-- ======================= PEGAR TEXTO ======================= -->
@@ -576,6 +594,7 @@ function pintarSelectores() {
   $('#txtModulo').innerHTML = ops;
   $('#filtroModulo').innerHTML = '<option value="">Todos los módulos</option>' + ops;
   $('#explicarModulo').innerHTML = '<option value="">Todos los módulos</option>' + ops;
+  $('#esquemaModulo').innerHTML = '<option value="">Todos los módulos</option>' + ops;
 
   const modelos = ESTADO.ollama.modelos;
   const comoOpciones = (elegido) => modelos.length
@@ -1038,6 +1057,23 @@ $('#btnBorrarSel').onclick = async () => {
   toast(`${n} eliminadas`, true);
   await cargarPreguntas();
   cargarEstado();
+};
+
+$('#btnEsquemas').onclick = async () => {
+  if (!ESTADO.ollama.ok) return toast('Ollama no está abierto', true);
+  try {
+    await api('/api/esquemas', {
+      method: 'POST',
+      cuerpo: {
+        modulo: $('#esquemaModulo').value || undefined,
+        rehacer: $('#esquemaRehacer').checked,
+        modelo: $('#selModelo').value || undefined,
+      },
+    });
+    // El registro vive en la pestaña Importar, igual que con las explicaciones.
+    irA('importar');
+    prepararRegistro('Buscando láminas…');
+  } catch (e) { toast(e.message, true); }
 };
 
 $('#btnExplicar').onclick = async () => {

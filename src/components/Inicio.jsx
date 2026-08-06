@@ -62,7 +62,7 @@ export default function Inicio({ resumen, sesionGuardada, ir, alReanudar, alDesc
 
   return (
     <div className="min-h-dvh pb-16">
-      <div className="mx-auto max-w-3xl px-4 pt-8">
+      <div className="zonaSegura mx-auto max-w-5xl px-4 pt-8">
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-sky-500">{TITULACION}</p>
@@ -112,8 +112,9 @@ export default function Inicio({ resumen, sesionGuardada, ir, alReanudar, alDesc
           </Tarjeta>
         )}
 
-        {/* Acciones */}
-        <div className="mt-4 flex flex-col gap-2.5">
+        {/* Acciones. En el ordenador van en dos columnas: si no, quedaban seis
+            franjas de punta a punta con la mitad de la pantalla en blanco. */}
+        <div className="mt-4 grid gap-2.5 md:grid-cols-2">
           {acciones.map((a) => (
             <button
               key={a.id}

@@ -17,7 +17,7 @@ export default function Estudio({ preguntas, titulo, alSalir }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  const { manejadores, desplazamiento, arrastrando } = useSwipe({
+  const { ref: zonaGesto, manejadores, desplazamiento, arrastrando } = useSwipe({
     alIzquierda: () => ir(indice + 1),
     alDerecha: () => ir(indice - 1),
   });
@@ -36,12 +36,13 @@ export default function Estudio({ preguntas, titulo, alSalir }) {
   return (
     <div className="min-h-dvh pb-28">
       <Cabecera titulo="Modo estudio" subtitulo={titulo} alVolver={alSalir} />
-      <div className="mx-auto max-w-3xl px-4">
+      <div className="mx-auto max-w-5xl px-4">
         <div className="pt-3">
           <Barra valor={indice + 1} total={total} color="bg-emerald-500" />
         </div>
 
         <div
+          ref={zonaGesto}
           {...manejadores}
           className="pt-5"
           style={{
@@ -69,7 +70,7 @@ export default function Estudio({ preguntas, titulo, alSalir }) {
       </div>
 
       <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
-        <div className="mx-auto flex max-w-3xl items-center gap-2 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <div className="mx-auto flex max-w-5xl items-center gap-2 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           {/* La salida también aquí: la cabecera se pierde al desplazarse. */}
           <button
             onClick={alSalir}

@@ -324,6 +324,46 @@ Sólo cambia el tema: ni el módulo, ni los identificadores, ni el texto. Si las
 preguntas son de temas distintos, se hace en varias tandas usando el buscador
 para separarlas.
 
+### Láminas para las explicaciones
+
+Debajo de la explicación puede salir una ilustración con aire de lámina de
+cuaderno: sepia sobre pergamino, trazo de mano alzada, volumen dado con luz y
+sombra, y los ejes X/Y/Z fijos arriba a la izquierda. Se generan desde el panel,
+pestaña **Banco → Láminas**.
+
+**Hay un cuaderno de dibujos ya hechos y el modelo no dibuja: sólo elige.**
+Pedirle un SVG a un modelo pequeño da líneas cruzadas y texto fuera del papel; y
+pedirle que rellene un diagrama de cajas da un diagrama de cajas, que no enseña
+nada que no dijera ya la explicación. Lo que sí hace bien es leer una pregunta y
+decir «esta va con la lámina del amortiguador». De dibujar se encarga el código.
+
+El cuaderno tiene dieciséis láminas: caída, convergencia, muelle, amortiguador,
+circuito hidráulico, par, fatiga, freno de disco, freno de tambor, dirección de
+cremallera, dirección asistida, barra estabilizadora, ballesta, neumático en
+corte, presión y superficie, y palanca. Si una pregunta no encaja con ninguna, se
+queda sin lámina: es a propósito.
+
+**Están compuestas para el móvil.** Ésa es la restricción que manda: el lienzo es
+de 420 px y la letra grande, porque en un iPhone la lámina se ve a unos 340 px y
+lo pensado para monitor queda a seis píxeles. Se midió, no se supuso.
+
+Los archivos van a `public/data/esquemas/<id>.svg`, uno por pregunta, y se borran
+solos si borras la pregunta.
+
+Para verlas todas sin gastar tiempo de modelo:
+
+```bash
+cd ~/Projects/test-automocion
+node herramientas/probar-esquema.mjs --ver
+open laminas-de-muestra.html
+```
+
+Las pruebas de las láminas comprueban algo que a ojo es imposible con dieciséis
+dibujos: que **ningún rótulo se pise con otro**, que nada se salga del papel, y
+que la letra siga siendo legible al tamaño del móvil. Ese detector encontró
+veintiún choques la primera vez, y de paso un fallo de verdad: las cotas metían
+su rótulo dentro del filtro de mano alzada y esas letras salían deformadas.
+
 ### Cuando una captura no sale bien
 
 Hay una herramienta que enseña, línea por línea, exactamente lo que el lector ve
@@ -692,7 +732,7 @@ declararlos antes de tenerlas.
 ## Comprobaciones
 
 ```bash
-npm run probar    # 377 comprobaciones automáticas
+npm run probar    # 462 comprobaciones automáticas
 npm run build     # que la app compila sin errores
 ```
 
@@ -707,7 +747,8 @@ Qué cubre cada bloque:
 | `probar-ia` | El flujo con Ollama contra un servidor simulado, con Ollama caído y con un modelo que se sale del formato |
 | `probar-banco` | El Banco montado en un navegador simulado: que la casilla no abra el editor, que escribir en una respuesta no la marque como correcta, quitar y añadir respuestas, y las acciones en bloque |
 | `probar-macos` | El lector de macOS: la conversión de coordenadas de Vision y el agrupado de líneas en opciones |
-| `probar-movil` | Lo que sólo falla con el dedo: el gesto de deslizar reproducido con eventos de puntero de verdad, y que se pueda salir del test sin la cabecera |
+| `probar-esquema` | Las láminas: que ningún rótulo se pise con otro, que nada se salga del papel, que la letra se lea al tamaño del móvil, y que aguante lo que conteste un modelo pequeño al elegir |
+| `probar-movil` | Lo que sólo falla con el dedo: el gesto de deslizar reproducido con eventos táctiles de verdad, salir del test sin la cabecera, el barajado al reanudar y el hueco de la barra de estado |
 | `probar-app` | La app de test renderizada de verdad: responder, colores, swipe, marcar, resultados, estadísticas |
 
 Si tocas el parseo, el OCR o las expresiones regulares, ejecútalo antes de fiarte.

@@ -22,6 +22,13 @@ export default function Test({ preguntas, titulo, subtitulo, ajustes, alSalir, a
   );
 
   // Guarda la sesión para poder reanudarla si cierras la app.
+  //
+  // Se guarda el ORDEN de las opciones tal y como lo estás viendo, no sólo el
+  // identificador de la pregunta. Antes se guardaban sólo los identificadores
+  // y al reanudar se volvían a sacar del banco sin barajar: parecía que la
+  // opción «Barajar las opciones» no hacía nada, y peor todavía, las
+  // respuestas que ya habías dado apuntaban a posiciones distintas, así que un
+  // acierto podía aparecer como fallo.
   useEffect(() => {
     almacenSesion.guardar({
       titulo,
@@ -30,6 +37,7 @@ export default function Test({ preguntas, titulo, subtitulo, ajustes, alSalir, a
       indice,
       respuestas,
       ids: preguntas.map((p) => p.id),
+      orden: preguntas.map((p) => ({ id: p.id, opciones: p.opciones, correcta: p.correcta })),
     });
   }, [indice, respuestas, preguntas, titulo, subtitulo]);
 
@@ -69,7 +77,7 @@ export default function Test({ preguntas, titulo, subtitulo, ajustes, alSalir, a
     });
   }
 
-  const { manejadores, desplazamiento, arrastrando } = useSwipe({
+  const { ref: zonaGesto, manejadores, desplazamiento, arrastrando } = useSwipe({
     alIzquierda: () => ir(indice + 1),
     alDerecha: () => ir(indice - 1),
   });
@@ -108,12 +116,13 @@ export default function Test({ preguntas, titulo, subtitulo, ajustes, alSalir, a
           </button>
         }
       />
-      <div className="mx-auto max-w-3xl px-4">
+      <div className="mx-auto max-w-5xl px-4">
         <div className="pt-3">
           <Barra valor={respondidas} total={total} />
         </div>
 
         <div
+          ref={zonaGesto}
           {...manejadores}
           className="pt-5"
           style={{
@@ -143,7 +152,7 @@ export default function Test({ preguntas, titulo, subtitulo, ajustes, alSalir, a
           arriba al desplazarse y en el móvil te quedabas sin manera de volver
           al menú. Esta barra está siempre fija a la vista. */}
       <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
-        <div className="mx-auto flex max-w-3xl items-center gap-2 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <div className="mx-auto flex max-w-5xl items-center gap-2 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           <button
             onClick={() => setConfirmarSalida(true)}
             aria-label="Salir al menú"

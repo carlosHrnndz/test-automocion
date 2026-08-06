@@ -106,20 +106,35 @@ const clic = async (el) => {
   });
 };
 
-/** Reproduce un gesto de dedo sobre un elemento. dx negativo = hacia la izquierda. */
-async function deslizar(el, dx, { pasos = 6, ms = 120, dy = 0 } = {}) {
+// Se apunta si el gesto le dice al navegador "este movimiento es mío": sin
+// eso, Safari se lo queda para desplazar y el swipe no llega a funcionar.
+let vecesEvitado = 0;
+
+/**
+ * Reproduce un gesto de dedo con eventos táctiles, que es lo que manda un
+ * iPhone de verdad. dx negativo = hacia la izquierda.
+ */
+async function deslizar(el, dx, { pasos = 6, ms = 120, dy = 0, destino = el } = {}) {
   const x0 = 200, y0 = 400;
-  const nuevo = (tipo, x, y) => new dom.window.PointerEvent(tipo, {
-    bubbles: true, clientX: x, clientY: y, pointerId: 1, pointerType: 'touch', button: 0,
-  });
-  await act(async () => { el.dispatchEvent(nuevo('pointerdown', x0, y0)); });
+  const toque = (x, y) => ({ clientX: x, clientY: y, identifier: 1, target: destino });
+  const nuevo = (tipo, x, y, acabado = false) => {
+    const e = new dom.window.Event(tipo, { bubbles: true, cancelable: tipo === 'touchmove' });
+    const lista = [toque(x, y)];
+    e.touches = acabado ? [] : lista;
+    e.changedTouches = lista;
+    e.targetTouches = acabado ? [] : lista;
+    const original = e.preventDefault.bind(e);
+    e.preventDefault = () => { vecesEvitado++; original(); };
+    return e;
+  };
+  await act(async () => { destino.dispatchEvent(nuevo('touchstart', x0, y0)); });
   for (let i = 1; i <= pasos; i++) {
     const x = x0 + (dx * i) / pasos;
     const y = y0 + (dy * i) / pasos;
-    await act(async () => { el.dispatchEvent(nuevo('pointermove', x, y)); });
+    await act(async () => { destino.dispatchEvent(nuevo('touchmove', x, y)); });
   }
   await new Promise((r) => setTimeout(r, ms));
-  await act(async () => { el.dispatchEvent(nuevo('pointerup', x0 + dx, y0 + dy)); });
+  await act(async () => { destino.dispatchEvent(nuevo('touchend', x0 + dx, y0 + dy, true)); });
 }
 
 const zona = () => $('[style*="translateX"]') || $$('div').find((d) => d.style?.touchAction === 'pan-y');
@@ -133,10 +148,17 @@ console.log('\n--- Deslizar para cambiar de pregunta ---');
 
   ok('empieza en la primera', T().includes('1 / 5'));
 
-  capturas.length = 0;
+  vecesEvitado = 0;
   await deslizar(area, -150);
   ok('deslizar a la izquierda avanza', T().includes('2 / 5'));
-  ok('captura el puntero al reconocer el gesto', capturas.length > 0);
+  ok('le dice al navegador que el gesto es suyo', vecesEvitado > 0);
+
+  // Y lo mismo si el dedo empieza encima de un botón de respuesta, que es lo
+  // que pasa la mitad de las veces en una pantalla pequeña.
+  const unaOpcion = $$('button').find((b) => b.querySelector('.rounded-md'));
+  await deslizar(area, 150, { destino: unaOpcion });
+  ok('funciona aunque el dedo empiece sobre una respuesta', T().includes('1 / 5'));
+  await deslizar(area, -150);
 
   await deslizar(area, 150);
   ok('deslizar a la derecha retrocede', T().includes('1 / 5'));
@@ -193,6 +215,139 @@ console.log('\n--- Salir del test ---');
   ok('pregunta antes de salir', T().includes('¿Salir del test?'));
   await clic($$('button').find((b) => b.textContent.includes('Guardar y salir')));
   ok('sale de verdad', salido === true);
+}
+
+// --- Barajar las opciones y reanudar ----------------------------------------
+// El fallo que se vio en uso: parecía que "Barajar las opciones" no hacía
+// nada. Y era peor: al continuar un test a medias, las respuestas ya dadas
+// señalaban a otra opción, así que un acierto podía salir como fallo.
+console.log('\n--- Barajar y reanudar ---');
+{
+  // banco.js usa import.meta.env, que sólo existe dentro de Vite. Se compila
+  // igual que la app para poder usarlo aquí.
+  const salidaBanco = path.join(cache, `banco-${process.pid}.mjs`);
+  await esbuild.build({
+    entryPoints: [path.join(RAIZ, 'src', 'lib', 'banco.js')],
+    bundle: true, format: 'esm',
+    define: { 'import.meta.env': '{"BASE_URL":"/"}' },
+    outfile: salidaBanco, logLevel: 'silent',
+  });
+  const { construirTest } = await import('file://' + salidaBanco);
+
+  const original = {
+    id: 'x-1', pregunta: '¿Cuál?', opciones: ['A', 'B', 'C', 'D'], correcta: 2,
+    explicacion: 'e', ejemplo: 'j', revisado: true,
+  };
+
+  // Con 40 intentos, que salgan siempre en el mismo orden sería imposible.
+  const ordenes = new Set();
+  let correctaSiempreBien = true;
+  for (let i = 0; i < 40; i++) {
+    const [p] = construirTest([original], { cantidad: 'todas', aleatorio: false, barajarOpciones: true });
+    ordenes.add(p.opciones.join(''));
+    if (p.opciones[p.correcta] !== 'C') correctaSiempreBien = false;
+  }
+  ok('barajar cambia el orden de verdad', ordenes.size > 1);
+  ok('y la correcta sigue apuntando a la misma respuesta', correctaSiempreBien);
+
+  const [sinBarajar] = construirTest([original], { cantidad: 'todas', aleatorio: false, barajarOpciones: false });
+  ok('con la opcion apagada no toca nada', sinBarajar.opciones.join('') === 'ABCD');
+
+  // Lo que se guarda al hacer un test tiene que llevar el orden que ves.
+  localStorage.clear();
+  const barajada = construirTest([original], { cantidad: 'todas', aleatorio: false, barajarOpciones: true })[0];
+  const raiz3 = document.createElement('div');
+  document.body.appendChild(raiz3);
+  const root3 = createRoot(raiz3);
+  await act(async () => {
+    root3.render(React.createElement(Test, {
+      preguntas: [barajada], titulo: 'T', subtitulo: 's',
+      ajustes: { avanceAutomatico: false }, alSalir: () => {}, alTerminar: () => {},
+    }));
+  });
+
+  const guardada = JSON.parse(localStorage.getItem('ta_sesion') || '{}');
+  ok('la sesion guarda el orden de las opciones', Array.isArray(guardada.orden));
+  ok('con las opciones tal y como las ves',
+     guardada.orden?.[0]?.opciones.join('') === barajada.opciones.join(''));
+  ok('y con cual es la correcta en ese orden',
+     guardada.orden?.[0]?.correcta === barajada.correcta);
+  ok('sigue guardando los identificadores', guardada.ids?.[0] === 'x-1');
+
+  await act(async () => { root3.unmount(); });
+  raiz3.remove();
+  localStorage.clear();
+  fs.rmSync(salidaBanco, { force: true });
+}
+
+// --- El hueco de la barra de estado -----------------------------------------
+console.log('\n--- Barra de estado del movil ---');
+{
+  const css = fs.readFileSync(path.join(RAIZ, 'src', 'index.css'), 'utf8');
+  ok('hay una regla para apartar la barra de estado',
+     /\.zonaSegura[^}]*safe-area-inset-top/s.test(css));
+
+  const ui = fs.readFileSync(path.join(RAIZ, 'src', 'components', 'ui.jsx'), 'utf8');
+  ok('la cabecera la usa', /<header className="zonaSegura/.test(ui));
+
+  const inicio = fs.readFileSync(path.join(RAIZ, 'src', 'components', 'Inicio.jsx'), 'utf8');
+  ok('y la pantalla de inicio tambien, que no lleva cabecera',
+     /zonaSegura/.test(inicio));
+
+  const html = fs.readFileSync(path.join(RAIZ, 'index.html'), 'utf8');
+  ok('el viewport permite dibujar bajo la barra', /viewport-fit=cover/.test(html));
+}
+
+// --- Ancho en el ordenador --------------------------------------------------
+console.log('\n--- Aprovechar la pantalla del ordenador ---');
+{
+  const tarjeta = fs.readFileSync(path.join(RAIZ, 'src', 'components', 'TarjetaPregunta.jsx'), 'utf8');
+  ok('la tarjeta se parte en dos columnas al responder', /lg:grid-cols-2/.test(tarjeta));
+
+  const inicio = fs.readFileSync(path.join(RAIZ, 'src', 'components', 'Inicio.jsx'), 'utf8');
+  ok('el menu de inicio va en rejilla', /md:grid-cols-2/.test(inicio));
+
+  for (const archivo of ['Test.jsx', 'Estudio.jsx', 'Configurador.jsx', 'Estadisticas.jsx']) {
+    const t = fs.readFileSync(path.join(RAIZ, 'src', 'components', archivo), 'utf8');
+    ok(`${archivo} ya no se queda en una columna estrecha`,
+       !/max-w-3xl/.test(t) && /max-w-5xl/.test(t));
+  }
+}
+
+// --- El esquema en la app ---------------------------------------------------
+console.log('\n--- El esquema en la tarjeta ---');
+{
+  const conEsquema = [{
+    id: 'p-svg', pregunta: '¿Con dibujo?', opciones: ['A', 'B'], correcta: 0,
+    explicacion: 'Porque sí.', ejemplo: 'Un ejemplo.', revisado: true,
+    imagen: 'data/esquemas/p-svg.svg',
+  }];
+  const raiz4 = document.createElement('div');
+  document.body.appendChild(raiz4);
+  const root4 = createRoot(raiz4);
+  await act(async () => {
+    root4.render(React.createElement(Test, {
+      preguntas: conEsquema, titulo: 'T', subtitulo: 's',
+      ajustes: { avanceAutomatico: false }, alSalir: () => {}, alTerminar: () => {},
+    }));
+  });
+
+  ok('antes de responder no se ve el esquema', !raiz4.querySelector('img'));
+
+  const opcion = [...raiz4.querySelectorAll('button')].find((b) => b.querySelector('.rounded-md'));
+  await act(async () => {
+    opcion.dispatchEvent(new dom.window.MouseEvent('click', { bubbles: true }));
+  });
+
+  const img = raiz4.querySelector('img');
+  ok('al responder aparece el esquema', !!img);
+  ok('apunta al archivo', img?.getAttribute('src')?.endsWith('data/esquemas/p-svg.svg'));
+  ok('lleva la base de la app delante', img?.getAttribute('src')?.startsWith('/'));
+  ok('tiene texto alternativo', !!img?.getAttribute('alt'));
+  ok('dice que es una lámina del cuaderno', raiz4.textContent.includes('Lámina del cuaderno'));
+
+  await act(async () => { root4.unmount(); });
+  raiz4.remove();
 }
 
 // --- Lo mismo en el modo estudio --------------------------------------------

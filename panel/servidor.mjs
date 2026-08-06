@@ -21,6 +21,7 @@ import { analizar, clavePregunta } from '../herramientas/importador/texto.mjs';
 import { hayTesseract, idiomasDisponibles } from '../herramientas/importador/ocr.mjs';
 import { comprobarMacOS } from '../herramientas/importador/ocr-macos.mjs';
 import { comprobarOllama, generar, extraerCampos } from '../herramientas/importador/ollama.mjs';
+import { generarEsquema } from '../herramientas/importador/esquema.mjs';
 import * as banco from './banco.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -651,6 +652,64 @@ const rutas = {
       }
       t.log(`\nTerminado. ${hechas} con explicación${fallos ? `, ${fallos} con error` : ''}.`);
       t.log('Quedan marcadas como SIN REVISAR: repásalas en la pestaña Banco.');
+      t.fin(0);
+    })().catch((e) => { t.log('Error: ' + e.message); t.fin(1); });
+  },
+
+  // Esquemas: un dibujo sencillo para acompañar la explicación.
+  async 'POST /api/esquemas'(req, res) {
+    const cuerpo = await leerCuerpo(req);
+    const ajustes = banco.guardarAjustes({ modelo: cuerpo.modelo || 'gemma3:4b' });
+    let t;
+    try { t = tareaPropia('Generar esquemas'); }
+    catch (e) { return json(res, { error: e.message }, 409); }
+    json(res, { ok: true });
+
+    (async () => {
+      const todas = cuerpo.modulo ? banco.leerModulo(cuerpo.modulo) : banco.leerTodo();
+      // Sin explicación no hay nada de donde sacar el esquema. Y si ya tiene
+      // uno, no se rehace salvo que se pida a propósito.
+      const pendientes = todas.filter((p) =>
+        p.explicacion && (cuerpo.rehacer || !p.imagen));
+
+      if (!pendientes.length) { t.log('No hay ninguna pregunta que encaje.'); return t.fin(0); }
+      t.log(`${pendientes.length} pregunta(s) con ${ajustes.modelo}.`);
+      t.log('El modelo no dibuja: sólo elige qué lámina del cuaderno le viene bien.\n');
+
+      let hechos = 0, sinEsquema = 0, fallos = 0;
+      for (let i = 0; i < pendientes.length; i++) {
+        if (tarea.cancelada) { t.log('Detenido.'); break; }
+        const p = pendientes[i];
+        const t0 = Date.now();
+        const cuenta = `  ${i + 1}/${pendientes.length} · ${p.id}`;
+        try {
+          const { datos, svg } = await generarEsquema(p, {
+            url: ajustes.urlOllama, modelo: ajustes.modelo,
+          });
+          const segundos = ((Date.now() - t0) / 1000).toFixed(0);
+          if (!svg) {
+            sinEsquema++;
+            t.log(`${cuenta} · sin esquema${datos ? ' (el modelo dice que no procede)' : ''} · ${segundos}s`);
+            continue;
+          }
+          const ruta = banco.guardarEsquema(p.id, svg);
+          banco.guardarPregunta({ ...p, imagen: ruta });
+          hechos++;
+          t.log(`${cuenta} · ${datos.lamina} · ${segundos}s`);
+        } catch (e) {
+          fallos++;
+          t.log(`${cuenta} · ERROR: ${e.message}`);
+          if (/fetch failed|ECONNREFUSED/i.test(e.message)) {
+            t.log('  Se ha perdido la conexión con Ollama. ¿Está abierto?');
+            break;
+          }
+        }
+      }
+
+      t.log(`\nTerminado. ${hechos} con esquema` +
+            `${sinEsquema ? `, ${sinEsquema} sin esquema` : ''}` +
+            `${fallos ? `, ${fallos} con error` : ''}.`);
+      if (hechos) t.log('Míralos en el Banco antes de publicar: un esquema que despiste es peor que ninguno.');
       t.fin(0);
     })().catch((e) => { t.log('Error: ' + e.message); t.fin(1); });
   },

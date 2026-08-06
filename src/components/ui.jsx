@@ -21,8 +21,8 @@ export function Boton({ children, variante = 'primario', className = '', ...prop
 
 export function Cabecera({ titulo, subtitulo, alVolver, derecha }) {
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200/70 bg-white/85 backdrop-blur dark:border-slate-800 dark:bg-slate-950/85">
-      <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3">
+    <header className="zonaSegura sticky top-0 z-20 border-b border-slate-200/70 bg-white/85 backdrop-blur dark:border-slate-800 dark:bg-slate-950/85">
+      <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
         {alVolver && (
           <button
             onClick={alVolver}

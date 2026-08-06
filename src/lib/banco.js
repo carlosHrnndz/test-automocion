@@ -7,6 +7,17 @@ import { ESTRUCTURA } from './estructura.js';
 
 const BASE = import.meta.env.BASE_URL || '/';
 
+/**
+ * Completa una ruta de dentro de public/ con la base donde esté publicada la
+ * app. En GitHub Pages la app cuelga de /nombre-del-repo/, así que una ruta
+ * como "data/esquemas/x.svg" tiene que llevar ese prefijo delante.
+ */
+export function rutaDeArchivo(ruta) {
+  if (!ruta) return null;
+  if (/^(https?:|data:|\/)/.test(ruta)) return ruta;   // ya es absoluta
+  return BASE + ruta;
+}
+
 let cache = null;
 let cargando = null;
 

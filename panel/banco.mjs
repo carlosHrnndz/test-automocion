@@ -181,7 +181,32 @@ export function marcarRevisadas(ids, revisado = true) {
   return { cambiadas: n, sinExplicacion };
 }
 
+/**
+ * Guarda el esquema de una pregunta como archivo suelto y devuelve la ruta
+ * relativa que hay que meter en el campo `imagen`.
+ *
+ * Aparte y no dentro del JSON: así el archivo de preguntas no se hincha, el
+ * navegador puede guardarlo en su caché por separado, y se puede mirar o
+ * borrar a mano si alguno sale mal.
+ */
+export function guardarEsquema(id, svg) {
+  const limpio = String(id).replace(/[^\w-]/g, '');
+  if (!limpio) throw new Error('Identificador de pregunta no válido');
+  const dir = path.join(DATOS, 'esquemas');
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, `${limpio}.svg`), svg);
+  return `data/esquemas/${limpio}.svg`;
+}
+
+/** Quita el esquema de una pregunta, si lo tenía. */
+export function borrarEsquema(id) {
+  const limpio = String(id).replace(/[^\w-]/g, '');
+  try { fs.rmSync(path.join(DATOS, 'esquemas', `${limpio}.svg`), { force: true }); }
+  catch { /* no existía: da igual */ }
+}
+
 export function borrarPreguntas(ids) {
+  for (const id of ids) borrarEsquema(id);
   const porBorrar = new Set(ids);
   let n = 0;
   for (const moduloId of modulosConArchivo()) {

@@ -10,7 +10,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "importar": "node herramientas/importar.mjs",
-    "probar": "node herramientas/probar-analizador.mjs && node herramientas/probar-capturador.mjs && node herramientas/probar-ia.mjs && node herramientas/probar-importador.mjs && node herramientas/probar-macos.mjs && node herramientas/probar-panel.mjs && node herramientas/probar-banco.mjs && node herramientas/probar-movil.mjs && node herramientas/probar-app.mjs"
+    "probar": "node herramientas/probar-analizador.mjs && node herramientas/probar-capturador.mjs && node herramientas/probar-ia.mjs && node herramientas/probar-importador.mjs && node herramientas/probar-macos.mjs && node herramientas/probar-esquema.mjs && node herramientas/probar-panel.mjs && node herramientas/probar-banco.mjs && node herramientas/probar-movil.mjs && node herramientas/probar-app.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
