@@ -1,5 +1,80 @@
+import { useEffect, useState } from 'react';
 import { LETRAS, rutaDeArchivo } from '../lib/banco.js';
 import { Etiqueta, Icono } from './ui.jsx';
+
+/**
+ * La ilustración que acompaña a la explicación.
+ *
+ * En el móvil una lámina con detalle se ve pequeña, así que al tocarla se abre
+ * a pantalla completa. El gesto de pasar de pregunta se desactiva encima de
+ * ella: si no, arrastrar para mirar un detalle te cambiaba de pregunta.
+ *
+ * Si el archivo falta o está roto no se pinta nada. Vale más una explicación
+ * sin dibujo que un hueco con el icono de imagen rota.
+ */
+function Ilustracion({ ruta, id }) {
+  const [ampliada, setAmpliada] = useState(false);
+  const [rota, setRota] = useState(false);
+
+  useEffect(() => { setRota(false); }, [ruta]);
+
+  useEffect(() => {
+    if (!ampliada) return;
+    const cerrar = (e) => { if (e.key === 'Escape') setAmpliada(false); };
+    window.addEventListener('keydown', cerrar);
+    return () => window.removeEventListener('keydown', cerrar);
+  }, [ampliada]);
+
+  if (!ruta || rota) return null;
+
+  const src = rutaDeArchivo(ruta);
+  const alt = `Ilustración de la pregunta ${id ?? ''}`;
+  // El retoque para el modo oscuro es sólo para las láminas sepia que dibuja
+  // el propio programa; una imagen de fuera se deja como su autor la hizo.
+  const esLamina = String(ruta).startsWith('data/esquemas/');
+
+  return (
+    <>
+      <figure data-sin-swipe className="m-0">
+        <button
+          type="button"
+          onClick={() => setAmpliada(true)}
+          className="block w-full cursor-zoom-in overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700"
+          title="Tócala para verla más grande"
+        >
+          <img
+            src={src}
+            alt={alt}
+            onError={() => setRota(true)}
+            className={`w-full ${esLamina ? 'dark:brightness-[0.82] dark:contrast-[1.06]' : ''}`}
+            loading="lazy"
+            draggable={false}
+          />
+        </button>
+      </figure>
+
+      {ampliada && (
+        <div
+          data-sin-swipe
+          role="dialog"
+          aria-label={alt}
+          onClick={() => setAmpliada(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-slate-950/90 p-3"
+        >
+          <img src={src} alt={alt} className="max-h-full w-auto max-w-full rounded-lg" draggable={false} />
+          <button
+            type="button"
+            aria-label="Cerrar"
+            className="fixed right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-lg font-bold text-white backdrop-blur"
+            style={{ top: 'calc(env(safe-area-inset-top) + 12px)' }}
+          >
+            ✕
+          </button>
+        </div>
+      )}
+    </>
+  );
+}
 
 /**
  * Tarjeta de una pregunta.
@@ -158,20 +233,7 @@ export default function TarjetaPregunta({
             </div>
           )}
 
-          {pregunta.imagen && (
-            <figure>
-              <img
-                src={rutaDeArchivo(pregunta.imagen)}
-                alt={`Esquema de la pregunta ${pregunta.id ?? ''}`}
-                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 dark:brightness-[0.82] dark:contrast-[1.06]"
-                loading="lazy"
-                draggable={false}
-              />
-              <figcaption className="mt-1.5 text-center text-[11px] text-slate-400 dark:text-slate-600">
-                Lámina del cuaderno
-              </figcaption>
-            </figure>
-          )}
+          <Ilustracion ruta={pregunta.imagen} id={pregunta.id} />
 
           <EnlacesMaterial material={pregunta.material} />
         </div>

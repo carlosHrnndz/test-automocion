@@ -382,7 +382,32 @@
       <button class="b" id="btnEsquemas">Generar láminas</button>
     </div>
     <p class="ayuda" style="margin-top:9px">Necesita que la pregunta ya tenga explicación:
-      el esquema sale de ahí.</p>
+      la lámina sale de ahí.</p>
+
+    <hr style="border:0;border-top:1px solid var(--borde);margin:18px 0">
+    <p class="ayuda">
+      <b>Imágenes tuyas en <code>public/images</code>.</b> Deja ahí los archivos con el
+      nombre de su pregunta —<code>cfsd-0007.png</code>, o <code>cfsd_0007.png</code>, da
+      igual el guion bajo— y este botón las apunta en la pregunta que les toca.
+      No copia nada: las deja donde están.
+    </p>
+    <div class="fila">
+      <button class="b" id="btnVincularImagenes">Enlazar las imágenes</button>
+      <span class="ayuda" id="estadoImagenes"></span>
+    </div>
+
+    <hr style="border:0;border-top:1px solid var(--borde);margin:18px 0">
+    <p class="ayuda">
+      <b>Desde otra carpeta.</b> Si las imágenes están en cualquier otro sitio
+      —<code>~/Downloads</code>, por ejemplo— se traen todas de una vez.
+      Valen <code>.svg</code>, <code>.png</code>, <code>.jpg</code>, <code>.webp</code>,
+      <code>.avif</code> y <code>.gif</code>, siempre con el identificador de la pregunta
+      por nombre.
+    </p>
+    <div class="fila">
+      <input id="carpetaLaminas" placeholder="~/Downloads/laminas" style="flex:1;min-width:260px">
+      <button class="b gris" id="btnMeterLaminas">Traer esas imágenes</button>
+    </div>
   </div>
 </section>
 
@@ -529,6 +554,20 @@ async function cargarEstado() {
   pintarSelectores();
   $('#infoDev').textContent = ESTADO.dev.activo ? 'Abierta en ' + ESTADO.dev.url : '';
   $('#btnPararDev').hidden = !ESTADO.dev.activo;
+  pintarImagenes();
+}
+
+// Cuántas imágenes hay en public/images y cuántas están ya puestas en su
+// pregunta. Sin esto no hay forma de saber si el botón ha hecho algo.
+function pintarImagenes() {
+  const el = $('#estadoImagenes');
+  if (!el) return;
+  const i = ESTADO.imagenes || { total: 0, enlazadas: 0 };
+  if (!i.total) { el.textContent = 'Ahora mismo no hay ninguna imagen ahí.'; return; }
+  const sueltas = i.total - i.enlazadas;
+  el.textContent = sueltas
+    ? `${i.total} imagen(es): ${i.enlazadas} enlazada(s), ${sueltas} sin enlazar.`
+    : `${i.total} imagen(es), todas enlazadas.`;
 }
 
 function pintarSemaforo() {
@@ -852,6 +891,7 @@ function pintarPreguntas() {
             ${!p.explicacion ? '<span class="etq">sin explicación</span>'
               : p.revisado ? '<span class="etq ok">revisada</span>'
               : '<span class="etq no">sin revisar</span>'}
+            ${p.imagen ? '<span class="etq ok">con ilustración</span>' : ''}
           </div>
         </div>
       </div>`).join('')}</div>`
@@ -931,6 +971,19 @@ function pintarEditor() {
         <div><label>Ejemplo</label>
           <textarea id="edEjemplo" style="min-height:110px;font-family:inherit">${esc(p.ejemplo || '')}</textarea></div>
       </div>
+      ${p.imagen ? `
+      <div style="margin-top:14px">
+        <label>Ilustración</label>
+        <img src="/archivo/${esc(p.imagen)}?t=${Date.now()}" alt=""
+             style="display:block;width:100%;max-width:420px;border:1px solid var(--borde);
+                    border-radius:9px;background:#fff">
+        <div class="fila" style="margin-top:7px">
+          <code class="fin">${esc(p.imagen)}</code>
+          <button class="mini rojo" id="btnQuitarImagen">Quitar la ilustración</button>
+        </div>
+        <p class="ayuda" style="margin-top:5px">Quitarla sólo la desenlaza de esta pregunta;
+          el archivo se queda donde está.</p>
+      </div>` : ''}
       <div class="fila" style="margin-top:14px">
         <button class="b verde" id="btnGuardarPregunta">Guardar</button>
         ${p.explicacion && !p.revisado ? '<button class="b" id="btnRevisada">Guardar y marcar revisada</button>' : ''}
@@ -992,6 +1045,15 @@ function pintarEditor() {
     pintarEditor();
     $$('#editor .op .txt').at(-1)?.focus();
   };
+
+  $('#btnQuitarImagen')?.addEventListener('click', async () => {
+    if (!confirm('¿Quitar la ilustración de esta pregunta?\nEl archivo no se borra.')) return;
+    await api('/api/quitar-imagen', { method: 'POST', cuerpo: { id: p.id } });
+    BORRADOR = null;
+    toast('Quitada');
+    await cargarPreguntas();
+    cargarEstado();
+  });
 }
 
 ['#filtroModulo','#filtroEstado'].forEach((s) => $(s).onchange = pintarPreguntas);
@@ -1057,6 +1119,24 @@ $('#btnBorrarSel').onclick = async () => {
   toast(`${n} eliminadas`, true);
   await cargarPreguntas();
   cargarEstado();
+};
+
+$('#btnMeterLaminas').onclick = async () => {
+  const carpeta = $('#carpetaLaminas').value.trim();
+  if (!carpeta) return toast('Dime en qué carpeta están', true);
+  try {
+    await api('/api/importar-laminas', { method: 'POST', cuerpo: { carpeta } });
+    irA('importar');
+    prepararRegistro('Trayendo las imágenes…');
+  } catch (e) { toast(e.message, true); }
+};
+
+$('#btnVincularImagenes').onclick = async () => {
+  try {
+    await api('/api/vincular-imagenes', { method: 'POST', cuerpo: {} });
+    irA('importar');
+    prepararRegistro('Enlazando las imágenes…');
+  } catch (e) { toast(e.message, true); }
 };
 
 $('#btnEsquemas').onclick = async () => {

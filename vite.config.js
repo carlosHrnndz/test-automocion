@@ -18,8 +18,23 @@ export default defineConfig({
       workbox: {
         // Las preguntas también se cachean: la app funciona sin cobertura.
         globPatterns: ['**/*.{js,css,html,svg,png,json,woff2}'],
+        // Las ilustraciones no: son una por pregunta y descargarlas todas al
+        // instalar la app serían muchos megas de golpe, la mayoría de
+        // preguntas que quizá no estudies hoy. Se guardan al verlas.
+        globIgnores: ['**/images/**'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: base + 'index.html',
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.includes('/images/'),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'ilustraciones',
+              expiration: { maxEntries: 500, maxAgeSeconds: 60 * 60 * 24 * 180 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
       },
       manifest: {
         name: 'Test de Mecánica · Automoción',

@@ -115,9 +115,29 @@ for (const nombre of NOMBRES) {
 console.log('\n--- Composición ---');
 {
   const svg = construirDibujo(NOMBRES[0]);
-  ok('lleva los ejes X, Y y Z', ['>X<', '>Y<', '>Z<'].every((e) => svg.includes(e)));
-  ok('los ejes van arriba a la izquierda',
-     /<text x="[2-5]\d" y="[1-4]\d"[^>]*>[XYZ]</.test(svg) || svg.indexOf('>X<') < svg.indexOf('</svg>') / 3);
+  ok('lleva los ejes que definen la orientación',
+     ['>X<', '>Y<', '>Z<'].every((e) => svg.includes(e)));
+
+  // La rosa va abajo a la izquierda y sus ejes CAMBIAN con la vista: mirándola
+  // se sabe desde dónde estás viendo la pieza. Antes era fija y no informaba.
+  const alto = Number(svg.match(/viewBox="0 0 \d+ (\d+)"/)[1]);
+  const letrasEje = [...svg.matchAll(/<text x="([\d.]+)" y="([\d.]+)"[^>]*>[XYZ]<\/text>/g)]
+    .map((m) => ({ x: Number(m[1]), y: Number(m[2]) }));
+  ok('la rosa está abajo a la izquierda',
+     letrasEje.length >= 2 && letrasEje.every((l) => l.x < ANCHO / 2 && l.y > alto * 0.7));
+
+  const frontal = construirDibujo(NOMBRES.find((n) => CATALOGO[n].vista === 'frontal'));
+  const superior = construirDibujo(NOMBRES.find((n) => CATALOGO[n].vista === 'superior'));
+  const marcaPerpendicular = (t) => {
+    // El eje que sale del papel se dibuja con círculo y punto; el que entra,
+    // con círculo y aspa. Si cambia la vista, tiene que cambiar la marca.
+    const letras = [...t.matchAll(/<text x="([\d.]+)" y="([\d.]+)"[^>]*>([XYZ])<\/text>/g)];
+    // La del eje perpendicular es la que va anclada al final (anclaje 'end').
+    const conAncla = [...t.matchAll(/<text x="[\d.]+" y="[\d.]+" text-anchor="end"[^>]*>([XYZ])<\/text>/g)];
+    return conAncla.length ? conAncla[0][1] : null;
+  };
+  ok('el eje perpendicular cambia con la vista',
+     marcaPerpendicular(frontal) !== marcaPerpendicular(superior));
   ok('el papel es de pergamino', svg.includes('#f2e8d5'));
   ok('el trazo tiembla como el de una mano', svg.includes('url(#pulso)'));
   ok('hay volumen', svg.includes('url(#vol-'));

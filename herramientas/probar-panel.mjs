@@ -394,7 +394,35 @@ Aquí tienes el resultado:
     ok('la peticion de esquemas se acepta o avisa',
        sinOllama.ok === true || !!sinOllama.error);
 
+    // Láminas dibujadas fuera del programa, una por pregunta.
+    const conLamina = (await api('/api/preguntas')).preguntas[0];
+    const carpeta = path.join(os.tmpdir(), `laminas-${process.pid}`);
+    fs.mkdirSync(carpeta, { recursive: true });
+    fs.writeFileSync(path.join(carpeta, `${conLamina.id}.svg`),
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>');
+    fs.writeFileSync(path.join(carpeta, 'no-existe-esta.svg'), '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
+    fs.writeFileSync(path.join(carpeta, 'basura.svg'), 'esto no es un svg');
+
+    await api('/api/importar-laminas', { method: 'POST', cuerpo: { carpeta } });
+    let listo = false;
+    for (let i = 0; i < 60 && !listo; i++) {
+      await esperar(120);
+      listo = (await api('/api/estado')).tarea?.terminado;
+    }
+    ok('mete las laminas de una carpeta', listo);
+    const conImagen = (await api('/api/preguntas')).preguntas.find((p) => p.id === conLamina.id);
+    ok('la pregunta se queda con su lamina', conImagen?.imagen === `data/esquemas/${conLamina.id}.svg`);
+    ok('el archivo esta en su sitio',
+       fs.existsSync(path.join(RAIZ, 'public', 'data', 'esquemas', `${conLamina.id}.svg`)));
+    fs.rmSync(carpeta, { recursive: true, force: true });
+
+    const sinCarpeta = await api('/api/importar-laminas', { method: 'POST', cuerpo: {} });
+    ok('sin carpeta avisa', !!sinCarpeta.error);
+    const carpetaMala = await api('/api/importar-laminas', { method: 'POST', cuerpo: { carpeta: '/no/existe' } });
+    ok('con una carpeta que no existe avisa', !!carpetaMala.error);
+
     const pagina = await (await fetch(base + '/')).text();
+    ok('la interfaz deja meter laminas de fuera', /id="btnMeterLaminas"/.test(pagina));
     ok('la interfaz tiene el boton de laminas', /id="btnEsquemas"/.test(pagina));
     ok('deja elegir modulo', /id="esquemaModulo"/.test(pagina));
     ok('y rehacer las que ya tienen', /id="esquemaRehacer"/.test(pagina));

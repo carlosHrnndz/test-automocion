@@ -149,17 +149,56 @@ export const nota = (xDesde, yDesde, xTexto, yTexto, t, { anclaje = 'start' } = 
     { color: TINTA_SUAVE, ancho: 1.1 }) +
   rotulo(xTexto, yTexto, t, { tam: 13, anclaje, color: TINTA_SUAVE, cursiva: true });
 
-// --- La rosa de ejes --------------------------------------------------------
-//
-// Siempre la misma y siempre en el mismo sitio: arriba a la izquierda,
-// orientada como la ve la cámara.
-//
-//   X  a la derecha
-//   Y  hacia arriba
-//   Z  saliendo del papel, hacia ti
-//
-// Al no cambiar nunca, se convierte en una referencia fija: miras la esquina y
-// sabes cómo está orientado lo que estás viendo, sin tener que interpretarla.
+// --- Piezas que se repiten --------------------------------------------------
+
+/** Una rueda dentada vista de frente, con sus dientes y su volumen. */
+export const engranaje = (cx, cy, r, dientes, { conCentro = true } = {}) => {
+  const alto = r * 0.22;
+  let d = '';
+  for (let i = 0; i < dientes; i++) {
+    const a0 = (i * 360) / dientes;
+    const a1 = a0 + 360 / dientes / 2.6;
+    const p = (a, rr) => [
+      (cx + rr * Math.cos((a * Math.PI) / 180)).toFixed(1),
+      (cy + rr * Math.sin((a * Math.PI) / 180)).toFixed(1),
+    ];
+    const [x1, y1] = p(a0, r), [x2, y2] = p(a0, r + alto);
+    const [x3, y3] = p(a1, r + alto), [x4, y4] = p(a1, r);
+    d += `M ${x1} ${y1} L ${x2} ${y2} L ${x3} ${y3} L ${x4} ${y4} `;
+  }
+  return circulo(cx, cy, r, { ancho: 2.2, relleno: PAPEL }) +
+    volumenR(cx, cy, r) +
+    camino(d, { ancho: 1.8 }) +
+    (conCentro
+      ? circulo(cx, cy, r * 0.22, { ancho: 1.8, relleno: PAPEL }) +
+        circulo(cx, cy, r * 0.07, { ancho: 1.2, relleno: TINTA_SUAVE })
+      : '');
+};
+
+/** La circunferencia primitiva: la línea de puntos por donde ruedan sin resbalar. */
+export const primitiva = (cx, cy, r) =>
+  circulo(cx, cy, r, { color: SANGUINA, ancho: 1.2, relleno: 'none' })
+    .replace('/>', ' stroke-dasharray="5 4"/>');
+
+/** Una polea con su garganta. */
+export const polea = (cx, cy, r) =>
+  circulo(cx, cy, r, { ancho: 2.4, relleno: PAPEL }) +
+  volumenR(cx, cy, r) +
+  circulo(cx, cy, r * 0.78, { color: TINTA_SUAVE, ancho: 1.2 }) +
+  circulo(cx, cy, r * 0.2, { ancho: 1.6, relleno: PAPEL });
+
+/** Una masa colgada o apoyada, con su rayado. */
+export const bloque = (x, y, w, h, { radio = 3 } = {}) =>
+  rect(x, y, w, h, { ancho: 2.4, relleno: PAPEL, radio }) +
+  volumenV(x, y, w, h, radio) +
+  rayado(x + 3, y + 3, w - 6, h - 6, { paso: 7, angulo: 45 });
+
+/** Una correa o cable entre dos puntos, con su grosor. */
+export const correa = (d, { dentada = false } = {}) =>
+  camino(d, { color: TINTA_SUAVE, ancho: dentada ? 6.5 : 4 }) +
+  camino(d, { ancho: dentada ? 4 : 2 });
+
+// --- Desde dónde se mira ----------------------------------------------------
 
 export const VISTAS = {
   frontal: 'visto de frente',
@@ -170,26 +209,84 @@ export const VISTAS = {
 };
 
 /**
- * La rosa de ejes. X y Z con flecha; Z, que sale del papel hacia ti, con el
- * círculo y el punto, que es como se marca en dibujo técnico.
+ * Los ejes que corresponden a cada vista, cuando la lámina no declara los
+ * suyos. Cambian con la vista, que es justo lo que hace útil la rosa: mirándola
+ * sabes desde dónde estás viendo la pieza.
+ *
+ *   de frente     el coche se aleja de ti     → X entra en el papel
+ *   desde arriba  lo miras desde el techo     → Y sale hacia ti
+ *   de lado       lo miras desde el costado   → Z sale hacia ti
  */
-export function rosaEjes(x, y) {
-  const L = 17;
+export const EJES_POR_VISTA = {
+  frontal: { X: 'dentro', Y: 'arriba', Z: 'derecha' },
+  superior: { X: 'arriba', Y: 'fuera', Z: 'derecha' },
+  lateral: { X: 'derecha', Y: 'arriba', Z: 'fuera' },
+  corte: null,
+  detalle: null,
+};
+
+// --- La rosa de ejes --------------------------------------------------------
+//
+// Abajo a la izquierda, y ORIENTADA CON LA PIEZA. No es una brújula fija: dice
+// cómo está puesto lo que estás mirando. Si el dibujo es una vista de frente,
+// el eje que sale del papel es uno; si es desde arriba, otro.
+//
+// Cada lámina declara hacia dónde va cada eje. Sólo se dibujan los que hagan
+// falta para entender la orientación: si un eje no aporta, no se pone.
+//
+//   'derecha' 'izquierda' 'arriba' 'abajo'   → flecha en el plano
+//   'fuera'                                   → círculo con punto (viene hacia ti)
+//   'dentro'                                  → círculo con aspa (se aleja)
+//   un número                                 → grados, para direcciones oblicuas
+//                                               (0 = derecha, 90 = abajo)
+
+const DIRECCIONES = {
+  derecha: 0, abajo: 90, izquierda: 180, arriba: 270,
+};
+
+/**
+ * Dibuja la rosa. `ejes` es algo como { X: 'derecha', Y: 'arriba', Z: 'fuera' }
+ * o { X: 'derecha', Z: 'fuera' } si con dos basta.
+ */
+export function rosaEjes(ejes, x, y) {
+  if (!ejes || !Object.keys(ejes).length) return { trazos: '', textos: '' };
+  const L = 19;
   const c = TINTA_SUAVE;
+  let trazos = '', textos = '';
+  let hayPerpendicular = false;
 
-  const trazos =
-    flecha(x, y, x + L, y, { color: c, ancho: 1.4 }) +
-    flecha(x, y, x, y - L, { color: c, ancho: 1.4 }) +
-    circulo(x, y, 4.5, { color: c, ancho: 1.2, relleno: PAPEL }) +
-    circulo(x, y, 1.4, { color: c, ancho: 1.2, relleno: c });
+  for (const [letra, hacia] of Object.entries(ejes)) {
+    if (hacia === 'fuera' || hacia === 'dentro') {
+      hayPerpendicular = true;
+      trazos += circulo(x, y, 5, { color: c, ancho: 1.3, relleno: PAPEL });
+      if (hacia === 'fuera') {
+        trazos += circulo(x, y, 1.5, { color: c, ancho: 1.3, relleno: c });
+      } else {
+        trazos += linea(x - 3.4, y - 3.4, x + 3.4, y + 3.4, { color: c, ancho: 1.2 });
+        trazos += linea(x + 3.4, y - 3.4, x - 3.4, y + 3.4, { color: c, ancho: 1.2 });
+      }
+      // La letra del eje perpendicular, pegada al círculo y sin estorbar.
+      textos += rotulo(x - 10, y + 15, letra, { tam: 13, anclaje: 'end', color: c, peso: 700 });
+      continue;
+    }
 
-  const textos =
-    rotulo(x + L + 7, y + 4, 'X', { tam: 12, color: c, peso: 700 }) +
-    rotulo(x, y - L - 5, 'Y', { tam: 12, color: c, peso: 700 }) +
-    rotulo(x - 9, y + 15, 'Z', { tam: 12, anclaje: 'end', color: c, peso: 700 });
+    const grados = typeof hacia === 'number' ? hacia : DIRECCIONES[hacia];
+    if (grados === undefined) continue;
+    const rad = (grados * Math.PI) / 180;
+    const dx = Math.cos(rad), dy = Math.sin(rad);
+    trazos += flecha(x, y, x + dx * L, y + dy * L, { color: c, ancho: 1.4 });
+    textos += rotulo(x + dx * (L + 10), y + dy * (L + 10) + 4.5, letra,
+      { tam: 13, color: c, peso: 700 });
+  }
+
+  // Un punto en el origen cuando no hay eje perpendicular que lo marque.
+  if (!hayPerpendicular) trazos += circulo(x, y, 1.6, { color: c, ancho: 1.2, relleno: c });
 
   return { trazos, textos };
 }
+
+/** Cuánto sitio necesita la rosa en la lámina. */
+export const ALTO_ROSA = 62;
 
 // --- La lámina completa -----------------------------------------------------
 
@@ -199,21 +296,24 @@ export function rosaEjes(x, y) {
  * `dibujo` devuelve { trazos, textos }. Los trazos pasan por el filtro que les
  * da el temblor de mano alzada; los textos, no.
  */
-export function lamina({ titulo = '', pie = '', vista = 'detalle', alto, dibujo }) {
+export function lamina({ titulo = '', pie = '', vista = 'detalle', ejes = null, alto, dibujo }) {
   const { trazos = '', textos = '' } = dibujo || {};
   const subtitulo = VISTAS[vista] || '';
-  const conEjes = !!subtitulo;
+  // Si la lámina no dice sus ejes, se usan los que corresponden a su vista.
+  const susEjes = ejes || EJES_POR_VISTA[vista] || null;
+  const conEjes = !!susEjes;
 
   // El pie se parte en líneas: de una tirada se salía por los lados del papel.
   const lineasPie = partirEnLineas(pie, 58);
   const altoPie = lineasPie.length ? lineasPie.length * 17 + 12 : 0;
-  // La rosa va arriba a la izquierda, en la banda del título. Ahí no estorba a
-  // ningún dibujo y queda siempre en el mismo sitio, que es la gracia.
-  const yDibujo = titulo ? 62 : 34;
-  const H = yDibujo + alto + altoPie + (conEjes ? 22 : 0) + 12;
+  // La rosa va abajo a la izquierda, en su propia franja: así no se pisa con
+  // el dibujo ni con el pie, y se mira igual que se mira una escala.
+  const yDibujo = titulo ? 50 : 18;
+  const H = yDibujo + alto + altoPie + (conEjes ? ALTO_ROSA : 0) + 12;
 
   const yPie = yDibujo + alto + 24;
-  const rosa = conEjes ? rosaEjes(34, 36) : { trazos: '', textos: '' };
+  const yRosa = H - 32;
+  const rosa = conEjes ? rosaEjes(susEjes, 46, yRosa) : { trazos: '', textos: '' };
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ANCHO} ${H}" width="${ANCHO}" height="${H}" role="img" aria-label="${esc(titulo || 'Esquema')}">
   <style>
@@ -245,8 +345,8 @@ export function lamina({ titulo = '', pie = '', vista = 'detalle', alto, dibujo 
   <rect width="${ANCHO}" height="${H}" fill="${PAPEL}" filter="url(#grano)" opacity="0.9"/>
   <rect x="7" y="7" width="${ANCHO - 14}" height="${H - 14}" fill="none"
         stroke="${TINTA_SUAVE}" stroke-width="1" opacity="0.5" rx="2"/>
-${conEjes ? `  <g filter="url(#pulso)">${rosa.trazos}</g>\n${rosa.textos}\n` : ''}${titulo ? `  ${rotulo(ANCHO / 2 + 22, 30, titulo, { tam: 17.5, peso: 600 })}
-  ${linea(ANCHO / 2 - 68, 40, ANCHO / 2 + 112, 40, { color: TINTA_SUAVE, ancho: 0.9 })}\n` : ''}
+${titulo ? `  ${rotulo(ANCHO / 2, 29, titulo, { tam: 17.5, peso: 600 })}
+  ${linea(ANCHO / 2 - 90, 38, ANCHO / 2 + 90, 38, { color: TINTA_SUAVE, ancho: 0.9 })}\n` : ''}
   <g transform="translate(0 ${yDibujo})">
     <g filter="url(#pulso)">
 ${trazos}
@@ -254,7 +354,9 @@ ${trazos}
 ${textos}
   </g>
 ${lineasPie.map((l, i) => '  ' + rotulo(ANCHO / 2, yPie + i * 17, l, { tam: 13, cursiva: true })).join('\n')}
-${conEjes ? `  ${rotulo(ANCHO / 2, H - 13, subtitulo, { tam: 12.5, color: TINTA_SUAVE, cursiva: true })}\n` : ''}</svg>
+${conEjes ? `  <g filter="url(#pulso)">${rosa.trazos}</g>
+${rosa.textos}
+  ${rotulo(96, yRosa + 5, subtitulo, { tam: 13, anclaje: 'start', color: TINTA_SUAVE, cursiva: true })}\n` : ''}</svg>
 `;
 }
 

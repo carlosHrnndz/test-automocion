@@ -344,10 +344,69 @@ console.log('\n--- El esquema en la tarjeta ---');
   ok('apunta al archivo', img?.getAttribute('src')?.endsWith('data/esquemas/p-svg.svg'));
   ok('lleva la base de la app delante', img?.getAttribute('src')?.startsWith('/'));
   ok('tiene texto alternativo', !!img?.getAttribute('alt'));
-  ok('dice que es una lámina del cuaderno', raiz4.textContent.includes('Lámina del cuaderno'));
+  // El gesto de pasar de pregunta no debe dispararse al arrastrar sobre la
+  // ilustración: si no, mirar un detalle te cambiaba de pregunta.
+  ok('la ilustración no se lleva el gesto', !!img?.closest('[data-sin-swipe]'));
+  // Retoque de modo oscuro sólo para las láminas sepia del propio programa.
+  ok('a la lámina propia se le baja el brillo en oscuro',
+     (img?.getAttribute('class') || '').includes('dark:brightness'));
 
   await act(async () => { root4.unmount(); });
   raiz4.remove();
+}
+
+// --- Ilustraciones puestas por el usuario en public/images ------------------
+console.log('\n--- Ilustración de public/images ---');
+{
+  const conImagen = [{
+    id: 'cfsd-0003', pregunta: '¿Con foto?', opciones: ['A', 'B'], correcta: 0,
+    explicacion: 'Porque sí.', ejemplo: 'Un ejemplo.', revisado: true,
+    imagen: 'images/cfsd-0003.png',
+  }];
+  const raiz5 = document.createElement('div');
+  document.body.appendChild(raiz5);
+  const root5 = createRoot(raiz5);
+  await act(async () => {
+    root5.render(React.createElement(Test, {
+      preguntas: conImagen, titulo: 'T', subtitulo: 's',
+      ajustes: { avanceAutomatico: false }, alSalir: () => {}, alTerminar: () => {},
+    }));
+  });
+
+  const opcion5 = [...raiz5.querySelectorAll('button')].find((b) => b.querySelector('.rounded-md'));
+  await act(async () => {
+    opcion5.dispatchEvent(new dom.window.MouseEvent('click', { bubbles: true }));
+  });
+
+  const foto = raiz5.querySelector('img');
+  ok('se ve la imagen de public/images', !!foto);
+  ok('apunta a images/', foto?.getAttribute('src')?.endsWith('images/cfsd-0003.png'));
+  // Una foto o un dibujo a color del usuario se deja como su autor lo hizo.
+  ok('a una imagen de fuera no se le toca el brillo',
+     !(foto?.getAttribute('class') || '').includes('dark:brightness'));
+
+  // Al tocarla se abre a pantalla completa: en el móvil el detalle no se ve.
+  const lupa = foto?.closest('button');
+  ok('la imagen es pulsable para ampliarla', !!lupa);
+  await act(async () => {
+    lupa.dispatchEvent(new dom.window.MouseEvent('click', { bubbles: true }));
+  });
+  const grande = raiz5.querySelector('[role=dialog]');
+  ok('al pulsarla se abre a pantalla completa', !!grande);
+  ok('la vista grande tampoco se lleva el gesto', !!grande?.closest('[data-sin-swipe]'));
+  await act(async () => {
+    grande.dispatchEvent(new dom.window.MouseEvent('click', { bubbles: true }));
+  });
+  ok('se cierra al tocar fuera', !raiz5.querySelector('[role=dialog]'));
+
+  // Si el archivo falta, mejor no dejar el hueco del icono roto.
+  await act(async () => {
+    raiz5.querySelector('img').dispatchEvent(new dom.window.Event('error', { bubbles: false }));
+  });
+  ok('si la imagen no carga desaparece', !raiz5.querySelector('img'));
+
+  await act(async () => { root5.unmount(); });
+  raiz5.remove();
 }
 
 // --- Lo mismo en el modo estudio --------------------------------------------

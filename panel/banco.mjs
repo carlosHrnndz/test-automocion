@@ -198,6 +198,102 @@ export function guardarEsquema(id, svg) {
   return `data/esquemas/${limpio}.svg`;
 }
 
+// --- Ilustraciones sueltas en public/images ---------------------------------
+//
+// Aparte del circuito de láminas SVG que dibuja el programa, se pueden dejar
+// imágenes hechas por fuera —a mano, con una IA, escaneadas— en public/images
+// con el nombre de la pregunta a la que acompañan. Esta parte las localiza y
+// las apunta en su pregunta, sin tener que tocar el JSON.
+
+export const IMAGENES = path.join(RAIZ, 'public', 'images');
+
+const EXTENSIONES = ['.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif', '.svg'];
+
+/**
+ * Del nombre de un archivo al identificador de una pregunta.
+ *
+ * Tolerante a propósito: cfsd_0007.png, CFSD-0007.PNG y cfsd 0007.webp son
+ * todos la pregunta cfsd-0007. Nombrar archivos a mano es fácil equivocarse y
+ * no merece la pena que una imagen se pierda por un guion bajo.
+ */
+export function idDeArchivo(archivo) {
+  const base = archivo.replace(/\.[^.]+$/, '');
+  return base.trim().toLowerCase().replace(/[\s_.]+/g, '-');
+}
+
+/** Lista los archivos de imagen que hay ahora mismo en public/images. */
+export function listarImagenes() {
+  if (!fs.existsSync(IMAGENES)) return [];
+  return fs
+    .readdirSync(IMAGENES)
+    .filter((f) => !f.startsWith('.') && EXTENSIONES.includes(path.extname(f).toLowerCase()))
+    .sort();
+}
+
+/**
+ * Empareja cada imagen de public/images con su pregunta y la apunta en el
+ * campo `imagen`.
+ *
+ * Devuelve el parte completo, porque lo interesante no es cuántas ha puesto
+ * sino cuáles se han quedado fuera: un archivo mal nombrado se ve enseguida
+ * en la lista de "sin pregunta".
+ */
+export function vincularImagenes() {
+  const archivos = listarImagenes();
+  const porId = new Map();
+  for (const f of archivos) {
+    const id = idDeArchivo(f);
+    // Si hay dos archivos para la misma pregunta gana el primero por orden
+    // alfabético, y el otro se avisa como repetido.
+    if (porId.has(id)) porId.get(id).push(f);
+    else porId.set(id, [f]);
+  }
+
+  const puestas = [];
+  const yaEstaban = [];
+  const repetidas = [];
+  const usados = new Set();
+
+  for (const moduloId of modulosConArchivo()) {
+    const lista = leerModulo(moduloId);
+    let tocado = false;
+    for (const p of lista) {
+      const grupo = porId.get(String(p.id).toLowerCase());
+      if (!grupo) continue;
+      usados.add(String(p.id).toLowerCase());
+      if (grupo.length > 1) repetidas.push({ id: p.id, archivos: grupo });
+      const ruta = `images/${grupo[0]}`;
+      if (p.imagen === ruta) { yaEstaban.push(p.id); continue; }
+      p.imagen = ruta;
+      puestas.push({ id: p.id, archivo: grupo[0] });
+      tocado = true;
+    }
+    if (tocado) escribirModulo(moduloId, lista);
+  }
+
+  const sinPregunta = [...porId.entries()]
+    .filter(([id]) => !usados.has(id))
+    .flatMap(([, archivos]) => archivos);
+
+  return { total: archivos.length, puestas, yaEstaban, repetidas, sinPregunta };
+}
+
+/**
+ * Quita la referencia a la imagen de una pregunta.
+ * No borra el archivo: lo puso el usuario y puede querer volver a enlazarlo.
+ */
+export function desvincularImagen(id) {
+  for (const moduloId of modulosConArchivo()) {
+    const lista = leerModulo(moduloId);
+    const p = lista.find((q) => q.id === id);
+    if (!p) continue;
+    delete p.imagen;
+    escribirModulo(moduloId, lista);
+    return true;
+  }
+  return false;
+}
+
 /** Quita el esquema de una pregunta, si lo tenía. */
 export function borrarEsquema(id) {
   const limpio = String(id).replace(/[^\w-]/g, '');

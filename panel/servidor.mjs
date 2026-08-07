@@ -331,6 +331,21 @@ const rutas = {
       })),
       tesseract: { ok: hayTesseract(), idiomas: hayTesseract() ? idiomasDisponibles() : [] },
       macos: comprobarMacOS(),
+      // Cuántas imágenes hay sueltas en public/images y cuántas están ya
+      // apuntadas en su pregunta. La diferencia es lo que falta por enlazar.
+      imagenes: (() => {
+        const archivos = banco.listarImagenes();
+        const enlazadas = new Set(
+          banco.leerTodo()
+            .map((p) => p.imagen)
+            .filter((r) => typeof r === 'string' && r.startsWith('images/'))
+            .map((r) => r.slice('images/'.length))
+        );
+        return {
+          total: archivos.length,
+          enlazadas: archivos.filter((f) => enlazadas.has(f)).length,
+        };
+      })(),
       ollama,
       git: {
         esRepo: git.ok,
@@ -654,6 +669,133 @@ const rutas = {
       t.log('Quedan marcadas como SIN REVISAR: repásalas en la pestaña Banco.');
       t.fin(0);
     })().catch((e) => { t.log('Error: ' + e.message); t.fin(1); });
+  },
+
+  // Meter en el banco láminas dibujadas fuera del programa.
+  //
+  // Se le da una carpeta con archivos .svg cuyo nombre es el identificador de
+  // la pregunta (cfsd-0007.svg). Cada uno se copia a su sitio y se apunta en
+  // la pregunta. Es el camino para las ilustraciones hechas a mano, una por
+  // pregunta, sin tener que tocar el JSON.
+  async 'POST /api/importar-laminas'(req, res) {
+    const { carpeta } = await leerCuerpo(req);
+    if (!carpeta) return json(res, { error: 'Falta la carpeta' }, 400);
+
+    const dir = path.resolve(String(carpeta).replace(/^~/, os.homedir()));
+    if (!fs.existsSync(dir) || !fs.statSync(dir).isDirectory()) {
+      return json(res, { error: 'No existe esa carpeta' }, 400);
+    }
+
+    let t;
+    try { t = tareaPropia('Meter las láminas'); }
+    catch (e) { return json(res, { error: e.message }, 409); }
+    json(res, { ok: true });
+
+    (async () => {
+      const ADMITIDAS = ['.svg', '.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif'];
+      const archivos = fs.readdirSync(dir)
+        .filter((f) => !f.startsWith('.') && ADMITIDAS.includes(path.extname(f).toLowerCase()));
+      if (!archivos.length) {
+        t.log('No hay ninguna imagen en esa carpeta.');
+        t.log('Valen .svg, .png, .jpg, .webp, .avif y .gif.');
+        return t.fin(0);
+      }
+      t.log(`${archivos.length} lámina(s) en ${dir}\n`);
+
+      // Por identificador normalizado, para que dé igual cfsd_0007 que cfsd-0007.
+      const porId = new Map(banco.leerTodo().map((p) => [String(p.id).toLowerCase(), p]));
+      let puestas = 0, sinPregunta = 0, malas = 0;
+
+      for (const archivo of archivos) {
+        const id = banco.idDeArchivo(archivo);
+        const pregunta = porId.get(id);
+        if (!pregunta) {
+          sinPregunta++;
+          t.log(`  ✗ ${archivo} · no hay ninguna pregunta con ese identificador`);
+          continue;
+        }
+
+        let ruta;
+        if (path.extname(archivo).toLowerCase() === '.svg') {
+          const svg = fs.readFileSync(path.join(dir, archivo), 'utf8');
+          // Comprobación mínima: que sea un SVG y no un archivo cualquiera.
+          if (!/^\s*<svg[\s>]/.test(svg) || !svg.includes('</svg>')) {
+            malas++;
+            t.log(`  ✗ ${archivo} · no parece un SVG`);
+            continue;
+          }
+          ruta = banco.guardarEsquema(pregunta.id, svg);
+        } else {
+          // Las imágenes de mapa de bits van tal cual a public/images, con el
+          // identificador de la pregunta por nombre.
+          const destino = `${pregunta.id}${path.extname(archivo).toLowerCase()}`;
+          fs.mkdirSync(banco.IMAGENES, { recursive: true });
+          fs.copyFileSync(path.join(dir, archivo), path.join(banco.IMAGENES, destino));
+          ruta = `images/${destino}`;
+        }
+
+        banco.guardarPregunta({ ...pregunta, imagen: ruta });
+        puestas++;
+        t.log(`  ✓ ${pregunta.id}`);
+      }
+
+      t.log(`\nTerminado. ${puestas} lámina(s) puestas` +
+            `${sinPregunta ? `, ${sinPregunta} sin pregunta que las reciba` : ''}` +
+            `${malas ? `, ${malas} con formato raro` : ''}.`);
+      if (puestas) t.log('Míralas en el Banco y publica cuando te convenzan.');
+      t.fin(0);
+    })().catch((e) => { t.log('Error: ' + e.message); t.fin(1); });
+  },
+
+  // Enlazar las imágenes que haya en public/images con sus preguntas.
+  //
+  // El otro camino (importar-laminas) copia archivos de fuera. Éste no copia
+  // nada: las imágenes ya están en su sitio, sólo hay que apuntarlas en la
+  // pregunta que les corresponde según el nombre del archivo.
+  async 'POST /api/vincular-imagenes'(req, res) {
+    let t;
+    try { t = tareaPropia('Enlazar las imágenes'); }
+    catch (e) { return json(res, { error: e.message }, 409); }
+    json(res, { ok: true });
+
+    (async () => {
+      const r = banco.vincularImagenes();
+
+      if (!r.total) {
+        t.log('No hay ninguna imagen en public/images.');
+        t.log('Deja ahí los archivos con el nombre de su pregunta (cfsd-0007.png) y vuelve a darle.');
+        return t.fin(0);
+      }
+
+      t.log(`${r.total} imagen(es) en public/images\n`);
+      for (const p of r.puestas) t.log(`  ✓ ${p.id} · ${p.archivo}`);
+      if (r.yaEstaban.length) t.log(`\n  ${r.yaEstaban.length} ya estaban enlazadas y no se han tocado.`);
+
+      if (r.repetidas.length) {
+        t.log('\nHay preguntas con más de una imagen; se ha cogido la primera:');
+        for (const x of r.repetidas) t.log(`  · ${x.id} → ${x.archivos.join(', ')}`);
+      }
+
+      if (r.sinPregunta.length) {
+        t.log('\nEstos archivos no tienen ninguna pregunta con ese identificador:');
+        for (const f of r.sinPregunta) t.log(`  ✗ ${f}`);
+        t.log('Comprueba el nombre. Da igual el guion bajo y las mayúsculas,');
+        t.log('pero el número tiene que coincidir con el de la pregunta.');
+      }
+
+      t.log(`\nTerminado. ${r.puestas.length} enlazada(s) de nuevas.`);
+      if (r.puestas.length) t.log('Míralas en el Banco y publica cuando te convenzan.');
+      t.fin(0);
+    })().catch((e) => { t.log('Error: ' + e.message); t.fin(1); });
+  },
+
+  // Desenlazar la ilustración de una pregunta, sin borrar el archivo.
+  async 'POST /api/quitar-imagen'(req, res) {
+    const { id } = await leerCuerpo(req);
+    if (!id) return json(res, { error: 'Falta el identificador' }, 400);
+    const ok = banco.desvincularImagen(id);
+    if (!ok) return json(res, { error: 'No existe esa pregunta' }, 404);
+    json(res, { ok: true });
   },
 
   // Esquemas: un dibujo sencillo para acompañar la explicación.
@@ -1020,12 +1162,40 @@ const servidor = http.createServer(async (req, res) => {
     }
   }
 
+  const TIPOS = {
+    '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css',
+    '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif',
+    '.gif': 'image/gif', '.json': 'application/json',
+  };
+  const binario = (ext) => !['.html', '.js', '.css', '.svg', '.json'].includes(ext);
+
+  // Archivos de public/, para poder enseñar en el panel las ilustraciones tal
+  // y como se verán en la app. Sólo lectura y sólo de dentro de public.
+  if (url.pathname.startsWith('/archivo/')) {
+    const pedido = decodeURIComponent(url.pathname.slice('/archivo/'.length));
+    const dentro = path.join(RAIZ, 'public');
+    const completo = path.resolve(dentro, pedido);
+    if (completo.startsWith(dentro + path.sep) && fs.existsSync(completo) && fs.statSync(completo).isFile()) {
+      const ext = path.extname(completo).toLowerCase();
+      res.writeHead(200, {
+        'content-type': (TIPOS[ext] || 'application/octet-stream') + (binario(ext) ? '' : '; charset=utf-8'),
+        'cache-control': 'no-cache',
+      });
+      return res.end(fs.readFileSync(completo));
+    }
+    res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
+    return res.end('No encontrado');
+  }
+
   // Archivos estáticos del panel.
   const archivo = url.pathname === '/' ? 'ui.html' : url.pathname.replace(/^\/+/, '');
   const completo = path.join(AQUI, archivo);
   if (completo.startsWith(AQUI) && fs.existsSync(completo) && fs.statSync(completo).isFile()) {
-    const tipos = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml' };
-    res.writeHead(200, { 'content-type': (tipos[path.extname(completo)] || 'text/plain') + '; charset=utf-8' });
+    const ext = path.extname(completo).toLowerCase();
+    res.writeHead(200, {
+      'content-type': (TIPOS[ext] || 'text/plain') + (binario(ext) ? '' : '; charset=utf-8'),
+    });
     return res.end(fs.readFileSync(completo));
   }
 

@@ -699,6 +699,7 @@ export function construirDibujo(nombre, tituloPropio = '') {
     titulo: tituloPropio || e.titulo,
     pie: e.pie,
     vista: e.vista,
+    ejes: e.ejes,          // si la lámina declara los suyos, mandan ésos
     alto: e.alto,
     dibujo: e.dibujo(),
   });
