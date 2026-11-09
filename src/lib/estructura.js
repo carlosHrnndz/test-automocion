@@ -37,6 +37,7 @@ export const ESTRUCTURA = [
     submodulos: [
       'TRANSMISIÓN Y DINÁMICA DEL VEHÍCULO',
       'OTROS SISTEMAS DE FRENOS',
+      'FRENOS ACTIVOS',
     ],
   },
   {

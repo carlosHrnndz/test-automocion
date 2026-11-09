@@ -2839,5 +2839,991 @@
     "id": "stf-0098",
     "nombre_imagen": "stf-0098.jpg",
     "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El freno hidroneumático utiliza para el freno de estacionamiento'. Key concept: 'La fuerza de un resorte'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sensor de velocidad inductivo genera una señal",
+    "opciones": [
+      "Senoidal",
+      "Dual",
+      "Hall",
+      "Cuadrada"
+    ],
+    "correcta": 0,
+    "explicacion": "El sensor de velocidad de rueda de tipo inductivo (también llamado sensor pasivo de revoluciones) es el captador electromagnético encargado de informar a la centralita del ABS de la velocidad angular de cada rueda sin necesidad de alimentación eléctrica propia. Su interior aloja un imán permanente acoplado a una bobina de hilo de cobre arrollada sobre un núcleo polar que apunta hacia una rueda fónica o corona dentada solidaria al buje. Cuando la rueda gira, el paso sucesivo de dientes y huecos frente al núcleo modifica periódicamente el flujo magnético que atraviesa la bobina y, por la ley de inducción de Faraday, induce en sus extremos una tensión alterna cuya frecuencia y amplitud crecen con la velocidad de giro. Como el flujo magnético sube gradualmente al acercarse el diente y se invierte suavemente al alejarse hacia el hueco, la forma de onda eléctrica obtenida es una señal alterna senoidal pura, razón por la cual «Senoidal» es la respuesta correcta. No es una señal «Cuadrada» ni «Hall» porque esas corresponden a los sensores activos (de efecto Hall o magnetorresistivos) que llevan electrónica integrada, y el término «Dual» no define ninguna forma de onda eléctrica. La confusión habitual en el taller es creer que todos los sensores de rueda del ABS dan una onda cuadrada digital cuando se miden con el osciloscopio.",
+    "ejemplo": "Si conectas los dos canales del osciloscopio a un captador inductivo de dos cables y haces girar a mano el disco de freno con el coche en el elevador, verás en la pantalla una onda senoidal suave cuya altura en voltios y cuya frecuencia aumentan cuanto más rápido gires la rueda. Si al frenar un diente de la corona está roto o lleno de viruta metálica, observarás un salto irregular en uno de los ciclos de la sinusoide.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0099",
+    "nombre_imagen": "stf-0099.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sensor de velocidad inductivo genera una señal'. Key concept: 'Senoidal'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "La gestión electrónica del ABS se realiza en dos procesadores simultáneos, lo que se conoce como un sistema",
+    "opciones": [
+      "Redundante",
+      "Dual",
+      "Dinofreno",
+      "Repetitivo"
+    ],
+    "correcta": 3,
+    "explicacion": "La arquitectura de doble procesador de la unidad de control electrónica (ECU) del ABS es un diseño de seguridad funcional creado para evitar que un fallo informático interno provoque una orden de frenado errónea o deje sin control el sistema sin previo aviso. Dentro del calculador trabajan dos microprocesadores en paralelo que reciben simultáneamente las mismas señales de los sensores de rueda, procesan los algoritmos de deslizamiento al mismo tiempo y comparan de forma continua e idéntica los resultados obtenidos antes de excitar las electroválvulas del grupo hidráulico. Si ambos procesadores no coinciden exactamente en sus cálculos repetidos ciclo tras ciclo, la centralita desconecta al instante la regulación electrónica, enciende el testigo de avería en el cuadro y deja operativo el freno hidráulico convencional. En la clave oficial de corrección de este test del temario se da por válida la opción «Repetitivo» (aludiendo a que ambos procesadores repiten el mismo cálculo de manera simultánea para contrastarlo), aunque en la jerga técnica de ingeniería electrónica automotriz a esta configuración también se la denomina habitualmente sistema «Redundante». «Dual» se emplea para circuitos hidráulicos dobles y «Dinofreno» es un término inventado sin relación con la microelectrónica del ABS. Conviene recordar esta particularidad de cara al examen oficial del módulo: aunque técnicamente sea una arquitectura redundante, el corrector del test valida «Repetitivo».",
+    "ejemplo": "Cuando abres una unidad electrónica de ABS averiada en el banco de diagnóstico, verás en la placa base dos microcontroladores que monitorizan en espejo las señales de las cuatro ruedas cada pocos milisegundos. Si uno de los dos chips sufre un fallo de memoria interna y sus cálculos dejan de coincidir con los de su compañero, la unidad graba un código de avería permanente de fallo interno de ECU y pasa a modo seguro.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0100",
+    "nombre_imagen": "stf-0100.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'La gestión electrónica del ABS se realiza en dos procesadores simultáneos, lo que se conoce como un sistema'. Key concept: 'Repetitivo'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "Una rueda bloqueada pierde el poder de:",
+    "opciones": [
+      "Guiado",
+      "Tracción",
+      "Fricción",
+      "Agarre"
+    ],
+    "correcta": 0,
+    "explicacion": "El poder de guiado (o capacidad direccional) de un neumático es la propiedad física que le permite generar fuerzas laterales contra el asfalto para que el vehículo obedezca el ángulo que el conductor marca con el volante. Mientras la rueda gira con un deslizamiento controlado, la huella de contacto del neumático se deforma elásticamente y es capaz de repartir su adherencia entre la fuerza longitudinal de frenado y la fuerza transversal de dirección. Sin embargo, cuando el par de frenado supera el límite de adherencia y la rueda se bloquea por completo (deslizamiento del 100 %), el neumático pasa a resbalar como un patín sobre la calzada y su capacidad para soportar esfuerzos laterales cae prácticamente a cero. Por este motivo, una rueda bloqueada pierde por completo el poder de «Guiado», haciendo que el coche siga recto por inercia aunque el conductor gire el volante a tope. «Tracción» se refiere al esfuerzo motor al acelerar y no a la pérdida direccional en frenada, mientras que «Fricción» y «Agarre» no desaparecen del todo (sigue existiendo rozamiento cinético contra el suelo, aunque menor que el estático). El error típico es pensar que el ABS se inventó sólo para acortar metros de frenada, cuando su objetivo primordial es conservar el guiado para poder esquivar un obstáculo mientras se frena a fondo.",
+    "ejemplo": "En una pista deslizante de escuela de conducción, si desconectas el fusible del ABS, pisas el freno a fondo para bloquear las ruedas delanteras y giras el volante 90 grados para esquivar unos conos, comprobarás que el coche sigue completamente recto como un trineo y los derriba. Al volver a conectar el ABS y repetir la maniobra, las ruedas no llegan a bloquearse y el coche gira obedeciendo al volante mientras decelera.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0101",
+    "nombre_imagen": "stf-0101.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'Una rueda bloqueada pierde el poder de:'. Key concept: 'Guiado'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "La regulación del control de tracción actúa sobre:",
+    "opciones": [
+      "La gestión de motor solamente.",
+      "La potencia del motor y sobre los frenos.",
+      "Sobre los frenos solamente.",
+      "Sobre la gestión del diferencial."
+    ],
+    "correcta": 1,
+    "explicacion": "El sistema de control de tracción (ASR o TCS) es una función activa integrada en el calculador del ABS/ESP cuya misión es impedir que las ruedas motrices patinen al acelerar sobre firme deslizante o al demandar un par excesivo con el acelerador. Cuando los sensores de velocidad detectan que una o ambas ruedas motrices se embalan respecto a las ruedas no motrices, la unidad electrónica dispone de dos vías de actuación complementarias según la velocidad del vehículo y la magnitud del patinamiento. Si solo patina una rueda a baja velocidad (por ejemplo, al pisar hielo con un lado del coche), el grupo hidráulico aplica presión de freno únicamente sobre esa rueda para que el diferencial envíe el par hacia la rueda con buen agarre; si patinan las dos o la velocidad es alta, solicita además a la centralita de motor que reduzca el par entregado. Por eso la respuesta correcta es que actúa sobre «La potencia del motor y sobre los frenos». Las opciones que dicen que actúa solamente sobre la gestión del motor o solamente sobre los frenos son incompletas porque describen un único modo de intervención, y no actúa sobre la gestión del diferencial porque en un diferencial mecánico convencional el efecto autoblocante electrónico (EDS) se logra precisamente frenando la rueda que patina. La confusión habitual es creer que el control de tracción solo corta inyección sin llegar a usar nunca las pinzas de freno.",
+    "ejemplo": "Al arrancar en una rampa de garaje mojada con una rueda delantera sobre una rejilla metálica resbaladiza, escucharás primero el zumbido del bloque hidráulico frenando a impulsos esa rueda para pasar giro a la que pisa cemento. Si aun así sigues pisando el acelerador a fondo, notarás que el motor no sube de vueltas porque la centralita limita simultáneamente la mariposa y la inyección.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0102",
+    "nombre_imagen": "stf-0102.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'La regulación del control de tracción actúa sobre:'. Key concept: 'La potencia del motor y sobre los frenos.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El interruptor del pedal de freno",
+    "opciones": [
+      "Discrimina la actuación del ABS y del Control de tracción",
+      "Solamente actúa sobre las luces de frenado",
+      "Solo actúa sobre el control de emisiones del motor",
+      "Actúa a la vez que el del acelerador."
+    ],
+    "correcta": 0,
+    "explicacion": "El interruptor del pedal de freno (BLS) es un sensor eléctrico o Hall montado en el soporte del pedal que informa instantáneamente a las distintas unidades electrónicas del vehículo de si el conductor está pisando o no el freno. Dentro de la lógica del bloque ABS/ASR/ESP, esta señal resulta crítica porque ambos sistemas utilizan los mismos sensores de giro de rueda y las mismas electroválvulas del grupo hidráulico, pero con objetivos opuestos según la maniobra. Cuando la centralita recibe señal de pedal de freno pisado, sabe que cualquier diferencia brusca de velocidad en una rueda se debe a una tendencia al bloqueo en frenada y aplica la lógica del ABS (liberar presión); en cambio, si el interruptor indica que el pedal NO está pisado, interpreta el desfase de giro como un patinamiento en aceleración y activa el control de tracción (aplicar presión de freno a la rueda que patina). Por ello es correcto afirmar que «Discrimina la actuación del ABS y del Control de tracción». No actúa solamente sobre las luces de freno ni solo sobre las emisiones, ya que su señal viaja por CAN a motor, cambio automático y ABS, y tampoco actúa a la vez que el acelerador. Un fallo clásico de taller es no relacionar un código de avería en el módulo ABS/ESP con un simple interruptor de pedal de freno desajustado o con un filamento internamente cortado.",
+    "ejemplo": "En muchos turismos del grupo VAG o PSA, cuando se enciende en el cuadro el testigo de avería del ESP/ABS junto con el de precalentamiento parpadeando, al conectar la máquina de diagnosis aparece el fallo «Señal incoherente del conmutador de luz de freno». Basta sustituir o calar correctamente el interruptor del pedal para que la unidad vuelva a discriminar cuándo frenas y apague las alertas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0103",
+    "nombre_imagen": "stf-0103.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El interruptor del pedal de freno'. Key concept: 'Discrimina la actuación del ABS y del Control de tracción'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sensor piezoeléctrico de presión de freno se basa en.",
+    "opciones": [
+      "La deformación de un piezoelemento por la presión del freno",
+      "El deslizamiento de una resistencia variable",
+      "La resistencia de un superconductor",
+      "La variación de volumen de las ruedas que derrapan."
+    ],
+    "correcta": 0,
+    "explicacion": "El sensor piezoeléctrico de presión de frenado es el transductor integrado en el bloque hidráulico del ESP/ABS encargado de medir en tiempo real qué presión hidráulica (en bares) está generando el conductor al pisar el pedal. Su principio físico se apoya en el efecto piezoresistivo o piezoeléctrico: el líquido de frenos a presión empuja una membrana micromecánica de silicio o cuarzo (piezoelemento) cuya estructura cristalina se deforma microscópicamente de forma proporcional a los bares del circuito. Esa deformación altera la respuesta eléctrica de un puente de medida integrado en el propio chip sensor, que acondiciona y amplifica la señal para entregar a la ECU una tensión lineal entre 0,5 V y 4,5 V equivalente a la presión real de la bomba. De ahí que la opción correcta sea que se basa en «La deformación de un piezoelemento por la presión del freno». No utiliza un cursor mecánico sobre una resistencia variable (eso sería un potenciómetro sujeto a desgaste), ni emplea superconductores criogénicos, ni mide en modo alguno el volumen de los neumáticos. El error frecuente es confundir este sensor de presión hidráulica interna con el interruptor todo/nada del pedal de freno.",
+    "ejemplo": "Si entras con la máquina de diagnosis en los bloques de valores reales del módulo ESP con el coche parado, verás que la presión de freno marca cerca de 0 bares (o una ligera oscilación de ±0,5 bar) con el pedal suelto. A medida que vas pisando el pedal con fuerza creciente, observarás cómo la lectura sube progresivamente hasta superar los 100 o 120 bares en una frenada de emergencia.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0104",
+    "nombre_imagen": "stf-0104.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sensor piezoeléctrico de presión de freno se basa en.'. Key concept: 'La deformación de un piezoelemento por la presión del freno'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "Respecto al sistema hidráulico del ABS, en turismos puede configurarse;",
+    "opciones": [
+      "Con 1 canal",
+      "Con 2 canales",
+      "Con 2, 3 o 4 canales",
+      "Con 0 canales"
+    ],
+    "correcta": 2,
+    "explicacion": "Los canales de regulación de un sistema hidráulico de ABS son las líneas independientes de control de presión gobernadas por su propio juego de electroválvulas dentro del bloque hidrostático. A lo largo de la evolución de los turismos y comerciales ligeros se han empleado configuraciones de 2 canales (control por ejes o en diagonal), de 3 canales (dos canales delanteros independientes para cada rueda directriz y un único canal común con criterio Select-Low para las dos ruedas traseras) y de 4 canales (regulación individual para cada una de las cuatro ruedas, imprescindible hoy cuando el coche incorpora ESP). Gracias a esta variedad constructiva, la opción correcta es que en turismos puede configurarse «Con 2, 3 o 4 canales». Decir que solo existe con 1 canal o solo con 2 canales ignora las configuraciones de 3 y 4 canales que dominan el parque automovilístico, y hablar de 0 canales carece de sentido porque sin canales hidráulicos no habría modulación de presión posible. Un error común es pensar que por tener cuatro ruedas todos los ABS de la historia han tenido obligatoriamente cuatro canales independientes.",
+    "ejemplo": "Al inspeccionar el grupo hidráulico de un turismo moderno con ESP verás salir cuatro tuberías rígidas hacia las cuatro ruedas (4 canales y 8 electroválvulas, una de entrada y otra de salida por rueda). En cambio, en una furgoneta antigua con ABS de 3 canales observarás dos salidas para las pinzas delanteras y una sola tubería trasera que luego se bifurca en una «T» hacia los dos tambores posteriores.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0105",
+    "nombre_imagen": "stf-0105.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'Respecto al sistema hidráulico del ABS, en turismos puede configurarse;'. Key concept: 'Con 2, 3 o 4 canales'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "La principal función del circuito de frenos ABS es evitar que:",
+    "opciones": [
+      "Las distracciones del conductor para frenar.",
+      "El bloqueo y el posterior derrapaje de las ruedas al frenar.",
+      "El bloqueo de las ruedas del eje trasero.",
+      "El bloqueo de las ruedas del eje delantero."
+    ],
+    "correcta": 1,
+    "explicacion": "El sistema antibloqueo de frenos (ABS, Antilock Braking System) es un dispositivo electrónico-hidráulico de seguridad activa diseñado para modular la presión de frenado cuando el conductor pisa el pedal con una fuerza superior a la que el agarre del pavimento permite soportar. Cuando los captadores de rueda informan a la centralita de que una o varias ruedas sufren una deceleración angular brusca previa al clavado, el bloque hidráulico cierra la entrada de presión y abre brevemente la descarga para mantener el deslizamiento en la franja óptima del 15 % al 22 %. Con ello consigue evitar simultáneamente que la rueda se detenga en seco y que el vehículo patine sin control, manteniendo la direccionabilidad y reduciendo la distancia de parada en la mayoría de firmes. Por tanto, la respuesta correcta es evitar «El bloqueo y el posterior derrapaje de las ruedas al frenar». El ABS no evita las distracciones humanas del conductor (eso corresponde a sistemas ADAS de alerta de atención), y las dos opciones que limitan su función solo al eje trasero o solo al eje delantero son falsas porque el ABS protege ambos ejes del vehículo. La confusión habitual es olvidar que el bloqueo de rueda es precisamente la causa directa del derrapaje incontrolado.",
+    "ejemplo": "Si realizas una frenada de emergencia sobre asfalto mojado a 80 km/h, notarás un tableteo característico en el pedal de freno provocado por los pulsos de la bomba de retorno y las electroválvulas del ABS. Gracias a esa modulación rápida, las cuatro ruedas siguen girando al límite de adherencia sin dejar las clásicas huellas negras de goma quemada ni hacer que la zaga adelante al morro.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0106",
+    "nombre_imagen": "stf-0106.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'La principal función del circuito de frenos ABS es evitar que:'. Key concept: 'El bloqueo y el posterior derrapaje de las ruedas al frenar.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sistema de control de tracción",
+    "opciones": [
+      "Frena las ruedas que derrapan al acelerar",
+      "Frena las ruedas que derrapan al frenar,",
+      "Frena todas las ruedas para prevenir el derrapa",
+      "Para el motor cuando hay exceso de tracción"
+    ],
+    "correcta": 0,
+    "explicacion": "El sistema de control de tracción (ASR/TCS) tiene como finalidad evitar la pérdida de motricidad y de estabilidad cuando el conductor pisa el acelerador y el par transmitido a las ruedas motrices supera la adherencia disponible entre neumático y calzada. Para lograrlo a velocidades bajas y medias, el calculador del ABS/ESP compara el giro de las ruedas motrices con el de las ruedas libres y, en cuanto detecta que una rueda motriz se acelera en vacío, excita una válvula conmutadora y la bomba de alta presión para enviar líquido de frenos exclusivamente a la pinza de esa rueda que patina. Al frenar selectivamente la rueda que pierde agarre, hace el efecto de un diferencial autoblocante electrónico (EDS) y obliga al diferencial mecánico a enviar el par motor hacia la rueda opuesta que sí tiene tracción. Por eso la opción correcta es que «Frena las ruedas que derrapan al acelerar». Frenar las ruedas al frenar sería un contrasentido (al frenar actúa el ABS liberando presión, no aplicando más freno), no frena todas las ruedas a la vez porque inmovilizaría el coche, y jamás apaga o para el motor en marcha porque dejaría al vehículo sin servodirección ni asistencia. El error típico es confundir la actuación del ASR al acelerar con la del ABS al frenar.",
+    "ejemplo": "Cuando intentas salir de un aparcamiento nevado y una de las ruedas motrices pisa una placa de hielo, verás parpadear el testigo amarillo de control de tracción en el cuadro mientras la pinza de esa rueda la frena a golpes cortos. Eso impide que la rueda sobre el hielo gire loca a toda velocidad y permite que la otra rueda, apoyada en nieve pisada, mueva el coche hacia delante.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0107",
+    "nombre_imagen": "stf-0107.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sistema de control de tracción'. Key concept: 'Frena las ruedas que derrapan al acelerar'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El control de crucero adaptativo:",
+    "opciones": [
+      "No se utiliza en Europa por no estar demostrada su fiabilidad.",
+      "Utiliza un radar para calcular la velocidad máxima de la vía.",
+      "Utiliza un radar para calcular la distancia sobre el vehículo precedente",
+      "Utiliza un radar para calcular la distancia sobre el vehículo lateral."
+    ],
+    "correcta": 2,
+    "explicacion": "El control de crucero adaptativo (ACC, Adaptive Cruise Control) es un sistema avanzado de asistencia a la conducción que evoluciona el control de velocidad convencional añadiendo la capacidad de regular automáticamente la distancia de seguridad con el tráfico que circula delante. Para ello emplea un sensor de radar de ondas milimétricas (a menudo apoyado por cámara frontal) instalado en la parrilla o el paragolpes delantero, el cual emite haces electromagnéticos y mide por efecto Doppler el tiempo de rebote y la velocidad relativa del vehículo que nos precede. Si el coche de delante circula más despacio que la velocidad programada, la centralita del ACC ordena reducir el par motor e incluso solicita al módulo ESP/freno inteligente que aplique los frenos suavemente para mantener el intervalo temporal seleccionado por el conductor. Por eso la opción correcta es que «Utiliza un radar para calcular la distancia sobre el vehículo precedente». Es totalmente falso que no se utilice en Europa (es equipamiento habitual y homologado en toda la UE), el radar no lee las señales de velocidad máxima de la vía (eso lo hace la cámara de reconocimiento de señales TSR), y tampoco mide la distancia al vehículo lateral (función propia de los sensores de ángulo muerto BSD). Un fallo frecuente tras una reparación de carrocería es montar el paragolpes sin calibrar con el panel reflectante el ángulo del radar ACC.",
+    "ejemplo": "Al circular por autovía con el ACC fijado a 120 km/h y alcanzar a un camión que va a 95 km/h en tu mismo carril, el radar frontal detecta el acercamiento y el coche frena solo hasta igualar los 95 km/h manteniendo la distancia de seguridad elegida. En cuanto pones el intermitente y cambias al carril izquierdo libre de obstáculos, el sistema vuelve a acelerar progresivamente hasta recuperar los 120 km/h.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0108",
+    "nombre_imagen": "stf-0108.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El control de crucero adaptativo:'. Key concept: 'Utiliza un radar para calcular la distancia sobre el vehículo precedente'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sistema de freno es el responsable fundamental en:",
+    "opciones": [
+      "La seguridad activa del vehículo",
+      "La seguridad pasiva del vehículo",
+      "El ahorro de consumo",
+      "La reducción de emisiones de CO"
+    ],
+    "correcta": 0,
+    "explicacion": "Dentro de la seguridad integral del automóvil se distingue claramente entre seguridad activa (todos los sistemas que actúan antes de un accidente para evitar que se produzca) y seguridad pasiva (los elementos que actúan durante y después del impacto para minimizar las lesiones a los ocupantes). El sistema de frenos —junto con la dirección, la suspensión, los neumáticos y los controles electrónicos ABS/ESP— permite al conductor reducir la velocidad, detener el vehículo a tiempo o corregir la trayectoria ante un imprevisto en la vía. Por su papel directo en evitar la colisión antes de que ocurra, el sistema de freno es el responsable fundamental en «La seguridad activa del vehículo». No pertenece a la «seguridad pasiva» porque esta engloba airbags, cinturones con pretensor, reposacabezas activos y carrocería de deformación programada, y tampoco tiene como misión principal ahorrar combustible ni reducir las emisiones de monóxido de carbono (CO) del escape. La confusión habitual de examen consiste en mezclar seguridad activa y pasiva cuando se habla de sistemas electrónicos modernos.",
+    "ejemplo": "Cuando un peatón irrumpe en un paso de cebra y el sistema de frenado autónomo junto con los frenos de disco detienen el coche a medio metro sin llegar a tocarlo, acaba de actuar la seguridad activa evitando el accidente. Si el freno no hubiera sido suficiente y se produjera el choque, saltarían los pretensores y el airbag frontal, que ya forman parte de la seguridad pasiva.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0109",
+    "nombre_imagen": "stf-0109.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sistema de freno es el responsable fundamental en:'. Key concept: 'La seguridad activa del vehículo'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "¿Qué coeficiente de rozamiento se considera óptimo en los procesos de frenado?",
+    "opciones": [
+      "Del 95 al 100 %.",
+      "Del 0 al 10 %.",
+      "Del 0 al 5 %.",
+      "Del 15% al 22 %."
+    ],
+    "correcta": 3,
+    "explicacion": "En la dinámica del frenado y en los manuales técnicos de automoción, cuando se analiza la curva que relaciona el deslizamiento del neumático con el coeficiente de rozamiento longitudinal, la zona de máxima adherencia y eficacia de frenada se alcanza cuando la rueda presenta un porcentaje de deslizamiento situado entre el 15 % y el 22 % respecto a la velocidad real del vehículo. En ese estrecho margen de resbalamiento elástico, la goma del neumático desarrolla la máxima fuerza de frenado contra el asfalto sin llegar a perder todavía una parte crítica de su capacidad de guiado lateral. Precisamente la centralita del ABS está programada para modular las electroválvulas manteniendo la rueda dentro de esa ventana de trabajo, por lo que la opción correcta del test es «Del 15% al 22 %.». Un valor del 95 % al 100 % implicaría una rueda prácticamente bloqueada donde el rozamiento cae y se pierde toda la dirección, mientras que entre el 0 % y el 5 % o el 10 % la rueda gira casi libre y aún no se está aprovechando la máxima capacidad de retención del neumático. Conviene tener presente que, aunque el enunciado mencione «coeficiente de rozamiento» expresado en tanto por ciento, se refiere a este margen óptimo de deslizamiento de frenado del 15 % al 22 % de la gráfica característica del ABS.",
+    "ejemplo": "Si observas en el banco de pruebas la gráfica de funcionamiento de un ABS moderno durante una frenada a fondo en seco, verás que la velocidad periférica de la rueda nunca cae a cero, sino que oscila continuamente alrededor de un 18 % por debajo de la velocidad real de avance del chasis. Mantener la rueda en esa franja del 15 % al 22 % es lo que permite lograr la distancia de parada más corta posible.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0110",
+    "nombre_imagen": "stf-0110.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: '¿Qué coeficiente de rozamiento se considera óptimo en los procesos de frenado?'. Key concept: 'Del 15% al 22 %.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El control de estabilidad",
+    "opciones": [
+      "Interviene frenando selectivamente alguna rueda",
+      "Frena los trenes delantero o trasero para encaminar el vehículo",
+      "Aumenta el par en las ruedas que se bloquean",
+      "Solo actúa sobre el GPS"
+    ],
+    "correcta": 0,
+    "explicacion": "El control electrónico de estabilidad (ESP, ESC o DSC) es el sistema de seguridad activa encargado de mantener el vehículo dentro de la trayectoria deseada por el conductor cuando aparece un subviraje (el morro se va recto hacia fuera de la curva) o un sobreviraje (la zaga derrapa tratando de adelantar al eje delantero). Para saber si el coche obedece o no, la centralita compara decenas de veces por segundo qué dirección pide el conductor (sensor de ángulo de volante) con cómo está girando realmente la carrocería sobre su eje vertical (sensor de velocidad de guiñada o derrape y acelerómetro transversal). Si detecta una desviación peligrosa, el ESP genera un par de giro corrector sobre el eje vertical del coche aplicando presión de freno de manera selectiva sobre una sola rueda estratégica: frena la rueda trasera interior si el coche subvira, o frena la rueda delantera exterior si el coche sobrevira. Por eso la opción correcta es que «Interviene frenando selectivamente alguna rueda». No frena los trenes delantero o trasero completos porque un eje entero frenado a la vez no genera el par de guiñada asimétrico necesario para enderezar el coche, jamás aumenta el par en ruedas bloqueadas y no tiene nada que ver con actuar solo sobre el GPS. El error típico es confundir qué rueda frena el ESP en cada pérdida de trayectoria.",
+    "ejemplo": "Al entrar demasiado rápido en una rotonda mojada hacia la izquierda, si el coche empieza a irse de atrás hacia la derecha (sobreviraje), el módulo ESP manda presión hidráulica de forma autónoma solo a la pinza delantera derecha (rueda delantera exterior). Ese frenazo puntual en una sola esquina tira del morro hacia fuera de la curva, corta la cruzada de la trasera y devuelve el coche a su carril sin que el conductor haya pisado siquiera el freno.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0111",
+    "nombre_imagen": "stf-0111.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El control de estabilidad'. Key concept: 'Interviene frenando selectivamente alguna rueda'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sistema de frenado inteligente.",
+    "opciones": [
+      "Puede actuar los frenos de forma parcial o totalmente autónoma.",
+      "Solo funciona si el conductor actúa sobre el pedal del freno",
+      "Solo actúa bloqueando los frenos en el arranque en rampa",
+      "Sustituye el freno de mano por el de pie."
+    ],
+    "correcta": 0,
+    "explicacion": "El sistema de frenado inteligente (conocido comercialmente como AEB, Autonomous Emergency Braking, o asistente de frenada inteligente en ciudad y carretera) es un sistema activo que vigila permanentemente el espacio por delante del vehículo mediante cámaras, radar o lidar para evitar colisiones por alcance o atropellos. Cuando el calculador detecta que nos aproximamos peligrosamente a un obstáculo y el conductor no reacciona a las alertas acústicas y visuales, o bien pisa el pedal de freno con demasiada timidez para evitar el impacto, el sistema toma el mando del grupo hidráulico o del servofreno electrónico. Según la situación, puede complementar la frenada del conductor aumentando la presión (frenado parcial asistido) o aplicar por sí mismo toda la presión de frenado sin que nadie toque el pedal (frenado totalmente autónomo). Por ello la respuesta correcta es que «Puede actuar los frenos de forma parcial o totalmente autónoma.». Es falso que solo funcione si el conductor pisa el pedal (su gran virtud es frenar aunque el conductor esté distraído), no se limita al arranque en rampa (eso es el Hill Holder) y tampoco sustituye el freno de estacionamiento por un freno de pie. La confusión habitual es confundir el servofreno de emergencia mecánico antiguo (BAS) con el frenado inteligente autónomo moderno.",
+    "ejemplo": "Circulando en caravana urbana a 30 km/h, si el coche de delante frena en seco y tú apartas un segundo la vista hacia el retrovisor, el sistema de frenado inteligente pita en el cuadro y clava los frenos de forma 100 % autónoma mediante la bomba del ESP antes de que tu pie llegue al pedal. Si habías empezado a pisar el freno pero con poca fuerza, el sistema añade por su cuenta los bares que faltan para detener el coche a tiempo.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0112",
+    "nombre_imagen": "stf-0112.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sistema de frenado inteligente.'. Key concept: 'Puede actuar los frenos de forma parcial o totalmente autónoma.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "¿Puede el control de tracción actuar sobre el par del motor?",
+    "opciones": [
+      "No, solo actúa sobre el freno",
+      "Si, actuando sobre el catalizador",
+      "No, solo actúa sobre la presión de los neumáticos",
+      "Si, alterando el encendido, la inyección o la alimentación"
+    ],
+    "correcta": 3,
+    "explicacion": "Cuando las ruedas motrices pierden adherencia al acelerar con fuerza, el control de tracción (ASR/TCS) necesita reducir rápidamente el par que llega al suelo no solo frenando la rueda que patina, sino también disminuyendo la fuerza que entrega el propio propulsor. Para ello, la unidad del ABS/ESP se comunica a través del bus CAN de alta velocidad con la unidad de control del motor (ECU de inyección/encendido) solicitando una reducción inmediata de par motor al valor exacto que los neumáticos pueden transmitir sin resbalar. En un motor de gasolina, la centralita de motor logra esa reducción cerrando parcialmente la mariposa motorizada (alimentación de aire), retrasando el avance del encendido o suprimiendo selectivamente pulsos de inyección; en un motor diésel, recorta el caudal de combustible inyectado por carrera. Por esa razón, la respuesta correcta es «Si, alterando el encendido, la inyección o la alimentación». Las dos opciones que empiezan por «No» son falsas porque a partir de cierta velocidad actuar solo con los frenos recalienta los discos sin controlar el empuje del motor, y decir que actúa sobre el catalizador es absurdo porque el catalizador es un elemento pasivo de postratamiento de gases de escape. El error común es pensar que como el pedal del acelerador lo pisa el conductor a fondo, el motor está obligado a abrir la mariposa al 100 %.",
+    "ejemplo": "En un coche con acelerador electrónico (Drive-by-Wire), si sales acelerando a fondo sobre gravilla suelta, aunque tu pie derecho mantenga el pedal pegado a la moqueta al 100 %, al mirar los parámetros en la máquina de diagnosis verás que la mariposa motorizada se cierra al 30 % y el avance de encendido se retrasa por orden directa del módulo de control de tracción.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0113",
+    "nombre_imagen": "stf-0113.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: '¿Puede el control de tracción actuar sobre el par del motor?'. Key concept: 'Si, alterando el encendido, la inyección o la alimentación'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "¿Qué componente del ABS libera la presión de frenado ante un bloqueo de una rueda?",
+    "opciones": [
+      "El sensor del número de revoluciones por minuto.",
+      "El bloque hidráulico.",
+      "El módulo electrónico.",
+      "El bus CAN de datos."
+    ],
+    "correcta": 1,
+    "explicacion": "Dentro de la arquitectura del sistema ABS, cada componente cumple un rol específico en el lazo cerrado de control: los sensores miden el giro, la centralita electrónica procesa los datos y el bloque hidráulico (o hidrogrupo) ejecuta físicamente los cambios de presión sobre el líquido de frenos. Cuando una rueda está a punto de bloquearse, es el bloque hidráulico —mediante la apertura de la electroválvula de salida o descarga de esa rueda y la puesta en marcha de la bomba eléctrica de retorno— el elemento que alivia y libera físicamente la presión de la pinza o bombín para que la rueda vuelva a girar. Por tanto, la opción correcta es «El bloque hidráulico.». El sensor de revoluciones solo informa de la velocidad angular de la rueda pero no tiene contacto con el líquido de frenos, el módulo electrónico toma la decisión lógica y envía la corriente pero no contiene conductos ni válvulas para liberar presión por sí solo, y el bus CAN es únicamente el cableado de comunicación digital entre centralitas. La confusión típica en los exámenes es atribuir la acción hidráulica directa al módulo electrónico en vez de al bloque hidráulico.",
+    "ejemplo": "Al purgar un circuito de frenos con máquina de diagnosis tras cambiar el líquido, cuando activas el test de actuadores del ABS escucharás el chasquido metálico de las electroválvulas y el motor de la bomba dentro del bloque hidráulico liberando la presión de cada pinza hacia el acumulador de baja presión.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0114",
+    "nombre_imagen": "stf-0114.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: '¿Qué componente del ABS libera la presión de frenado ante un bloqueo de una rueda?'. Key concept: 'El bloque hidráulico.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "Las fuerzas laterales que transmite el vehículo a la calzada;",
+    "opciones": [
+      "Afectan a la aceleración y deceleración del vehículo",
+      "Afectan al guiado del vehículo",
+      "Son absorbidas por los amortiguadores",
+      "No tienen influencia alguna en la estabilidad."
+    ],
+    "correcta": 1,
+    "explicacion": "Un neumático en contacto con el pavimento está sometido a dos tipos principales de esfuerzos en el plano horizontal: las fuerzas longitudinales (en el sentido de la marcha, responsables de acelerar y frenar el vehículo) y las fuerzas laterales o transversales (perpendiculares al plano de la rueda). Estas fuerzas laterales aparecen siempre que el conductor gira el volante para trazar una curva o cuando actúan agentes externos como el viento lateral o el peralte de la calzada, siendo las encargadas de cambiar la dirección del vector velocidad del centro de gravedad del coche. Si el neumático no pudiera transmitir fuerzas laterales al suelo (por ejemplo, al bloquearse la rueda o al pasar sobre hielo pulido), el vehículo sería incapaz de describir una curva y seguiría en línea recta por inercia; de ahí que la opción correcta sea que «Afectan al guiado del vehículo». No afectan a la aceleración y deceleración porque esas dependen de las fuerzas longitudinales de tracción y frenado, tampoco son absorbidas por los amortiguadores (los amortiguadores controlan las oscilaciones verticales de la suspensión), y por supuesto es falso que no tengan influencia en la estabilidad. El error frecuente es olvidar que el círculo de adherencia de Kamm limita la suma vectorial de fuerzas longitudinales y laterales que aguanta el neumático.",
+    "ejemplo": "Cuando tomas una curva cerrada a buen ritmo en carretera seca, notas cómo el flanco de los neumáticos exteriores se apoya contra el asfalto generando la fuerza lateral que mantiene el coche dentro del carril (guiado). Si en mitad de esa curva pisas el freno de forma brusca agotando toda la adherencia en fuerza longitudinal, la rueda pierde capacidad de transmitir fuerza lateral y el coche abre su trayectoria.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0115",
+    "nombre_imagen": "stf-0115.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'Las fuerzas laterales que transmite el vehículo a la calzada;'. Key concept: 'Afectan al guiado del vehículo'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "En el ABS, una vez que se produce el bloqueo.",
+    "opciones": [
+      "Se abre la válvula de entrada",
+      "Se abre la válvula de salida",
+      "Se abre el interruptor del pedal del freno",
+      "Se conecta la bomba de barrido"
+    ],
+    "correcta": 1,
+    "explicacion": "El ciclo de regulación del ABS en cada rueda consta de tres fases hidráulicas sucesivas gobernadas por dos electroválvulas por canal: una válvula de entrada (o admisión, normalmente abierta en reposo) y una válvula de salida (o escape/descarga, normalmente cerrada en reposo). Cuando la rueda empieza a desacelerar en exceso, primero se cierra la válvula de entrada para mantener constante la presión; si pese a ello la rueda llega a bloquearse o supera el umbral de deslizamiento crítico, la centralita excita también la segunda bobina para que «Se abre la válvula de salida» mientras mantiene cerrada la de entrada. Al abrirse la válvula de salida, el líquido de frenos a presión de la pinza escapa hacia el acumulador de baja presión y es devuelto por la bomba de retorno hacia el circuito principal, liberando la mordaza del disco para que la rueda recupere el giro. Por eso la opción correcta es «Se abre la válvula de salida». Si se abriera la válvula de entrada entraría aún más presión desde la bomba del pedal agravando el bloqueo, el interruptor del pedal de freno lo acciona el pie del conductor y no el ABS, y el término «bomba de barrido» corresponde al engrase por cárter seco de un motor, aunque la bomba de retorno del ABS actúe como apoyo en la descarga. El error clásico es confundir el estado en reposo de las dos electroválvulas del canal.",
+    "ejemplo": "En el esquema hidráulico de un ABS de 4 canales y 8 electroválvulas, cuando una rueda delantera se clava sobre un paso de peatones pintado y mojado, la válvula de admisión recibe corriente para cerrarse y la válvula de salida recibe el pulso máximo de corriente para abrirse unos milisegundos, dejando escapar unos centímetros cúbicos de líquido de la pinza hasta que la rueda vuelve a rodar.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0116",
+    "nombre_imagen": "stf-0116.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'En el ABS, una vez que se produce el bloqueo.'. Key concept: 'Se abre la válvula de salida'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sistema ABS-ESP actúa selectivamente sobre:",
+    "opciones": [
+      "Los frenos de la rueda individualmente y sobre la gestión del motor.",
+      "La gestión del motor.",
+      "Los cuatro frenos de las ruedas conjuntamente.",
+      "Es el mismo circuito que el ABS y funciona de igual manera."
+    ],
+    "correcta": 0,
+    "explicacion": "El conjunto integrado ABS-ESP (que engloba antibloqueo de frenos, reparto electrónico EBD, control de tracción ASR y control de estabilidad ESP) representa el nivel superior de control activo del chasis sobre la dinámica longitudinal y transversal del automóvil. A diferencia de un ABS básico que solo alivia presión cuando el conductor frena, el sistema ABS-ESP dispone de un grupo hidráulico capaz de generar presión por sí mismo en cualquier momento y dirigirla de manera totalmente independiente a cualquiera de las cuatro ruedas, además de estar conectado por bus CAN con la centralita de inyección para modular el par motor. Gracias a esta doble vía de actuación combinada, puede frenar una única rueda concreta (por ejemplo, la trasera interior en subviraje o la delantera exterior en sobreviraje) y, simultáneamente, reducir la entrega de par del propulsor para estabilizar el vehículo. De ahí que la opción correcta sea que actúa selectivamente sobre «Los frenos de la rueda individualmente y sobre la gestión del motor.». Decir que actúa solo sobre la gestión del motor ignora toda su parte hidráulica, decir que frena las cuatro ruedas conjuntamente impediría generar el par de guiñada corrector del ESP, y afirmar que es exactamente igual que un ABS básico es falso porque el ABS por sí solo no puede frenar ruedas sin pisar el pedal ni corregir pérdidas laterales de trayectoria. La confusión habitual es pensar que el ESP frena las cuatro ruedas a la vez cuando el coche derrapa en curva.",
+    "ejemplo": "Al realizar la maniobra de esquiva del alce en carretera, el módulo ABS-ESP corta gas a través de la gestión electrónica del motor aunque el conductor siga pisando el acelerador y, en la misma décima de segundo, aplica presión de freno solo sobre la rueda delantera exterior al giro para evitar que el coche trompee.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0117",
+    "nombre_imagen": "stf-0117.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sistema ABS-ESP actúa selectivamente sobre:'. Key concept: 'Los frenos de la rueda individualmente y sobre la gestión del motor.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "En un sistema ABS el mayor responsable de la frenada es",
+    "opciones": [
+      "La válvula de descarga.",
+      "La bomba de alta presión",
+      "El pedal del freno del conductor",
+      "El disco de freno"
+    ],
+    "correcta": 2,
+    "explicacion": "En un sistema de frenos convencional equipado con ABS (sistema ABS add-on), la energía hidráulica que empuja los pistones de las pinzas para detener el vehículo sigue procediendo íntegramente del esfuerzo físico que el conductor aplica sobre el pedal de freno, multiplicado por el servofreno y transformado en presión por la bomba principal o cilindro maestro. El módulo del ABS no está diseñado para frenar más fuerte de lo que pisa el conductor, sino únicamente para modular y limitar esa presión cuando es excesiva respecto a la adherencia del neumático con el suelo. Si el conductor pisa el pedal con poca fuerza en una emergencia, el ABS ni siquiera llegará a intervenir porque las ruedas estarán lejos del umbral de bloqueo, de modo que «El pedal del freno del conductor» sigue siendo el mayor responsable de generar la frenada. La válvula de descarga y la bomba de alta presión (bomba de retorno) solo actúan para aliviar y devolver líquido cuando ya sobra presión y hay riesgo de bloqueo, y el disco de freno es el elemento pasivo de fricción pero no quien gobierna ni origina la fuerza de frenado. El error típico es creer que por llevar ABS el coche frena al máximo por sí solo con apenas rozar el pedal.",
+    "ejemplo": "En los cursos de conducción segura se enseña que, ante un obstáculo inesperado con un coche con ABS, hay que pisar el pedal de freno con toda la fuerza posible desde el primer instante («frenada de pánico»). Si el conductor pisa con miedo a mitad de recorrido, la presión en el circuito será baja y el coche tardará muchos más metros en detenerse porque el ABS no puede inventar una presión que el pie no ha generado.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0118",
+    "nombre_imagen": "stf-0118.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'En un sistema ABS el mayor responsable de la frenada es'. Key concept: 'El pedal del freno del conductor'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "En el ABS, durante la fase de generación de presión antes del bloqueo de una rueda",
+    "opciones": [
+      "Actúa la presión del acumulador",
+      "No hay presión en el circuito de frenos",
+      "Actúa la bomba de barrido",
+      "No actúa más que la fuerza del conductor"
+    ],
+    "correcta": 3,
+    "explicacion": "Durante una frenada normal en la que las ruedas todavía tienen buen agarre y no se ha alcanzado el umbral de bloqueo (fase inicial de generación o establecimiento de presión), el sistema ABS permanece completamente en reposo pasivo. En esta situación, las electroválvulas de entrada de cada canal están abiertas sin alimentación eléctrica y las electroválvulas de salida permanecen cerradas, dejando el paso totalmente libre y directo desde la bomba principal (cilindro maestro) hasta las pinzas de freno de las ruedas. Como la electrobomba de retorno del bloque hidráulico está apagada y los acumuladores están aislados por las válvulas cerradas, toda la presión que sube por las tuberías procede única y exclusivamente del pie del conductor ayudado por el servofreno. Por ello, la opción correcta es que «No actúa más que la fuerza del conductor». No actúa la presión de ningún acumulador (opción que suele confundirse con los antiguos sistemas de freno de alta presión o con la fase de descarga), es falso que no haya presión en el circuito porque el coche sí está frenando, y tampoco actúa la bomba de barrido/retorno porque aún no se ha producido ningún bloqueo que evacuar. La confusión frecuente es creer que la bomba eléctrica del ABS funciona cada vez que tocamos el pedal de freno en un semáforo.",
+    "ejemplo": "Cuando frenas suavemente al llegar a una rotonda o un semáforo en ciudad, el líquido de frenos pasa directamente desde la bomba tándem a través de las válvulas de entrada abiertas del bloque ABS hasta las pinzas como si el coche no llevara electrónica alguna. El motor eléctrico y los acumuladores del ABS ni se enteran ni consumen corriente hasta que una rueda intenta bloquearse.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0119",
+    "nombre_imagen": "stf-0119.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'En el ABS, durante la fase de generación de presión antes del bloqueo de una rueda'. Key concept: 'No actúa más que la fuerza del conductor'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El freno con control electrónico ECB",
+    "opciones": [
+      "Calcula la aceleración del motor para obtener la mejor respuesta tras la frenada.",
+      "Utiliza la información del ESP para mejorar la autonomía de la batería.",
+      "Utiliza la información del sistema antipatinaje para modular la fuerza destinada a la regeneración.",
+      "Solo utiliza la señal del ABS cuando la calzada muestra irregularidades o muy baja temperatura."
+    ],
+    "correcta": 2,
+    "explicacion": "El freno con control electrónico ECB (Electronically Controlled Brake, característico de vehículos híbridos y eléctricos como los sistemas Toyota/Lexus) es un sistema de frenado por cable (Brake-by-Wire) que coordina la frenada regenerativa del motor eléctrico con la frenada hidráulica de fricción en las pastillas. Cuando el conductor pisa el pedal, la centralita del ECB prioriza frenar con el generador eléctrico para recuperar energía cinética y recargar la batería de alta tensión; sin embargo, como el generador solo actúa sobre el eje motriz, una retención eléctrica excesiva sobre piso resbaladizo podría bloquear o hacer patinar esas ruedas. Por ese motivo, el calculador ECB permanece en comunicación constante con el sistema antipatinaje/ABS para modular instantáneamente cuánta fuerza se destina a la frenación regenerativa y cuánta debe transferirse a los frenos hidráulicos de las cuatro ruedas si el pavimento desliza. De ahí que la opción correcta sea que «Utiliza la información del sistema antipatinaje para modular la fuerza destinada a la regeneración.». No calcula la aceleración del motor térmico para salir más rápido tras frenar, el ESP no sirve para aumentar la autonomía de la batería sino para estabilizar el chasis, y el ECB utiliza la señal de velocidad del ABS en todo momento y no solo con frío o baches. El error común es olvidar que la frenada regenerativa también puede provocar pérdida de adherencia si el suelo está helado o mojado.",
+    "ejemplo": "Si vas frenando suavemente con un coche híbrido para recargar batería y de repente una rueda delantera pasa por encima de una tapa de alcantarilla mojada y tiende a deslizar, el sistema antipatinaje avisa al instante a la centralita ECB. En milisegundos, el ECB reduce el par de frenado regenerativo del motor eléctrico y aplica la presión equivalente con las pinzas hidráulicas en las cuatro ruedas para que el coche no pierda estabilidad.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0120",
+    "nombre_imagen": "stf-0120.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El freno con control electrónico ECB'. Key concept: 'Utiliza la información del sistema antipatinaje para modular la fuerza destinada a la regeneración.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sistema de freno ABS add-on",
+    "opciones": [
+      "Mantiene la configuración tradicional de bomba y servofreno",
+      "Integra todos los elementos de mando del freno en un solo conjunto",
+      "No se utiliza en el freno",
+      "Solo se utiliza en sistemas ASR"
+    ],
+    "correcta": 0,
+    "explicacion": "En la clasificación constructiva de los sistemas antibloqueo se distingue entre los sistemas ABS integrados (donde bomba, servofreno e hidrogrupo forman un único bloque compacto) y los sistemas ABS «add-on» (o sistemas añadidos), que son con diferencia los más extendidos en los automóviles actuales. Un sistema ABS add-on recibe ese nombre porque se «añade» o intercala en serie sobre un circuito de frenos convencional: conserva intactos el pedal, el servofreno de vacío o electromecánico y la bomba principal tándem en el salpicadero, y simplemente intercala el bloque hidrostático (electroválvulas y bomba de retorno) en las tuberías que van desde la bomba principal hacia las cuatro ruedas. La gran ventaja de este diseño es su sencillez de fabricación y su seguridad intrínseca, ya que si falla toda la electrónica del ABS, el conductor sigue disponiendo del circuito hidráulico clásico de bomba y servofreno. Por eso la opción correcta es que «Mantiene la configuración tradicional de bomba y servofreno». La opción que dice que integra todos los elementos de mando en un solo conjunto define precisamente al sistema «integrado» (el opuesto al add-on), y las otras dos son falsas porque sí se usa en el freno de servicio y no es exclusivo del ASR. El fallo de examen más habitual es confundir el concepto de ABS add-on con el de ABS integrado.",
+    "ejemplo": "Al levantar el capó de casi cualquier turismo actual, verás por un lado el tambor redondo del servofreno con la bomba principal y el depósito de líquido frente al puesto del conductor, y a unos centímetros de distancia, conectado por dos latiguillos metálicos, el cubo de aluminio del bloque ABS add-on del que salen los cuatro tubos hacia las ruedas.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0121",
+    "nombre_imagen": "stf-0121.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sistema de freno ABS add-on'. Key concept: 'Mantiene la configuración tradicional de bomba y servofreno'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sensor de giro del volante",
+    "opciones": [
+      "Evalúa la velocidad de giro de las ruedas",
+      "Evalúa la posición del volante y la velocidad de giro del mismo",
+      "Activa los intermitentes cuando se mueve a los lados",
+      "No se utiliza en los sistemas de control de estabilidad"
+    ],
+    "correcta": 1,
+    "explicacion": "El sensor de ángulo de giro del volante (SAS, Steering Angle Sensor) es uno de los captadores de entrada fundamentales de los sistemas de control de estabilidad (ESP), dirección asistida eléctrica (EPS) y suspensión activa. Instalado en la columna de dirección (habitualmente integrado en el anillo espiral o módulo bajo el volante), utiliza discos codificados ópticos, sensores Hall o elementos magnetorresistivos con engranajes de distinto número de dientes (principio Vernier) para medir tanto los grados exactos de giro del volante respecto a la línea recta como la rapidez (en grados por segundo) con la que el conductor lo está moviendo. Con ambos datos —posición angular y velocidad de giro— la centralita del ESP sabe con total precisión qué trayectoria pretende trazar el conductor y con qué urgencia está realizando la maniobra (por ejemplo, un volantazo de esquiva). Por ello la respuesta correcta es que «Evalúa la posición del volante y la velocidad de giro del mismo». La velocidad de giro de las ruedas la miden los sensores de rueda del ABS y no el del volante, los intermitentes no se encienden al girar el volante (al contrario, el retorno mecánico los apaga al enderezar), y por supuesto es imprescindible en los sistemas de control de estabilidad. Un error muy común en el taller es hacer una alineación de dirección corrigiendo las bieletas sin recalibrar después el punto cero (0°) del sensor de giro del volante con la máquina de diagnosis.",
+    "ejemplo": "Si tras sustituir una rótula de dirección y alinear el coche dejas el volante físicamente recto pero el sensor de giro sigue leyendo 12 grados a la izquierda en línea recta, en cuanto el cliente salga a autovía se le encenderá el testigo del ESP. La centralita creerá que el conductor está intentando girar continuamente a la izquierda mientras el sensor de guiñada dice que el coche va recto, interpretándolo como un derrape o una avería de calibración.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0122",
+    "nombre_imagen": "stf-0122.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sensor de giro del volante'. Key concept: 'Evalúa la posición del volante y la velocidad de giro del mismo'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El freno con control electrónico ECB",
+    "opciones": [
+      "Calcula la fuerza de frenado de cada uno de los sistemas en función del esfuerzo que ejerce el conductor sobre el pedal.",
+      "Frena con la máxima fuerza en todo momento.",
+      "Retrasa el momento de frenado hasta que la colisión es inminente.",
+      "No se utiliza mas que en Estados Unidos."
+    ],
+    "correcta": 0,
+    "explicacion": "En un sistema de freno con control electrónico ECB (Brake-by-Wire), el pedal de freno que pisa el conductor está desacoplado hidráulicamente de las pinzas durante el funcionamiento normal y actúa sobre un simulador de tacto de pedal equipado con sensores de recorrido y de presión. Cuando el conductor pisa el pedal, la centralita del ECB lee cuánto recorrido y cuánta presión está aplicando el pie (la demanda total de deceleración del conductor) y calcula en tiempo real cómo repartir esa fuerza total de frenado entre los distintos sistemas disponibles: cuánta parte asume el generador eléctrico mediante frenada regenerativa y cuánta presión hidráulica exacta debe enviar cada electroválvula lineal a las pinzas de freno de cada rueda. De esta forma, aunque la regeneración eléctrica varíe según la velocidad o la carga de la batería, la deceleración total que siente el conductor siempre coincide fielmente con lo que pide con el pie. Por eso la opción correcta es que «Calcula la fuerza de frenado de cada uno de los sistemas en función del esfuerzo que ejerce el conductor sobre el pedal.». No frena con la máxima fuerza en todo momento porque sería inconducible, jamás retrasa el frenado hasta que la colisión sea inminente, y se utiliza en todo el mundo en millones de híbridos y eléctricos. El error típico es pensar que en un freno electrónico el pedal sigue empujando directamente el líquido hacia las cuatro pinzas como en un coche antiguo.",
+    "ejemplo": "Al frenar de forma constante desde 80 km/h hasta 0 km/h en un híbrido con sistema ECB, a alta velocidad casi el 80 % de la retención la hace el motor eléctrico y solo el 20 % las pastillas; cuando el coche baja de 15 km/h y el generador ya apenas puede retener, la centralita ECB sube suavemente la presión hidráulica de las pinzas hasta el 100 % sin que el conductor note ningún escalón ni cambio de dureza en el pedal.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0123",
+    "nombre_imagen": "stf-0123.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El freno con control electrónico ECB'. Key concept: 'Calcula la fuerza de frenado de cada uno de los sistemas en función del esfuerzo que ejerce el conductor sobre el pedal.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sensor piezoeléctrico de derrape se basa en:",
+    "opciones": [
+      "Los golpes que recibe por las vibraciones de las ruedas",
+      "La diferencia de tensión por termopar",
+      "La conductividad de los supermetales",
+      "El funcionamiento de un diapasón doble"
+    ],
+    "correcta": 3,
+    "explicacion": "El sensor piezoeléctrico de derrape (también llamado sensor de velocidad de guiñada o Yaw Rate Sensor) es el captador del sistema ESP encargado de medir a qué velocidad angular está girando el vehículo alrededor de su propio eje vertical (por ejemplo, al trazar una curva o al empezar a trompear). Su elemento sensible micromecánico se basa en un pequeño cilindro metálico hueco o un «diapasón doble» de cuarzo/silicio con elementos piezoeléctricos que se hace vibrar a su frecuencia de resonancia mediante una tensión alterna. Mientras el coche circula en línea recta, la parte superior del diapasón de medida no sufre torsión y no genera señal de salida; pero en cuanto el vehículo gira sobre su eje vertical en una curva o un derrape, aparece la aceleración física de Coriolis que retuerce las patas vibrantes del diapasón de forma proporcional a la velocidad angular de giro de la carrocería. Esa deformación mecánica en los cristales piezoeléctricos genera la señal eléctrica que informa al ESP de si el coche está subvirando o sobrevirando, por lo que la opción correcta es «El funcionamiento de un diapasón doble». No funciona por golpes de las ruedas, ni por efecto termopar de temperatura, ni por conductividad de supermetales. El error habitual es instalar este sensor mal atornillado o inclinado bajo el asiento o la consola central, falseando por completo la lectura de Coriolis.",
+    "ejemplo": "Si desmontas la consola central de un turismo para reparar la calefacción y dejas el sensor de guiñada (derrape) colgando de su conector en lugar de atornillado horizontalmente a su soporte del chasis, en el primer bache el diapasón interno detectará giros falsos y el ESP frenará una rueda en plena recta antes de desactivarse por avería.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0124",
+    "nombre_imagen": "stf-0124.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sensor piezoeléctrico de derrape se basa en:'. Key concept: 'El funcionamiento de un diapasón doble'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "Los sensores de velocidad se montan de forma.",
+    "opciones": [
+      "Axial",
+      "Radial",
+      "Axial o radial",
+      "Excéntrica"
+    ],
+    "correcta": 2,
+    "explicacion": "Los sensores de velocidad de rueda del ABS deben instalarse en el portamanguetas con su cabeza lectora enfrentada a muy poca distancia (entrehierro de unos 0,5 a 1,5 mm) de la rueda fónica o del anillo codificador magnético que gira solidario al buje o al palier. Dependiendo del diseño geométrico de la mangueta, del rodamiento del buje y del espacio disponible junto al disco de freno, el fabricante puede optar por dos disposiciones constructivas de montaje: montaje «radial» (cuando el eje del sensor apunta perpendicularmente hacia la periferia exterior cilíndrica de la corona dentada) o montaje «axial» (cuando el sensor se coloca paralelo al eje de giro del palier, apuntando de frente contra la cara lateral plana de la corona o del retén magnético del rodamiento). Como ambas configuraciones geométricas son completamente habituales en el automóvil según el eje y el modelo, la respuesta correcta es «Axial o radial». Elegir solo «Axial» o solo «Radial» descartaría la mitad de los montajes reales que se encuentran en los talleres, y «Excéntrica» no es una disposición de montaje de captadores de rueda. Un error frecuente al cambiar un rodamiento de rueda con anillo magnético integrado es prensarlo del revés, dejando la pista magnética lejos del sensor axial.",
+    "ejemplo": "En muchos ejes delanteros con corona dentada mecanizada sobre la junta homocinética verás el sensor de ABS entrando de forma radial (perpendicular a las almenas del palier). En cambio, en los bujes modernos donde el codificador magnético va integrado en la cara lateral del propio rodamiento de rueda, el sensor entra en posición axial apuntando contra el flanco plano del cojinete.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0125",
+    "nombre_imagen": "stf-0125.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'Los sensores de velocidad se montan de forma.'. Key concept: 'Axial o radial'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El freno con control electrónico ECB",
+    "opciones": [
+      "No se comunica nada más que no el motor",
+      "Integra sus funciones con el sistema ABS y ESP",
+      "Integra su función con el Air bag",
+      "Solo funciona cuando el conductor decide detener totalmente el vehículo."
+    ],
+    "correcta": 1,
+    "explicacion": "El sistema de frenos con control electrónico ECB (Brake-by-Wire) no es un módulo aislado que solo sirva para regenerar batería, sino que constituye el cerebro completo de frenado y estabilidad del vehículo. Dentro de su unidad electrónica (o en red directa de alta velocidad con ella) integra todas las funciones de seguridad activa del chasis: el antibloqueo de ruedas en frenada (ABS), el reparto electrónico de frenada entre ejes (EBD), el asistente de frenada de emergencia (BAS), el control de tracción (TRC/ASR) y el control electrónico de estabilidad (VSC/ESP). Al gobernar una electrobomba de alta presión con acumulador y válvulas lineales independientes para cada una de las cuatro ruedas, el ECB puede modular instantáneamente la presión de cada pinza tanto para evitar el bloqueo al frenar como para frenar una sola rueda y corregir un derrape en curva. Por tanto, la opción correcta es que «Integra sus funciones con el sistema ABS y ESP». Es falso que solo se comunique con el motor, no integra su función hidráulica con el airbag (que es seguridad pasiva de disparo pirotécnico en impacto), y por supuesto actúa en cualquier deceleración suave o media y no solo cuando el conductor quiere detener el coche por completo. La confusión típica es pensar que un coche híbrido lleva un módulo ECB para frenar y otro bloque hidráulico separado para el ABS y el ESP.",
+    "ejemplo": "En un Toyota o Lexus híbrido, cuando tienes que sustituir el líquido de frenos o purgar el circuito en el taller, todo el procedimiento se realiza a través de la unidad integrada de control de patinaje/ECB con la máquina de diagnosis, ya que un único conjunto electrohidráulico gestiona a la vez el pedal electrónico, la regeneración, el ABS y el ESP.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0126",
+    "nombre_imagen": "stf-0126.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El freno con control electrónico ECB'. Key concept: 'Integra sus funciones con el sistema ABS y ESP'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "En un sistema de frenos sin gestión electrónica, el responsable completo de la frenada es:",
+    "opciones": [
+      "El giro de la dirección.",
+      "La bomba de freno",
+      "El neumático",
+      "La fuerza de frenado del conductor"
+    ],
+    "correcta": 3,
+    "explicacion": "En un sistema de frenos convencional puramente hidráulico y mecánico, desprovisto de gestión electrónica activa (sin ABS, sin ESP y sin frenado autónomo), el circuito funciona como un transmisor hidrostático cerrado gobernado por el principio de Pascal. El servofreno ayuda a multiplicar el esfuerzo físico y la bomba de freno transforma esa fuerza en presión hidráulica, pero ningún componente del circuito tiene capacidad de decidir cuándo frenar, con qué intensidad hacerlo ni de aliviar la presión si una rueda se bloquea sobre asfalto mojado. Por consiguiente, tanto la iniciación de la frenada como la dosificación exacta del esfuerzo sobre el pedal para no clavar las ruedas recaen íntegramente en el conductor, siendo correcta la opción «La fuerza de frenado del conductor». El giro de la dirección solo orienta las ruedas directrices pero no frena el vehículo, y tanto la bomba de freno como el neumático son elementos mecánicos necesarios para ejecutar y transmitir la frenada al suelo, pero son completamente pasivos y obedecen de forma ciega a la fuerza que aplica el pie del conductor. El error habitual es atribuir la responsabilidad del control de la frenada a la bomba o al neumático olvidando quién gobierna la presión.",
+    "ejemplo": "Al conducir un vehículo clásico sin ABS sobre una carretera mojada, si el conductor se asusta y pisa el pedal con demasiada fuerza, las ruedas se bloquearán de inmediato porque ni la bomba ni los neumáticos pueden impedirlo por sí mismos. Es el propio conductor quien tiene que dosificar a pulso la fuerza de su pie («frenada regresiva») para detener el coche sin derrapar.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0127",
+    "nombre_imagen": "stf-0127.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'En un sistema de frenos sin gestión electrónica, el responsable completo de la frenada es:'. Key concept: 'La fuerza de frenado del conductor'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "El sensor de velocidad magnetorresistivo.",
+    "opciones": [
+      "Integra un circuito electrónico PWM",
+      "Produce una señal senoidal de frecuencia fija",
+      "Utiliza una corriente fija de 4 Amperios",
+      "No se utiliza en sensores de automoción."
+    ],
+    "correcta": 0,
+    "explicacion": "El sensor de velocidad de rueda magnetorresistivo (AMR/GMR) es un sensor «activo» de última generación que sustituye a los antiguos captadores inductivos pasivos porque es capaz de medir la velocidad de la rueda desde prácticamente 0 km/h e incluso detectar el sentido de giro (hacia delante o marcha atrás). En lugar de una corona dentada de hierro, lee un anillo multipolar magnetizado con polos norte y sur alternos integrado en el retén del rodamiento de la rueda; al girar dicho anillo, las líneas de campo magnético hacen variar la resistencia eléctrica de las finas láminas ferromagnéticas del puente sensor. Como esa variación de resistencia es muy pequeña, el propio cabezal del sensor integra un circuito electrónico integrado (ASIC) alimentado por la centralita que transforma y codifica la medida en una señal digital cuadrada modulada en corriente o en anchura de pulso (PWM) lista para ser leída sin interferencias. Por ello la respuesta correcta es que «Integra un circuito electrónico PWM». No produce una señal senoidal (eso es propio del sensor inductivo pasivo, y además su frecuencia nunca sería fija sino variable con la velocidad), no consume una brutalidad de 4 amperios (trabaja con miliamperios, típicamente saltando entre 7 mA y 14 mA), y es el sensor más utilizado hoy en automoción. El fallo más grave en el taller es medir la resistencia interna de un sensor activo magnetorresistivo con un polímetro en ohmios como si fuera una bobina inductiva, pudiendo dañar su microchip interno.",
+    "ejemplo": "En un turismo con asistente de arranque en pendiente (Hill Holder) y aparcamiento automático, el sensor magnetorresistivo envía pulsos PWM con distinta anchura según la rueda gire hacia delante o empiece a caer un milímetro hacia atrás en una cuesta. Gracias a esa electrónica integrada, la centralita sabe al instante en qué sentido se mueve el coche incluso a 0,1 km/h, algo que un sensor inductivo antiguo era incapaz de ver.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0128",
+    "nombre_imagen": "stf-0128.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'El sensor de velocidad magnetorresistivo.'. Key concept: 'Integra un circuito electrónico PWM'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "Un deslizamiento del 100% significa que la rueda está.",
+    "opciones": [
+      "Bloqueada",
+      "Libre",
+      "Desinflada",
+      "Pinchada"
+    ],
+    "correcta": 0,
+    "explicacion": "El deslizamiento (o resbalamiento relativo) de una rueda durante la frenada es la magnitud porcentual que compara la velocidad lineal real de avance del vehículo con la velocidad periférica de giro de la rueda, calculada dividiendo la diferencia entre ambas velocidades por la velocidad del vehículo y multiplicando por cien: (Vv - Vr) / Vv × 100. Cuando el coche rueda libremente sin frenar, la velocidad periférica de la cubierta coincide exactamente con la velocidad del chasis (Vr = Vv), de modo que la resta vale cero y el deslizamiento es del 0 %. En el extremo opuesto, cuando el conductor frena tan fuerte que la pinza inmoviliza el disco y la rueda deja de girar por completo (Vr = 0) mientras el vehículo sigue avanzando por inercia sobre el asfalto (Vv > 0), la diferencia equivale al total de la velocidad y el resultado es del 100 %. Por tanto, un deslizamiento del 100 % significa inequívocamente que la rueda está «Bloqueada». Una rueda «Libre» corresponde precisamente al caso contrario (0 % de deslizamiento), y que esté «Desinflada» o «Pinchada» son estados de presión neumática de la cubierta que no definen el porcentaje cinemático de deslizamiento. La confusión habitual de los alumnos es pensar al revés: creer que 0 % es rueda parada y 100 % rueda girando libre.",
+    "ejemplo": "Si un vehículo circula a 100 km/h y en una frenada brusca sin ABS una rueda delantera reduce su velocidad periférica a 80 km/h, esa rueda lleva un 20 % de deslizamiento (zona óptima de frenado). Si un instante después la pinza clava el disco y la rueda pasa a 0 km/h mientras el coche aún se desliza a 70 km/h sobre el asfalto, el deslizamiento alcanza el 100 % (rueda bloqueada).",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0129",
+    "nombre_imagen": "stf-0129.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'Un deslizamiento del 100% significa que la rueda está.'. Key concept: 'Bloqueada'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "La diferencia entre la velocidad de la rueda y la velocidad del vehículo se denomina.",
+    "opciones": [
+      "Diferencial de velocidad",
+      "Velocidad angular",
+      "Derrapaje",
+      "Eficacia de frenada"
+    ],
+    "correcta": 2,
+    "explicacion": "Durante cualquier proceso de frenado, para que el neumático genere una fuerza de retención longitudinal contra el pavimento es físicamente imprescindible que exista una deformación y un ligero resbalamiento entre la banda de rodadura y el suelo, lo que hace que la velocidad tangencial de la rueda sea siempre algo menor que la velocidad lineal a la que avanza la carrocería. En la terminología del temario de sistemas de frenado, a esa diferencia entre la velocidad de giro de la rueda y la velocidad real de traslación del vehículo se la denomina «Derrapaje» (o deslizamiento de frenado). Cuando esa diferencia es moderada (entre el 15 % y el 22 %), hablamos de derrapaje o deslizamiento controlado en zona estable; cuando la diferencia llega al total de la velocidad del coche porque la rueda se para, se convierte en bloqueo y derrapaje total. Por esa razón, la respuesta correcta del test es «Derrapaje». «Diferencial de velocidad» es un distractor genérico que no constituye el término técnico específico del fenómeno neumático-calzada en el temario, «Velocidad angular» es simplemente la rapidez de rotación de un eje medida en rad/s o rpm, y «Eficacia de frenada» es la relación entre la fuerza de frenado obtenida y el peso del vehículo expresada en porcentaje. El error más común en este test es marcar «Diferencial de velocidad» por sonar parecido a la palabra «diferencia» del enunciado.",
+    "ejemplo": "Cuando el calculador del ABS compara las señales de los cuatro sensores de rueda durante una frenada en mojado y observa que la rueda delantera derecha gira a una velocidad equivalente a 65 km/h mientras la velocidad calculada del vehículo es de 80 km/h, detecta un derrapaje excesivo en esa rueda y ordena modular la válvula de entrada antes de que llegue a bloquearse.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0130",
+    "nombre_imagen": "stf-0130.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'La diferencia entre la velocidad de la rueda y la velocidad del vehículo se denomina.'. Key concept: 'Derrapaje'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "¿Qué componente del ABS calcula la velocidad de referencia del vehículo?",
+    "opciones": [
+      "El sensor del número de revoluciones por minuto.",
+      "El bloque hidráulico.",
+      "El módulo electrónico.",
+      "El bus CAN de datos."
+    ],
+    "correcta": 2,
+    "explicacion": "Para poder calcular el porcentaje de deslizamiento o derrapaje de cada rueda durante una frenada, el sistema ABS necesita comparar la velocidad individual de cada una de las cuatro ruedas con la velocidad real a la que se desplaza la carrocería del vehículo sobre el suelo, llamada «velocidad de referencia». Como un automóvil no lleva un quinto rueda libre ni puede fiarse del GPS en un túnel para frenar en milisegundos, quien determina matemática y continuamente esa velocidad de referencia es «El módulo electrónico.» (la unidad de control o ECU del ABS). El microprocesador del módulo electrónico recibe las cuatro señales de los sensores de rueda (y en sistemas con ESP también la del acelerómetro longitudinal) y, aplicando algoritmos lógicos a partir de las ruedas que giran más rápido o que menos están deslizando en cada instante, estima la velocidad teórica real del chasis para usarla como patrón de comparación. El sensor de revoluciones solo mide el giro de su propia rueda individual (que puede estar patinando o bloqueándose) pero no calcula nada, el bloque hidráulico es un actuador de electroválvulas sin capacidad de cálculo, y el bus CAN es únicamente la línea de cables por la que viajan los mensajes digitales. La confusión habitual es pensar que un sensor de rueda mide directamente la velocidad del chasis.",
+    "ejemplo": "Si un coche entra frenando sobre una placa de hielo y tres ruedas empiezan a frenarse bruscamente a la vez mientras una cuarta rueda aún pisa asfalto seco y gira a 90 km/h, el módulo electrónico del ABS toma esa rueda más rápida y la curva de deceleración máxima física del vehículo para calcular que la velocidad de referencia del coche sigue siendo de 90 km/h, liberando al instante la presión de las otras tres.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0131",
+    "nombre_imagen": "stf-0131.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: '¿Qué componente del ABS calcula la velocidad de referencia del vehículo?'. Key concept: 'El módulo electrónico.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
+  },
+  {
+    "moduloId": "stf",
+    "modulo": "SISTEMAS DE TRANSMISIÓN Y FRENADO",
+    "submoduloId": "frenos-activos",
+    "submodulo": "FRENOS ACTIVOS",
+    "idExterno": null,
+    "pregunta": "Al accionar el mando del freno de estacionamiento, el circuito neumático:",
+    "opciones": [
+      "Libera de presión los cilindros combinados y frenan por fuerza del muelle.",
+      "Aumenta la presión en los cilindros de émbolos y frenan.",
+      "Aumenta la presión en los cilindros combinados y frenan.",
+      "Aumenta la presión en los cilindros de membrana y frenan."
+    ],
+    "correcta": 0,
+    "explicacion": "En los vehículos industriales pesados (camiones y autobuses) con frenos neumáticos, el freno de estacionamiento no actúa empujando las zapatas o pastillas con presión de aire como hace el freno de servicio de pie, sino mediante potentes cilindros de freno combinados (cámaras de muelle acumulador o Tristop) montados en el eje trasero. Estos cilindros combinados alojan en su parte posterior un gran muelle helicoidal comprimido que tiene fuerza mecánica de sobra para dejar clavadas las ruedas por sí solo; para poder circular y soltar el freno de mano, es necesario inyectar aire a presión (unos 6 a 8,5 bares) en esa cámara para vencer al muelle y mantenerlo encogido. En cambio, cuando el conductor tira de la palanca del freno de estacionamiento en la cabina, la válvula manual corta la alimentación y vacía a la atmósfera el aire de la cámara del muelle acumulador: al quedar sin presión neumática que lo sujete, el muelle se expande con enorme fuerza y acciona mecánicamente el freno. Por eso la opción correcta es que «Libera de presión los cilindros combinados y frenan por fuerza del muelle.». Las otras tres opciones son falsas porque dicen que «aumenta la presión» para frenar en estacionamiento, lo cual sería peligrosísimo: si el camión aparcado en una cuesta tuviera una pequeña fuga de aire durante la noche, se quedaría sin frenos y se escaparía cuesta abajo. El error clásico es creer que el freno de mano neumático de un camión frena metiendo aire a presión igual que el pedal de servicio.",
+    "ejemplo": "Cuando arrancas un camión por la mañana con los calderines vacíos de aire, aunque sueltes la palanca del freno de estacionamiento el vehículo sigue totalmente bloqueado porque aún no hay presión neumática suficiente para comprimir los muelles de los cilindros combinados traseros. En cuanto el compresor llena el circuito por encima de unos 5,5 bares, el aire vence a los muelles, libera los frenos y al aparcar y tirar de la palanca escucharás el fuerte soplido de descarga («pssshh») que vacía los cilindros para que los muelles dejen frenado el camión.",
+    "revisado": true,
+    "material": {
+      "pdf": null,
+      "pagina": null,
+      "video": null,
+      "minuto": null,
+      "audio": null
+    },
+    "tags": [],
+    "id": "stf-0132",
+    "nombre_imagen": "stf-0132.jpg",
+    "prompt_imagen": "A didactic technical engineering illustration for automotive mechanical topic: 'Al accionar el mando del freno de estacionamiento, el circuito neumático:'. Key concept: 'Libera de presión los cilindros combinados y frenan por fuerza del muelle.'. Aesthetic: warm vintage sepia parchment paper background, fine charcoal pencil sketch lines, detailed cross-hatching shading for metal volume. Handwritten Renaissance cursive calligraphic script typography for all text callouts. 100% SPANISH text ONLY. Mechanically and anatomically precise cutaway engineering drawing. CRUCIAL: Absolutely NO main top title or header text on the image canvas. Each key component has a handwritten script label AND a short functional explanation of what it does and how it works. Include clear motion or fluid flow directional arrows where appropriate. In the bottom-left corner, include a subtle, minimal 3D coordinate axis tripod like Maya 3D gizmo, small and discreet, labeled with 'X', 'Y', 'Z' only, with no descriptive text sentences. Sepia charcoal sketch."
   }
 ]
