@@ -96,25 +96,26 @@ export default function TarjetaPregunta({
 
   function claseOpcion(i) {
     const base =
-      'group flex w-full items-start gap-3 rounded-xl border-2 p-3.5 text-left text-[15px] leading-snug transition';
+      'group flex w-full items-start gap-3.5 rounded-2xl border-2 p-4 text-left text-[15px] leading-snug transition-all duration-200';
     if (!revelada) {
-      return `${base} border-slate-200 bg-white hover:border-sky-400 hover:bg-sky-50 active:scale-[0.99] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-sky-500 dark:hover:bg-sky-500/10`;
+      return `${base} border-slate-200/90 bg-white/95 shadow-2xs hover:border-sky-400 hover:bg-sky-50/70 hover:shadow-sm active:scale-[0.99] dark:border-slate-800 dark:bg-slate-900/85 dark:hover:border-sky-500/80 dark:hover:bg-sky-500/10`;
     }
     if (i === pregunta.correcta) {
-      return `${base} border-emerald-500 bg-emerald-50 dark:border-emerald-500 dark:bg-emerald-500/15`;
+      return `${base} border-emerald-500 bg-emerald-50/90 shadow-sm shadow-emerald-500/10 dark:border-emerald-500 dark:bg-emerald-500/15`;
     }
     if (i === seleccionada) {
-      return `${base} border-rose-500 bg-rose-50 dark:border-rose-500 dark:bg-rose-500/15`;
+      return `${base} border-rose-500 bg-rose-50/90 shadow-sm shadow-rose-500/10 dark:border-rose-500 dark:bg-rose-500/15`;
     }
-    return `${base} border-slate-200 bg-white opacity-55 dark:border-slate-800 dark:bg-slate-900`;
+    return `${base} border-slate-200/70 bg-white/70 opacity-55 dark:border-slate-800/80 dark:bg-slate-900/60`;
   }
 
   function claseLetra(i) {
     const base =
-      'mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-xs font-bold';
-    if (!revelada) return `${base} bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400`;
-    if (i === pregunta.correcta) return `${base} bg-emerald-500 text-white`;
-    if (i === seleccionada) return `${base} bg-rose-500 text-white`;
+      'mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-xs font-extrabold transition-colors';
+    if (!revelada)
+      return `${base} bg-slate-100 text-slate-600 group-hover:bg-sky-500 group-hover:text-white dark:bg-slate-800 dark:text-slate-300 dark:group-hover:bg-sky-500 dark:group-hover:text-white`;
+    if (i === pregunta.correcta) return `${base} bg-emerald-500 text-white shadow-xs shadow-emerald-500/40`;
+    if (i === seleccionada) return `${base} bg-rose-500 text-white shadow-xs shadow-rose-500/40`;
     return `${base} bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500`;
   }
 
@@ -200,34 +201,34 @@ export default function TarjetaPregunta({
           Sin data-sin-swipe a propósito: después de responder ocupa media
           pantalla, y es justo cuando quieres deslizar a la siguiente. */}
       {revelada && (pregunta.explicacion || pregunta.ejemplo) && (
-        <div className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/60">
+        <div className="animar-entrada flex flex-col gap-4 rounded-xl border border-slate-200/90 bg-white/90 p-4 shadow-sm backdrop-blur-md dark:border-slate-800/90 dark:bg-slate-900/80">
           {pregunta.explicacion && (
-            <div>
-              <div className="mb-1.5 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wide text-sky-600 dark:text-sky-400">
+            <div className="rounded-xl border border-sky-500/15 bg-sky-500/[0.04] p-3.5 dark:border-sky-400/15 dark:bg-sky-500/[0.06]">
+              <div className="mb-1.5 flex flex-wrap items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">
                 <Icono nombre="bombilla" size={15} />
                 Por qué
                 {pregunta.revisado === false && (
                   <span
                     title="Generada automáticamente y todavía sin contrastar. Comprueba los datos antes de darla por buena."
-                    className="rounded-md bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold normal-case tracking-normal text-amber-700 dark:bg-amber-500/15 dark:text-amber-400"
+                    className="rounded-lg bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold normal-case tracking-normal text-amber-700 dark:bg-amber-500/15 dark:text-amber-400"
                   >
                     sin revisar
                   </span>
                 )}
               </div>
-              <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
+              <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-200">
                 {pregunta.explicacion}
               </p>
             </div>
           )}
 
           {pregunta.ejemplo && (
-            <div>
-              <div className="mb-1.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-amber-600 dark:text-amber-400">
+            <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.05] p-3.5 dark:border-amber-400/15 dark:bg-amber-500/[0.06]">
+              <div className="mb-1.5 flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">
                 <Icono nombre="llave" size={15} />
                 Ejemplo
               </div>
-              <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
+              <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-200">
                 {pregunta.ejemplo}
               </p>
             </div>

@@ -32,7 +32,7 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
           subtitulo="Elige el módulo"
           alVolver={alVolver}
         />
-        <div className="mx-auto flex max-w-5xl flex-col gap-2.5 px-4 py-5">
+        <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-5">
           {modulos.map((m) => (
             <button
               key={m.id}
@@ -40,18 +40,25 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
                 setModuloId(m.id);
                 setSubmoduloId('todos');
               }}
-              className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-sky-400 active:scale-[0.99] dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-500"
+              className="group flex items-center gap-3.5 rounded-2xl border border-slate-200/85 bg-white/90 p-4 text-left shadow-xs backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-400/70 hover:shadow-md active:scale-[0.99] dark:border-slate-800/90 dark:bg-slate-900/80 dark:hover:border-sky-500/60"
             >
-              <span className="h-10 w-1.5 shrink-0 rounded-full" style={{ background: m.color }} />
+              <span
+                className="h-11 w-1.5 shrink-0 rounded-full"
+                style={{ background: m.color, boxShadow: `0 0 12px ${m.color}66` }}
+              />
               <span className="min-w-0 flex-1">
-                <span className="block text-[15px] font-bold leading-tight text-slate-900 dark:text-white">
+                <span className="block text-[15px] font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white">
                   {m.nombre}
                 </span>
-                <span className="mt-0.5 block text-xs text-slate-500 dark:text-slate-400">
+                <span className="mt-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
                   {m.total} preguntas · {m.submodulos.length} temas
                 </span>
               </span>
-              <Icono nombre="derecha" size={18} className="shrink-0 text-slate-400" />
+              <Icono
+                nombre="derecha"
+                size={18}
+                className="shrink-0 text-slate-400 transition-transform duration-200 group-hover:translate-x-0.5"
+              />
             </button>
           ))}
         </div>
@@ -92,7 +99,7 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
         </section>
 
         <section>
-          <h2 className="mb-2.5 text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          <h2 className="mb-2.5 text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             Número de preguntas
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -103,10 +110,10 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
                   key={c}
                   disabled={desactivada}
                   onClick={() => setCantidad(c)}
-                  className={`min-w-[64px] rounded-xl px-4 py-2.5 text-sm font-bold transition disabled:opacity-30 ${
+                  className={`min-w-[68px] rounded-xl px-4 py-2.5 text-sm font-extrabold transition-all disabled:opacity-30 ${
                     cantidadEfectiva === c
-                      ? 'bg-sky-500 text-white'
-                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700'
+                      ? 'bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-md shadow-sky-500/25 ring-1 ring-inset ring-white/20'
+                      : 'border border-slate-200/80 bg-white/90 text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-800'
                   }`}
                 >
                   {c === 'todas' ? `Todas (${maximo})` : c}
@@ -122,22 +129,26 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
         </section>
 
         <section>
-          <h2 className="mb-2.5 text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          <h2 className="mb-2.5 text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             Orden
           </h2>
           <div className="flex gap-2">
             <button
               onClick={() => setAleatorio(true)}
-              className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-bold transition ${
-                aleatorio ? 'bg-sky-500 text-white' : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200'
+              className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-extrabold transition-all ${
+                aleatorio
+                  ? 'bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-md shadow-sky-500/25 ring-1 ring-inset ring-white/20'
+                  : 'border border-slate-200/80 bg-white/90 text-slate-700 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-200'
               }`}
             >
               Aleatorio
             </button>
             <button
               onClick={() => setAleatorio(false)}
-              className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-bold transition ${
-                !aleatorio ? 'bg-sky-500 text-white' : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200'
+              className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-extrabold transition-all ${
+                !aleatorio
+                  ? 'bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-md shadow-sky-500/25 ring-1 ring-inset ring-white/20'
+                  : 'border border-slate-200/80 bg-white/90 text-slate-700 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-200'
               }`}
             >
               Del temario

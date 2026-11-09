@@ -52,11 +52,11 @@ export default function Resultados({ resultado, alInicio, alRepetirFallos, alRep
     <div className="min-h-dvh pb-16">
       <Cabecera titulo="Resultado" subtitulo={subtitulo || titulo} alVolver={alInicio} />
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-6">
-        <Tarjeta className="flex flex-col items-center gap-3 py-8 text-center">
+        <Tarjeta className="flex flex-col items-center gap-3.5 border-slate-200/90 bg-gradient-to-b from-white/95 to-slate-50/90 py-8 text-center shadow-md dark:border-slate-800/90 dark:from-slate-900/95 dark:to-slate-950/90">
           <Anillo pct={pct} aprobado={aprobado} />
           <div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">{nota.toFixed(1)}</p>
-            <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">{mensaje}</p>
+            <p className="text-4xl font-black tracking-tight text-slate-900 dark:text-white">{nota.toFixed(1)}</p>
+            <p className="mt-0.5 text-sm font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">{mensaje}</p>
           </div>
           <div className="flex flex-wrap justify-center gap-2 pt-1">
             <Etiqueta color="verde">{aciertos} aciertos</Etiqueta>
@@ -96,9 +96,9 @@ function Anillo({ pct, aprobado }) {
   const r = 52;
   const c = 2 * Math.PI * r;
   return (
-    <div className="relative h-32 w-32">
-      <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90">
-        <circle cx="60" cy="60" r={r} fill="none" strokeWidth="10" className="stroke-slate-200 dark:stroke-slate-800" />
+    <div className="relative h-36 w-36">
+      <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90 drop-shadow-sm">
+        <circle cx="60" cy="60" r={r} fill="none" strokeWidth="10" className="stroke-slate-200/80 dark:stroke-slate-800" />
         <circle
           cx="60"
           cy="60"
@@ -109,11 +109,16 @@ function Anillo({ pct, aprobado }) {
           className={aprobado ? 'stroke-emerald-500' : 'stroke-rose-500'}
           strokeDasharray={c}
           strokeDashoffset={c - (c * pct) / 100}
-          style={{ transition: 'stroke-dashoffset 700ms ease-out' }}
+          style={{
+            transition: 'stroke-dashoffset 700ms ease-out',
+            filter: aprobado
+              ? 'drop-shadow(0 0 8px rgba(16, 185, 129, 0.45))'
+              : 'drop-shadow(0 0 8px rgba(244, 63, 94, 0.45))',
+          }}
         />
       </svg>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-2xl font-black text-slate-800 dark:text-slate-100">{pct}%</span>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">{pct}%</span>
       </div>
     </div>
   );

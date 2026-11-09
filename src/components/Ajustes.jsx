@@ -110,9 +110,9 @@ export default function Ajustes({
 
 function Interruptor({ titulo, texto, activo, alCambiar }) {
   return (
-    <label className="flex cursor-pointer items-center gap-3 p-4">
+    <label className="flex cursor-pointer items-center gap-3 p-4 transition-colors hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
       <span className="min-w-0 flex-1">
-        <span className="block text-sm font-semibold text-slate-900 dark:text-white">{titulo}</span>
+        <span className="block text-sm font-bold text-slate-900 dark:text-white">{titulo}</span>
         <span className="mt-0.5 block text-xs text-slate-500 dark:text-slate-400">{texto}</span>
       </span>
       <button
@@ -120,12 +120,14 @@ function Interruptor({ titulo, texto, activo, alCambiar }) {
         role="switch"
         aria-checked={activo}
         onClick={() => alCambiar(!activo)}
-        className={`relative h-6 w-11 shrink-0 rounded-full transition ${
-          activo ? 'bg-sky-500' : 'bg-slate-300 dark:bg-slate-700'
+        className={`relative h-6 w-11 shrink-0 rounded-full transition-all duration-200 ${
+          activo
+            ? 'bg-gradient-to-r from-sky-500 to-indigo-500 shadow-sm shadow-sky-500/30'
+            : 'bg-slate-300 dark:bg-slate-700'
         }`}
       >
         <span
-          className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all ${
+          className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow-md transition-all duration-200 ${
             activo ? 'left-[22px]' : 'left-0.5'
           }`}
         />

@@ -69,13 +69,13 @@ export default function Estudio({ preguntas, titulo, alSalir }) {
         </p>
       </div>
 
-      <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
+      <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200/80 bg-white/85 shadow-lg backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/85">
         <div className="mx-auto flex max-w-5xl items-center gap-2 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           {/* La salida también aquí: la cabecera se pierde al desplazarse. */}
           <button
             onClick={alSalir}
             aria-label="Salir al menú"
-            className="shrink-0 rounded-xl p-3 text-slate-500 active:scale-95 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
+            className="shrink-0 rounded-xl border border-transparent p-3 text-slate-500 transition hover:border-slate-200 hover:bg-slate-100 active:scale-95 dark:text-slate-400 dark:hover:border-slate-800 dark:hover:bg-slate-900"
           >
             <Icono nombre="casa" size={20} />
           </button>

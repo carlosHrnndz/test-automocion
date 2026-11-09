@@ -3,14 +3,50 @@
 /* Tailwind v4: el modo oscuro se activa con la clase .dark en <html> */
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --accent-brand-light: #0284c7;
+  --accent-brand-dark: #38bdf8;
+  --accent-color: var(--accent-brand-light);
+  --bg-glow-1: rgba(56, 189, 248, 0.13);
+  --bg-glow-2: rgba(245, 158, 11, 0.08);
+  --bg-glow-3: rgba(99, 102, 241, 0.08);
+  color-scheme: light dark;
+  accent-color: var(--accent-color);
+}
+
+:root.dark {
+  --accent-color: var(--accent-brand-dark);
+  --bg-glow-1: rgba(56, 189, 248, 0.14);
+  --bg-glow-2: rgba(245, 158, 11, 0.09);
+  --bg-glow-3: rgba(99, 102, 241, 0.11);
+  color-scheme: dark;
+}
+
+:root:not(.dark) {
+  color-scheme: light;
+}
+
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
+    font-family: var(--font-sans);
   }
 
   body {
     @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+    background-image:
+      radial-gradient(circle at 14% 8%, var(--bg-glow-1) 0%, transparent 44%),
+      radial-gradient(circle at 86% 14%, var(--bg-glow-3) 0%, transparent 40%),
+      radial-gradient(circle at 50% 96%, var(--bg-glow-2) 0%, transparent 46%);
+    background-attachment: fixed;
     overscroll-behavior-y: none;
+  }
+
+  ::selection {
+    background-color: rgba(56, 189, 248, 0.28);
+    color: inherit;
   }
 
   /* Instalada en el iPhone, la app ocupa la pantalla entera, barra de estado
@@ -26,4 +62,19 @@
   a {
     -webkit-tap-highlight-color: transparent;
   }
+}
+
+@keyframes entradaSuave {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animar-entrada {
+  animation: entradaSuave 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }

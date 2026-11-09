@@ -1,16 +1,20 @@
-// Piezas de interfaz reutilizables.
+// Piezas de interfaz reutilizables con acabado de cuadro de instrumentos premium.
 
 export function Boton({ children, variante = 'primario', className = '', ...props }) {
   const base =
-    'inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold ' +
-    'transition active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none select-none';
+    'inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold tracking-tight ' +
+    'transition-all duration-200 active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none select-none cursor-pointer';
   const variantes = {
-    primario: 'bg-sky-500 text-white hover:bg-sky-400 shadow-lg shadow-sky-500/20',
+    primario:
+      'bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500 text-white hover:from-sky-400 hover:via-sky-400 hover:to-indigo-400 ' +
+      'shadow-lg shadow-sky-500/25 ring-1 ring-inset ring-white/25',
     secundario:
-      'bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700',
+      'bg-white/90 text-slate-800 border border-slate-200/90 shadow-sm hover:bg-slate-100/90 hover:border-slate-300 ' +
+      'dark:bg-slate-800/90 dark:text-slate-100 dark:border-slate-700/80 dark:hover:bg-slate-700/90 dark:hover:border-slate-600',
     fantasma:
-      'bg-transparent text-slate-600 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-800',
-    peligro: 'bg-rose-600 text-white hover:bg-rose-500',
+      'bg-transparent text-slate-600 hover:bg-slate-200/60 dark:text-slate-300 dark:hover:bg-slate-800/70',
+    peligro:
+      'bg-gradient-to-r from-rose-600 to-orange-600 text-white hover:from-rose-500 hover:to-orange-500 shadow-lg shadow-rose-500/25 ring-1 ring-inset ring-white/20',
   };
   return (
     <button className={`${base} ${variantes[variante]} ${className}`} {...props}>
@@ -21,13 +25,13 @@ export function Boton({ children, variante = 'primario', className = '', ...prop
 
 export function Cabecera({ titulo, subtitulo, alVolver, derecha }) {
   return (
-    <header className="zonaSegura sticky top-0 z-20 border-b border-slate-200/70 bg-white/85 backdrop-blur dark:border-slate-800 dark:bg-slate-950/85">
+    <header className="zonaSegura sticky top-0 z-20 border-b border-slate-200/80 bg-white/80 shadow-xs backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/80">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
         {alVolver && (
           <button
             onClick={alVolver}
             aria-label="Volver"
-            className="-ml-2 rounded-lg p-2 text-slate-500 hover:bg-slate-200/70 dark:text-slate-400 dark:hover:bg-slate-800"
+            className="-ml-2 flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-slate-600 transition hover:border-slate-200 hover:bg-slate-100/80 active:scale-95 dark:text-slate-300 dark:hover:border-slate-800 dark:hover:bg-slate-900"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -35,9 +39,9 @@ export function Cabecera({ titulo, subtitulo, alVolver, derecha }) {
           </button>
         )}
         <div className="min-w-0 flex-1">
-          <h1 className="truncate text-base font-bold text-slate-900 dark:text-white">{titulo}</h1>
+          <h1 className="truncate text-base font-extrabold tracking-tight text-slate-900 dark:text-white">{titulo}</h1>
           {subtitulo && (
-            <p className="truncate text-xs text-slate-500 dark:text-slate-400">{subtitulo}</p>
+            <p className="truncate text-xs font-medium text-slate-500 dark:text-slate-400">{subtitulo}</p>
           )}
         </div>
         {derecha}
@@ -49,7 +53,7 @@ export function Cabecera({ titulo, subtitulo, alVolver, derecha }) {
 export function Tarjeta({ children, className = '', ...props }) {
   return (
     <div
-      className={`rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900 ${className}`}
+      className={`rounded-2xl border border-slate-200/85 bg-white/90 p-4 shadow-sm backdrop-blur-md dark:border-slate-800/85 dark:bg-slate-900/80 dark:shadow-black/25 ${className}`}
       {...props}
     >
       {children}
@@ -60,8 +64,10 @@ export function Tarjeta({ children, className = '', ...props }) {
 export function Vacio({ icono, titulo, texto, accion }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 px-6 py-16 text-center">
-      <div className="text-4xl opacity-60">{icono}</div>
-      <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100">{titulo}</h2>
+      <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/80 text-3xl shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
+        {icono}
+      </div>
+      <h2 className="text-lg font-extrabold tracking-tight text-slate-800 dark:text-slate-100">{titulo}</h2>
       <p className="max-w-sm text-sm text-slate-500 dark:text-slate-400">{texto}</p>
       {accion}
     </div>
@@ -71,22 +77,30 @@ export function Vacio({ icono, titulo, texto, accion }) {
 export function Barra({ valor, total, color = 'bg-sky-500' }) {
   const pct = total > 0 ? Math.round((valor / total) * 100) : 0;
   return (
-    <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
-      <div className={`h-full rounded-full ${color} transition-all duration-300`} style={{ width: `${pct}%` }} />
+    <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200/85 p-[1px] shadow-inner dark:bg-slate-800/90">
+      <div
+        className={`h-full rounded-full ${color} transition-all duration-300`}
+        style={{ width: `${pct}%`, boxShadow: pct > 0 ? '0 0 12px rgba(56, 189, 248, 0.45)' : 'none' }}
+      />
     </div>
   );
 }
 
 export function Etiqueta({ children, color = 'slate' }) {
   const colores = {
-    slate: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300',
-    verde: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300',
-    rojo: 'bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300',
-    ambar: 'bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300',
-    azul: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300',
+    slate:
+      'bg-slate-100/90 text-slate-700 ring-1 ring-inset ring-slate-300/60 dark:bg-slate-800/90 dark:text-slate-300 dark:ring-slate-700/70',
+    verde:
+      'bg-emerald-500/12 text-emerald-700 ring-1 ring-inset ring-emerald-500/25 dark:bg-emerald-500/15 dark:text-emerald-300 dark:ring-emerald-400/25',
+    rojo:
+      'bg-rose-500/12 text-rose-700 ring-1 ring-inset ring-rose-500/25 dark:bg-rose-500/15 dark:text-rose-300 dark:ring-rose-400/25',
+    ambar:
+      'bg-amber-500/12 text-amber-700 ring-1 ring-inset ring-amber-500/25 dark:bg-amber-500/15 dark:text-amber-300 dark:ring-amber-400/25',
+    azul:
+      'bg-sky-500/12 text-sky-700 ring-1 ring-inset ring-sky-500/25 dark:bg-sky-500/15 dark:text-sky-300 dark:ring-sky-400/25',
   };
   return (
-    <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-[11px] font-semibold ${colores[color]}`}>
+    <span className={`inline-flex items-center rounded-lg px-2.5 py-0.5 text-[11px] font-bold tracking-tight ${colores[color]}`}>
       {children}
     </span>
   );
