@@ -522,7 +522,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0019"
+    "id": "cfsd-0019",
+    "imagen": "images/cfsd_0019.png"
   },
   {
     "moduloId": "cfsd",
@@ -549,7 +550,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0020"
+    "id": "cfsd-0020",
+    "imagen": "images/cfsd_0020.png"
   },
   {
     "moduloId": "cfsd",
@@ -574,7 +576,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0021"
+    "id": "cfsd-0021",
+    "imagen": "images/cfsd_0021.png"
   },
   {
     "moduloId": "cfsd",
@@ -736,7 +739,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0027"
+    "id": "cfsd-0027",
+    "imagen": "images/cfsd-0027.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -1222,7 +1226,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0045"
+    "id": "cfsd-0045",
+    "imagen": "images/cfsd-0045.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -1519,7 +1524,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0056"
+    "id": "cfsd-0056",
+    "imagen": "images/cfsd-0056.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -1573,7 +1579,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0058"
+    "id": "cfsd-0058",
+    "imagen": "images/cfsd-0058.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -3706,7 +3713,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0137"
+    "id": "cfsd-0137",
+    "imagen": "images/cfsd-0137.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -3733,7 +3741,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0138"
+    "id": "cfsd-0138",
+    "imagen": "images/cfsd-0138.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -5260,7 +5269,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0195"
+    "id": "cfsd-0195",
+    "imagen": "images/cfsd-0195.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -5638,7 +5648,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0209"
+    "id": "cfsd-0209",
+    "imagen": "images/cfsd-0209.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -7400,7 +7411,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0275"
+    "id": "cfsd-0275",
+    "imagen": "images/cfsd-0275.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -7751,7 +7763,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0288"
+    "id": "cfsd-0288",
+    "imagen": "images/cfsd-0288.jpg"
   },
   {
     "moduloId": "cfsd",
@@ -8817,7 +8830,8 @@
       "audio": null
     },
     "tags": [],
-    "id": "cfsd-0328"
+    "id": "cfsd-0328",
+    "imagen": "images/cfsd-0328.jpg"
   },
   {
     "moduloId": "cfsd",

@@ -16,15 +16,30 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icono.svg', 'icono-180.png'],
       workbox: {
-        // Las preguntas también se cachean: la app funciona sin cobertura.
-        globPatterns: ['**/*.{js,css,html,svg,png,json,woff2}'],
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
+        // Las preguntas se consultan primero por red (NetworkFirst) para que
+        // los nuevos temas y correcciones lleguen al iPhone sin borrar caché,
+        // pero siguen guardadas para funcionar sin cobertura.
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
         // Las ilustraciones no: son una por pregunta y descargarlas todas al
         // instalar la app serían muchos megas de golpe, la mayoría de
         // preguntas que quizá no estudies hoy. Se guardan al verlas.
-        globIgnores: ['**/images/**'],
+        globIgnores: ['**/images/**', '**/data/**'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: base + 'index.html',
         runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.includes('/data/'),
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'banco-preguntas',
+              networkTimeoutSeconds: 4,
+              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 180 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
           {
             urlPattern: ({ url }) => url.pathname.includes('/images/'),
             handler: 'CacheFirst',

@@ -29,6 +29,7 @@ export default function App() {
   const [ajustes, setAjustes] = useState(() => almacenAjustes.leer());
   const [sesionGuardada, setSesionGuardada] = useState(() => almacenSesion.leer());
   const [refresco, setRefresco] = useState(0);
+  const [actualizando, setActualizando] = useState(false);
 
   // Tema
   useEffect(() => {
@@ -43,6 +44,39 @@ export default function App() {
     cargarBanco()
       .then((banco) => setEstado({ fase: 'listo', banco }))
       .catch((e) => setEstado({ fase: 'error', mensaje: e.message }));
+  }, []);
+
+  // Fuerza la actualización de caché del Service Worker y recarga el banco
+  const actualizarApp = useCallback(async () => {
+    setActualizando(true);
+    try {
+      if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(
+          regs.map(async (r) => {
+            try {
+              await r.update();
+              if (r.waiting) r.waiting.postMessage({ type: 'SKIP_WAITING' });
+            } catch { /* ignorar */ }
+          })
+        );
+      }
+      if (typeof caches !== 'undefined') {
+        const nombres = await caches.keys();
+        await Promise.all(
+          nombres
+            .filter((n) => !n.includes('ilustraciones'))
+            .map((n) => caches.delete(n))
+        );
+      }
+      const nuevoBanco = await cargarBanco({ forzar: true });
+      setEstado({ fase: 'listo', banco: nuevoBanco });
+      setRefresco((n) => n + 1);
+    } catch {
+      location.reload();
+    } finally {
+      setActualizando(false);
+    }
   }, []);
 
   const banco = estado.banco;
@@ -276,6 +310,8 @@ export default function App() {
         alCambiar={cambiarAjustes}
         alVolver={volverAlInicio}
         totalPreguntas={banco.preguntas.length}
+        alActualizar={actualizarApp}
+        actualizando={actualizando}
       />
     );
   }
@@ -292,6 +328,8 @@ export default function App() {
       }}
       tema={ajustes.tema}
       alCambiarTema={() => cambiarAjustes({ tema: ajustes.tema === 'oscuro' ? 'claro' : 'oscuro' })}
+      alActualizar={actualizarApp}
+      actualizando={actualizando}
     />
   );
 }

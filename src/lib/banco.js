@@ -21,8 +21,10 @@ export function rutaDeArchivo(ruta) {
 let cache = null;
 let cargando = null;
 
-async function json(ruta) {
-  const r = await fetch(BASE + ruta, { cache: 'no-cache' });
+async function json(ruta, bust = '') {
+  const sep = ruta.includes('?') ? '&' : '?';
+  const sufijo = bust ? `${sep}t=${bust}` : '';
+  const r = await fetch(BASE + ruta + sufijo, { cache: 'no-store' });
   if (!r.ok) throw new Error(`No se pudo cargar ${ruta} (${r.status})`);
   return r.json();
 }
@@ -31,22 +33,30 @@ async function json(ruta) {
  * Carga el manifiesto y todos los archivos de preguntas que declare.
  * Devuelve { preguntas, porModulo, manifiesto }.
  */
-export async function cargarBanco() {
+export async function cargarBanco({ forzar = false } = {}) {
+  if (forzar) {
+    cache = null;
+    cargando = null;
+  }
   if (cache) return cache;
   if (cargando) return cargando;
+
+  const bust = forzar ? String(Date.now()) : '';
 
   cargando = (async () => {
     let manifiesto;
     try {
-      manifiesto = await json('data/manifest.json');
+      manifiesto = await json('data/manifest.json', bust);
     } catch {
       manifiesto = { modulos: [] };
     }
 
+    const versionBust = bust || manifiesto.actualizado || String(manifiesto.version || '');
+
     const listas = await Promise.all(
       (manifiesto.modulos || []).map(async (m) => {
         try {
-          const datos = await json('data/' + m.archivo);
+          const datos = await json('data/' + m.archivo, versionBust);
           return Array.isArray(datos) ? datos : datos.preguntas || [];
         } catch (e) {
           console.warn('Módulo omitido:', m.archivo, e.message);

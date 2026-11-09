@@ -1,11 +1,15 @@
 {
   "titulacion": "Técnico Superior en Automoción",
   "version": 1,
-  "actualizado": "2026-08-07",
+  "actualizado": "2026-11-09",
   "modulos": [
     {
       "id": "cfsd",
       "archivo": "preguntas/cfsd.json"
+    },
+    {
+      "id": "stf",
+      "archivo": "preguntas/stf.json"
     }
   ]
 }

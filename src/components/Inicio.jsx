@@ -1,7 +1,17 @@
 import { Boton, Icono, Tarjeta } from './ui.jsx';
 import { TITULACION } from '../lib/estructura.js';
 
-export default function Inicio({ resumen, sesionGuardada, ir, alReanudar, alDescartarSesion, tema, alCambiarTema }) {
+export default function Inicio({
+  resumen,
+  sesionGuardada,
+  ir,
+  alReanudar,
+  alDescartarSesion,
+  tema,
+  alCambiarTema,
+  alActualizar,
+  actualizando = false,
+}) {
   const acciones = [
     {
       id: 'configurar',
@@ -70,22 +80,35 @@ export default function Inicio({ resumen, sesionGuardada, ir, alReanudar, alDesc
               Test de Mecánica
             </h1>
           </div>
-          <button
-            onClick={alCambiarTema}
-            aria-label="Cambiar tema"
-            className="rounded-lg p-2 text-slate-500 hover:bg-slate-200/70 dark:text-slate-400 dark:hover:bg-slate-800"
-          >
-            {tema === 'oscuro' ? (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-              </svg>
-            ) : (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
-              </svg>
+          <div className="flex items-center gap-1">
+            {alActualizar && (
+              <button
+                onClick={alActualizar}
+                disabled={actualizando}
+                aria-label="Actualizar preguntas y aplicación"
+                title="Actualizar preguntas y aplicación"
+                className="rounded-lg p-2 text-slate-500 hover:bg-slate-200/70 disabled:opacity-50 dark:text-slate-400 dark:hover:bg-slate-800"
+              >
+                <Icono nombre="repaso" size={20} className={actualizando ? 'animate-spin text-sky-500' : ''} />
+              </button>
             )}
-          </button>
+            <button
+              onClick={alCambiarTema}
+              aria-label="Cambiar tema"
+              className="rounded-lg p-2 text-slate-500 hover:bg-slate-200/70 dark:text-slate-400 dark:hover:bg-slate-800"
+            >
+              {tema === 'oscuro' ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                </svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Resumen */}

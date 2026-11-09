@@ -53,7 +53,7 @@ dom.window.localStorage.setItem('ta_ajustes', JSON.stringify({ barajarOpciones: 
 
 // fetch servido desde public/
 global.fetch = async (url) => {
-  const rel = String(url).replace(/^https?:\/\/[^/]+\//, '').replace(/^\/+/, '');
+  const rel = String(url).replace(/^https?:\/\/[^/]+\//, '').replace(/^\/+/, '').replace(/\?.*$/, '');
   const f = path.join(RAIZ, 'public', rel);
   if (!fs.existsSync(f)) return { ok: false, status: 404 };
   return { ok: true, status: 200, json: async () => JSON.parse(fs.readFileSync(f, 'utf8')) };
@@ -87,11 +87,13 @@ ok('repaso y marcadas empiezan desactivados', buscar('Repasar fallos').disabled 
 
 console.log('--- Configurar test ---');
 await clic(buscar('Nuevo test'));
-ok('lista modulos con preguntas', T().includes('CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN'));
+ok('lista modulos con preguntas', T().includes('CIRCUITOS DE FLUIDOS SUSPENSIÓN Y DIRECCIÓN') && T().includes('SISTEMAS DE TRANSMISIÓN Y FRENADO'));
 await clic(buscar('CIRCUITOS DE FLUIDOS'));
 ok('opcion modulo completo', T().includes('Módulo completo'));
 ok('submodulos reales del banco', ['RUEDAS', 'EL SISTEMA DE DIRECCIÓN'].every((x) => T().includes(x)));
+await clic(buscar('EL SISTEMA DE DIRECCIÓN'));
 ok('desactiva cantidades imposibles', btns().find((b) => b.textContent.trim() === '150')?.disabled === true);
+await clic(btns().find((b) => b.textContent.trim() === '10'));
 
 console.log('--- Responder ---');
 await clic(btns().find((b) => b.textContent.trim() === 'Del temario'));
@@ -101,8 +103,8 @@ ok('explicacion oculta antes de responder', !T().includes('Por qué'));
 ok('cuatro opciones', opciones().length === 4);
 
 const ops = opciones();
-const iMal = ops.findIndex((o) => !o.textContent.includes('Frenar las oscilaciones'));
-await clic(ops[iMal]);
+const iMal = ops.findIndex((o) => !o.textContent.includes('Potenciómetro de esfuerzo'));
+await clic(ops[iMal >= 0 ? iMal : 0]);
 ok('aparece la explicacion', T().includes('Por qué'));
 ok('aparece el ejemplo', T().includes('Ejemplo'));
 ok('la correcta en verde', !!document.querySelector('.border-emerald-500'));

@@ -21,6 +21,7 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
   }, [banco, moduloId, submoduloId]);
 
   const maximo = disponibles.length;
+  const cantidadEfectiva = cantidad !== 'todas' && cantidad > maximo ? 'todas' : cantidad;
 
   // Paso 1: elegir módulo
   if (!moduloId) {
@@ -103,7 +104,7 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
                   disabled={desactivada}
                   onClick={() => setCantidad(c)}
                   className={`min-w-[64px] rounded-xl px-4 py-2.5 text-sm font-bold transition disabled:opacity-30 ${
-                    cantidad === c
+                    cantidadEfectiva === c
                       ? 'bg-sky-500 text-white'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700'
                   }`}
@@ -163,7 +164,7 @@ export default function Configurador({ banco, modulos, destino = 'test', alEmpez
               alEmpezar({
                 moduloId,
                 submoduloId,
-                cantidad,
+                cantidad: cantidadEfectiva,
                 aleatorio,
                 titulo: modulo.corto || modulo.nombre,
                 subtitulo:

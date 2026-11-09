@@ -2,7 +2,14 @@ import { useRef } from 'react';
 import { Boton, Cabecera, Tarjeta } from './ui.jsx';
 import { exportarProgreso, importarProgreso } from '../lib/almacen.js';
 
-export default function Ajustes({ ajustes, alCambiar, alVolver, totalPreguntas }) {
+export default function Ajustes({
+  ajustes,
+  alCambiar,
+  alVolver,
+  totalPreguntas,
+  alActualizar,
+  actualizando = false,
+}) {
   const inputRef = useRef(null);
 
   function descargar() {
@@ -52,6 +59,27 @@ export default function Ajustes({ ajustes, alCambiar, alVolver, totalPreguntas }
             alCambiar={(v) => alCambiar({ barajarOpciones: v })}
           />
         </Tarjeta>
+
+        {alActualizar && (
+          <section className="flex flex-col gap-2">
+            <h2 className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              Actualización del banco y app
+            </h2>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Descarga al instante las últimas preguntas, explicaciones y mejoras sin perder tu progreso ni tener que borrar el acceso directo del iPhone.
+            </p>
+            <div className="mt-1">
+              <Boton
+                variante="primario"
+                onClick={alActualizar}
+                disabled={actualizando}
+                className="w-full"
+              >
+                {actualizando ? 'Actualizando banco y caché…' : 'Actualizar preguntas y app ahora'}
+              </Boton>
+            </div>
+          </section>
+        )}
 
         <section className="flex flex-col gap-2">
           <h2 className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">

@@ -34,7 +34,10 @@ export const ESTRUCTURA = [
     nombre: 'SISTEMAS DE TRANSMISIÓN Y FRENADO',
     corto: 'Transmisión y frenado',
     color: '#a78bfa',
-    submodulos: [],
+    submodulos: [
+      'TRANSMISIÓN Y DINÁMICA DEL VEHÍCULO',
+      'OTROS SISTEMAS DE FRENOS',
+    ],
   },
   {
     id: 'mot',

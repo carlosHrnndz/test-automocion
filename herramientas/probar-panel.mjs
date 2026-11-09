@@ -33,6 +33,8 @@ const esperar = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // --- Respaldo del banco ----------------------------------------------------
 fs.cpSync(DATOS, RESPALDO, { recursive: true });
+fs.rmSync(path.join(DATOS, 'preguntas'), { recursive: true, force: true });
+fs.mkdirSync(path.join(DATOS, 'preguntas'), { recursive: true });
 const restaurar = () => {
   fs.rmSync(DATOS, { recursive: true, force: true });
   fs.cpSync(RESPALDO, DATOS, { recursive: true });
